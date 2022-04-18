@@ -4,12 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookstoreManagement"
-             xmlns:components="clr-namespace:BookstoreManagement.Components"
+             xmlns:components="clr-namespace:BookstoreManagement.Components" 
+             xmlns:shapes="clr-namespace:BookstoreManagement.Components.Shapes"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <Border>
         <Grid Margin="80 30 80 0">
             <components:MainMenu>
+                <components:MainMenu.FloatingContent>
+
+                </components:MainMenu.FloatingContent>
             </components:MainMenu>
         </Grid>
     </Border>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.Shapes.EmployeeFlag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookstoreManagement.Components.Shapes"
+             mc:Ignorable="d" 
+             d:DesignHeight="48" d:DesignWidth="39">
+    <Canvas Height="48">
+        <Rectangle Fill="AliceBlue" Height="48" Width="39"/>
+        <Polygon Fill="LightBlue" Name="Triangle">
+            <Polygon.Points>
+                <Point X="0" Y="48"/>
+                <Point X="39" Y="48"/>
+                <Point X="20" Y="28"/>
+            </Polygon.Points>
+        </Polygon>
+    </Canvas>
+</UserControl>

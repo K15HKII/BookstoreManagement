@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for ImageLoader.xaml
+    /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class ImageLoader : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public ImageLoader()
+        public UserControl1()
         {
             InitializeComponent();
         }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for ImageLoader.xaml
+    /// Interaction logic for PersonCard.xaml
     /// </summary>
-    public partial class ImageLoader : UserControl
+    public partial class PersonCard : UserControl
     {
-        public ImageLoader()
+        public PersonCard()
         {
             InitializeComponent();
         }

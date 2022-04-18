@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.Shapes
 {
     /// <summary>
-    /// Interaction logic for ImageLoader.xaml
+    /// Interaction logic for EmployeeFlag.xaml
     /// </summary>
-    public partial class ImageLoader : UserControl
+    public partial class EmployeeFlag : UserControl
     {
-        public ImageLoader()
+        public EmployeeFlag()
         {
             InitializeComponent();
         }
