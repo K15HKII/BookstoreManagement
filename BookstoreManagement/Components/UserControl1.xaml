@@ -6,6 +6,4 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d" 
              d:DesignHeight="116" d:DesignWidth="447">
-    <Path Stroke="DarkGoldenRod" StrokeThickness="3"
-Data="M 0,0 L 447,0 L  H 280" />
 </UserControl>

@@ -12,7 +12,7 @@
         <Grid Margin="80 30 80 0">
             <components:MainMenu>
                 <components:MainMenu.FloatingContent>
-
+                    <Border/>
                 </components:MainMenu.FloatingContent>
             </components:MainMenu>
         </Grid>
