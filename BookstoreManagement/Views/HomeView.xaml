@@ -6,15 +6,15 @@
              xmlns:local="clr-namespace:BookstoreManagement"
              xmlns:components="clr-namespace:BookstoreManagement.Components" 
              xmlns:shapes="clr-namespace:BookstoreManagement.Components.Shapes"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
+    <UserControl.Resources>
+    </UserControl.Resources>
     <Border>
         <Grid Margin="80 30 80 0">
-            <components:MainMenu>
-                <components:MainMenu.FloatingContent>
-                    <Border/>
-                </components:MainMenu.FloatingContent>
-            </components:MainMenu>
+            <components:PageItemsControl x:Name="test" ItemsPerPage="2"/>
+            <!-- <components:PageItemsNavigationBar MaxPage="4"/> -->
         </Grid>
     </Border>
 </UserControl>

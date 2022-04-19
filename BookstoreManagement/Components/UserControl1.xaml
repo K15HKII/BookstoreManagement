@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookstoreManagement.Components"
-             mc:Ignorable="d" 
-             d:DesignHeight="116" d:DesignWidth="447">
+             mc:Ignorable="d">
+    <Grid>
+        <Image Source="/Images/voucher.png" Stretch="None" Grid.ColumnSpan="2"/>
+    </Grid>
 </UserControl>
