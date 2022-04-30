@@ -16,18 +16,14 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for MainMenuItem.xaml
+    /// Interaction logic for test.xaml
     /// </summary>
-    public partial class MainMenuItem : UserControl
+    public partial class test : UserControl
     {
-        public MainMenuItem()
+        public test()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

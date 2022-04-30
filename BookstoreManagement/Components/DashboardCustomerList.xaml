@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.DashboardCustomerList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BookstoreManagement.Components"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <GridLength x:Key="InfoCustomerColumnWidth">*</GridLength>
+        <GridLength x:Key="OrderedQuantityColumnWidth">64</GridLength>
+    </UserControl.Resources>
+
+    <Border Background="White"
+            Width="352px">
+        <ItemsControl>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="352px"
+                          Height="65px">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{StaticResource InfoCustomerColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource OrderedQuantityColumnWidth}" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Name="infoOfCustomer"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal">
+                            <Border Width="47px"
+                                    Height="47px"
+                                    CornerRadius="25"
+                                    Background="{StaticResource SolidLightGrayColor}"
+                                    Margin="0 0 6 0">
+                            </Border>
+                            <StackPanel Orientation="Vertical"
+                                        VerticalAlignment="Center">
+                                <TextBlock HorizontalAlignment="Left"
+                                           Text="Nobita"
+                                           Style="{StaticResource Title}" />
+                                <TextBlock HorizontalAlignment="Left"
+                                           Text="20520558@gm.uit.edu.vn"
+                                           Style="{StaticResource Caption}"
+                                           Foreground="{StaticResource SolidDarkGrayColor}" />
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Vertical"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center">
+
+                            <TextBlock Text="1002"
+                                       HorizontalAlignment="Right"
+                                       Style="{StaticResource Title}" />
+                            <TextBlock HorizontalAlignment="Right"
+                                       Text="Đơn hàng"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />
+
+                        </StackPanel>
+                    </Grid>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Border>
+
+</UserControl>

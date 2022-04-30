@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for MainMenuItem.xaml
+    /// Interaction logic for DashboardCustomerList.xaml
     /// </summary>
-    public partial class MainMenuItem : UserControl
+    public partial class DashboardCustomerList : UserControl
     {
-        public MainMenuItem()
+        public DashboardCustomerList()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

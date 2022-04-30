@@ -1,0 +1,314 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <!--custom checkbox-->
+    <Style x:Key="myCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid x:Name="abc"
+                                Height="{TemplateBinding Height}"
+                                Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="checkboxIcon" Kind="CheckBoxOutlineBlank" 
+                                                 Foreground="{StaticResource SolidPrimaryColor}"
+                                                 VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
+                        <ContentPresenter/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="checkboxIcon"
+                                    Property="Kind"
+                                    Value="Checkbox"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--custom toggle button-->
+    <Style x:Key="myRatingStyle"
+           TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="abc"
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="ratingIcon"
+                                                 Kind="StarBorder"
+                                                 Foreground="{StaticResource SolidYellowColor}"
+                                                 VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}"/>
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="ratingIcon"
+                                    Property="Kind"
+                                    Value="Star"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--custom radius button-->
+    <Style x:Key="myRadioButtonStyle"
+           TargetType="{x:Type RadioButton}"
+           x:Name="met">
+        <Setter Property="Background"
+                Value="{StaticResource SolidDarkPrimaryColor}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="abc"
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="radioButtonIcon"
+                                                 Kind="RadioButtonUnchecked"
+                                                 Foreground="{StaticResource SolidDarkPrimaryColor}"
+                                                 VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}"/>
+                        <ContentPresenter />
+                    </Grid>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="radioButtonIcon"
+                                    Property="Kind"
+                                    Value="RadioButtonChecked"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--custom button-->
+    <Style x:Key="PrimaryButton"
+           TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="White" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource buttonFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Bold" />
+        <Setter Property="MinWidth"
+                Value="97" />
+        <Setter Property="Height"
+                Value="36" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border CornerRadius="20"
+                                Background="{StaticResource SolidPrimaryColor}"
+                                BorderBrush="White"
+                                BorderThickness="1">
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="12 0 12 0">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SecondButton"
+           TargetType="Button"
+           BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="{StaticResource SolidDarkPrimaryColor}" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource buttonFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Bold" />
+        <Setter Property="MinWidth"
+                Value="97" />
+        <Setter Property="Height"
+                Value="36" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border CornerRadius="20"
+                                Background="White"
+                                BorderBrush="{StaticResource SolidDarkPrimaryColor}"
+                                BorderThickness="1">
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="12 0 12 0">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--custom input-->
+    <Style x:Key="myInput"
+           TargetType="TextBox"
+           BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="Black" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource captionFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Regular" />
+        <Setter Property="Width"
+                Value="328" />
+        <Setter Property="Height"
+                Value="51" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="25"
+                                Background="White"
+                                BorderThickness="1">
+                            <StackPanel VerticalAlignment="Center"
+                                        Margin="24 11"
+                                        Orientation="Vertical">
+                                <TextBlock Text="{Binding ElementName=a, Path=Content}"
+                                           Style="{StaticResource SmallCaption}"
+                                           Margin="0 0 0 2">
+                                </TextBlock>
+                                <TextBox Padding="0"
+                                         x:Name="abc"
+                                         materialDesign:HintAssist.Hint="Text"
+                                         Foreground="Black"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        <ContentPresenter VerticalAlignment="Center"
+                                          x:Name="a"
+                                          Visibility="Hidden"
+                                          Content="{TemplateBinding Text}">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="myInputIcon"
+           TargetType="TextBox"
+           BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="Black" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource captionFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Regular" />
+        <Setter Property="Width"
+                Value="328" />
+        <Setter Property="Height"
+                Value="51" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="25"
+                                Background="White"
+                                BorderThickness="1">
+                            <DockPanel Margin="24 12">
+                                <StackPanel VerticalAlignment="Center"
+                                            Orientation="Vertical"
+                                            DockPanel.Dock="Left">
+                                    <TextBlock Text="{Binding ElementName=a, Path=Content}"
+                                               Style="{StaticResource SmallCaption}"
+                                               Margin="0 0 0 2">
+                                    </TextBlock>
+                                    <TextBox Padding="0"
+                                             x:Name="abc"
+                                             materialDesign:HintAssist.Hint="Text"
+                                             Foreground="Black"></TextBox>
+                                </StackPanel>
+                                <materialDesign:PackIcon Kind="Visibility"
+                                                         Foreground="Black"
+                                                         Width="24"
+                                                         Height="24"
+                                                         DockPanel.Dock="Right"
+                                                         VerticalAlignment="Center"
+                                                         HorizontalAlignment="Right" />
+                            </DockPanel>
+                        </Border>
+                        <ContentPresenter VerticalAlignment="Center"
+                                          x:Name="a"
+                                          Visibility="Hidden"
+                                          Content="{TemplateBinding Text}">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

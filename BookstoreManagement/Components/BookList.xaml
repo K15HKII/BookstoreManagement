@@ -5,42 +5,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" >
     <UserControl.Resources>
-        <GridLength x:Key="IconWidth">64</GridLength>
-        <GridLength x:Key="NameWidth">127</GridLength>
-        <GridLength x:Key="CategoryWidth">125</GridLength>
-        <GridLength x:Key="PriceWidth">110</GridLength>
-        <GridLength x:Key="PublisherWidth">155</GridLength>
-        <GridLength x:Key="StatusWidth">132</GridLength>
-        <GridLength x:Key="SoldWidth">132</GridLength>
-        <GridLength x:Key="CheckWidth">20</GridLength>
+        <GridLength x:Key="InfoBookColumnWidth">2.5*</GridLength>
+        <GridLength x:Key="CategoryColumnWidth">1.5*</GridLength>
+        <GridLength x:Key="PriceColumnWidth">1.1*</GridLength>
+        <GridLength x:Key="PublisherColumnWidth">1.8*</GridLength>
+        <GridLength x:Key="StatusColumnWidth">1.1*</GridLength>
+        <GridLength x:Key="SoldColumnWidth">1.1*</GridLength>
     </UserControl.Resources>
-    <Border Background="White">
+    <Border Background="White"
+            Width="928px">
         <ItemsControl Margin="12 0 20 0">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <StackPanel>
                         <Grid x:Name="PART_Header">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="{StaticResource IconWidth}"/>
-                                <ColumnDefinition Width="{StaticResource NameWidth}"/>
-                                <ColumnDefinition Width="{StaticResource CategoryWidth}"/>
-                                <ColumnDefinition Width="{StaticResource PriceWidth}"/>
-                                <ColumnDefinition Width="{StaticResource PublisherWidth}"/>
-                                <ColumnDefinition Width="{StaticResource StatusWidth}"/>
-                                <ColumnDefinition Width="{StaticResource SoldWidth}"/>
-                                <ColumnDefinition Width="{StaticResource CheckWidth}"/>
+                                <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}"/>
+                                <ColumnDefinition Width="{StaticResource CategoryColumnWidth}"/>
+                                <ColumnDefinition Width="{StaticResource PriceColumnWidth}"/>
+                                <ColumnDefinition Width="{StaticResource PublisherColumnWidth}"/>
+                                <ColumnDefinition Width="{StaticResource StatusColumnWidth}"/>
+                                <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0"/>
-                            <TextBlock Grid.Column="1"/>
-                            <TextBlock Grid.Column="2"/>
-                            <TextBlock Grid.Column="3"/>
-                            <TextBlock Grid.Column="4"/>
-                            <TextBlock Grid.Column="5"/>
-                            <TextBlock Grid.Column="6"/>
-                            <TextBlock Grid.Column="7"/>
+                            <TextBlock Grid.Column="0"
+                                       Text="Tên"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"/>
+                            <TextBlock Grid.Column="1"
+                                       Text="Loại"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"/>
+                            <TextBlock Grid.Column="2"
+                                       Text="Giá"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />
+                            <TextBlock Grid.Column="3"
+                                       Text="Nhà cung cấp"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />
+                            <TextBlock Grid.Column="4"
+                                       Text="Trạng thái"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />
+                            <TextBlock Grid.Column="5"
+                                       Text="Đã bán"
+                                       Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />
                         </Grid>
                         <StackPanel>
                             <ItemsPresenter/>
@@ -50,28 +62,66 @@
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid x:Name="PART_Header">
+                    <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{StaticResource IconWidth}"/>
-                            <ColumnDefinition Width="{StaticResource NameWidth}"/>
-                            <ColumnDefinition Width="{StaticResource CategoryWidth}"/>
-                            <ColumnDefinition Width="{StaticResource PriceWidth}"/>
-                            <ColumnDefinition Width="{StaticResource PublisherWidth}"/>
-                            <ColumnDefinition Width="{StaticResource StatusWidth}"/>
-                            <ColumnDefinition Width="{StaticResource SoldWidth}"/>
-                            <ColumnDefinition Width="{StaticResource CheckWidth}"/>
+                            <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource StatusColumnWidth}" />
+                            <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />
                         </Grid.ColumnDefinitions>
-                        <Border Width="56" Height="56" HorizontalAlignment="Left" Grid.Column="0"/>
-                        <StackPanel Grid.Column="1">
-                            <TextBlock HorizontalAlignment="Left" />
-                            <TextBlock HorizontalAlignment="Left" />
+                        <StackPanel Name="infoOfCustomer"
+                                    Grid.Column="0"
+                                    Orientation="Horizontal">
+                            <Border Width="56px"
+                                    Height="56px"
+                                    CornerRadius="4"
+                                    Background="{StaticResource SolidLightGrayColor}"
+                                    Margin="0 0 8 0">
+                            </Border>
+                            <StackPanel Orientation="Vertical"
+                                        VerticalAlignment="Center">
+                                <TextBlock HorizontalAlignment="Left"
+                                           Text="Ten sach"
+                                           Style="{StaticResource Title}" />
+                                <TextBlock HorizontalAlignment="Left"
+                                           Text="#Ma sach"
+                                           Style="{StaticResource Caption}"
+                                           Foreground="{StaticResource SolidDarkGrayColor}" />
+                            </StackPanel>
                         </StackPanel>
-                        <TextBlock Grid.Column="2"/>
-                        <TextBlock Grid.Column="3"/>
-                        <TextBlock Grid.Column="4"/>
-                        <TextBlock Grid.Column="5"/>
-                        <TextBlock Grid.Column="6"/>
-                        <CheckBox Grid.Column="7"/>
+                        <TextBlock Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Thể loại"
+                                   Style="{StaticResource Title}" />
+
+                        <TextBlock Grid.Column="2"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Giá bìa"
+                                   Style="{StaticResource Title}"
+                                   Foreground="{StaticResource SolidOrangeColor}" />
+
+                        <TextBlock Grid.Column="3"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Nhà cung cấp"
+                                   Style="{StaticResource Title}" />
+
+                        <TextBlock Grid.Column="4"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="Trạng thái"
+                                   Style="{StaticResource Title}" />
+
+                        <TextBlock Grid.Column="5"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Text="5000"
+                                   Style="{StaticResource Title}" />
+
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

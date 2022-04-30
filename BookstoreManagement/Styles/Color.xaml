@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Color x:Key="PrimaryColor">#0c5776</Color>
+    <Color x:Key="DarkPrimaryColor">#001c44</Color>
+    <Color x:Key="SecondaryColor">#98bdc7</Color>
+    <Color x:Key="BackgroundColor">#bcfefe</Color>
+    <Color x:Key="PinkColor">#F8DAD0</Color>
+    <Color x:Key="DarkGrayColor">#636363</Color>
+    <Color x:Key="LightGrayColor">#c0c8ca</Color>
+    <Color x:Key="OrangeColor">#E73827</Color>
+    <Color x:Key="YellowColor">#E9ED14</Color>
+
+    <SolidColorBrush x:Key="SolidPrimaryColor" Color="{StaticResource PrimaryColor}"/>
+    <SolidColorBrush x:Key="SolidDarkPrimaryColor" Color="{StaticResource DarkPrimaryColor}"/>
+    <SolidColorBrush x:Key="SolidSecondaryColor" Color="{StaticResource SecondaryColor}"/>
+    <SolidColorBrush x:Key="SolidBackgroundColor" Color="{StaticResource BackgroundColor}"/>
+    <SolidColorBrush x:Key="SolidPinkColor" Color="{StaticResource PinkColor}"/>
+    <SolidColorBrush x:Key="SolidDarkGrayColor" Color="{StaticResource DarkGrayColor}"/>
+    <SolidColorBrush x:Key="SolidLightGrayColor" Color="{StaticResource LightGrayColor}"/>
+    <SolidColorBrush x:Key="SolidOrangeColor" Color="{StaticResource OrangeColor}"/>
+    <SolidColorBrush x:Key="SolidYellowColor" Color="{StaticResource YellowColor}" />
+
+</ResourceDictionary>
