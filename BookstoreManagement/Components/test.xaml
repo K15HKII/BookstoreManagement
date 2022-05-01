@@ -39,17 +39,29 @@
             <TextBox Background="Transparent"></TextBox>
         </Border>
 
-        <TextBox Style="{StaticResource myInputIcon}"
-                 Text="Họ và Tên"
-                 TextChanged="TextBox_TextChanged_1">
+        <TextBox Style="{StaticResource mySearchInput}"
+                 Text="Placeholder">
 
         </TextBox>
 
         <!--<local:ucTextInput></local:ucTextInput>-->
 
-        
 
-       
+
+        <Rectangle Width="200"
+                   Height="100">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0"
+                                     EndPoint="0,1">
+                    <GradientStop Color="{StaticResource BackgroundColor}"
+                                  Offset="0.0" />
+                    <GradientStop Color="White"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+
 
     </StackPanel>
 

@@ -8,11 +8,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Icons\facebook.png" />
+    <None Remove="Images\Icons\google.png" />
+    <None Remove="Images\Icons\google_icon.svg" />
+    <None Remove="Images\voucher.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.5" />
     <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Icons\facebook.png" />
+    <Resource Include="Images\Icons\google.png" />
+    <Resource Include="Images\Icons\google_icon.svg">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\voucher.png" />
   </ItemGroup>
 
   <ItemGroup>

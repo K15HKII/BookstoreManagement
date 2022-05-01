@@ -190,9 +190,9 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--custom input-->
-    <Style x:Key="myInput"
+    <Style x:Key="myInputWithPlaceholder"
            TargetType="TextBox"
            BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="TextBlock.Foreground"
@@ -217,20 +217,20 @@
                             <StackPanel VerticalAlignment="Center"
                                         Margin="24 11"
                                         Orientation="Vertical">
-                                <TextBlock Text="{Binding ElementName=a, Path=Content}"
+                                <TextBlock Text="{Binding ElementName=a, Path=Tag}"
                                            Style="{StaticResource SmallCaption}"
-                                           Margin="0 0 0 2">
+                                           Margin="1 0 0 2">
                                 </TextBlock>
                                 <TextBox Padding="0"
-                                         x:Name="abc"
-                                         materialDesign:HintAssist.Hint="Text"
+                                         materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
                                          Foreground="Black"></TextBox>
                             </StackPanel>
                         </Border>
                         <ContentPresenter VerticalAlignment="Center"
                                           x:Name="a"
                                           Visibility="Hidden"
-                                          Content="{TemplateBinding Text}">
+                                          Content="{TemplateBinding Text}"
+                                          Tag="{TemplateBinding Tag}">
                         </ContentPresenter>
                     </Grid>
                 </ControlTemplate>
@@ -273,13 +273,12 @@
                                 <StackPanel VerticalAlignment="Center"
                                             Orientation="Vertical"
                                             DockPanel.Dock="Left">
-                                    <TextBlock Text="{Binding ElementName=a, Path=Content}"
+                                    <TextBlock Text="{Binding ElementName=a, Path=Tag}"
                                                Style="{StaticResource SmallCaption}"
-                                               Margin="0 0 0 2">
+                                               Margin="1 0 0 2">
                                     </TextBlock>
                                     <TextBox Padding="0"
-                                             x:Name="abc"
-                                             materialDesign:HintAssist.Hint="Text"
+                                             materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
                                              Foreground="Black"></TextBox>
                                 </StackPanel>
                                 <materialDesign:PackIcon Kind="Visibility"
@@ -290,6 +289,111 @@
                                                          VerticalAlignment="Center"
                                                          HorizontalAlignment="Right" />
                             </DockPanel>
+                        </Border>
+                        <ContentPresenter VerticalAlignment="Center"
+                                          x:Name="a"
+                                          Visibility="Hidden"
+                                          Content="{TemplateBinding Text}"
+                                          Tag="{TemplateBinding Tag}">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="myInput"
+           TargetType="TextBox"
+           BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="Black" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource captionFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Regular" />
+        <Setter Property="Width"
+                Value="328" />
+        <Setter Property="Height"
+                Value="51" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="25"
+                                Background="White">
+                            <TextBox Padding="0"
+                                     VerticalAlignment="Center"
+                                     Margin="24 12"
+                                     materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
+                                     Foreground="Black"></TextBox>
+                        </Border>
+                        <ContentPresenter VerticalAlignment="Center"
+                                          x:Name="a"
+                                          Visibility="Hidden"
+                                          Content="{TemplateBinding Text}">
+                        </ContentPresenter>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="mySearchInput"
+           TargetType="TextBox"
+           BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="TextBlock.Foreground"
+                Value="Black" />
+        <Setter Property="TextBlock.FontFamily"
+                Value="{StaticResource fontFamily}" />
+        <Setter Property="TextBlock.FontSize"
+                Value="{StaticResource captionFontSize}" />
+        <Setter Property="TextBlock.FontWeight"
+                Value="Regular" />
+        <Setter Property="Width"
+                Value="663" />
+        <Setter Property="Height"
+                Value="51" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Grid>
+                        <Border CornerRadius="25"
+                                Background="White">
+                            <StackPanel VerticalAlignment="Center"
+                                        Orientation="Horizontal"
+                                        Margin="24 12">
+                                <materialDesign:PackIcon Kind="Search"
+                                                         Foreground="Black"
+                                                         Width="24"
+                                                         Height="24"
+                                                         VerticalAlignment="Center"
+                                                         Margin="0 0 10 0" />
+                                <TextBox Padding="0"
+                                         VerticalAlignment="Center"
+                                         materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
+                                         Foreground="Black"></TextBox>
+                            </StackPanel>
+
                         </Border>
                         <ContentPresenter VerticalAlignment="Center"
                                           x:Name="a"
