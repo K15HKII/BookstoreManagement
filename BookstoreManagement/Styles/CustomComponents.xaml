@@ -100,20 +100,19 @@
 
     <!--custom button-->
     <Style x:Key="PrimaryButton"
-           TargetType="Button"
-           BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="TextBlock.Foreground"
-                Value="White" />
-        <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
-        <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource buttonFontSize}" />
-        <Setter Property="TextBlock.FontWeight"
-                Value="Bold" />
+           TargetType="Button">
         <Setter Property="MinWidth"
                 Value="97" />
         <Setter Property="Height"
                 Value="36" />
+        <Setter Property="FontFamily"
+                Value="{DynamicResource fontFamily}" />
+        <Setter Property="FontSize"
+                Value="{DynamicResource buttonFontSize}" />
+        <Setter Property="FontWeight"
+                Value="Bold" />
+        <Setter Property="Foreground"
+                Value="White" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -146,15 +145,12 @@
     </Style>
 
     <Style x:Key="SecondButton"
-           TargetType="Button"
-           BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="TextBlock.Foreground"
-                Value="{StaticResource SolidDarkPrimaryColor}" />
-        <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
-        <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource buttonFontSize}" />
-        <Setter Property="TextBlock.FontWeight"
+           TargetType="Button">
+        <Setter Property="FontFamily"
+                Value="{DynamicResource fontFamily}" />
+        <Setter Property="FontSize"
+                Value="{DynamicResource buttonFontSize}" />
+        <Setter Property="FontWeight"
                 Value="Bold" />
         <Setter Property="MinWidth"
                 Value="97" />
@@ -193,14 +189,13 @@
 
     <!--custom input-->
     <Style x:Key="myInputWithPlaceholder"
-           TargetType="TextBox"
-           BasedOn="{StaticResource {x:Type TextBox}}">
+           TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
+                Value="{DynamicResource fontFamily}" />
         <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource captionFontSize}" />
+                Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
         <Setter Property="Width"
@@ -218,7 +213,7 @@
                                         Margin="24 11"
                                         Orientation="Vertical">
                                 <TextBlock Text="{Binding ElementName=a, Path=Tag}"
-                                           Style="{StaticResource SmallCaption}"
+                                           Style="{DynamicResource SmallCaption}"
                                            Margin="1 0 0 2">
                                 </TextBlock>
                                 <TextBox Padding="0"
@@ -248,14 +243,13 @@
     </Style>
 
     <Style x:Key="myInputIcon"
-           TargetType="TextBox"
-           BasedOn="{StaticResource {x:Type TextBox}}">
+           TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
+                Value="{DynamicResource fontFamily}" />
         <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource captionFontSize}" />
+                Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
         <Setter Property="Width"
@@ -274,7 +268,7 @@
                                             Orientation="Vertical"
                                             DockPanel.Dock="Left">
                                     <TextBlock Text="{Binding ElementName=a, Path=Tag}"
-                                               Style="{StaticResource SmallCaption}"
+                                               Style="{DynamicResource SmallCaption}"
                                                Margin="1 0 0 2">
                                     </TextBlock>
                                     <TextBox Padding="0"
@@ -312,14 +306,13 @@
     </Style>
 
     <Style x:Key="myInput"
-           TargetType="TextBox"
-           BasedOn="{StaticResource {x:Type TextBox}}">
+           TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
+                Value="{DynamicResource fontFamily}" />
         <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource captionFontSize}" />
+                Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
         <Setter Property="Width"
@@ -359,14 +352,13 @@
     </Style>
 
     <Style x:Key="mySearchInput"
-           TargetType="TextBox"
-           BasedOn="{StaticResource {x:Type TextBox}}">
+           TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
-                Value="{StaticResource fontFamily}" />
+                Value="{DynamicResource fontFamily}" />
         <Setter Property="TextBlock.FontSize"
-                Value="{StaticResource captionFontSize}" />
+                Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
         <Setter Property="Width"
@@ -411,6 +403,147 @@
                                   Opacity="0.25"
                                   Direction="-90">
                 </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="myCombobox"
+           TargetType="ComboBox">
+        <Setter Property="Width"
+                Value="115"></Setter>
+        <Setter Property="Height"
+                Value="51"></Setter>
+        <Setter Property="Background"
+                Value="Transparent"></Setter>
+        <Setter Property="Foreground"
+                Value="Black"></Setter>
+        <Setter Property="SnapsToDevicePixels"
+                Value="true" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll"
+                Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <Border Background="White"
+                                CornerRadius="25">
+                            <DockPanel LastChildFill="False"
+                                       VerticalAlignment="Center">
+
+                                <StackPanel VerticalAlignment="Center"
+                                            Margin="18 0 0 0">
+                                    <TextBlock Text="Giới tính"
+                                               Style="{DynamicResource SmallCaption}"
+                                               Margin="0 0 0 2" />
+
+                                    <TextBox Style="{x:Null}"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Center"
+                                             Focusable="True"
+                                             Background="pink"
+                                             Foreground="red"
+                                             Visibility="Hidden"
+                                             IsReadOnly="{TemplateBinding IsReadOnly}" />
+
+                                </StackPanel>
+
+                                <materialDesign:PackIcon Kind="ArrowDropDown"
+                                                         Width="24"
+                                                         Height="24"
+                                                         VerticalAlignment="Center"
+                                                         DockPanel.Dock="Right"
+                                                         Margin="0 0 4 0" />
+                            </DockPanel>
+                        </Border>
+
+                        <ContentPresenter IsHitTestVisible="False"
+                                          Content="{TemplateBinding SelectionBoxItem}"
+                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                          Margin="18 22 0 10"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Left"
+                                          TextElement.FontFamily="{DynamicResource fontFamily}"
+                                          TextElement.Foreground="Black"
+                                          TextElement.FontSize="{DynamicResource captionFontSize}"
+                                          TextElement.FontWeight="Regular" />
+
+
+                        <Popup Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+
+                            <Grid Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"
+                                        Background="White"
+                                        CornerRadius="16" />
+                                <ScrollViewer Margin="4,6,4,6"
+                                              SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True"
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="{x:Type ComboBoxItem}"
+           TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="true" />
+        <Setter Property="Foreground"
+                Value="Black" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border Name="Border"
+                            Padding="2"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted"
+                                 Value="true">
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="#bcfefe" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="false">
+                            <Setter Property="Foreground"
+                                    Value="red" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>

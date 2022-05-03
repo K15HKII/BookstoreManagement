@@ -21,6 +21,13 @@
                 Content="abcd">
         </Button>-->
 
+        <ComboBox Style="{StaticResource myCombobox}" IsDropDownOpen="True">
+            <ComboBoxItem Content="1"></ComboBoxItem>
+            <ComboBoxItem Content="2"
+                          IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="3"></ComboBoxItem>
+        </ComboBox>
+
         <ToggleButton Style="{StaticResource myRatingStyle}"
                       Width="40px"
                       Height="40px"

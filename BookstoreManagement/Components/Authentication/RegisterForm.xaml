@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.Authentication.RegisterForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BookstoreManagement.Components.Authentication"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignHeight="720"
+             d:DesignWidth="1280">
+
+    <Border CornerRadius="16"
+            Background="{StaticResource SolidPrimaryColor}">
+        <Border Width="880"
+                Height="584"
+                Background="{StaticResource GradientBackgroundColor}"
+                CornerRadius="16">
+            <Border Width="440"
+                    Height="585"
+                    HorizontalAlignment="Right"
+                    CornerRadius="16"
+                    Background="White">
+
+                <StackPanel>
+
+                    <materialDesign:PackIcon Kind="ArrowBack"
+                                             Width="24"
+                                             Height="24"
+                                             Margin="22 26 0 0" />
+
+                    <TextBlock Style="{StaticResource Heading1}"
+                               Text="Đăng kí"
+                               Margin="60 19 0 25">
+                    </TextBlock>
+
+                    <StackPanel x:Name="panel_body"
+                                Margin="46 0 46 0">
+                        <DockPanel LastChildFill="False"
+                                   Margin="0 0 0 12"
+                                   Width="{Binding ElementName=panel_body, Path=ActualWidth}">
+                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                                     Tag="Tên đăng nhập"
+                                     Text="20520558"
+                                     Width="226"></TextBox>
+
+                            <ComboBox Style="{StaticResource myCombobox}"
+                                      DockPanel.Dock="Right">
+                                <ComboBoxItem Content="Nam"
+                                              IsSelected="True" />
+                            </ComboBox>
+
+                        </DockPanel>
+
+                        <DockPanel LastChildFill="False"
+                                   Margin="0 0 0 12"
+                                   Width="{Binding ElementName=panel_body, Path=ActualWidth}">
+                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                                     Tag="Ngày sinh"
+                                     Text="20520558"
+                                     Width="163"></TextBox>
+
+                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                                     Tag="Số điện thoại"
+                                     Text="168"
+                                     DockPanel.Dock="Right"
+                                     Width="168"></TextBox>
+
+                        </DockPanel>
+
+                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                                 Tag="Email"
+                                 Text="20520558@gm.uit.edu.vn"
+                                 Margin="0 0 0 20"
+                                 Width="{Binding ElementName=panel_body, Path=ActualWidth}"></TextBox>
+
+                        <TextBox Style="{StaticResource myInputIcon}"
+                                 Tag="Mật khẩu"
+                                 Text="******"
+                                 Width="{Binding ElementName=panel_body, Path=ActualWidth}"
+                                 Margin="0 0 0 12"></TextBox>
+
+                        <TextBox Style="{StaticResource myInputIcon}"
+                                 Tag="Nhập lại mật khẩu"
+                                 Text="******"
+                                 Width="{Binding ElementName=panel_body, Path=ActualWidth}"></TextBox>
+                    </StackPanel>
+
+
+                    <Button Style="{StaticResource PrimaryButton}"
+                            Width="348"
+                            Height="49"
+                            Content="Đăng kí"
+                            Margin="0 43 0 0"></Button>
+
+                </StackPanel>
+
+            </Border>
+        </Border>
+    </Border>
+</UserControl>
