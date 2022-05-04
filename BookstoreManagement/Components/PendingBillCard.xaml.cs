@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for PublisherCard.xaml
+    /// Interaction logic for PendingBillCard.xaml
     /// </summary>
-    public partial class PublisherCard : UserControl
+    public partial class PendingBillCard : UserControl
     {
-        public PublisherCard()
+        public PendingBillCard()
         {
             InitializeComponent();
         }

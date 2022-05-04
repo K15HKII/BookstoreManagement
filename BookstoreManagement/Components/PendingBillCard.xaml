@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.PendingBillCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookstoreManagement.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="114" d:DesignWidth="449">
+    
+    <Border CornerRadius="8"
+            Background="White"
+            Padding="0 0 20 0">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="114"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="8"
+                    BorderThickness="1"
+                    BorderBrush="Black">
+                
+            </Border>
+            <Grid Grid.Column="1"
+                  Margin="16 14 0 14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="67"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Title}"
+                               Foreground="Black"
+                               Margin="0 0 0 6"/>
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidPrimaryColor}"
+                               Margin="0 0 0 16"/>
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidOrangeColor}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource SmallCaption}"
+                                   Foreground="{StaticResource SolidDarkGrayColor}"
+                                   Margin="0 0 0 2" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="{StaticResource SolidDarkPrimaryColor}" />
+                    </StackPanel>
+
+                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
+                              Width="24"
+                              Height="24"
+                              HorizontalAlignment="Right"
+                              Margin="0 34 0 0" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="4"
+                              Color="#000000"
+                              Opacity="0.25"
+                              Direction="-90">
+            </DropShadowEffect>
+        </Border.Effect>
+        
+    </Border>
+    
+</UserControl>

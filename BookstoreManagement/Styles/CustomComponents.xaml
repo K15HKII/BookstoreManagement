@@ -44,8 +44,8 @@
                         <materialDesign:PackIcon Name="ratingIcon"
                                                  Kind="StarBorder"
                                                  Foreground="{StaticResource SolidYellowColor}"
-                                                 VerticalAlignment="Center"
-                                                 HorizontalAlignment="Center"
+                                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                                  Height="{Binding ElementName=abc, Path=ActualHeight}"
                                                  Width="{Binding ElementName=abc, Path=ActualWidth}"/>
                         <ContentPresenter />

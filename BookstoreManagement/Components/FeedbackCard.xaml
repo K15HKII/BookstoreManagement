@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.FeedbackCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BookstoreManagement.Components"
+             mc:Ignorable="d"
+             d:DesignWidth="448">
+
+    <Border Background="White"
+            CornerRadius="8"
+            Padding="16">
+        <Grid Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="24" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"
+                  Margin="0 0 0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="176" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Width="176"
+                        Height="176"
+                        Background="{StaticResource SolidLightGrayColor}" />
+
+                <Grid Grid.Column="1"
+                      Margin="16 0 0 0">
+                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
+                              Width="24"
+                              Height="24"
+                              HorizontalAlignment="Right"
+                              VerticalAlignment="Top" />
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource Title}"
+                                   Foreground="Black"
+                                   Margin="0 0 0 23" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="{StaticResource SolidDarkGrayColor}"
+                                   Margin="0 0 0 8" />
+                        <TextBlock Style="{StaticResource Title}"
+                                   Foreground="Black"
+                                   Margin="0 0 0 8" />
+                        <TextBlock Style="{StaticResource Body}"
+                                   Foreground="Black"
+                                   Margin="0 0 0 20" />
+                        <TextBlock Style="{StaticResource Body}"
+                                   Foreground="{StaticResource SolidPrimaryColor}"
+                                   Margin="0 0 0 8" />
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Star"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidYellowColor}" />
+                            <materialDesign:PackIcon Kind="Star"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidYellowColor}" />
+                            <materialDesign:PackIcon Kind="Star"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidYellowColor}" />
+                            <materialDesign:PackIcon Kind="Star"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidYellowColor}" />
+                            <materialDesign:PackIcon Kind="Star"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidYellowColor}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Center">
+                <materialDesign:PackIcon Kind="ExpandMore"
+                                         Width="24"
+                                         Height="24" />
+            </Grid>
+        </Grid>
+    </Border>
+
+</UserControl>

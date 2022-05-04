@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.TitleBar
 {
     /// <summary>
-    /// Interaction logic for PublisherCard.xaml
+    /// Interaction logic for ucTitleBar.xaml
     /// </summary>
-    public partial class PublisherCard : UserControl
+    public partial class ucTitleBar : UserControl
     {
-        public PublisherCard()
+        public ucTitleBar()
         {
             InitializeComponent();
         }

@@ -32,16 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Components\PublisherCard.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Components\PublisherCard.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Themes\BookstoreManagentment.NumberNavigationBar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

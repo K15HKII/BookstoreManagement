@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for PersonCard.xaml
+    /// Interaction logic for VoucherCard.xaml
     /// </summary>
-    public partial class PersonCard : UserControl
+    public partial class VoucherCard : UserControl
     {
-        public PersonCard()
+        public VoucherCard()
         {
             InitializeComponent();
         }

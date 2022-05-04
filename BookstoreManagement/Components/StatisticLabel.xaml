@@ -17,11 +17,17 @@
             </Grid.RowDefinitions>
             <DockPanel>
                 <materialDesign:PackIcon Height="20" Width="20" DockPanel.Dock="Left"/>
-                <TextBlock Margin="8 0 0 0"/>
+                <TextBlock Margin="8 0 0 0"
+                           Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidPrimaryColor}" />
             </DockPanel>
 
-            <TextBlock Grid.Row="2"/>
-            <TextBlock Grid.Row="3"/>
+            <TextBlock Grid.Row="2" 
+                       Style="{StaticResource Body}"
+                       Foreground="Black"/>
+            <TextBlock Grid.Row="3"
+                       Style="{StaticResource Caption}"
+                       Foreground="{StaticResource SolidSecondaryColor}"/>
         </Grid>
     </Border>
 </UserControl>

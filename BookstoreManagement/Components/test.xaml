@@ -16,10 +16,10 @@
 
     </UserControl.Resources>
 
-    <StackPanel>
-        <!--<Button Style="{StaticResource SecondButton}"
+    <!--<StackPanel>
+        --><!--<Button Style="{StaticResource SecondButton}"
                 Content="abcd">
-        </Button>-->
+        </Button>--><!--
 
         <ComboBox Style="{StaticResource myCombobox}" IsDropDownOpen="True">
             <ComboBoxItem Content="1"></ComboBoxItem>
@@ -51,7 +51,7 @@
 
         </TextBox>
 
-        <!--<local:ucTextInput></local:ucTextInput>-->
+        --><!--<local:ucTextInput></local:ucTextInput>--><!--
 
 
 
@@ -70,6 +70,6 @@
 
 
 
-    </StackPanel>
+    </StackPanel>-->
 
 </UserControl>
