@@ -407,7 +407,7 @@
         </Setter>
     </Style>
 
-
+    <!--custom combobox-->
     <Style x:Key="myCombobox"
            TargetType="ComboBox">
         <Setter Property="Width"
@@ -547,5 +547,55 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--custom canvas-->
+    <Canvas x:Key="myVoucher"
+            x:Shared="False">
+        <Rectangle Fill="{DynamicResource SolidPinkColor}"
+                   Width="447"
+                   Height="116">
+            <Rectangle.OpacityMask>
+                <DrawingBrush Stretch="None">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="Black">
+                            <GeometryDrawing.Geometry>
+                                <CombinedGeometry GeometryCombineMode="Exclude">
+                                    <CombinedGeometry.Geometry1>
+                                        <RectangleGeometry Rect="0 0 447 116"
+                                                           RadiusX="8"
+                                                           RadiusY="8">
+                                        </RectangleGeometry>
+                                    </CombinedGeometry.Geometry1>
+                                    <CombinedGeometry.Geometry2>
+                                        <CombinedGeometry GeometryCombineMode="Union">
+                                            <CombinedGeometry.Geometry1>
+                                                <EllipseGeometry Center="0, 58"
+                                                                 RadiusX="12"
+                                                                 RadiusY="12">
+                                                </EllipseGeometry>
+                                            </CombinedGeometry.Geometry1>
+                                            <CombinedGeometry.Geometry2>
+                                                <EllipseGeometry Center="447, 58"
+                                                                 RadiusX="12"
+                                                                 RadiusY="12">
+                                                </EllipseGeometry>
+                                            </CombinedGeometry.Geometry2>
+                                        </CombinedGeometry>
+                                    </CombinedGeometry.Geometry2>
+                                </CombinedGeometry>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Canvas.Effect>
+            <DropShadowEffect BlurRadius="4"
+                              Color="#000000"
+                              Opacity="0.25"
+                              Direction="-90">
+            </DropShadowEffect>
+        </Canvas.Effect>
+    </Canvas>
 
 </ResourceDictionary>
