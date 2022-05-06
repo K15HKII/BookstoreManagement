@@ -187,6 +187,34 @@
         </Setter>
     </Style>
 
+    <Button x:Key="btnAddImage"
+            x:Name="a"
+            Width="138"
+            Height="138">
+        <Button.Content>
+            <Canvas>
+                <Rectangle Fill="{StaticResource SolidPinkColor}"
+                           Width="138"
+                           Height="138"
+                           Canvas.Left="-69"
+                           Canvas.Top="-69"
+                           RadiusX="8"
+                           RadiusY="8"
+                           Stroke="Black"
+                           StrokeThickness="1"
+                           StrokeDashArray="5 4"
+                           StrokeDashCap="Round"
+                           StrokeLineJoin="Round">
+                </Rectangle>
+                <materialDesign:PackIcon Kind="Add"
+                                         Width="24"
+                                         Height="24"
+                                         Canvas.Top="-12"
+                                         Canvas.Left="-12" />
+            </Canvas>
+        </Button.Content>
+    </Button>
+
     <!--custom input-->
     <Style x:Key="myInputWithPlaceholder"
            TargetType="TextBox">
