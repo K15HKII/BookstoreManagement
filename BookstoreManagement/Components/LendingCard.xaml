@@ -20,12 +20,8 @@
     <Border CornerRadius="8"
             Background="White">
 
-        <Grid Background="Transparent"
-              Margin="0 0 0 8">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition Height="24" />
-            </Grid.RowDefinitions>
+        <StackPanel Background="Transparent"
+                    Margin="0 0 0 8">
 
             <Grid VerticalAlignment="Center"
               Margin="20 12"
@@ -95,13 +91,13 @@
             </Grid>
         </Grid>
 
-            <Grid Grid.Row="1"
-                  HorizontalAlignment="Center">
-                <materialDesign:PackIcon Kind="ExpandMore"
-                                         Width="24"
-                                         Height="24" />
-            </Grid>
-        </Grid>
+            <local:BookLendingList 
+                Margin="0 0 0 8"
+                Visibility="Collapsed"/>
+
+            <ToggleButton Style="{StaticResource myExpanderButton}" />
+
+        </StackPanel>
 
         <Border.Effect>
             <DropShadowEffect BlurRadius="4"

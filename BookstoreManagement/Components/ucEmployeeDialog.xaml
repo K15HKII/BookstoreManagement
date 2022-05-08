@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.ucEmployeeDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:BookstoreManagement.Components"
+             mc:Ignorable="d" 
+             d:DesignWidth="735">
+    <Border CornerRadius="16"
+            Background="White">
+        <StackPanel Background="Transparent">
+            <StackPanel HorizontalAlignment="Center"
+                        Margin="0 0 0 29">
+                <Border Width="191"
+                        Height="191"
+                        CornerRadius="100"
+                        Background="{StaticResource SolidLightGrayColor}"
+                        Margin="0 0 0 16" />
+                <TextBlock Style="{StaticResource Title}"
+                           Foreground="{StaticResource SolidOrangeColor}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Chuc vu"
+                           Margin="0 0 0 16"/>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Center">
+                    <TextBlock Style="{StaticResource Title}"
+                               Foreground="{StaticResource SolidDarkGrayColor}"
+                               VerticalAlignment="Center"
+                               Text="#Ma nhan vien" />
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Margin="12 0 0 0"
+                               Text="Nobita" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 29">
+                <Button Width="auto"
+                        Height="50"
+                        Style="{StaticResource myButtonForShowDialog}"
+                        Margin="0 0 0 10"
+                        x:Name="btnUpdateCustomerInfo">
+                    <DockPanel Width="{Binding ElementName=btnUpdateCustomerInfo, Path=ActualWidth}">
+                        <materialDesign:PackIcon Kind="User"
+                                                 Width="24"
+                                                 Height="24"
+                                                 Foreground="White"
+                                                 DockPanel.Dock="Left"
+                                                 Margin="24 0 0 0 "></materialDesign:PackIcon>
+                        <materialDesign:PackIcon Kind="User"
+                                                 Width="24"
+                                                 Height="24"
+                                                 Foreground="White"
+                                                 DockPanel.Dock="Right"
+                                                 Margin="0 0 24 0"></materialDesign:PackIcon>
+                        <TextBlock Style="{StaticResource Button}"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Text="Thong tin ca nhan" />
+                    </DockPanel>
+                </Button>
+
+                <StackPanel>
+                    <Border Padding="12 8">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       Text="So dien thoai"
+                                       VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Body}"
+                                       Foreground="Black"
+                                       DockPanel.Dock="Right"
+                                       Text="@..." />
+                        </DockPanel>
+                    </Border>
+
+                    <Border Padding="12 8">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       Text="Ngay sinh"
+                                       VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Body}"
+                                       Foreground="Black"
+                                       DockPanel.Dock="Right"
+                                       Text="@..." />
+                        </DockPanel>
+                    </Border>
+
+                    <Border Padding="12 8">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       Text="Gioi tinh"
+                                       VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Body}"
+                                       Foreground="Black"
+                                       DockPanel.Dock="Right"
+                                       Text="@..." />
+                        </DockPanel>
+                    </Border>
+
+                    <Border Padding="12 8">
+                        <DockPanel LastChildFill="False">
+                            <TextBlock Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       Text="Dia chi"
+                                       VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Body}"
+                                       Foreground="Black"
+                                       DockPanel.Dock="Right"
+                                       Text="@..." />
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+
+            <DockPanel LastChildFill="False"
+                       Margin="0 0 0 16">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="So ngay nghi" />
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="{StaticResource SolidOrangeColor}"
+                           Text="5"
+                           DockPanel.Dock="Right" />
+            </DockPanel>
+
+            <DockPanel LastChildFill="False"
+                       Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           Text="Toi da"
+                           VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource Title}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           Text="20"
+                           DockPanel.Dock="Right" />
+            </DockPanel>
+
+            <DockPanel LastChildFill="False"
+                       Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="Tinh cach" />
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="{StaticResource SolidPrimaryColor}"
+                           Text="chamchi"
+                           DockPanel.Dock="Right" />
+            </DockPanel>
+
+            <DockPanel LastChildFill="False"
+                       Margin="0 0 0 32">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="Ngay tham gia" />
+                <TextBlock Style="{StaticResource Title}"
+                           Foreground="{StaticResource SolidPrimaryColor}"
+                           Text="02/02/2022"
+                           DockPanel.Dock="Right"
+                           VerticalAlignment="Center" />
+            </DockPanel>
+
+            <!--button-->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Style="{StaticResource SecondButton}"
+                        Width="97"
+                        Margin="0 0 16 0"
+                        Content="Huy"></Button>
+                <Button Style="{StaticResource PrimaryButton}"
+                        Width="97"
+                        Content="Cap nhat"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

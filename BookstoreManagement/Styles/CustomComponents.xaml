@@ -62,7 +62,32 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <Style x:Key="myExpanderButton"
+           TargetType="ToggleButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid HorizontalAlignment="Center">
+                        <materialDesign:PackIcon x:Name="expanderIcon"
+                                                 Kind="ExpandMore"
+                                                 Width="24"
+                                                 Height="24"
+                                                 Foreground="Black" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="expanderIcon"
+                                    Property="Kind"
+                                    Value="ExpandLess" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--custom radius button-->
     <Style x:Key="myRadioButtonStyle"
            TargetType="{x:Type RadioButton}"
@@ -215,6 +240,30 @@
         </Button.Content>
     </Button>
 
+    <Style x:Key="myButtonForShowDialog"
+           TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="{StaticResource SolidPrimaryColor}"
+                                Width="{TemplateBinding Width}"
+                                Height="{TemplateBinding Height}"
+                                CornerRadius="8">
+                        </Border>
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          TextElement.Foreground="White"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          TextElement.FontFamily="{DynamicResource fontFamily}"
+                                          TextElement.FontSize="{DynamicResource buttonFontSize}"
+                                          TextElement.FontWeight="Bold"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--custom input-->
     <Style x:Key="myInputWithPlaceholder"
            TargetType="TextBox">
@@ -228,7 +277,7 @@
                 Value="Regular" />
         <Setter Property="Width"
                 Value="328" />
-        <Setter Property="Height"
+        <Setter Property="MinHeight"
                 Value="51" />
         <Setter Property="Template">
             <Setter.Value>
@@ -245,8 +294,12 @@
                                            Margin="1 0 0 2">
                                 </TextBlock>
                                 <TextBox Padding="0"
-                                         materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                         Foreground="Black"></TextBox>
+                                         Text="{Binding ElementName=a, Path=Content}"
+                                         Foreground="Black"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"
+                                         TextBlock.LineStackingStrategy="BlockLineHeight"
+                                         TextBlock.LineHeight="20"></TextBox>
                             </StackPanel>
                         </Border>
                         <ContentPresenter VerticalAlignment="Center"
@@ -282,7 +335,7 @@
                 Value="Regular" />
         <Setter Property="Width"
                 Value="328" />
-        <Setter Property="Height"
+        <Setter Property="MinHeight"
                 Value="51" />
         <Setter Property="Template">
             <Setter.Value>
@@ -345,7 +398,7 @@
                 Value="Regular" />
         <Setter Property="Width"
                 Value="328" />
-        <Setter Property="Height"
+        <Setter Property="MinHeight"
                 Value="51" />
         <Setter Property="Template">
             <Setter.Value>
@@ -356,13 +409,19 @@
                             <TextBox Padding="0"
                                      VerticalAlignment="Center"
                                      Margin="24 12"
-                                     materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                     Foreground="Black"></TextBox>
+                                     Text="{Binding ElementName=a, Path=Content}"
+                                     Foreground="Black"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     TextBlock.LineStackingStrategy="BlockLineHeight"
+                                     TextBlock.LineHeight="20"></TextBox>
                         </Border>
                         <ContentPresenter VerticalAlignment="Center"
                                           x:Name="a"
                                           Visibility="Hidden"
-                                          Content="{TemplateBinding Text}">
+                                          Content="{TemplateBinding Text}"
+                                          Margin="24 12"
+                                          materialDesign:HintAssist.Hint="{TemplateBinding Text}">
                         </ContentPresenter>
                     </Grid>
                 </ControlTemplate>
@@ -391,7 +450,7 @@
                 Value="Regular" />
         <Setter Property="Width"
                 Value="663" />
-        <Setter Property="Height"
+        <Setter Property="MinHeight"
                 Value="51" />
         <Setter Property="Template">
             <Setter.Value>
@@ -411,7 +470,11 @@
                                 <TextBox Padding="0"
                                          VerticalAlignment="Center"
                                          materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                         Foreground="Black"></TextBox>
+                                         Foreground="Black"
+                                         TextWrapping="Wrap"
+                                         AcceptsReturn="True"
+                                         TextBlock.LineStackingStrategy="BlockLineHeight"
+                                         TextBlock.LineHeight="20"></TextBox>
                             </StackPanel>
 
                         </Border>
@@ -577,7 +640,7 @@
     </Style>
     
     <!--custom canvas-->
-    <Canvas x:Key="myVoucher"
+    <Canvas x:Key="myVoucherCard"
             x:Shared="False">
         <Rectangle Fill="{DynamicResource SolidPinkColor}"
                    Width="447"
@@ -604,6 +667,54 @@
                                             </CombinedGeometry.Geometry1>
                                             <CombinedGeometry.Geometry2>
                                                 <EllipseGeometry Center="447, 58"
+                                                                 RadiusX="12"
+                                                                 RadiusY="12">
+                                                </EllipseGeometry>
+                                            </CombinedGeometry.Geometry2>
+                                        </CombinedGeometry>
+                                    </CombinedGeometry.Geometry2>
+                                </CombinedGeometry>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <Canvas.Effect>
+            <DropShadowEffect BlurRadius="4"
+                              Color="#000000"
+                              Opacity="0.25"
+                              Direction="-90">
+            </DropShadowEffect>
+        </Canvas.Effect>
+    </Canvas>
+    <Canvas x:Key="myVoucher"
+            x:Shared="False">
+        <Rectangle Fill="{DynamicResource SolidPinkColor}"
+                   Width="327"
+                   Height="116">
+            <Rectangle.OpacityMask>
+                <DrawingBrush Stretch="None">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="Black">
+                            <GeometryDrawing.Geometry>
+                                <CombinedGeometry GeometryCombineMode="Exclude">
+                                    <CombinedGeometry.Geometry1>
+                                        <RectangleGeometry Rect="0 0 327 116"
+                                                           RadiusX="8"
+                                                           RadiusY="8">
+                                        </RectangleGeometry>
+                                    </CombinedGeometry.Geometry1>
+                                    <CombinedGeometry.Geometry2>
+                                        <CombinedGeometry GeometryCombineMode="Union">
+                                            <CombinedGeometry.Geometry1>
+                                                <EllipseGeometry Center="0, 58"
+                                                                 RadiusX="12"
+                                                                 RadiusY="12">
+                                                </EllipseGeometry>
+                                            </CombinedGeometry.Geometry1>
+                                            <CombinedGeometry.Geometry2>
+                                                <EllipseGeometry Center="327, 58"
                                                                  RadiusX="12"
                                                                  RadiusY="12">
                                                 </EllipseGeometry>

@@ -8,17 +8,17 @@
              mc:Ignorable="d"
              d:DesignWidth="448">
 
+    <UserControl.Resources>
+    </UserControl.Resources>
+
     <Border Background="White"
             CornerRadius="8"
             Padding="16">
-        <Grid Background="Transparent">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition Height="24" />
-            </Grid.RowDefinitions>
+
+        <StackPanel Background="Transparent">
 
             <Grid Grid.Row="0"
-                  Margin="0 0 0 20">
+                  Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="176" />
                     <ColumnDefinition />
@@ -78,13 +78,46 @@
 
             </Grid>
 
-            <Grid Grid.Row="1"
-                  HorizontalAlignment="Center">
-                <materialDesign:PackIcon Kind="ExpandMore"
-                                         Width="24"
-                                         Height="24" />
-            </Grid>
-        </Grid>
+            <StackPanel x:Name="EXPANDER_PART"
+                        Visibility="Collapsed">
+                <StackPanel Margin="0 0 0 24">
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Text="Noi dung"
+                               Margin="0 0 0 8" />
+                    <TextBox Style="{StaticResource myInput}"
+                             Width="{Binding ElementName=root, Path=ActualWidth}" />
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 24"
+                            HorizontalAlignment="Left">
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Text="Hinh anh"
+                               Margin="0 0 0 8" />
+                    <Button Padding="0"
+                            Width="138"
+                            Height="138">
+                        <ContentControl Content="{StaticResource btnAddImage}" />
+                    </Button>
+
+                </StackPanel>
+
+                <StackPanel Margin="0 0 0 24">
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Text="Phan hoi"
+                               Margin="0 0 0 8" />
+                    <TextBox Style="{StaticResource myInput}"
+                             Width="{Binding ElementName=root, Path=ActualWidth}"
+                             materialDesign:HintAssist.Hint="Viet o day..." />
+
+                </StackPanel>
+            </StackPanel>
+
+            <ToggleButton Style="{StaticResource myExpanderButton}"/>
+        </StackPanel>
+
     </Border>
 
 </UserControl>
