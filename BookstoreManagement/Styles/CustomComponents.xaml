@@ -736,5 +736,14 @@
             </DropShadowEffect>
         </Canvas.Effect>
     </Canvas>
+    <!--<Canvas x:Key="StatisticLabel"
+            x:Shared="False"
+            Background="Transparent">
+        <Border Background="{StaticResource SolidPrimaryColor}"
+                Width="160"
+                Height="83"
+                CornerRadius="16">
+        </Border>
+    </Canvas>-->
 
 </ResourceDictionary>

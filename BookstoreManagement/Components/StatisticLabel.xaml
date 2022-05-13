@@ -29,5 +29,12 @@
                        Style="{StaticResource Caption}"
                        Foreground="{StaticResource SolidSecondaryColor}"/>
         </Grid>
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="4"
+                              Color="#000000"
+                              Opacity="0.25"
+                              Direction="-90">
+            </DropShadowEffect>
+        </Border.Effect>
     </Border>
 </UserControl>

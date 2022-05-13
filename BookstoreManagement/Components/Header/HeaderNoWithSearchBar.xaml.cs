@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.Header
 {
     /// <summary>
-    /// Interaction logic for HeadingMainPage.xaml
+    /// Interaction logic for HeaderNoWithSearchBar.xaml
     /// </summary>
-    public partial class HeadingMainPage : UserControl
+    public partial class HeaderNoWithSearchBar : UserControl
     {
-        public HeadingMainPage()
+        public HeaderNoWithSearchBar()
         {
             InitializeComponent();
         }
