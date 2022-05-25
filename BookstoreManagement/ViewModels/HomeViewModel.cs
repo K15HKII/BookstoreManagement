@@ -10,7 +10,7 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels
 {
-    public partial class HomeViewModel : ObservableObject
+    public partial class HomeViewModel : BaseViewModel<HomeNavigator>
     {
 
         [ObservableProperty] public ObservableCollection<object>? tabContents;

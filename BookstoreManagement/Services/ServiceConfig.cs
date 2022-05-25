@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using BookstoreManagement.Data.Remote;
+using BookstoreManagement.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Refit;
@@ -29,6 +25,16 @@ namespace BookstoreManagement.Services
                 RefitSettings settings = new RefitSettings(new NewtonsoftJsonContentSerializer());
                 service.AddRefitClient<IAuthRemote>(settings).ConfigHttpClientBuilder();
                 service.AddRefitClient<IModelRemote>(settings).ConfigHttpClientBuilder();
+            });
+            return host;
+        }
+
+        public static IHostBuilder AddViewModels(this IHostBuilder host)
+        {
+            host.ConfigureServices((context, service) =>
+            {
+                service.AddTransient<HomeViewModel>();
+
             });
             return host;
         }
