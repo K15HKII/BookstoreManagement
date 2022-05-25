@@ -4,7 +4,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
+using MaterialDesignThemes.Wpf;
 
 namespace BookstoreManagement.Components.Converters
 {
@@ -29,6 +31,7 @@ namespace BookstoreManagement.Components.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            PackIcon thickness;
             throw new InvalidOperationException();
         }
 

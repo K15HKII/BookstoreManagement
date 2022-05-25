@@ -152,7 +152,9 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <TabControl Style="{StaticResource NavigationRail}">
+    <TabControl 
+        ItemsSource="{Binding TabContents}" 
+        Style="{StaticResource NavigationRail}">
         <TabItem>
             <TabItem.Header>
                 <Grid>

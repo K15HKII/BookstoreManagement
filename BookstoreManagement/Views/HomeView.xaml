@@ -12,9 +12,6 @@
     <UserControl.Resources>
     </UserControl.Resources>
     <Border>
-        <Grid Margin="80 30 80 0">
-            <components:PageItemsControl x:Name="test" ItemsPerPage="2"/>
-            <!-- <components:PageItemsNavigationBar MaxPage="4"/> -->
-        </Grid>
+        <TabControl></TabControl>
     </Border>
 </UserControl>

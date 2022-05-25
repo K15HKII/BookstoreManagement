@@ -21,7 +21,7 @@ namespace BookstoreManagement.Views
             items.Add("123");
             items.Add("456");
             items.Add("378");
-            test.ItemsSource = items;
+            // test.ItemsSource = items;
         }
     }
 }
