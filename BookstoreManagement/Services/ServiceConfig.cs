@@ -1,6 +1,12 @@
 ﻿using System;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.ViewModels;
+using BookstoreManagement.ViewModels.BookStore;
+using BookstoreManagement.ViewModels.Dashboard;
+using BookstoreManagement.ViewModels.Order;
+using BookstoreManagement.ViewModels.Rating;
+using BookstoreManagement.ViewModels.Report;
+using BookstoreManagement.ViewModels.Voucher;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Refit;
@@ -34,7 +40,12 @@ namespace BookstoreManagement.Services
             host.ConfigureServices((context, service) =>
             {
                 service.AddTransient<HomeViewModel>();
-
+                service.AddTransient<DashboardViewModel>();
+                service.AddTransient<ReportViewModel>();
+                service.AddTransient<BookStoreViewModel>();
+                service.AddTransient<OrderViewModel>();
+                service.AddTransient<VoucherViewModel>();
+                service.AddTransient<RatingViewModel>();
             });
             return host;
         }

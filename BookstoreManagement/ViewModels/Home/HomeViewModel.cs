@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.ViewModels.Home;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels
@@ -16,6 +17,10 @@ namespace BookstoreManagement.ViewModels
         [ObservableProperty] public ObservableCollection<object>? tabContents;
 
         [ObservableProperty] public object? selectedContent;
+
+        public void logOut() { }
+
+        public void openSetting() { }
 
     }
 }

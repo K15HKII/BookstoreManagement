@@ -2,14 +2,14 @@
 
 namespace BookstoreManagement.ViewModels;
 
-public class BaseViewModel<N> : BaseViewModel where N : INavigator
+public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
 {
 
     protected N Navigator { get; set; }
 
 }
 
-public class BaseViewModel : ObservableObject
+public abstract class BaseViewModel : ObservableObject
 {
     
 }
