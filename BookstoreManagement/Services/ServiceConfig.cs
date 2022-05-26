@@ -2,14 +2,30 @@
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.ViewModels;
 using BookstoreManagement.ViewModels.BookStore;
+using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
+using BookstoreManagement.ViewModels.Customer;
+using BookstoreManagement.ViewModels.Customer.CustomerAdapter;
 using BookstoreManagement.ViewModels.Dashboard;
+using BookstoreManagement.ViewModels.Home.BookAdapter;
+using BookstoreManagement.ViewModels.Home.UserAdapter;
+using BookstoreManagement.ViewModels.Lend;
+using BookstoreManagement.ViewModels.Manager;
+using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 using BookstoreManagement.ViewModels.Order;
+using BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
 using BookstoreManagement.ViewModels.Rating;
+using BookstoreManagement.ViewModels.Rating.RatingAdapter;
 using BookstoreManagement.ViewModels.Report;
+using BookstoreManagement.ViewModels.Suppier;
+using BookstoreManagement.ViewModels.Suppier.SupplierAdapter;
 using BookstoreManagement.ViewModels.Voucher;
+using BookstoreManagement.ViewModels.Voucher.VoucherAdapter;
+using BookstoreManagement.ViewModels.Order.Page;
+using BookstoreManagement.ViewModels.Account;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Refit;
+using BookstoreManagement.ViewModels.Setting;
 
 namespace BookstoreManagement.Services
 {
@@ -46,6 +62,49 @@ namespace BookstoreManagement.Services
                 service.AddTransient<OrderViewModel>();
                 service.AddTransient<VoucherViewModel>();
                 service.AddTransient<RatingViewModel>();
+                service.AddTransient<CustomerViewModel>();
+                service.AddTransient<ManagerViewModel>();
+                service.AddTransient<LendViewModel>();
+                service.AddTransient<SupplierViewModel>();
+
+                //Adapter
+                //Home
+                service.AddTransient<UserAdapterViewModel>();
+                service.AddTransient<BookAdapterViewModel>();
+
+                //BookStore
+                service.AddTransient<BookInfoViewModel>();
+
+                //Order
+                service.AddTransient<OrderInfoViewModel>();
+
+                //Voucher
+                service.AddTransient<VoucherAdapterViewModel>();
+
+                //Rating
+                service.AddTransient<RatingInfoViewModel>();
+
+                //Customer
+                service.AddTransient<CustomerInfoViewModel>();
+
+                //Manager
+                service.AddTransient<EmployeeInfoViewModel>();
+
+                //Supplier
+                service.AddTransient<SupplierInfoViewModel>();
+
+                //OrderPage
+                service.AddTransient<ArrivedPageViewModel>();
+                service.AddTransient<CancleViewModel>();
+                service.AddTransient<RateOrderPageViewModel>();
+                service.AddTransient<ShippingPageViewModel>();
+                service.AddTransient<WaitingConfirmPageViewModel>();
+
+                //Setting
+                service.AddTransient<SettingViewModel>();
+
+                //Account
+                service.AddTransient<AccountViewModel>();
             });
             return host;
         }
