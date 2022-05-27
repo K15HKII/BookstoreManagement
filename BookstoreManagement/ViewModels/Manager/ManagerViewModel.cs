@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Manager
 {
-    public class ManagerViewModel : BaseViewModel<ManagerNavigator>
+    public partial class ManagerViewModel : BaseViewModel<ManagerNavigator>
     {
         // Thiếu mở dialog thêm nhân viên, xoá, filter
         public void openAccount() { }

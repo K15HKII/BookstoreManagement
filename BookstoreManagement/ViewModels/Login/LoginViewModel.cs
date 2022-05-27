@@ -20,14 +20,10 @@ namespace BookstoreManagement.ViewModels.Login
             _authenticator = authenticator;
         }
 
-        [ObservableProperty]
-        [Required]
-        [MaxLength(16)]
+        [ObservableProperty] [Required] [MaxLength(16)]
         private string? _username;
 
-        [ObservableProperty]
-        [Required]
-        private string? _password;
+        [ObservableProperty] [Required] private string? _password;
 
         [ICommand]
         public void Login()
@@ -42,4 +38,5 @@ namespace BookstoreManagement.ViewModels.Login
             _authenticator.Authenticate(Username!, Password!).Subscribe();
         }
 
+    }
 }

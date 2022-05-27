@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 {
-    public class SupplierInfoViewModel : BaseViewModel
+    public partial class SupplierInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? SupplierId;
+        [ObservableProperty] object? supplierId;
 
-        [ObservableProperty] object? SupplierName;
+        [ObservableProperty] object? supplierName;
 
-        [ObservableProperty] object? SupplierEmail;
+        [ObservableProperty] object? supplierEmail;
 
-        [ObservableProperty] object? SupplierCoopDate;
+        [ObservableProperty] object? supplierCoopDate;
 
-        [ObservableProperty] object? SupplierType;
+        [ObservableProperty] object? supplierType;
 
-        [ObservableProperty] object? SupplierQuantity;
+        [ObservableProperty] object? supplierQuantity;
     }
 }

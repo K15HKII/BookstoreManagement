@@ -8,25 +8,25 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels.Account
 {
-    public class AccountViewModel : BaseViewModel<AccountNavigator>
+    public partial class AccountViewModel : BaseViewModel<AccountNavigator>
     {
         //Thiếu dialog đổi mật khẩu và đổi thông tin cá nhân
         public void BackWard() { }
 
-        [ObservableProperty] object? AccountName;
+        [ObservableProperty] object? accountName;
 
-        [ObservableProperty] object? AccountEmail;
+        [ObservableProperty] object? accountEmail;
 
-        [ObservableProperty] object? AccountPhoneNum;
+        [ObservableProperty] object? accountPhoneNum;
 
-        [ObservableProperty] object? AccountCreateDate;
+        [ObservableProperty] object? accountCreateDate;
 
-        [ObservableProperty] object? AccountGender;
+        [ObservableProperty] object? accountGender;
 
-        [ObservableProperty] object? AccountAddress;
+        [ObservableProperty] object? accountAddress;
 
-        [ObservableProperty] object? AccountFaceBook;
+        [ObservableProperty] object? accountFaceBook;
 
-        [ObservableProperty] object? AccountInstagram;
+        [ObservableProperty] object? accountInstagram;
     }
 }

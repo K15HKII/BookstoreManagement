@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Lend
 {
-    public class LendViewModel : BaseViewModel<LendNavigator>
+    public partial class LendViewModel : BaseViewModel<LendNavigator>
     {
         // Thiếu mở dialog thêm đơn mượn, xoá, filter
         public void openAccount() { }

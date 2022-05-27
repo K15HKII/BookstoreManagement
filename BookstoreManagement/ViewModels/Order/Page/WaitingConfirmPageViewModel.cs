@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace BookstoreManagement.ViewModels.Order.Page
 {
-    public class WaitingConfirmPageViewModel : BaseViewModel
+    public partial class WaitingConfirmPageViewModel : BaseViewModel
     {
         [ObservableProperty] public ObservableCollection<object>? lsOrders;
 

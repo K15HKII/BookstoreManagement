@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Order.Page
 {
-    public class ArrivedPageViewModel : BaseViewModel
+    public partial class ArrivedPageViewModel : BaseViewModel
     {
         [ObservableProperty] public ObservableCollection<object>? lsOrders;
 

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
 {
-    public class VoucherAdapterViewModel : BaseViewModel
+    public partial class VoucherAdapterViewModel : BaseViewModel
     {
-        [ObservableProperty] object? VoucherTitle;
+        [ObservableProperty] object? voucherTitle;
 
-        [ObservableProperty] object? VoucherDescription;
+        [ObservableProperty] object? voucherDescription;
 
-        [ObservableProperty] object? VoucherExpire;
+        [ObservableProperty] object? voucherExpire;
 
-        [ObservableProperty] object? VoucherMaxUse;
+        [ObservableProperty] object? voucherMaxUse;
 
-        [ObservableProperty] object? VoucherUsedQuantity;
+        [ObservableProperty] object? voucherUsedQuantity;
 
-        [ObservableProperty] object? VoucherApplyType;
+        [ObservableProperty] object? voucherApplyType;
     }
 }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Customer.CustomerAdapter
 {
-    public class CustomerInfoViewModel : BaseViewModel
+    public partial class CustomerInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? CustomerName;
+        [ObservableProperty] object? customerName;
 
-        [ObservableProperty] object? CustomerEmail;
+        [ObservableProperty] object? customerEmail;
 
-        [ObservableProperty] object? CustomerType;
+        [ObservableProperty] object? customerType;
 
-        [ObservableProperty] object? BillQuantity;
+        [ObservableProperty] object? billQuantity;
 
-        [ObservableProperty] object? CustomerInCome;
+        [ObservableProperty] object? customerInCome;
 
-        [ObservableProperty] object? CreateDate;
+        [ObservableProperty] object? createDate;
     }
 }

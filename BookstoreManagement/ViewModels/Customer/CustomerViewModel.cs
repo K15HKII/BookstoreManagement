@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
-    public class CustomerViewModel : BaseViewModel<CustomerNavigator>
+    public partial class CustomerViewModel : BaseViewModel<CustomerNavigator>
     {
         // Thiếu mở dialog thêm khách hàng và filter và xoá
         public void openAccount() { }

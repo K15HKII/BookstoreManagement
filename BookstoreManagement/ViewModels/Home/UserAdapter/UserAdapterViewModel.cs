@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Home.UserAdapter
 {
-    public class UserAdapterViewModel : BaseViewModel
+    public partial class UserAdapterViewModel : BaseViewModel
     {
-        [ObservableProperty] object? UserImage;
+        [ObservableProperty] object? userImage;
 
-        [ObservableProperty] object? UserName;
+        [ObservableProperty] object? userName;
 
-        [ObservableProperty] object? UserEmail;
+        [ObservableProperty] object? userEmail;
 
-        [ObservableProperty] object? BillQuantity;
+        [ObservableProperty] object? billQuantity;
     }
 }

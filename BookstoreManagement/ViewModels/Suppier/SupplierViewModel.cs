@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Suppier
 {
-    public class SupplierViewModel : BaseViewModel<SupplierNavigator>
+    public partial class SupplierViewModel : BaseViewModel<SupplierNavigator>
     {
         // Thiếu mở dialog thêm nhà cung cấp, xoá, filter
         public void openAccount() { }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 {
-    public class EmployeeInfoViewModel : BaseViewModel
+    public partial class EmployeeInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? EmployeeId;
+        [ObservableProperty] object? employeeId;
 
-        [ObservableProperty] object? EmployeeName;
+        [ObservableProperty] object? employeeName;
 
-        [ObservableProperty] object? EmployeeStatus;
+        [ObservableProperty] object? employeeStatus;
 
-        [ObservableProperty] object? EmployeeDescription;
+        [ObservableProperty] object? employeeDescription;
 
-        [ObservableProperty] object? EmployeeJoinDate;
+        [ObservableProperty] object? employeeJoinDate;
 
-        [ObservableProperty] object? DayOffQuantity;
+        [ObservableProperty] object? dayOffQuantity;
     }
 }

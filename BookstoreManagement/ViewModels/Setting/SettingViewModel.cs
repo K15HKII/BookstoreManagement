@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Setting
 {
-    public class SettingViewModel : BaseViewModel<SettingNavigator>
+    public partial class SettingViewModel : BaseViewModel<SettingNavigator>
     {
         public void BackWard() { }
     }

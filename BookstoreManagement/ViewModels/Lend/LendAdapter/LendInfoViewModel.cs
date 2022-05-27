@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 {
-    public class LendInfoViewModel : BaseViewModel
+    public partial class LendInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? LendId;
+        [ObservableProperty] object? lendId;
 
-        [ObservableProperty] object? LendOwner;
+        [ObservableProperty] object? lendOwner;
 
-        [ObservableProperty] object? LendQuantity;
+        [ObservableProperty] object? lendQuantity;
 
-        [ObservableProperty] object? LendDate;
+        [ObservableProperty] object? lendDate;
 
-        [ObservableProperty] object? LendExpire;
+        [ObservableProperty] object? lendExpire;
 
-        [ObservableProperty] object? LendStatus;
+        [ObservableProperty] object? lendStatus;
     }
 }

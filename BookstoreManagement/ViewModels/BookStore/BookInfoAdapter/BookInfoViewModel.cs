@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 {
-    public class BookInfoViewModel
+    public partial class BookInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? BookImage;
+        [ObservableProperty] object? bookImage;
 
-        [ObservableProperty] object? BookName;
+        [ObservableProperty] object? bookName;
 
-        [ObservableProperty] object? BookRate;
+        [ObservableProperty] object? bookRate;
 
-        [ObservableProperty] object? BookPrice;
+        [ObservableProperty] object? bookPrice;
 
-        [ObservableProperty] object? BookSupplier;
+        [ObservableProperty] object? bookSupplier;
     }
 }

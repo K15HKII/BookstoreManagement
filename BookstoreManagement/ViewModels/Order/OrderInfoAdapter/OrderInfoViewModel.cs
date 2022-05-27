@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
 {
-    public class OrderInfoViewModel : BaseViewModel
+    public partial class OrderInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? OrderID;
+        [ObservableProperty] object? orderID;
 
-        [ObservableProperty] object? OrderDate;
+        [ObservableProperty] object? orderDate;
 
-        [ObservableProperty] object? OrderOwner;
+        [ObservableProperty] object? orderOwner;
 
-        [ObservableProperty] object? OrderPrice;
+        [ObservableProperty] object? orderPrice;
     }
 }

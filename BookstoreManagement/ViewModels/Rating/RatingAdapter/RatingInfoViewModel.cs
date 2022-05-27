@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Rating.RatingAdapter
 {
-    public class RatingInfoViewModel : BaseViewModel
+    public partial class RatingInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? RatingId;
+        [ObservableProperty] object? ratingId;
 
-        [ObservableProperty] object? ProductId;
+        [ObservableProperty] object? productId;
 
-        [ObservableProperty] object? BookName;
+        [ObservableProperty] object? bookName;
 
-        [ObservableProperty] object? RateOwner;
+        [ObservableProperty] object? rateOwner;
 
-        [ObservableProperty] object? StarQuantity;
+        [ObservableProperty] object? starQuantity;
     }
 }

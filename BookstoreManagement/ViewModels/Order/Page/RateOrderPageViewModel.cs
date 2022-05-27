@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace BookstoreManagement.ViewModels.Order.Page
 {
-    public class RateOrderPageViewModel : BaseViewModel
+    public partial class RateOrderPageViewModel : BaseViewModel
     {
         [ObservableProperty] public ObservableCollection<object>? lsOrders;
 
