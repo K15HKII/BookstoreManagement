@@ -21,6 +21,11 @@ public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
         ScheluderProvider = scheluderProvider;
     }
 
+    protected BaseViewModel()
+    {
+
+    }
+
     public void Dispose(IDisposable disposable)
     {
         _disposables.Add(disposable);
