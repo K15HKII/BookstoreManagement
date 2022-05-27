@@ -28,6 +28,16 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Refit;
 using BookstoreManagement.ViewModels.Setting;
+using BookstoreManagement.ViewModels.Lend.LendAdapter;
+using BookstoreManagement.ViewModels.Lend.LendInfoAdapter;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Order;
+using BookstoreManagement.ViewModels.DialogView.Order.Adapter;
+using BookstoreManagement.ViewModels.DialogView.Voucher;
+using BookstoreManagement.ViewModels.DialogView.Customer;
+using BookstoreManagement.ViewModels.DialogView.Manager;
+using BookstoreManagement.ViewModels.DialogView.Supplier;
+using BookstoreManagement.ViewModels.DialogView;
 
 namespace BookstoreManagement.Services
 {
@@ -81,6 +91,7 @@ namespace BookstoreManagement.Services
         {
             host.ConfigureServices((context, service) =>
             {
+                //Window
                 service.AddTransient<HomeViewModel>();
                 service.AddTransient<DashboardViewModel>();
                 service.AddTransient<ReportViewModel>();
@@ -109,6 +120,7 @@ namespace BookstoreManagement.Services
 
                 //Rating
                 service.AddTransient<RatingInfoViewModel>();
+                service.AddTransient<RatingExpanderViewModel>();
 
                 //Customer
                 service.AddTransient<CustomerInfoViewModel>();
@@ -131,6 +143,44 @@ namespace BookstoreManagement.Services
 
                 //Account
                 service.AddTransient<AccountViewModel>();
+
+                //Lend
+                service.AddTransient<LendInfoViewModel>();
+                //LendExpander
+                service.AddTransient<LendInfoExpandViewModel>();
+
+
+                //Dialog
+                //BookStore.DetailView
+                service.AddTransient<BookDetailViewModel>();
+                service.AddTransient<AddBookViewModel>();
+                service.AddTransient<EditBookViewModel>();
+
+                //Order
+                service.AddTransient<OrderBillViewModel>();
+                service.AddTransient<OrderItemViewModel>();
+                service.AddTransient<AddOrderViewModel>();
+
+                //Voucher
+                service.AddTransient<AddVoucherViewModel>();
+
+                //Customer
+                service.AddTransient<CustomerDetailViewModel>();
+                service.AddTransient<AddCustomerViewModel>();
+                service.AddTransient<EditCustomerViewModel>();
+
+                //Manager
+                service.AddTransient<EmployeeDetailViewModel>();
+                service.AddTransient<AddEmployeeViewModel>();
+                service.AddTransient<EditEmployeeViewModel>();
+
+                //Supplier
+                service.AddTransient<SupplierDetailViewModel>();
+                service.AddTransient<AddSupplierViewModel>();
+                service.AddTransient<EditSupplierViewModel>();
+
+                //Lend
+                service.AddTransient<AddLendBillViewModel>();
             });
             return host;
         }

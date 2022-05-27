@@ -1,6 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,5 +21,9 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         [ObservableProperty] object? lendExpire;
 
         [ObservableProperty] object? lendStatus;
+
+        [ObservableProperty] ObservableCollection<object>? lsLendBooks;
+
+        [ObservableProperty] object? selectedLendBook;
     }
 }
