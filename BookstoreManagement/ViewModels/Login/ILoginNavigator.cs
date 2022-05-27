@@ -8,5 +8,8 @@ namespace BookstoreManagement.ViewModels.Login
 {
     public interface ILoginNavigator : INavigator
     {
+
+        void openApp(Object obj = null);
+
     }
 }
