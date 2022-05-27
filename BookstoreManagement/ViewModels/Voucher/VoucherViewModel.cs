@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Voucher
 {
-    public class VoucherViewModel : BaseViewModel<VoucherNavigator>
+    public partial class VoucherViewModel : BaseViewModel<VoucherNavigator>
     {
         //Thiếu dialog thêm voucher
         public void openAccount() { }

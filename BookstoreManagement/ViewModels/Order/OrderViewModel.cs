@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Order
 {
-    public class OrderViewModel : BaseViewModel<OrderNavigator>
+    public partial class OrderViewModel : BaseViewModel<OrderNavigator>
     {
         //TODO: Thiếu mở dialog xoá đơn và thêm đơn hàng
 

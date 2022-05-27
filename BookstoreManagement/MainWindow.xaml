@@ -6,11 +6,23 @@
         xmlns:local="clr-namespace:BookstoreManagement"
         xmlns:components="clr-namespace:BookstoreManagement.Components"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
+        xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
         mc:Ignorable="d"
         Padding="0"
         Title="MainWindow"
         MinHeight="720"
         MinWidth="1280"
-        WindowStartupLocation="CenterScreen" >
-    <views:HomeView/>
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer>
+        <ItemsControl x:Name="itemsControl">
+            <ItemsControl.Resources>
+                <DataTemplate DataType="{x:Type api:BookProfile}">
+                    <components:ProductCard/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type api:CartItem}">
+                    <components:ucVoucher/>
+                </DataTemplate>
+            </ItemsControl.Resources>
+        </ItemsControl>
+    </ScrollViewer>
 </Window>

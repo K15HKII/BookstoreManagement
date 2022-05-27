@@ -323,6 +323,22 @@
         </Setter>
     </Style>
 
+        <Style x:Key="myPasswordBox"
+           TargetType="PasswordBox">
+        <Setter Property="PasswordBox.Foreground"
+                Value="Black" />
+        <Setter Property="PasswordBox.FontFamily"
+                Value="{DynamicResource fontFamily}" />
+        <Setter Property="PasswordBox.FontSize"
+                Value="{DynamicResource captionFontSize}" />
+        <Setter Property="PasswordBox.FontWeight"
+                Value="Regular" />
+        <Setter Property="Width"
+                Value="328" />
+        <Setter Property="MinHeight"
+                Value="51" />
+    </Style>
+    
     <Style x:Key="myInputIcon"
            TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"

@@ -29,6 +29,7 @@
 
                 <UniformGrid Rows="3">
                     <TextBlock Style="{StaticResource Title}"
+                               Text="{Binding Name}"
                                Foreground="Black" />
                     <TextBlock Margin="0 6 0 0"
                                Foreground="{StaticResource SolidOrangeColor}"

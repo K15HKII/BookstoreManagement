@@ -17,18 +17,18 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] object? TotalCollect;
-        [ObservableProperty] object? CollectGrowPercent;
+        [ObservableProperty] object? totalCollect;
+        [ObservableProperty] object? collectGrowPercent;
 
-        [ObservableProperty] object? TotalPay;
-        [ObservableProperty] object? PayGrowPercent;
+        [ObservableProperty] object? totalPay;
+        [ObservableProperty] object? payGrowPercent;
 
-        [ObservableProperty] object? TotalSoldProducts;
-        [ObservableProperty] object? SoldProductsGrowPercent;
+        [ObservableProperty] object? totalSoldProducts;
+        [ObservableProperty] object? soldProductsGrowPercent;
 
-        [ObservableProperty] object? WaitingConfirmOrders;
+        [ObservableProperty] object? waitingConfirmOrders;
 
-        [ObservableProperty] object? ShippingOrders;
+        [ObservableProperty] object? shippingOrders;
 
         [ObservableProperty] ObservableCollection<object>? lsUsers;
 

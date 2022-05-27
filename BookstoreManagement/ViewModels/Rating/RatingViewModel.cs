@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Rating
 {
-    public class RatingViewModel : BaseViewModel<RatingNavigator>
+    public partial class RatingViewModel : BaseViewModel<RatingNavigator>
     {
         //Thiếu xoá đánh giá
         public void openAccount() { }
