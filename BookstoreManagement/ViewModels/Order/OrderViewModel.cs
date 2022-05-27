@@ -19,5 +19,7 @@ namespace BookstoreManagement.ViewModels.Order
         [ObservableProperty] public ObservableCollection<object>? tabContents;
 
         [ObservableProperty] public object? selectedContent;
+
+        [ObservableProperty] public object? OrderBillQuantity;
     }
 }

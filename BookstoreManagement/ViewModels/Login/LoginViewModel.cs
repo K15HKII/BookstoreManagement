@@ -42,5 +42,4 @@ namespace BookstoreManagement.ViewModels.Login
             _authenticator.Authenticate(Username!, Password!).Subscribe();
         }
 
-    }
 }
