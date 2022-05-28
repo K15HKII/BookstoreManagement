@@ -32,6 +32,6 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("ebookfile")]
         public string? PriceDescription { get; set; }
-        public string PublisherName { get; set; }
+        public string? PublisherName { get; set; }
     }
 }

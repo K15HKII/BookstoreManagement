@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.Components
 {
@@ -20,9 +21,20 @@ namespace BookstoreManagement.Components
     /// </summary>
     public partial class CustomerList : UserControl
     {
+
         public CustomerList()
         {
             InitializeComponent();
+
+            User user = new User()
+            {
+                FirstName = "a",
+                LastName = "b",
+                Email = "@gmail.com",
+                CreatedAt = DateTime.Now
+            };
+
+            itemsControl.ItemsSource = new List<User>() { user, user };
         }
     }
 }

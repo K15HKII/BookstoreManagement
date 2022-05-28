@@ -66,12 +66,30 @@ namespace BookstoreManagement
                     BookProfile = "jawdlawd"
                 }
             };
-            //itemsControl.ItemsSource = new List<Object> { a };
-            i.DataContext = a;
+            itemsControl.ItemsSource = new List<Object> { a, b };
+            //i.DataContext = a;
 
-            ii.DataContext = publisher;
+            //ii.DataContext = publisher;
 
-            iii.DataContext = voucher;
+            //iii.DataContext = voucher;
+
+            //BookProfile bookProfile = new BookProfile()
+            //{
+            //    Id = "#1",
+            //    Name = "ABC",
+            //    Price = 10000,
+
+            //};
+
+            //BookProfile bookProfile1 = new BookProfile()
+            //{
+            //    Id = "#2",
+            //    Name = "ABC",
+            //    Price = 10000,
+
+            //};
+
+            //test.DataContext = new List<BookProfile>() { bookProfile };
         }
     }
 }
