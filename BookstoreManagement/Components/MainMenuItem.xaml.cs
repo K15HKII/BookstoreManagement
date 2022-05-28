@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
 namespace BookstoreManagement.Components
 {
@@ -20,14 +21,37 @@ namespace BookstoreManagement.Components
     /// </summary>
     public partial class MainMenuItem : UserControl
     {
+        
+        #region Icon
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register(nameof(Icon),
+            typeof(PackIconKind),
+            typeof(MainMenuItem),
+            new FrameworkPropertyMetadata());
+
+        public PackIconKind Icon
+        {
+            get => (PackIconKind) GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+        #endregion
+        
+        #region Text
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(nameof(Text),
+            typeof(string),
+            typeof(MainMenuItem),
+            new FrameworkPropertyMetadata());
+
+        public string Text
+        {
+            get => (string) GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
+        }
+        #endregion
+        
         public MainMenuItem()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

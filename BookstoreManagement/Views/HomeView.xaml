@@ -12,8 +12,6 @@
     <UserControl.Resources>
     </UserControl.Resources>
     <components:LoadingMask>
-        <components:MainMenu>
-
-        </components:MainMenu>
+        <components:MainMenu/>
     </components:LoadingMask>
 </UserControl>

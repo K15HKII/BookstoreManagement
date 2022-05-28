@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using BookstoreManagement.Data;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
@@ -53,6 +54,15 @@ namespace BookstoreManagement.Services
             {
                 c.BaseAddress = new Uri("https://upbeat-resolver-316305.df.r.appspot.com");
             }).AddHttpMessageHandler(() => new HttpLoggingHandler());
+        }
+
+        public static IHostBuilder Application(this IHostBuilder host, Application application)
+        {
+            host.ConfigureServices((context, service) =>
+            {
+                service.AddSingleton(application);
+            });
+            return host;
         }
 
         public static IHostBuilder AddLogging(this IHostBuilder host)
@@ -201,6 +211,8 @@ namespace BookstoreManagement.Services
 
                 //Lend
                 service.AddViewModel<AddLendBillViewModel>();
+                
+                service.AddSingleton<IViewModelFactory, ViewModelFactory>();
             });
             return host;
         }

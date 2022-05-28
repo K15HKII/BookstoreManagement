@@ -25,15 +25,18 @@ namespace BookstoreManagement
 
         private readonly IHost _host;
 
+        public IServiceProvider ServiceProvider => _host.Services;
+        
         public App()
         {
             _host = CreateHostBuilder().Build();
         }
 
 
-        private static IHostBuilder CreateHostBuilder(string[] args = null)
+        private IHostBuilder CreateHostBuilder(string[] args = null)
         {
             return Host.CreateDefaultBuilder(args)
+                .Application(this)
                 .AddLogging()
                 .AddRetrofit()
                 .AddStores()
@@ -43,13 +46,22 @@ namespace BookstoreManagement
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            MainViewState view = _host.Services.GetRequiredService<MainViewState>();
-            view.CurrentView = _host.Services.GetRequiredService<LoginViewModel>();
-            MainWindowRelease main = new MainWindowRelease()
+            bool test = false;
+
+            if (!test)
             {
-                DataContext = view
-            };
-            main.Show();
+                MainViewState view = _host.Services.GetRequiredService<MainViewState>();
+                view.CurrentView = _host.Services.GetRequiredService<LoginViewModel>();
+                MainWindowRelease main = new MainWindowRelease()
+                {
+                    DataContext = view
+                };
+                main.Show();
+            }
+            else
+            {
+                new MainWindow().Show();
+            }
         }
 
     }

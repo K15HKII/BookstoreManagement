@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dashboard="clr-namespace:BookstoreManagement.ViewModels.Dashboard"
+                    xmlns:components="clr-namespace:BookstoreManagement.Components"
+                    xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels">
+    
+    <ResourceDictionary x:Key="TabHeaderDataTemplates">
+        <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+    </ResourceDictionary>
+    
+    <ResourceDictionary x:Key="TabContentDataTemplates">
+        <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
+            <panels:DashboardPanel/>
+        </DataTemplate>
+    </ResourceDictionary>
+    
+</ResourceDictionary>

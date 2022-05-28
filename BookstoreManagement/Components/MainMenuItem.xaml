@@ -4,22 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              x:Name="_this"
              d:DesignWidth="132">
-    <Button MinWidth="132" Padding="0">
-        <Button.Template>
-            <ControlTemplate TargetType="Button">
-                <Grid>
-                    <Border CornerRadius="8" Width="132" Background="#FFBCFEFE"/>
-                    <DockPanel Margin="12 8 12 8" MinWidth="108">
-                        <Image Width="24" Height="24" Source="{Binding ElementName=_this, Path=IconSource}"/>
-                        <TextBlock Margin="8 3.5 0 3.5" 
-                                   TextWrapping="Wrap"
-                                   Text="{Binding ElementName=_this, Path=Text}" FontSize="14"/>
-                    </DockPanel>
-                </Grid>
-            </ControlTemplate>
-        </Button.Template>
-    </Button>
+    <Grid>
+        <Border CornerRadius="8" Width="132" Background="#FFBCFEFE"/>
+        <DockPanel Margin="12 8 12 8" MinWidth="108">
+            <materialDesign:PackIcon Width="24" Height="24" Kind="{Binding ElementName=_this, Path=Icon}"/>
+            <TextBlock Margin="8 3.5 0 3.5" 
+                       TextWrapping="Wrap"
+                       Text="{Binding ElementName=_this, Path=Text}" FontSize="14"/>
+        </DockPanel>
+    </Grid>
 </UserControl>
