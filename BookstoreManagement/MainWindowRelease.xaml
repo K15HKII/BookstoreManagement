@@ -1,0 +1,32 @@
+﻿<Window x:Class="BookstoreManagement.MainWindowRelease"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookstoreManagement"
+        xmlns:login="clr-namespace:BookstoreManagement.ViewModels.Login"
+        xmlns:viewModels="clr-namespace:BookstoreManagement.ViewModels"
+        xmlns:authentication="clr-namespace:BookstoreManagement.Components.Authentication"
+        xmlns:views="clr-namespace:BookstoreManagement.Views"
+        xmlns:components="clr-namespace:BookstoreManagement.Components"
+        mc:Ignorable="d"
+        Title="MainWindowRelease"        
+        Padding="0"
+        MinHeight="720"
+        MinWidth="1280"
+        WindowStartupLocation="CenterScreen">
+    <Border>
+        <ContentControl Content="{Binding CurrentView}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type login:LoginViewModel}">
+                    <components:LoadingMask Loading="{Binding IsLoading}">
+                        <authentication:LoginForm/>
+                    </components:LoadingMask>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
+                    <views:HomeView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Border>
+</Window>

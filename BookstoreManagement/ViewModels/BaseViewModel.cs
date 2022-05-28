@@ -41,7 +41,9 @@ public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
 
 }
 
-public abstract class BaseViewModel : ObservableValidator
+public abstract partial class BaseViewModel : ObservableValidator
 {
-    
+
+    [ObservableProperty] private bool _isLoading = false;
+
 }

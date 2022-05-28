@@ -10,6 +10,8 @@ using BookstoreManagement.Data;
 using BookstoreManagement.Data.Model.Auth;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.Login;
+using BookstoreManagement.Views.ViewStates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -35,12 +37,19 @@ namespace BookstoreManagement
                 .AddLogging()
                 .AddRetrofit()
                 .AddStores()
+                .AddViewStates()
                 .AddViewModels();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            new MainWindow().Show();
+            MainViewState view = _host.Services.GetRequiredService<MainViewState>();
+            view.CurrentView = _host.Services.GetRequiredService<LoginViewModel>();
+            MainWindowRelease main = new MainWindowRelease()
+            {
+                DataContext = view
+            };
+            main.Show();
         }
 
     }

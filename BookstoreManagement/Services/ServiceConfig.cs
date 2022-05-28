@@ -1,6 +1,7 @@
 ﻿using System;
 using BookstoreManagement.Data;
 using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
@@ -23,11 +24,23 @@ using BookstoreManagement.ViewModels.Voucher;
 using BookstoreManagement.ViewModels.Voucher.VoucherAdapter;
 using BookstoreManagement.ViewModels.Order.Page;
 using BookstoreManagement.ViewModels.Account;
+using BookstoreManagement.ViewModels.Login;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Refit;
 using BookstoreManagement.ViewModels.Setting;
+using BookstoreManagement.ViewModels.Lend.LendAdapter;
+using BookstoreManagement.ViewModels.Lend.LendInfoAdapter;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Order;
+using BookstoreManagement.ViewModels.DialogView.Order.Adapter;
+using BookstoreManagement.ViewModels.DialogView.Voucher;
+using BookstoreManagement.ViewModels.DialogView.Customer;
+using BookstoreManagement.ViewModels.DialogView.Manager;
+using BookstoreManagement.ViewModels.DialogView.Supplier;
+using BookstoreManagement.ViewModels.DialogView;
+using BookstoreManagement.Views.ViewStates;
 
 namespace BookstoreManagement.Services
 {
@@ -62,6 +75,7 @@ namespace BookstoreManagement.Services
             {
                 service.AddSingleton<LoginSession>();
                 service.AddSingleton<IAuthenticator, Authenticator>();
+                service.AddSingleton<ScheluderProvider>();
             });
             return host;
         }
@@ -77,60 +91,116 @@ namespace BookstoreManagement.Services
             return host;
         }
 
+        public static IHostBuilder AddViewStates(this IHostBuilder host)
+        {
+            host.ConfigureServices((context, service) =>
+            {
+                service.AddSingleton<MainViewState>();
+            });
+            return host;
+        }
+
+        private static void AddViewModel<T>(this IServiceCollection c) where T : BaseViewModel
+        {
+            c.AddTransient<T>();
+            c.AddSingleton<ViewModelCreator<T>>(s => s.GetRequiredService<T>);
+        }
+
         public static IHostBuilder AddViewModels(this IHostBuilder host)
         {
             host.ConfigureServices((context, service) =>
             {
-                service.AddTransient<HomeViewModel>();
-                service.AddTransient<DashboardViewModel>();
-                service.AddTransient<ReportViewModel>();
-                service.AddTransient<BookStoreViewModel>();
-                service.AddTransient<OrderViewModel>();
-                service.AddTransient<VoucherViewModel>();
-                service.AddTransient<RatingViewModel>();
-                service.AddTransient<CustomerViewModel>();
-                service.AddTransient<ManagerViewModel>();
-                service.AddTransient<LendViewModel>();
-                service.AddTransient<SupplierViewModel>();
+                service.AddSingleton<ILoginNavigator, LoginNavigator>();
+                service.AddViewModel<LoginViewModel>();
+                service.AddViewModel<HomeViewModel>();
+                service.AddViewModel<DashboardViewModel>();
+                service.AddViewModel<ReportViewModel>();
+                service.AddViewModel<BookStoreViewModel>();
+                service.AddViewModel<OrderViewModel>();
+                service.AddViewModel<VoucherViewModel>();
+                service.AddViewModel<RatingViewModel>();
+                service.AddViewModel<CustomerViewModel>();
+                service.AddViewModel<ManagerViewModel>();
+                service.AddViewModel<LendViewModel>();
+                service.AddViewModel<SupplierViewModel>();
 
                 //Adapter
                 //Home
-                service.AddTransient<UserAdapterViewModel>();
-                service.AddTransient<BookAdapterViewModel>();
+                service.AddViewModel<UserAdapterViewModel>();
+                service.AddViewModel<BookAdapterViewModel>();
 
                 //BookStore
-                service.AddTransient<BookInfoViewModel>();
+                service.AddViewModel<BookInfoViewModel>();
 
                 //Order
-                service.AddTransient<OrderInfoViewModel>();
+                service.AddViewModel<OrderInfoViewModel>();
 
                 //Voucher
-                service.AddTransient<VoucherAdapterViewModel>();
+                service.AddViewModel<VoucherAdapterViewModel>();
 
                 //Rating
-                service.AddTransient<RatingInfoViewModel>();
+                service.AddViewModel<RatingInfoViewModel>();
+                service.AddViewModel<RatingExpanderViewModel>();
 
                 //Customer
-                service.AddTransient<CustomerInfoViewModel>();
+                service.AddViewModel<CustomerInfoViewModel>();
 
                 //Manager
-                service.AddTransient<EmployeeInfoViewModel>();
+                service.AddViewModel<EmployeeInfoViewModel>();
 
                 //Supplier
-                service.AddTransient<SupplierInfoViewModel>();
+                service.AddViewModel<SupplierInfoViewModel>();
 
                 //OrderPage
-                service.AddTransient<ArrivedPageViewModel>();
-                service.AddTransient<CancleViewModel>();
-                service.AddTransient<RateOrderPageViewModel>();
-                service.AddTransient<ShippingPageViewModel>();
-                service.AddTransient<WaitingConfirmPageViewModel>();
+                service.AddViewModel<ArrivedPageViewModel>();
+                service.AddViewModel<CancleViewModel>();
+                service.AddViewModel<RateOrderPageViewModel>();
+                service.AddViewModel<ShippingPageViewModel>();
+                service.AddViewModel<WaitingConfirmPageViewModel>();
 
                 //Setting
-                service.AddTransient<SettingViewModel>();
+                service.AddViewModel<SettingViewModel>();
 
                 //Account
-                service.AddTransient<AccountViewModel>();
+                service.AddViewModel<AccountViewModel>();
+
+                //Lend
+                service.AddViewModel<LendInfoViewModel>();
+                //LendExpander
+                service.AddViewModel<LendInfoExpandViewModel>();
+
+
+                //Dialog
+                //BookStore.DetailView
+                service.AddViewModel<BookDetailViewModel>();
+                service.AddViewModel<AddBookViewModel>();
+                service.AddViewModel<EditBookViewModel>();
+
+                //Order
+                service.AddViewModel<OrderBillViewModel>();
+                service.AddViewModel<OrderItemViewModel>();
+                service.AddViewModel<AddOrderViewModel>();
+
+                //Voucher
+                service.AddViewModel<AddVoucherViewModel>();
+
+                //Customer
+                service.AddViewModel<CustomerDetailViewModel>();
+                service.AddViewModel<AddCustomerViewModel>();
+                service.AddViewModel<EditCustomerViewModel>();
+
+                //Manager
+                service.AddViewModel<EmployeeDetailViewModel>();
+                service.AddViewModel<AddEmployeeViewModel>();
+                service.AddViewModel<EditEmployeeViewModel>();
+
+                //Supplier
+                service.AddViewModel<SupplierDetailViewModel>();
+                service.AddViewModel<AddSupplierViewModel>();
+                service.AddViewModel<EditSupplierViewModel>();
+
+                //Lend
+                service.AddViewModel<AddLendBillViewModel>();
             });
             return host;
         }

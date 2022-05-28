@@ -9,29 +9,30 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <Grid x:Name="abc"
-                                Height="{TemplateBinding Height}"
-                                Width="{TemplateBinding Width}">
-                        <materialDesign:PackIcon Name="checkboxIcon" Kind="CheckBoxOutlineBlank" 
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="checkboxIcon" Kind="CheckBoxOutlineBlank"
                                                  Foreground="{StaticResource SolidPrimaryColor}"
                                                  VerticalAlignment="Center"
                                                  HorizontalAlignment="Center"
                                                  Height="{Binding ElementName=abc, Path=ActualHeight}"
                                                  Width="{Binding ElementName=abc, Path=ActualWidth}" />
-                        <ContentPresenter/>
+                        <ContentPresenter />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked"
                                  Value="True">
                             <Setter TargetName="checkboxIcon"
                                     Property="Kind"
-                                    Value="Checkbox"></Setter>
+                                    Value="Checkbox">
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--custom toggle button-->
     <Style x:Key="myRatingStyle"
            TargetType="{x:Type ToggleButton}">
@@ -47,7 +48,7 @@
                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                                                  Height="{Binding ElementName=abc, Path=ActualHeight}"
-                                                 Width="{Binding ElementName=abc, Path=ActualWidth}"/>
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
                         <ContentPresenter />
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -55,7 +56,8 @@
                                  Value="True">
                             <Setter TargetName="ratingIcon"
                                     Property="Kind"
-                                    Value="Star"></Setter>
+                                    Value="Star">
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -106,16 +108,17 @@
                                                  VerticalAlignment="Center"
                                                  HorizontalAlignment="Center"
                                                  Height="{Binding ElementName=abc, Path=ActualHeight}"
-                                                 Width="{Binding ElementName=abc, Path=ActualWidth}"/>
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
                         <ContentPresenter />
                     </Grid>
-                    
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked"
                                  Value="True">
                             <Setter TargetName="radioButtonIcon"
                                     Property="Kind"
-                                    Value="RadioButtonChecked"></Setter>
+                                    Value="RadioButtonChecked">
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -257,7 +260,7 @@
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           TextElement.FontFamily="{DynamicResource fontFamily}"
                                           TextElement.FontSize="{DynamicResource buttonFontSize}"
-                                          TextElement.FontWeight="Bold"/>
+                                          TextElement.FontWeight="Bold" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -281,7 +284,7 @@
                 Value="51" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
+                <ControlTemplate TargetType="TextBoxBase">
                     <Grid>
                         <Border CornerRadius="25"
                                 Background="White"
@@ -299,15 +302,16 @@
                                          TextWrapping="Wrap"
                                          AcceptsReturn="True"
                                          TextBlock.LineStackingStrategy="BlockLineHeight"
-                                         TextBlock.LineHeight="20"></TextBox>
+                                         TextBlock.LineHeight="20">
+                                </TextBox>
                             </StackPanel>
                         </Border>
-                        <ContentPresenter VerticalAlignment="Center"
-                                          x:Name="a"
-                                          Visibility="Hidden"
-                                          Content="{TemplateBinding Text}"
-                                          Tag="{TemplateBinding Tag}">
-                        </ContentPresenter>
+                        <!-- <ContentPresenter VerticalAlignment="Center" -->
+                        <!--                   x:Name="a" -->
+                        <!--                   Visibility="Hidden" -->
+                        <!--                   Content="{TemplateBinding Text}" -->
+                        <!--                   Tag="{TemplateBinding Tag}"> -->
+                        <!-- </ContentPresenter> -->
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -323,7 +327,7 @@
         </Setter>
     </Style>
 
-        <Style x:Key="myPasswordBox"
+    <Style x:Key="myPasswordBox"
            TargetType="PasswordBox">
         <Setter Property="PasswordBox.Foreground"
                 Value="Black" />
@@ -338,7 +342,7 @@
         <Setter Property="MinHeight"
                 Value="51" />
     </Style>
-    
+
     <Style x:Key="myInputIcon"
            TargetType="TextBox">
         <Setter Property="TextBlock.Foreground"
@@ -370,7 +374,8 @@
                                     </TextBlock>
                                     <TextBox Padding="0"
                                              materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                             Foreground="Black"></TextBox>
+                                             Foreground="Black">
+                                    </TextBox>
                                 </StackPanel>
                                 <materialDesign:PackIcon Kind="Visibility"
                                                          Foreground="Black"
@@ -430,7 +435,8 @@
                                      TextWrapping="Wrap"
                                      AcceptsReturn="True"
                                      TextBlock.LineStackingStrategy="BlockLineHeight"
-                                     TextBlock.LineHeight="20"></TextBox>
+                                     TextBlock.LineHeight="20">
+                            </TextBox>
                         </Border>
                         <ContentPresenter VerticalAlignment="Center"
                                           x:Name="a"
@@ -490,7 +496,8 @@
                                          TextWrapping="Wrap"
                                          AcceptsReturn="True"
                                          TextBlock.LineStackingStrategy="BlockLineHeight"
-                                         TextBlock.LineHeight="20"></TextBox>
+                                         TextBlock.LineHeight="20">
+                                </TextBox>
                             </StackPanel>
 
                         </Border>
@@ -518,13 +525,17 @@
     <Style x:Key="myCombobox"
            TargetType="ComboBox">
         <Setter Property="Width"
-                Value="115"></Setter>
+                Value="115">
+        </Setter>
         <Setter Property="Height"
-                Value="51"></Setter>
+                Value="51">
+        </Setter>
         <Setter Property="Background"
-                Value="Transparent"></Setter>
+                Value="Transparent">
+        </Setter>
         <Setter Property="Foreground"
-                Value="Black"></Setter>
+                Value="Black">
+        </Setter>
         <Setter Property="SnapsToDevicePixels"
                 Value="true" />
         <Setter Property="OverridesDefaultStyle"
@@ -654,7 +665,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--custom canvas-->
     <Canvas x:Key="myVoucherCard"
             x:Shared="False">

@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:BookstoreManagement.Components"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
-    xmlns:converters="clr-namespace:BookstoreManagement.Components.Converters">
+    xmlns:converters="clr-namespace:BookstoreManagement.Components.Converters"
+    xmlns:converters1="clr-namespace:BookstoreManagement.Utils.Converters">
 
     <!--<ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="BookstoreManagentment.ImageLoaderBoarder.xaml"/>
@@ -11,6 +12,28 @@
     </ResourceDictionary.MergedDictionaries>-->
 
     <converters:TextFormatConverter x:Key="ToStringConverter"/>
+    <converters1:BooleanVisibility x:Key="DefaultVisibilityConverter"/>
+
+    <Style TargetType="{x:Type local:LoadingMask}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:LoadingMask}">
+                    <Grid>
+                        <ContentPresenter ContentSource="Content"/>
+                        <Border 
+                            Opacity="0.54"
+                            Background="#9F000000"
+                            Visibility="{TemplateBinding Loading, Converter={StaticResource DefaultVisibilityConverter}}"/>
+                        <ProgressBar x:Name="LoadingMask" Value="0" Foreground="Black"
+                                     Visibility="{TemplateBinding Loading, Converter={StaticResource DefaultVisibilityConverter}}"
+                                     Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                     IsIndeterminate="True" Height="120" Width="120" Background="{x:Null}"
+                                     BorderBrush="{x:Null}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style TargetType="{x:Type local:PageItemsControl}">
         <Setter Property="Template">

@@ -17,12 +17,13 @@ namespace BookstoreManagement.ViewModels.Login
 
         private readonly IAuthenticator _authenticator;
 
-        public LoginViewModel(ScheluderProvider scheluder, IAuthenticator authenticator) : base(scheluder)
+        public LoginViewModel(ScheluderProvider scheluder, IAuthenticator authenticator, ILoginNavigator navigator) : base(scheluder)
         {
             _authenticator = authenticator;
+            Navigator = navigator;
         }
 
-        [ObservableProperty] [Required] [MaxLength(16)]
+        [ObservableProperty] [Required]
         private string? _username;
 
         [ObservableProperty] [Required] private string? _password;
@@ -37,8 +38,10 @@ namespace BookstoreManagement.ViewModels.Login
                 return;
             }
 
+            IsLoading = true;
             Dispose(_authenticator.Authenticate(Username!, Password!), res =>
             {
+                IsLoading = false;
                 Navigator!.openApp();
             });
         }
