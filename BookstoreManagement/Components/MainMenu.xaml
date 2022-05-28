@@ -94,9 +94,19 @@
             </Setter>
         </Style>
 
+        <Style TargetType="{x:Type TabItem}" x:Key="A">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <ContentPresenter ContentSource="Header" Panel.ZIndex="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style TargetType="{x:Type TabControl}" x:Key="NavigationRail">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="ItemContainerStyle" Value="{StaticResource NavigationRailItem}" />
+            <Setter Property="ItemContainerStyle" Value="{StaticResource A}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabControl}">
@@ -152,6 +162,7 @@
         </Style>
     </UserControl.Resources>
     <TabControl 
+        HorizontalContentAlignment="Center"
         ItemsSource="{Binding TabContents}" 
         Style="{StaticResource NavigationRail}">
         <TabControl.ItemTemplate>
@@ -163,10 +174,39 @@
         </TabControl.ItemTemplate>
         <TabControl.ContentTemplate>
             <DataTemplate>
-                <ContentControl 
+                <ContentControl
                     Content="{Binding}"
                     Resources="{StaticResource TabContentDataTemplates}"/>
             </DataTemplate>
         </TabControl.ContentTemplate>
+        <!-- <TabItem> -->
+        <!--     <TabItem.Header> -->
+        <!--         <Grid> -->
+        <!--             <Border CornerRadius="8" Width="132" Background="#FFBCFEFE"/> -->
+        <!--             <DockPanel Margin="12 8 12 8" MinWidth="108"> -->
+        <!--                 <materialDesign:PackIcon Width="24" Height="24" Kind="Abacus"/> -->
+        <!--                 <TextBlock Margin="8 3.5 0 3.5" -->
+        <!--                            TextWrapping="Wrap" -->
+        <!--                            Text="Ahihi" FontSize="14"/> -->
+        <!--             </DockPanel> -->
+        <!--         </Grid> -->
+        <!--     </TabItem.Header> -->
+        <!--     <Border Background="BlueViolet"/> -->
+        <!-- </TabItem> -->
+        <!-- <TabItem> -->
+        <!--     <TabItem.Header> -->
+        <!--         ~1~ <Grid> @1@ -->
+        <!--         ~1~     <Border CornerRadius="8" Width="132" Background="#FFBCFEFE"/> @1@ -->
+        <!--         ~1~     <DockPanel Margin="12 8 12 8" MinWidth="108"> @1@ -->
+        <!--         ~1~         <materialDesign:PackIcon Width="24" Height="24" Kind="AccessPointOff"/> @1@ -->
+        <!--         ~1~         <TextBlock Margin="8 3.5 0 3.5"  @1@ -->
+        <!--         ~1~                    TextWrapping="Wrap" @1@ -->
+        <!--         ~1~                    Text="Test" FontSize="14"/> @1@ -->
+        <!--         ~1~     </DockPanel> @1@ -->
+        <!--         ~1~ </Grid> @1@ -->
+        <!--         <local:MainMenuItem Icon="AccessPointOff" Text="Testawdawdawdawdwdawd"></local:MainMenuItem> -->
+        <!--     </TabItem.Header> -->
+        <!--     <Border Background="BlanchedAlmond"/> -->
+        <!-- </TabItem> -->
     </TabControl>
 </UserControl>

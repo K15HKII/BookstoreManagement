@@ -31,19 +31,20 @@ namespace BookstoreManagement.ViewModels.Login
         [ICommand]
         public void Login()
         {
-            ValidateAllProperties();
-
-            if (HasErrors)
-            {
-                return;
-            }
+            // ValidateAllProperties();
+            //
+            // if (HasErrors)
+            // {
+            //     return;
+            // }
 
             IsLoading = true;
-            Dispose(_authenticator.Authenticate(Username!, Password!), res =>
-            {
-                IsLoading = false;
-                Navigator!.openApp();
-            });
+            Navigator!.openApp();
+            // Dispose(_authenticator.Authenticate(Username!, Password!), res =>
+            // {
+            //     IsLoading = false;
+            //     Navigator!.openApp();
+            // });
         }
 
     }

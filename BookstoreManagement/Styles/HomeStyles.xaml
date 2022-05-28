@@ -2,17 +2,80 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:dashboard="clr-namespace:BookstoreManagement.ViewModels.Dashboard"
                     xmlns:components="clr-namespace:BookstoreManagement.Components"
-                    xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels">
+                    xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels"
+                    xmlns:report="clr-namespace:BookstoreManagement.ViewModels.Report"
+                    xmlns:lend="clr-namespace:BookstoreManagement.ViewModels.Lend"
+                    xmlns:suppier="clr-namespace:BookstoreManagement.ViewModels.Suppier"
+                    xmlns:manager="clr-namespace:BookstoreManagement.ViewModels.Manager"
+                    xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.Customer"
+                    xmlns:rating="clr-namespace:BookstoreManagement.ViewModels.Rating"
+                    xmlns:voucher="clr-namespace:BookstoreManagement.ViewModels.Voucher"
+                    xmlns:order="clr-namespace:BookstoreManagement.ViewModels.Order"
+                    xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.BookStore">
     
     <ResourceDictionary x:Key="TabHeaderDataTemplates">
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <components:MainMenuItem Icon="ViewDashboard" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type report:ReportViewModel}">
+            <components:MainMenuItem Icon="ChartBox" Text="Report"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type bookStore:BookStoreViewModel}">
+            <components:MainMenuItem Icon="BookOpenPageVariant" Text="Bookstore"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type order:OrderViewModel}">
+            <components:MainMenuItem Icon="DotsHorizontalCircle" Text="Order"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
+            <components:MainMenuItem Icon="Tag" Text="Voucher"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type rating:RatingViewModel}">
+            <components:MainMenuItem Icon="ThumbsUpDown" Text="Rating"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Customer"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
+            <components:MainMenuItem Icon="AccountGroup" Text="Manager"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
+            <components:MainMenuItem Icon="Charity" Text="Supplier"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type lend:LendViewModel}">
+            <components:MainMenuItem Icon="BookmarkMultiple" Text="Lend"/>
         </DataTemplate>
     </ResourceDictionary>
     
     <ResourceDictionary x:Key="TabContentDataTemplates">
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
             <panels:DashboardPanel/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type report:ReportViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type bookStore:BookStoreViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type order:OrderViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type rating:RatingViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type lend:LendViewModel}">
+            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
         </DataTemplate>
     </ResourceDictionary>
     

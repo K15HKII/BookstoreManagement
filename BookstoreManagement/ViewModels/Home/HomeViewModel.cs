@@ -29,14 +29,14 @@ namespace BookstoreManagement.ViewModels
             {
                 factory.Create<DashboardViewModel>(),
                 factory.Create<ReportViewModel>(),
-                factory.Create<BookStoreViewModel>(),
-                factory.Create<OrderViewModel>(),
-                factory.Create<VoucherViewModel>(),
-                factory.Create<RatingViewModel>(),
-                factory.Create<CustomerViewModel>(),
-                factory.Create<ManagerViewModel>(),
-                factory.Create<SupplierViewModel>(),
-                factory.Create<LendViewModel>()
+                // factory.Create<BookStoreViewModel>(),
+                // factory.Create<OrderViewModel>(),
+                // factory.Create<VoucherViewModel>(),
+                // factory.Create<RatingViewModel>(),
+                // factory.Create<CustomerViewModel>(),
+                // factory.Create<ManagerViewModel>(),
+                // factory.Create<SupplierViewModel>(),
+                // factory.Create<LendViewModel>()
             };
 
         }
