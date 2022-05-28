@@ -8,7 +8,6 @@
              d:DesignHeight="116"
              d:DesignWidth="447">
 
-
     <Grid>
         <Canvas>
             <ContentControl Content="{StaticResource myVoucherCard}"></ContentControl>
@@ -39,7 +38,8 @@
                 <StackPanel DockPanel.Dock="Top">
                     <TextBlock Style="{StaticResource Caption}"
                                Foreground="{StaticResource SolidDarkPrimaryColor}"
-                               Margin="0 0 0 8"/>
+                               Margin="0 0 0 8"
+                               Text="{Binding ExpiredDate}"/>
                     <TextBlock Style="{StaticResource SmallCaption}"
                                Foreground="{StaticResource SolidDarkPrimaryColor}"
                                Margin="0 0 0 2"/>

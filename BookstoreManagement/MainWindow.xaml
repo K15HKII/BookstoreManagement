@@ -2,9 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookstoreManagement"
-        xmlns:components="clr-namespace:BookstoreManagement.Components"
+        xmlns:component="clr-namespace:BookstoreManagement.Components"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
         mc:Ignorable="d"
@@ -13,16 +14,51 @@
         MinHeight="720"
         MinWidth="1280"
         WindowStartupLocation="CenterScreen">
-    <ScrollViewer>
-        <components:PageItemsControl>
-            <components:PageItemsControl.ItemsTemplate>
+
+	<StackPanel>
+		<!--<ItemsControl x:Name="itemsControl">
+				<ItemsControl.Resources>
+					<DataTemplate DataType="{x:Type api:BookProfile}">
+						<component:ProductCard/>
+					</DataTemplate>
+				</ItemsControl.Resources>
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel></WrapPanel>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+		</ItemsControl>-->
+
+		<component:ProductCard 
+			x:Name="i"
+			DataContext="{x:Type api:BookProfile}"/>
+
+		<component:PublisherCard			
+			x:Name="ii"
+			DataContext="{x:Type api:Publisher}"/>
+
+		<component:VoucherCard
+			x:Name="iii"
+			Width="447"
+			DataContext="{x:Type api:Voucher}"/>
+	</StackPanel>
+
+	<!--<Grid x:Name="itemsControl">
+			<DataTemplate DataType="{x:Type api:BookProfile}">
+				<component:ProductCard/>
+			</DataTemplate>
+	</Grid>-->
+	
+    <!--<ScrollViewer>
+        <component:PageItemsControl>
+            <component:PageItemsControl.ItemsTemplate>
                 <ItemsControl x:Name="itemsControl">
                     <ItemsControl.Resources>
                         <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <components:ProductCard/>
+                            <component:ProductCard/>
                         </DataTemplate>
                         <DataTemplate DataType="{x:Type api:CartItem}">
-                            <components:ucVoucher/>
+                            <component:ucVoucher/>
                         </DataTemplate>
                     </ItemsControl.Resources>
                     <ItemsControl.ItemsPanel>
@@ -31,7 +67,9 @@
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
-            </components:PageItemsControl.ItemsTemplate>
-        </components:PageItemsControl>
-    </ScrollViewer>
+            </component:PageItemsControl.ItemsTemplate>
+        </component:PageItemsControl>
+    </ScrollViewer>-->
+
+	
 </Window>

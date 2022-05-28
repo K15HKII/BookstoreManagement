@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Components\image.jpg" />
     <None Remove="Images\Icons\facebook.png" />
     <None Remove="Images\Icons\google.png" />
     <None Remove="Images\Icons\google_icon.svg" />
+    <None Remove="Images\image.jpg" />
     <None Remove="Images\voucher.png" />
   </ItemGroup>
 
@@ -38,6 +40,9 @@
     <Resource Include="Images\Icons\google_icon.svg">
       <CopyToOutputDirectory></CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\image.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\voucher.png" />
   </ItemGroup>
 
@@ -46,10 +51,6 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Components\Panels\" />
   </ItemGroup>
 
 </Project>

@@ -12,26 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BookstoreManagement.Data.Model.Api;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.Panels
 {
     /// <summary>
-    /// Interaction logic for ProductCard.xaml
+    /// Interaction logic for DashboardPanel.xaml
     /// </summary>
-    public partial class ProductCard : UserControl
+    public partial class DashboardPanel : UserControl
     {
-        public ProductCard()
+        public DashboardPanel()
         {
             InitializeComponent();
-
-            BookProfileImage b = new BookProfileImage()
-            {
-                Id = "1",
-                Image = @"/BookstoreManagement;component/Images/image.jpg"
-            };
-
-            Image1.DataContext = b;
         }
     }
 }

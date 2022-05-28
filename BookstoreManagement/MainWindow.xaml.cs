@@ -31,8 +31,10 @@ namespace BookstoreManagement
                 Name = "ABC",
                 AuthorId = 10,
                 Price = 10000,
-                Description = "Aluha"
+                PublisherName = "hi",
+                Description = "Aluha",
             };
+
             BookProfile b = new BookProfile()
             {
                 Name = "ABCASDA",
@@ -40,6 +42,17 @@ namespace BookstoreManagement
                 Price = 10000,
                 Description = "Aluha"
             };
+
+            Publisher publisher = new Publisher()
+            {
+                Name = "ABC",
+            };
+
+            Voucher voucher = new Voucher()
+            {
+                ExpiredDate = DateTime.Now,
+            };
+
             List<Object> list = new List<Object>
             {
                 a,
@@ -53,7 +66,12 @@ namespace BookstoreManagement
                     BookProfile = "jawdlawd"
                 }
             };
-            itemsControl.ItemsSource = list;
+            //itemsControl.ItemsSource = new List<Object> { a };
+            i.DataContext = a;
+
+            ii.DataContext = publisher;
+
+            iii.DataContext = voucher;
         }
     }
 }
