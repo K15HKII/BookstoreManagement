@@ -2,6 +2,7 @@
 using System.Windows;
 using BookstoreManagement.Data;
 using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Services.Common;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels;
 using BookstoreManagement.ViewModels.BookStore;
@@ -41,6 +42,7 @@ using BookstoreManagement.ViewModels.DialogView.Customer;
 using BookstoreManagement.ViewModels.DialogView.Manager;
 using BookstoreManagement.ViewModels.DialogView.Supplier;
 using BookstoreManagement.ViewModels.DialogView;
+using BookstoreManagement.ViewModels.Home;
 using BookstoreManagement.Views.ViewStates;
 
 namespace BookstoreManagement.Services
@@ -86,6 +88,8 @@ namespace BookstoreManagement.Services
                 service.AddSingleton<LoginSession>();
                 service.AddSingleton<IAuthenticator, Authenticator>();
                 service.AddSingleton<ScheluderProvider>();
+                service.AddSingleton<IDialogService, DialogService>();
+                service.Decorate<IModelRemote, CacheModelRemote>();
             });
             return host;
         }
@@ -122,7 +126,10 @@ namespace BookstoreManagement.Services
             {
                 service.AddSingleton<ILoginNavigator, LoginNavigator>();
                 service.AddViewModel<LoginViewModel>();
+
+                service.AddSingleton<IHomeNavigator, HomeNavigator>();
                 service.AddViewModel<HomeViewModel>();
+
                 service.AddViewModel<DashboardViewModel>();
                 service.AddViewModel<ReportViewModel>();
                 service.AddViewModel<BookStoreViewModel>();
@@ -169,6 +176,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<WaitingConfirmPageViewModel>();
 
                 //Setting
+                service.AddSingleton<ISettingNavigator, SettingNavigator>();
                 service.AddViewModel<SettingViewModel>();
 
                 //Account

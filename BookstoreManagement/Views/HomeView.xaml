@@ -7,11 +7,37 @@
              xmlns:components="clr-namespace:BookstoreManagement.Components" 
              xmlns:shapes="clr-namespace:BookstoreManagement.Components.Shapes"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
     <UserControl.Resources>
     </UserControl.Resources>
-    <components:LoadingMask>
-        <components:MainMenu/>
-    </components:LoadingMask>
+    <materialDesign:DialogHost>
+        <components:LoadingMask>
+            <components:MainMenu>
+                <components:MainMenu.FloatingContent>
+                    <StackPanel>
+                        <Button Command="{Binding OpenSettingCommand}">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <components:MainMenuItem 
+                                        Icon="Settings"
+                                        Text="Setting"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Command="{Binding LogoutCommand}">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <components:MainMenuItem
+                                        Icon="Logout"
+                                        Text="Log Out"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </components:MainMenu.FloatingContent>
+            </components:MainMenu>
+        </components:LoadingMask>
+    </materialDesign:DialogHost>
 </UserControl>

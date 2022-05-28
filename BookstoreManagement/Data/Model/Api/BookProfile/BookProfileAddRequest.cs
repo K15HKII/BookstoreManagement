@@ -1,16 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookstoreManagement.Data.Model.Api
 {
-    public class BookProfile
+    public class BookProfileAddRequest
     {
-        [JsonProperty("id")]
-        public string Id { get; set; }
 
         [JsonProperty("tags")]
         public string? Tags { get; set; }
@@ -32,6 +25,6 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("ebookfile")]
         public string? PriceDescription { get; set; }
-        public string PublisherName { get; set; }
+
     }
 }

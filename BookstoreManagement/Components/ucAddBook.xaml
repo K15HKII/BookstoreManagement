@@ -23,9 +23,8 @@
                            Foreground="Black"
                            Text="Ten san pham"
                            Margin="0 0 0 8" />
-                <TextBox Style="{StaticResource myInput}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}"
-                         Text="abc" />
+                <TextBox Width="{Binding ElementName=root, Path=ActualWidth}"
+                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <Grid Margin="0 0 0 24">
@@ -77,7 +76,7 @@
                            Text="Nha cung cap"
                            Margin="0 0 0 8"/>
                 <ComboBox Style="{StaticResource myCombobox}"
-                          Width="{Binding ElementName=root, Path=ActualWidth}" />
+                          Width="{Binding ElementName=root, Path=ActualWidth}"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">
@@ -98,8 +97,7 @@
                 </ListView>
                 <TextBox Style="{StaticResource myInput}"
                          Text="them"
-                         Width="{Binding ElementName=root, Path=ActualWidth}">
-                </TextBox>
+                         Width="{Binding ElementName=root, Path=ActualWidth}"/>
 
             </StackPanel>
 
@@ -146,6 +144,7 @@
                         Margin="0 0 16 0"
                         Content="Huy"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
+                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
                         Width="97"
                         Content="Them"></Button>
             </StackPanel>

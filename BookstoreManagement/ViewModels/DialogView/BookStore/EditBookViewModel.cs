@@ -10,8 +10,7 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
 {
     public partial class EditBookViewModel : BaseViewModel
     {
-        public void dismissDialog() { }
-
+        
         [ObservableProperty] object? bookId;
         [ObservableProperty] object? bookName;
         [ObservableProperty] object? bookPrice;
@@ -20,5 +19,6 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         [ObservableProperty] object? bookType;
         [ObservableProperty] ObservableCollection<object>? lsBookImage;
         [ObservableProperty] object? bookDescription;
+
     }
 }

@@ -4,5 +4,5 @@ public interface IHomeNavigator : INavigator
 {
     void Logout();
 
-    void openSetting();
+    void OpenSetting();
 }

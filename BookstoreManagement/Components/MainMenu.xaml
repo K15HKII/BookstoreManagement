@@ -117,24 +117,27 @@
                                     <RowDefinition Height="26" />
                                 </Grid.RowDefinitions>
                                 <Border Grid.Row="0" Background="#FFBCFEFE" CornerRadius="20">
-                                    <Grid Margin="14 0 14 0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition />
-                                            <RowDefinition Height="37" />
-                                            <RowDefinition />
-                                        </Grid.RowDefinitions>
-                                        <UniformGrid
+                                    <!-- <Grid > -->
+                                    <!--     <Grid.RowDefinitions> -->
+                                    <!--         <RowDefinition Height="*"/> -->
+                                    <!--         <RowDefinition Height="37"/> -->
+                                    <!--         <RowDefinition Height="*" MaxHeight="80"/> -->
+                                    <!--     </Grid.RowDefinitions> -->
+                                    <!-- -->
+                                    <!-- -->
+                                    <!-- </Grid> -->
+                                    <DockPanel Margin="14 0 14 0">
+                                        <StackPanel
                                             x:Name="HeaderPanel"
-                                            Margin="0 63 0 0"
+                                            Margin="0 59 0 -4"
                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                             VerticalAlignment="Top"
-                                            Columns="1"
                                             Focusable="False"
                                             IsItemsHost="True"
-                                            Rows="0" />
+                                            DockPanel.Dock="Top"/>
                                         <StackPanel VerticalAlignment="Bottom"
-                                                    Grid.Row="2"
-                                                    Margin="0 0 0 18">
+                                                    Margin="0 0 0 18"
+                                                    DockPanel.Dock="Bottom">
                                             <ContentPresenter
                                                 x:Name="FloatingContentPanel"
                                                 HorizontalAlignment="Center"
@@ -142,7 +145,7 @@
                                                 Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:MainMenu}}, Path=FloatingContent}"
                                                 Focusable="False" />
                                         </StackPanel>
-                                    </Grid>
+                                    </DockPanel>
                                 </Border>
                             </Grid>
                             <ContentPresenter
@@ -164,10 +167,12 @@
     <TabControl 
         HorizontalContentAlignment="Center"
         ItemsSource="{Binding TabContents}" 
+        SelectedIndex="{Binding SelectedIndex}"
         Style="{StaticResource NavigationRail}">
         <TabControl.ItemTemplate>
             <DataTemplate>
                 <ContentControl
+                    Margin="0 4 0 4"
                     Content="{Binding}"
                     Resources="{StaticResource TabHeaderDataTemplates}"/>
             </DataTemplate>

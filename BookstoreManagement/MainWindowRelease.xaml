@@ -9,6 +9,10 @@
         xmlns:authentication="clr-namespace:BookstoreManagement.Components.Authentication"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:components="clr-namespace:BookstoreManagement.Components"
+        xmlns:setting="clr-namespace:BookstoreManagement.ViewModels.Setting"
+        xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels"
+        xmlns:account="clr-namespace:BookstoreManagement.ViewModels.Account"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindowRelease"        
         Padding="0"
@@ -25,6 +29,12 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
                     <views:HomeView/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type setting:SettingViewModel}">
+                    <panels:SettingPanel/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type account:AccountViewModel}">
+
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

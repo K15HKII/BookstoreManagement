@@ -21,9 +21,9 @@ public class HomeNavigator : IHomeNavigator
         _mainViewState.CurrentView = _factory.Create<LoginViewModel>();
     }
 
-    public void openSetting()
+    public void OpenSetting()
     {
-        _mainViewState.CurrentView = _factory.Create<SettingViewModel>();
+        _mainViewState.NavigateAndQueue(_factory.Create<SettingViewModel>());
     }
     
 }

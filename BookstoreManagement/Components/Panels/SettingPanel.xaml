@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.Panels.SettingPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookstoreManagement.Components.Panels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Border Background="White">
+        <Grid Margin="80 30 80 30">
+            <Button Width="24" Height="24"
+                    Command="{Binding BackwardCommand}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <materialDesign:PackIcon 
+                            Width="24" Height="24"
+                            Kind="ArrowBack"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

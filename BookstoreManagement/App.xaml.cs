@@ -52,6 +52,7 @@ namespace BookstoreManagement
             {
                 MainViewState view = _host.Services.GetRequiredService<MainViewState>();
                 view.CurrentView = _host.Services.GetRequiredService<LoginViewModel>();
+                IModelRemote _model = _host.Services.GetRequiredService<IModelRemote>();
                 MainWindowRelease main = new MainWindowRelease()
                 {
                     DataContext = view

@@ -1561,7 +1561,7 @@ namespace BookstoreManagement.Annotations
     public string SearchTemplate { get; }
 
     /// <summary>
-    /// Message to show when the search pattern was found.
+    /// Message to Show when the search pattern was found.
     /// You can also prepend the message text with "Error:", "Warning:", "Suggestion:" or "Hint:" prefix to specify the pattern severity.
     /// Code patterns with replace template produce suggestions by default.
     /// However, if replace template is not provided, then warning severity will be used.
@@ -1574,7 +1574,7 @@ namespace BookstoreManagement.Annotations
     public string ReplaceTemplate { get; set; }
 
     /// <summary>
-    /// Replace message to show in the light bulb.
+    /// Replace message to Show in the light bulb.
     /// </summary>
     public string ReplaceMessage { get; set; }
 

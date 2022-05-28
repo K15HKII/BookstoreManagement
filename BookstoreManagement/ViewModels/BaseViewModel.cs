@@ -12,6 +12,27 @@ public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
 
     protected N? Navigator { get; set; }
 
+    protected BaseViewModel(N? navigator, ScheluderProvider scheluderProvider) : base(scheluderProvider)
+    {
+        Navigator = navigator;
+    }
+
+    protected BaseViewModel(ScheluderProvider scheluderProvider) : base(scheluderProvider)
+    {
+    }
+
+    protected BaseViewModel() : base(null)
+    {
+
+    }
+
+}
+
+public abstract partial class BaseViewModel : ObservableValidator
+{
+
+    [ObservableProperty] private bool _isLoading = false;
+
     protected readonly CompositeDisposable _disposables = new CompositeDisposable();
 
     public ScheluderProvider ScheluderProvider { get; }
@@ -38,12 +59,5 @@ public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
             .ObserveOn(ScheluderProvider.UI())
             .Subscribe(action));
     }
-
-}
-
-public abstract partial class BaseViewModel : ObservableValidator
-{
-
-    [ObservableProperty] private bool _isLoading = false;
 
 }

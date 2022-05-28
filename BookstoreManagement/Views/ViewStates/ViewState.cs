@@ -15,6 +15,27 @@ namespace BookstoreManagement.Views
 
         public event Action<BaseViewModel?>? StateChanged;
 
+        private readonly Queue<BaseViewModel> _viewQueue = new();
+
+        public void NavigateAndQueue(BaseViewModel destination)
+        {
+            if (_currentView != null)
+            {
+                _viewQueue.Enqueue(_currentView);
+            }
+            CurrentView = destination;
+        }
+
+        public BaseViewModel? Backward()
+        {
+            if (_viewQueue.TryPeek(out var peek))
+            {
+                CurrentView = peek;
+                return peek;
+            }
+            return null;
+        }
+
         protected ViewState()
         {
             this.PropertyChanged += (sender, args) =>
