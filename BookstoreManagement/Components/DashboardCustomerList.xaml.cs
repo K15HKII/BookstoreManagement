@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookstoreManagement.Data.Model.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace BookstoreManagement.Components
         public DashboardCustomerList()
         {
             InitializeComponent();
+
+            User user = new User()
+            {
+                FirstName = "a",
+                LastName = "b",
+                Email = "@gmail.com"
+            };
+
+            itemsControl.ItemsSource = new List<User>() { user, user, user };
         }
     }
 }

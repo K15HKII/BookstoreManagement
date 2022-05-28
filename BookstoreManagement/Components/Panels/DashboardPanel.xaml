@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:local="clr-namespace:BookstoreManagement.Components.Panels"
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
              mc:Ignorable="d"  
              d:DesignWidth="928">
+    
     <StackPanel>
         <Grid>
             <StackPanel>
@@ -17,7 +19,7 @@
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="{StaticResource SolidSecondaryColor}"
                            Text="Tháng này, 04-2022"
-                           Margin="0 -24 0 0"/>
+                           Margin="0 -24 0 0" />
             </StackPanel>
         </Grid>
 
@@ -29,26 +31,8 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel>
-                <!--<ListView Margin="0 4 0 0" >
-                    <ListViewItem>
-                        <local:StatisticLabel Width="160"
-                                              Height="83" />
-                    </ListViewItem>
-                    <ListViewItem>
-                        <local:StatisticLabel Width="160"
-                                              Height="83" />
-                    </ListViewItem>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            -->
-                <!--<local:StatisticLabel Width="160"
-                                          Height="83" />-->
-                <!--
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ListView>-->
 
-                <ListView>
+                <ListView x:Name="itemsControl">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="Padding"
@@ -59,6 +43,12 @@
                                     Value="0" />
                         </Style>
                     </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="{x:Type api:BookProfile}">
+                            <component:StatisticLabel Width="160"
+                                                      Height="83" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
@@ -70,53 +60,12 @@
             RelativeSource={RelativeSource AncestorType=ListView}}" />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
-                    <!--content-->
-                    <component:StatisticLabel Width="160"
-                                          Height="83" />
-                    <component:StatisticLabel Width="160"
-                                          Height="83" />
-                    <component:StatisticLabel Width="160"
-                                          Height="83" />
                 </ListView>
 
                 <Border Height="272"
                         Background="{StaticResource SolidLightGrayColor}"
                         Margin="0 15 0 0"></Border>
             </StackPanel>
-
-            <!--<StackPanel Grid.Column="2">
-                <ListView>
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="Padding"
-                                    Value="0 0 0 8" />
-                            <Setter Property="Margin"
-                                    Value="0 0 0 0" />
-                            <Setter Property="BorderThickness"
-                                    Value="0" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
-            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
-                                       ItemWidth="{Binding (ListView.View).ItemWidth, 
-            RelativeSource={RelativeSource AncestorType=ListView}}"
-                                       MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
-                                       ItemHeight="{Binding (ListView.View).ItemHeight, 
-            RelativeSource={RelativeSource AncestorType=ListView}}"
-                                        />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                    -->
-            <!--content-->
-            <!--
-                    <local:ImportantInformationLabel Width="173"
-                                                     Height="82" />
-                    <local:ImportantInformationLabel Width="173"
-                                                     Height="82" />
-                </ListView>
-            </StackPanel>-->
 
             <StackPanel Grid.Column="2">
                 <Grid>
@@ -125,11 +74,12 @@
                         <ColumnDefinition Width="4" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
+                    <!--cai nay mac dinh chi duy nhat 2 label nay nen hong set cung' luon-->
                     <component:ImportantInformationLabel Width="173"
-                                                     Height="82" />
+                                                         Height="82" />
                     <component:ImportantInformationLabel Grid.Column="2"
-                                                     Width="173"
-                                                     Height="82" />
+                                                         Width="173"
+                                                         Height="82" />
                 </Grid>
 
                 <StackPanel Margin="0 52 0 0">
@@ -137,7 +87,7 @@
                                Foreground="Black"
                                Text="Khách quen" />
                     <component:DashboardCustomerList Margin="0 8 0 0"
-                                                 Height="260" />
+                                                     Height="260" />
                 </StackPanel>
 
             </StackPanel>

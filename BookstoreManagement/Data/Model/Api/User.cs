@@ -56,5 +56,7 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("is_blocked")]
         public bool Is_Blocked { get; set; }
+
+        public String FullName { get { return FirstName + " " + LastName; } }
     }
 }

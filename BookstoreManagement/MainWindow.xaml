@@ -15,8 +15,9 @@
         MinWidth="1280"
         WindowStartupLocation="CenterScreen">
 
-	<StackPanel>
-		<!--<ItemsControl x:Name="itemsControl">
+    
+    <!--<StackPanel>
+		--><!--<ItemsControl x:Name="itemsControl">
 				<ItemsControl.Resources>
 					<DataTemplate DataType="{x:Type api:BookProfile}">
 						<component:ProductCard/>
@@ -27,23 +28,30 @@
 						<WrapPanel></WrapPanel>
 					</ItemsPanelTemplate>
 				</ItemsControl.ItemsPanel>
-		</ItemsControl>-->
+		</ItemsControl>--><!--
 
 		<component:ProductCard 
 			x:Name="i"
 			DataContext="{x:Type api:BookProfile}"/>
 
-		<component:PublisherCard			
+        --><!--<component:BookList x:Name="test"
+                            DataContext="{x:Type api:BookProfile}"
+                            Width="928"/>
+
+        <component:CustomerList DataContext="{x:Type api:User}"
+                                Width="928"/>-->
+
+        <!--<component:PublisherCard			
 			x:Name="ii"
 			DataContext="{x:Type api:Publisher}"/>
 
 		<component:VoucherCard
 			x:Name="iii"
 			Width="447"
-			DataContext="{x:Type api:Voucher}"/>
+			DataContext="{x:Type api:Voucher}"/>--><!--
 	</StackPanel>
 
-	<!--<Grid x:Name="itemsControl">
+	--><!--<Grid x:Name="itemsControl">
 			<DataTemplate DataType="{x:Type api:BookProfile}">
 				<component:ProductCard/>
 			</DataTemplate>

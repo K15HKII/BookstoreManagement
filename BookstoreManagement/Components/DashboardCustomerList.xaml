@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d">
 
@@ -13,9 +14,9 @@
 
     <Border Background="White"
             Width="352px">
-        <ItemsControl>
+        <ItemsControl x:Name="itemsControl">
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate DataType="{x:Type api:User}">
                     <Grid Width="352px"
                           Height="65px">
                         <Grid.ColumnDefinitions>
@@ -35,10 +36,10 @@
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="Nobita"
+                                           Text="{Binding FullName}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="20520558@gm.uit.edu.vn"
+                                           Text="{Binding Email}"
                                            Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}" />
                             </StackPanel>

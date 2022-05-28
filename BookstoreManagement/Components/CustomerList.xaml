@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
@@ -21,7 +22,7 @@
      
     <Border Background="White"
             Width="928px">
-        <ItemsControl Margin="12 0 20 0">
+        <ItemsControl Margin="12 0 20 0" x:Name="itemsControl">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <StackPanel>
@@ -72,7 +73,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate DataType="{x:Type api:User}">
                     <Grid x:Name="PART_Body"
                           VerticalAlignment="Center"
                           Height="65px" Width="928px">
@@ -94,7 +95,7 @@
                         <TextBlock Grid.Column="1"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="#1"
+                                   Text="{Binding Id}"
                                    Style="{StaticResource Title}" />
 
                         <StackPanel Name="infoOfCustomer"
@@ -109,10 +110,10 @@
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="Nobita"
+                                           Text="{Binding FullName}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="20520558@gm.uit.edu.vn"
+                                           Text="{Binding Email}"
                                            Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}" />
                             </StackPanel>
@@ -121,25 +122,25 @@
                         <TextBlock Grid.Column="3"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Khách quen"
+                                   Text=""
                                    Style="{StaticResource Caption}" />
 
                         <TextBlock Grid.Column="4"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="1002"
+                                   Text=""
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidOrangeColor}" />
                         <TextBlock Grid.Column="5"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="đ10.000.000"
+                                   Text=""
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Grid.Column="6"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="02/02/2022"
+                                   Text="{Binding CreatedAt}"
                                    Style="{StaticResource Caption}"
                                    Foreground="Black" />
                     </Grid>
