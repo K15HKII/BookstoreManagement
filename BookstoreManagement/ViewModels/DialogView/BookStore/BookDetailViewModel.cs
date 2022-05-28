@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.DialogView.BookStore
 {
-    public partial class BookDetailViewModel
+    public partial class BookDetailViewModel : BaseViewModel
     {
         [ObservableProperty] object? bookId;
         [ObservableProperty] object? bookName;

@@ -1,6 +1,6 @@
 ﻿namespace BookstoreManagement.ViewModels;
 
-public delegate BaseViewModel ViewModelCreator();
+public delegate TViewModel ViewModelCreator<out TViewModel>() where TViewModel : BaseViewModel;
 
 public class ViewModelFactory
 {

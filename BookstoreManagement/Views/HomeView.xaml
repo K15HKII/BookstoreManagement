@@ -11,7 +11,9 @@
              d:DesignHeight="720" d:DesignWidth="1280">
     <UserControl.Resources>
     </UserControl.Resources>
-    <Border>
-        <TabControl></TabControl>
-    </Border>
+    <components:LoadingMask>
+        <components:MainMenu>
+
+        </components:MainMenu>
+    </components:LoadingMask>
 </UserControl>
