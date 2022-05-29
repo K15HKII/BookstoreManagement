@@ -56,28 +56,56 @@
 				<component:ProductCard/>
 			</DataTemplate>
 	</Grid>-->
-	
-    <!--<ScrollViewer>
-        <component:PageItemsControl>
+
+    <ScrollViewer Width="928"
+                  Background="Black">
+        <component:PageItemsControl Margin="0 0 0 0">
             <component:PageItemsControl.ItemsTemplate>
-                <ItemsControl x:Name="itemsControl">
-                    <ItemsControl.Resources>
+                <ListView x:Name="itemsControl"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Padding"
+                                    Value="0 0 0 0" />
+                            <Setter Property="Margin"
+                                    Value="14 0 14 57" />
+                            <Setter Property="BorderThickness"
+                                    Value="0" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
                         <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:ProductCard/>
+                            <component:ProductCard Width="210" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Margin="-14 0 -14 0"
+                                       IsItemsHost="True"
+                                       Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+                
+            </component:PageItemsControl.ItemsTemplate>
+        </component:PageItemsControl>
+    </ScrollViewer>
+
+    <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
+                    <ItemsControl.Resources >
+                        <DataTemplate DataType="{x:Type api:BookProfile}">
+                            <component:ProductCard Margin="14 0 14 57"
+                                                   Width="150px"/>
                         </DataTemplate>
                         <DataTemplate DataType="{x:Type api:CartItem}">
                             <component:ucVoucher/>
                         </DataTemplate>
                     </ItemsControl.Resources>
                     <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel></WrapPanel>
+                        <ItemsPanelTemplate >
+                            <WrapPanel Margin="-14 0 -14 0"></WrapPanel>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </component:PageItemsControl.ItemsTemplate>
-        </component:PageItemsControl>
-    </ScrollViewer>-->
-
+                </ItemsControl>-->
 	
 </Window>

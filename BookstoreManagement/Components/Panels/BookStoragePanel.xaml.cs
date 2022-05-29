@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.Panels
 {
     /// <summary>
-    /// Interaction logic for DashboardPage.xaml
+    /// Interaction logic for BookStoragePanel.xaml
     /// </summary>
-    public partial class DashboardPage : UserControl
+    public partial class BookStoragePanel : UserControl
     {
-        public DashboardPage()
+        public BookStoragePanel()
         {
             InitializeComponent();
         }
