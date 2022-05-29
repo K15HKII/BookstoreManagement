@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              mc:Ignorable="d" 
-             d:DesignHeight="114" d:DesignWidth="449">
+             d:DesignHeight="114" d:DesignWidth="449"
+             DataContext="{x:Type api:BillDetail}">
     
     <Border CornerRadius="8"
             Background="White"
@@ -17,8 +19,9 @@
             </Grid.ColumnDefinitions>
             <Border CornerRadius="8"
                     BorderThickness="1"
-                    BorderBrush="Black">
-                
+                    BorderBrush="Black"
+                    DataContext="{x:Type api:BookProfileImage}">
+                <Image Source="{Binding Image}"></Image>
             </Border>
             <Grid Grid.Column="1"
                   Margin="16 14 0 14">
@@ -30,21 +33,27 @@
                 <StackPanel>
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="Black"
-                               Margin="0 0 0 6"/>
+                               Margin="0 0 0 6"
+                               Text="{Binding BillId}"/>
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="{StaticResource SolidPrimaryColor}"
                                Margin="0 0 0 16"/>
                     <TextBlock Style="{StaticResource Body}"
-                               Foreground="{StaticResource SolidOrangeColor}"/>
+                               Foreground="{StaticResource SolidOrangeColor}"
+                               Text="{Binding Price}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <StackPanel>
                         <TextBlock Style="{StaticResource SmallCaption}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
-                                   Margin="0 0 0 2" />
+                                   Margin="0 0 0 2"
+                                   Text="Ngày tạo đơn"
+                                   HorizontalAlignment="Right"/>
                         <TextBlock Style="{StaticResource Caption}"
-                                   Foreground="{StaticResource SolidDarkPrimaryColor}" />
+                                   Foreground="{StaticResource SolidDarkPrimaryColor}"
+                                   DataContext="{x:Type api:Bill}"
+                                   Text="{Binding Date}"/>
                     </StackPanel>
 
                     <CheckBox Style="{StaticResource myCheckBoxStyle}"

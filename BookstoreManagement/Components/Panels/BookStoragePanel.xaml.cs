@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookstoreManagement.Data.Model.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BookstoreManagement.Data.Model.Api;
 
-namespace BookstoreManagement
+namespace BookstoreManagement.Components.Panels
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BookStoragePanel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BookStoragePanel : UserControl
     {
-        public MainWindow()
+        public BookStoragePanel()
         {
             InitializeComponent();
-
 
             BookProfile a = new BookProfile()
             {
@@ -66,30 +65,7 @@ namespace BookstoreManagement
                     BookProfile = "jawdlawd"
                 }
             };
-            //itemsControl.ItemsSource = new List<Object> { a, b, a, a, a, a, a, a, a };
-            //i.DataContext = a;
-
-            //ii.DataContext = publisher;
-
-            //iii.DataContext = voucher;
-
-            //BookProfile bookProfile = new BookProfile()
-            //{
-            //    Id = "#1",
-            //    Name = "ABC",
-            //    Price = 10000,
-
-            //};
-
-            //BookProfile bookProfile1 = new BookProfile()
-            //{
-            //    Id = "#2",
-            //    Name = "ABC",
-            //    Price = 10000,
-
-            //};
-
-            //test.DataContext = new List<BookProfile>() { bookProfile };
+            itemsControl.ItemsSource = new List<Object> { a, b, a, a, a, a, a, a, a };
         }
     }
 }
