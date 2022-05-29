@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.DialogView.Voucher;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +9,33 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Voucher
 {
-    public interface VoucherNavigator : INavigator
+    public class VoucherNavigator : IVoucherNavigator
     {
-        void openAccountScreen();
+        private readonly IDialogService _dialogService;
 
-        void openNotificationScreen();
+        public VoucherNavigator(IDialogService dialogService)
+        {
+            _dialogService = dialogService;
+        }
+
+        public void openAccountScreen()
+        {
+            throw new NotImplementedException();
+        }
+
+        public VoucherAddRequest? OpenAddVoucherDialog(AddVoucherViewModel viewModel)
+        {
+            Task<object?> task = _dialogService.Show(viewModel);
+            task.Wait();
+            object? value = task.Result;
+            if (value == null)
+                return null;
+            return value as VoucherAddRequest;
+        }
+
+        public void openNotificationScreen()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

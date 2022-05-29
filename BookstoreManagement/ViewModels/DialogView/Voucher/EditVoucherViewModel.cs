@@ -11,58 +11,57 @@ using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;
 
-namespace BookstoreManagement.ViewModels.DialogView.Supplier
+namespace BookstoreManagement.ViewModels.DialogView.Voucher
 {
-    public partial class EditSupplierViewModel : BaseViewModel, IDialog
+    public partial class EditVoucherViewModel: BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
 
-        public EditSupplierViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public EditVoucherViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
         {
             _model = model;
         }
-        //TODO: thiết kế nhà cung cấp chưa đúng còn thiếu
 
-        [ObservableProperty]
-        [Required]
-        private string? _image;
-        
         [ObservableProperty]
         [Required]
         private string? _id;
-
-        [ObservableProperty]
-        [Required]
-        private string? _name;
         
         [ObservableProperty]
         [Required]
-        private string? _address;
-        [ObservableProperty]
-        [Required]
-        private DateTime? _coopdate;
-
+        private int? _discount;
+        
         [ObservableProperty] 
         [Required]
-        private string? _booktype;
+        private int? _quantity;
         
         [ObservableProperty]
         [Required]
-        private string? _phone;
+        private DateTime? _datestart;
         
         [ObservableProperty]
         [Required]
-        private string? _email;
+        private DateTime? _dateexpired;
+        
+        [ObservableProperty]
+        [Required]
+        private int? _maxuse;
+        
+        [ObservableProperty]
+        [Required]
+        private string? _condition;
+        
+        [ObservableProperty]
+        [Required]
+        private string? _morecondition;
 
-
-        public PublisherEditRequest? ToEditRequest()
+        public VoucherEditRequest? ToEditRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new PublisherEditRequest()
+            return new VoucherEditRequest()
             {
 
             };

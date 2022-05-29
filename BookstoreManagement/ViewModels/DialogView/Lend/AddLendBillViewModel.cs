@@ -1,28 +1,101 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView
 {
-    public partial class AddLendBillViewModel : BaseViewModel
+    public partial class AddLendBillViewModel : BaseViewModel, IDialog
     {
-        public void dismissDialog() { }
+        private readonly IModelRemote _model;
 
-        [ObservableProperty] object? lendCustomerId;
-        [ObservableProperty] object? lendCustomerName;
-        [ObservableProperty] object? lendCustomerPhone;
-        [ObservableProperty] object? lendCustomerAddress;
-        [ObservableProperty] object? lendBookId;
-        [ObservableProperty] object? lendBookName;
-        [ObservableProperty] object? lendBookQuantity;
-        [ObservableProperty] object? lendBookPrice;
-        [ObservableProperty] object? lendBookType;
-        [ObservableProperty] object? lendDate;
-        [ObservableProperty] object? lendExpired;
-        [ObservableProperty] object? lendNote;
+        public AddLendBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        {
+            _model = model;
+        }
+
+        [ObservableProperty] 
+        [Required]
+        private string? _customerid;
         
+        [ObservableProperty]
+        [Required]
+        private string? _customername;
+        
+        [ObservableProperty] 
+        [Required]
+        private string? _customerPhone;
+        
+        [ObservableProperty] 
+        [Required]
+        private string? _customerAddress;
+        
+        [NotNull]
+        [ItemNotNull]
+        public List<Book> PublisherSource
+        {
+            get
+            {
+                List<Book>? publisherSource = null;
+                Dispose(_model.getListBook(), result => publisherSource = result);
+                return publisherSource!;
+            }
+        }
+        [ObservableProperty] private Book? _book;
+        
+//        [ObservableProperty] object? lendBookId;
+//        [ObservableProperty] object? lendBookName;
+
+        [ObservableProperty]
+        [Required]
+        private string? _quantity;
+        
+        [ObservableProperty]
+        [Required]
+        private int? _price;
+        
+        [ObservableProperty]
+        [Required]
+        private string? _type;
+        
+        [ObservableProperty]
+        [Required]
+        private DateTime? _lenddate;
+        
+        [ObservableProperty] 
+        [Required]
+        private DateTime? _lendexpired;
+        
+        [ObservableProperty]
+        [Required]
+        private string? _note;
+        
+        public LendAddRequest? ToAddRequest()
+        {
+            ValidateAllProperties();
+
+            if (HasErrors)
+                return null;
+
+            return new LendAddRequest()
+            {
+
+            };
+        }
+
+        public event Action<object?>? CloseAction;
+        [ICommand]
+        public void Close()
+        {
+            CloseAction?.Invoke(ToAddRequest());
+        }
     }
 }
