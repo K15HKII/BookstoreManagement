@@ -32,8 +32,9 @@
                 </StackPanel>
             </DockPanel>
 
-            <ScrollViewer VerticalScrollBarVisibility="Hidden"
-                          HorizontalScrollBarVisibility="Auto" Background="Black">
+            <ScrollViewer Background="Black"
+                          Height="{Binding RelativeSource={RelativeSource FindAncestor, 
+                        AncestorType={x:Type Grid}}, Path=ActualHeight}">
                 <component:PageItemsControl Margin="0 0 0 0"
                                             Width="928" VerticalAlignment="Top"
                                             HorizontalAlignment="Left">
