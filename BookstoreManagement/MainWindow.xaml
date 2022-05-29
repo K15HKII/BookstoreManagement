@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookstoreManagement"
         xmlns:component="clr-namespace:BookstoreManagement.Components"
+        xmlns:panel="clr-namespace:BookstoreManagement.Components.Panels"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
         mc:Ignorable="d"
@@ -57,39 +58,7 @@
 			</DataTemplate>
 	</Grid>-->
 
-    <ScrollViewer Width="928"
-                  Background="Black">
-        <component:PageItemsControl Margin="0 0 0 0">
-            <component:PageItemsControl.ItemsTemplate>
-                <ListView x:Name="itemsControl"
-                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="Padding"
-                                    Value="0 0 0 0" />
-                            <Setter Property="Margin"
-                                    Value="14 0 14 57" />
-                            <Setter Property="BorderThickness"
-                                    Value="0" />
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                    <ListView.ItemTemplate>
-                        <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:ProductCard Width="210" />
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel Margin="-14 0 -14 0"
-                                       IsItemsHost="True"
-                                       Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
-                </ListView>
-                
-            </component:PageItemsControl.ItemsTemplate>
-        </component:PageItemsControl>
-    </ScrollViewer>
+    <panel:BookStoragePanel Width="928"/>
 
     <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
                     <ItemsControl.Resources >

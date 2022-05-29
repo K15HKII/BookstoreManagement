@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookstoreManagement.Data.Model.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,48 @@ namespace BookstoreManagement.Components.Panels
         public BookStoragePanel()
         {
             InitializeComponent();
+
+            BookProfile a = new BookProfile()
+            {
+                Name = "ABC",
+                AuthorId = 10,
+                Price = 10000,
+                PublisherName = "hi",
+                Description = "Aluha",
+            };
+
+            BookProfile b = new BookProfile()
+            {
+                Name = "ABCASDA",
+                AuthorId = 10,
+                Price = 10000,
+                Description = "Aluha"
+            };
+
+            Publisher publisher = new Publisher()
+            {
+                Name = "ABC",
+            };
+
+            Voucher voucher = new Voucher()
+            {
+                ExpiredDate = DateTime.Now,
+            };
+
+            List<Object> list = new List<Object>
+            {
+                a,
+                b,
+                a,
+                a,
+                b,
+                b,
+                new CartItem()
+                {
+                    BookProfile = "jawdlawd"
+                }
+            };
+            itemsControl.ItemsSource = new List<Object> { a, b, a, a, a, a, a, a, a };
         }
     }
 }
