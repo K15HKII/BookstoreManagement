@@ -5,11 +5,24 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
+using BookstoreManagement.ViewModels.BookStore;
 
 namespace BookstoreManagement.ViewModels.Rating
 {
-    public partial class RatingViewModel : BaseViewModel<RatingNavigator>
+    public partial class RatingViewModel : BaseViewModel<IRatingNavigator>
     {
+        private readonly IViewModelFactory _factory;
+        private readonly IModelRemote _model;
+
+        public RatingViewModel(IRatingNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        {
+            _factory = factory;
+            _model = model;
+        }
+        
         //Thiếu xoá đánh giá
         public void openAccount() { }
 

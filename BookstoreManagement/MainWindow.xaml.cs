@@ -66,7 +66,7 @@ namespace BookstoreManagement
                     BookProfile = "jawdlawd"
                 }
             };
-            itemsControl.ItemsSource = new List<Object> { a, b };
+            //itemsControl.ItemsSource = new List<Object> { a, b };
             //i.DataContext = a;
 
             //ii.DataContext = publisher;

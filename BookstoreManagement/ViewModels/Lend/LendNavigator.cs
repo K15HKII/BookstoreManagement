@@ -1,17 +1,35 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.DialogView;
 
-namespace BookstoreManagement.ViewModels.Lend
+namespace BookstoreManagement.ViewModels.Lend;
+
+public class LendNavigator : ILendNavigator
 {
-    public interface LendNavigator : INavigator
-    {
-        void openAccountScreen();
+    private readonly IDialogService _dialogService;
 
-        void openNotificationScreen();
+    public LendNavigator(IDialogService dialogService)
+    {
+        _dialogService = dialogService;
+    }
+    public void openAccountScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void openNotificationScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public LendAddRequest? OpenNewLendBillDialog(AddLendBillViewModel viewModel)
+    {
+        Task<object?> task = _dialogService.Show(viewModel);
+        task.Wait();
+        object? value = task.Result;
+        if (value == null)
+            return null;
+        return value as LendAddRequest;
     }
 }

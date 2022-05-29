@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BookstoreManagement.ViewModels.Dashboard;
 
-namespace BookstoreManagement.ViewModels.Dashboard
+public class DashboardNavigator : IDashboardNavigator
 {
-    public interface DashboardNavigator : INavigator
+    public void openAccountScreen()
     {
-        void openAccountScreen();
+        throw new System.NotImplementedException();
+    }
 
-        void openNotificationScreen();
+    public void openNotificationScreen()
+    {
+        throw new System.NotImplementedException();
     }
 }
