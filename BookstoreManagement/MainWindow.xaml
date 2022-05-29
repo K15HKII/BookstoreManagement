@@ -58,7 +58,7 @@
 			</DataTemplate>
 	</Grid>-->
 
-    <panel:BookStoragePanel Width="928"/>
+    <component:BillStateSelectorTab Width="928"/>
 
     <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
                     <ItemsControl.Resources >
