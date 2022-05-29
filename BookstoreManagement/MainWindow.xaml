@@ -58,7 +58,8 @@
 			</DataTemplate>
 	</Grid>-->
 
-    <component:BillStateSelectorTab Width="928"/>
+    <panel:UserManagementPanel/>
+
 
     <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
                     <ItemsControl.Resources >
