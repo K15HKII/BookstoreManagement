@@ -16,9 +16,24 @@
         <StackPanel>
             <h:HeaderWithSearchBar Tag="Voucher" />
 
-            <DockPanel LastChildFill="False">
-                <TextBlock Text="So luong" />
-                <TextBlock Text="200" />
+            <DockPanel LastChildFill="False"
+                       Height="36"
+                       VerticalAlignment="Center"
+                       Margin="0 25 0 29">
+                <TextBlock Text="Số lượng"
+                           Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           VerticalAlignment="Center" />
+                <TextBlock Text="200"
+                           Margin="6 0 0 0"
+                           Style="{StaticResource Button}"
+                           Foreground="{StaticResource SolidOrangeColor}"
+                           VerticalAlignment="Center" />
+                <Button Margin="21 0 0 0"
+                        Background="Gray">
+                    <materialDesign:PackIcon Kind="DeleteOutline"
+                                             VerticalAlignment="Center" />
+                </Button>
 
                 <StackPanel DockPanel.Dock="Right"
                             Orientation="Horizontal">
@@ -27,8 +42,13 @@
                                       IsSelected="True">
                         </ComboBoxItem>
                     </ComboBox>
-                    <materialDesign:PackIcon Kind="Filter"
-                                             VerticalAlignment="Center" />
+                    <Button Padding="0"
+                            Width="24"
+                            Height="24"
+                            VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Filter"
+                                                 VerticalAlignment="Center" />
+                    </Button>
                 </StackPanel>
             </DockPanel>
 

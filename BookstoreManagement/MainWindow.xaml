@@ -58,7 +58,6 @@
 			</DataTemplate>
 	</Grid>-->
 
-    <panel:UserManagementPanel/>
 
 
     <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">

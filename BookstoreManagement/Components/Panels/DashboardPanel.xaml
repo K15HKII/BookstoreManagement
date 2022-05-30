@@ -32,11 +32,13 @@
 
             <StackPanel>
 
-                <ListView x:Name="itemsControl">
+                <ListView x:Name="itemsControl"
+                          Width="{Binding ElementName=p, Path=ActualWidth}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="Padding"
-                                    Value="0 0 0 8" />
+                                    Value="0 0 0 0" />
                             <Setter Property="Margin"
                                     Value="4 0 4 0" />
                             <Setter Property="BorderThickness"
@@ -45,19 +47,14 @@
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:StatisticLabel Width="160"
-                                                      Height="83" />
+                            <component:ProductCard Width="160" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
-            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
-                                       ItemWidth="{Binding (ListView.View).ItemWidth, 
-            RelativeSource={RelativeSource AncestorType=ListView}}"
-                                       MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
-                                       ItemHeight="{Binding (ListView.View).ItemHeight, 
-            RelativeSource={RelativeSource AncestorType=ListView}}" />
+                            <WrapPanel Margin="4 0 4 0"
+                                       IsItemsHost="True"
+                                       Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
                 </ListView>
