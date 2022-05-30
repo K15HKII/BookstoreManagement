@@ -9,6 +9,6 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
 {
     public interface IVoucherAdapterNavigator : INavigator
     {
-        object? OpenEditVoucherDialog(EditVoucherViewModel viewModel);
+        object? OpenDetailVoucherDialog(VoucherDetailViewModel viewModel);
     }
 }

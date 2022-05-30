@@ -4,5 +4,5 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter;
 
 public interface ISupplierInfoNavigator : INavigator
 {
-    object? OpenEditSupplierDialog(EditSupplierViewModel viewModel); //TODO: return edit request
+    object? OpenDetailSupplierDialog(SupplierDetailViewModel viewModel); //TODO: return edit request
 }

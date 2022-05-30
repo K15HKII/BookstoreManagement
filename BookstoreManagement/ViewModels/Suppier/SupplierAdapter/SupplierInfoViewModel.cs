@@ -35,10 +35,10 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 
         [ObservableProperty] object? supplierQuantity;
         public event Action<object?>? CloseAction;
-        public void OpenEdit()
+        public void OpenDetail()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditSupplierDialog(_factory.Create<EditSupplierViewModel>());
+            object? request = Navigator!.OpenDetailSupplierDialog(_factory.Create<SupplierDetailViewModel>());
 
             if (request == null)
                 return;
