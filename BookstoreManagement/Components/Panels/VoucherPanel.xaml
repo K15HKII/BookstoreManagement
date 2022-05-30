@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BookstoreManagement.Components.Panels.BookStoragePanel"
+﻿<UserControl x:Class="BookstoreManagement.Components.Panels.VoucherPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,13 +8,13 @@
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignWidth="928"
              Height="664">
-
+    
     <Grid>
         <StackPanel>
-            <h:HeaderWithSearchBar Tag="Kho Sách" />
+            <h:HeaderWithSearchBar Tag="Voucher" />
 
             <DockPanel LastChildFill="False">
                 <TextBlock Text="So luong" />
@@ -32,12 +32,13 @@
                 </StackPanel>
             </DockPanel>
 
-            <ScrollViewer Background="Black" x:Name="p"
+            <ScrollViewer Background="Black"
+                          Margin="0" x:Name="p"
                           VerticalScrollBarVisibility="Auto"
                           Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                         AncestorType={x:Type Grid}}, Path=ActualHeight}">
                 <component:PageItemsControl Margin="0 0 0 0"
-                                            Width="928" VerticalAlignment="Top"
+                                            VerticalAlignment="Top"
                                             HorizontalAlignment="Left">
                     <component:PageItemsControl.ItemsTemplate>
                         <ListView x:Name="itemsControl"
@@ -48,19 +49,19 @@
                                     <Setter Property="Padding"
                                             Value="0 0 0 0" />
                                     <Setter Property="Margin"
-                                            Value="14 0 14 57" />
+                                            Value="11 0 12 32" />
                                     <Setter Property="BorderThickness"
                                             Value="0" />
                                 </Style>
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
-                                <DataTemplate DataType="{x:Type api:BookProfile}">
-                                    <component:ProductCard Width="210" />
+                                <DataTemplate DataType="{x:Type api:Voucher}">
+                                    <component:VoucherCard Width="447" />
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <WrapPanel Margin="-14 0 -14 0"
+                                    <WrapPanel Margin="-11 0 -12 0"
                                                IsItemsHost="True"
                                                Orientation="Horizontal" />
                                 </ItemsPanelTemplate>
@@ -79,5 +80,4 @@
                                      Foreground="White" />
         </Button>
     </Grid>
-
 </UserControl>
