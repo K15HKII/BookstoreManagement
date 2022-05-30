@@ -8,6 +8,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Order;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Order
 {
@@ -33,5 +37,15 @@ namespace BookstoreManagement.ViewModels.Order
         [ObservableProperty] public object? selectedContent;
 
         [ObservableProperty] public object? orderBillQuantity;
+        
+        [ICommand]
+        public void AddNew()
+        {
+            BillAddRequest? request = Navigator!.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
+            if (request == null)
+                return;
+
+            //TODO: Send request through IModelRemote
+        }
     }
 }

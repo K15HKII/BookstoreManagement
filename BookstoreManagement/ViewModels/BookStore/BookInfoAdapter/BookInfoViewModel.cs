@@ -35,10 +35,10 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ObservableProperty] object? bookSupplier;
 
         [ICommand]
-        public void OpenEdit()
+        public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditBookDialog(_factory.Create<EditBookViewModel>());
+            object? request = Navigator!.OpenInfoBookDialog(_factory.Create<BookDetailViewModel>());
 
             if (request == null)
                 return;

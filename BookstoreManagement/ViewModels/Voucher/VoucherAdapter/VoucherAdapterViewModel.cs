@@ -36,10 +36,10 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
         [ObservableProperty] object? voucherApplyType;
 
         [ICommand]
-        public void OpenEdit()
+        public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditVoucherDialog(_factory.Create<EditVoucherViewModel>());
+            object? request = Navigator!.OpenDetailVoucherDialog(_factory.Create<VoucherDetailViewModel>());
 
             if (request == null)
                 return;
