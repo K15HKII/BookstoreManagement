@@ -12,33 +12,23 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 {
-    public partial class BookInfoViewModel : BaseViewModel<IBookInfoNavigator>
+    public partial class BookDetailViewModel : BaseBookViewModel<IBookInfoNavigator>
     {
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
-        public BookInfoViewModel(IBookInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookDetailViewModel(IBookInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
         {
             _factory = factory;
             _model = model;
         }
 
-        [ObservableProperty] private object? _image;
-
-        [ObservableProperty] private object? _name;
-
-        [ObservableProperty] private object? _rate;
-
-        [ObservableProperty] object? _price;
-
-        [ObservableProperty] object? _supplier;
-
         [ICommand]
         public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenInfoBookDialog(_factory.Create<BookDetailViewModel>());
+            object? request = Navigator!.OpenInfoBookDialog(_factory.Create<DialogView.BookStore.BookDialogViewModel>());
 
             if (request == null)
                 return;

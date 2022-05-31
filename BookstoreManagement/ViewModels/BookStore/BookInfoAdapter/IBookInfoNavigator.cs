@@ -10,7 +10,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
     public interface IBookInfoNavigator : INavigator
     {
 
-        object? OpenInfoBookDialog(BookDetailViewModel viewModel); //TODO: return edit request
+        object? OpenInfoBookDialog(DialogView.BookStore.BookDialogViewModel viewModel); //TODO: return edit request
 
     }
 }

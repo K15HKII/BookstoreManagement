@@ -41,7 +41,7 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         [ObservableProperty] ObservableCollection<CustomerViewModel>? _userList;
 
-        [ObservableProperty] ObservableCollection<BookDetailViewModel>? _bookList;
+        [ObservableProperty] ObservableCollection<BookDialogViewModel>? _bookList;
         
     }
 }

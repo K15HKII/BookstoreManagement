@@ -13,26 +13,17 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.BookStore
 {
-    public partial class BookDetailViewModel : BaseViewModel<IBookDetailNavigator>, IDialog
+    public partial class BookDialogViewModel : BaseBookViewModel<IBookDetailNavigator>, IDialog
     {
         private readonly IModelRemote _model;
         private readonly IViewModelFactory _factory;
 
-        public BookDetailViewModel(IBookDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookDialogViewModel(IBookDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
         {
             _model = model;
             _factory = factory;
         }
-        
-        [ObservableProperty] private string? _id;
-        [ObservableProperty] private string? _name;
-        [ObservableProperty] private string? _description;
-        [ObservableProperty] private BookTag[] _tags;
-        [ObservableProperty] private string? _authorName;
-        [ObservableProperty] private string? _publisherName;
-        [ObservableProperty] private decimal? _price;
-        [ObservableProperty] private int? _quantity;
-        
+
         [ObservableProperty] object? _sold;
         
         public event Action<object?>? CloseAction;

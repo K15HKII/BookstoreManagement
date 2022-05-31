@@ -17,10 +17,10 @@
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
             <components:MainMenuItem Icon="ViewDashboard" Text="Dashboard"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type report:ReportViewModel}">
+        <DataTemplate DataType="{x:Type report:ReportPanelViewModel}">
             <components:MainMenuItem Icon="ChartBox" Text="Report"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type bookStore:BookStoreViewModel}">
+        <DataTemplate DataType="{x:Type bookStore:BookPanelViewModel}">
             <components:MainMenuItem Icon="BookOpenPageVariant" Text="Bookstore"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
@@ -50,10 +50,10 @@
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
             <panels:DashboardPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type report:ReportViewModel}">
+        <DataTemplate DataType="{x:Type report:ReportPanelViewModel}">
             <panels:StatisticPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type bookStore:BookStoreViewModel}">
+        <DataTemplate DataType="{x:Type bookStore:BookPanelViewModel}">
             <panels:BookStoragePanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type order:OrderViewModel}">

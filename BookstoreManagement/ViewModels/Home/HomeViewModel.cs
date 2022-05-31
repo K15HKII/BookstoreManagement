@@ -39,8 +39,8 @@ namespace BookstoreManagement.ViewModels
             _tabContents = new()
             {
                 factory.Create<DashboardViewModel>(),
-                factory.Create<ReportViewModel>(),
-                factory.Create<BookStoreViewModel>(),
+                factory.Create<ReportPanelViewModel>(),
+                factory.Create<BookPanelViewModel>(),
                 factory.Create<OrderViewModel>(),
                 factory.Create<VoucherViewModel>(),
                 factory.Create<RatingViewModel>(),

@@ -44,6 +44,8 @@ using BookstoreManagement.ViewModels.DialogView.Supplier;
 using BookstoreManagement.ViewModels.DialogView;
 using BookstoreManagement.ViewModels.Home;
 using BookstoreManagement.Views.ViewStates;
+using BookDetailViewModel = BookstoreManagement.ViewModels.BookStore.BookInfoAdapter.BookDetailViewModel;
+using LendViewModel = BookstoreManagement.ViewModels.Lend.LendAdapter.LendViewModel;
 
 namespace BookstoreManagement.Services
 {
@@ -138,10 +140,10 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<DashboardViewModel>();
 
                 service.AddSingleton<IReportNavigator, ReportNavigator>();
-                service.AddViewModel<ReportViewModel>();
+                service.AddViewModel<ReportPanelViewModel>();
 
                 service.AddSingleton<IBookStoreNavigator, BookStoreNavigator>();
-                service.AddViewModel<BookStoreViewModel>();
+                service.AddViewModel<BookPanelViewModel>();
 
                 service.AddSingleton<IOrderNavigator, OrderNavigator>();
                 service.AddViewModel<OrderViewModel>();
@@ -159,7 +161,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<ManagerViewModel>();
                 
                 service.AddSingleton<ILendNavigator, LendNavigator>();
-                service.AddViewModel<LendViewModel>();
+                service.AddViewModel<ViewModels.Lend.LendViewModel>();
 
                 service.AddSingleton<ISupplierNavigator, SupplierNavigator>();
                 service.AddViewModel<SupplierViewModel>();
@@ -177,7 +179,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<BookAdapterViewModel>();
 
                 //BookStore
-                service.AddViewModel<BookInfoViewModel>();
+                service.AddViewModel<BookDetailViewModel>();
 
                 //Order
                 service.AddViewModel<OrderInfoViewModel>();
@@ -210,14 +212,12 @@ namespace BookstoreManagement.Services
                 
 
                 //Lend
-                service.AddViewModel<LendInfoViewModel>();
-                //LendExpander
-                service.AddViewModel<LendInfoExpandViewModel>();
+                service.AddViewModel<LendViewModel>();
 
 
                 //Dialog
                 //BookStore.DetailView
-                service.AddViewModel<BookDetailViewModel>();
+                service.AddViewModel<ViewModels.DialogView.BookStore.BookDialogViewModel>();
                 service.AddViewModel<AddBookViewModel>();
                 service.AddViewModel<EditBookViewModel>();
 

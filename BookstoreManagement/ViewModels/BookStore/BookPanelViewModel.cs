@@ -14,13 +14,13 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.BookStore
 {
-    public partial class BookStoreViewModel : BaseViewModel<IBookStoreNavigator>
+    public partial class BookPanelViewModel : BaseViewModel<IBookStoreNavigator>
     {
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
-        public BookStoreViewModel(IBookStoreNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookPanelViewModel(IBookStoreNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
         {
             _factory = factory;
             _model = model;
@@ -31,9 +31,9 @@ namespace BookstoreManagement.ViewModels.BookStore
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsBooks;
+        [ObservableProperty] public ObservableCollection<BookDialogViewModel>? _books;
 
-        [ObservableProperty] public object? selectedBook;
+        [ObservableProperty] public ObservableCollection<BookDialogViewModel>? _selectedBooks;
 
         [ICommand]
         public void AddNew()

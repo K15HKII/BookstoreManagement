@@ -64,7 +64,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type bookStore:BookDetailViewModel}">
+                <DataTemplate DataType="{x:Type bookStore:BookDialogViewModel}">
                     <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />

@@ -12,6 +12,7 @@ using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.DialogView;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.Lend.LendAdapter;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Lend
@@ -32,9 +33,44 @@ namespace BookstoreManagement.ViewModels.Lend
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsLendBills;
+        private ObservableCollection<LendViewModel> _sourceLends;
+        public ObservableCollection<LendViewModel>? SourceLends
+        {
+            get => _sourceLends;
+            set
+            {
+                _sourceLends = value;
+                _sourceLends.CollectionChanged += (sender, args) =>
+                {
+                    //TODO: apply filter logic
+                    filter(_sourceLends, WaitingLends, model =>
+                    {
+                        return true;
+                    });
+                };
+            }
+        }
 
-        [ObservableProperty] public object? selectedLendBill;
+        private void filter(ObservableCollection<LendViewModel> source, ObservableCollection<LendViewModel> target,
+            Func<LendViewModel, bool> predicate)
+        {
+            target.Clear();
+            foreach (var item in source)
+            {
+                if (predicate(item))
+                {
+                    target.Add(item);
+                }
+            }
+        }
+
+        [ObservableProperty] private ObservableCollection<LendViewModel>? _waitingLends;
+        [ObservableProperty] private ObservableCollection<LendViewModel>? _usingLends;
+        [ObservableProperty] private ObservableCollection<LendViewModel>? _finishLends;
+        [ObservableProperty] private ObservableCollection<LendViewModel>? _cancelledLends;
+
+
+        [ObservableProperty] public ObservableCollection<LendViewModel> _selectedLends;
         
         [ICommand]
         public void AddNew()
