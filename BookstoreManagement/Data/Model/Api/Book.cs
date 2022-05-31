@@ -12,7 +12,26 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("profileid")]
-        public string ProfileId { get; set; }
+        [JsonProperty("title")]
+        public string Title { get; set; }
+        
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+        
+        [JsonProperty("isbn")]
+        public string? Isbn { get; set; }
+        
+        [JsonProperty("stock")]
+        public int Stock { get; set; }
+        
+        [JsonProperty("author_id")]
+        public int AuthorId { get; set; }
+        
+        [JsonProperty("price")]
+        public float Price { get; set; }
+        
+        [JsonProperty("publisher_id")]
+        public int PublisherId { get; set; }
+        
     }
 }

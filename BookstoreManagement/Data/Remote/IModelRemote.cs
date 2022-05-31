@@ -80,33 +80,7 @@ namespace BookstoreManagement.Data.Remote
         IObservable<Object> deleteTransport(string id);
         #endregion
 
-        #region BookProfile
-        [Get("/api/model/bookprofile")]
-        IObservable<List<BookProfile>> getListBookProfile();
-
-        [Get("/api/model/bookprofile")]
-        IObservable<BookProfile> getBookProfile(string id);
-
-        [Post("/api/model/bookprofile")]
-        IObservable<Object> saveBookProfile(BookProfile bookProfile);
-
-        [Delete("/api/model/bookprofile")]
-        IObservable<Object> deleteBookProfile(string id);
-        #endregion
-
-        #region BookProfileImage
-        [Get("/api/model/bookprofileimage")]
-        IObservable<List<BookProfileImage>> getListBookProfileImage();
-
-        [Get("/api/model/bookprofileimage")]
-        IObservable<BookProfileImage> getBookProfileImage(string id);
-
-        [Post("/api/model/bookprofileimage")]
-        IObservable<Object> saveBookProfileImage(BookProfileImage bookProfileImage);
-
-        [Delete("/api/model/bookprofileimage")]
-        IObservable<Object> deleteBookProfileImage(string id);
-        #endregion
+        
 
         #region Book
         [Get("/api/model/book")]

@@ -5,13 +5,23 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
 
 namespace BookstoreManagement.ViewModels.Order.Page
 {
     public partial class ArrivedPageViewModel : BaseViewModel
     {
-        [ObservableProperty] public ObservableCollection<object>? lsOrders;
+        private readonly IModelRemote _model;
 
-        [ObservableProperty] public object? selectedOrder;
+        public ArrivedPageViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        {
+            _model = model;
+        }
+        
+        [ObservableProperty] public ObservableCollection<object>? _lsorders;
+
+        [ObservableProperty] public object? _selectedorder;
     }
 }

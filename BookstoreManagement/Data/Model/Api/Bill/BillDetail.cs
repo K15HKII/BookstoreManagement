@@ -9,13 +9,16 @@ namespace BookstoreManagement.Data.Model.Api
 {
     public class BillDetail
     {
-        [JsonProperty("billid")]
+        [JsonProperty("bill_id")]
         public int BillId { get; set; }
 
-        [JsonProperty("bookid")]
+        [JsonProperty("book_id")]
         public string BookId { get; set; }
 
-        [JsonProperty("price")]
-        public decimal Price { get; set; }
+        [JsonProperty("unit_price")]
+        public float UnitPrice { get; set; }
+        
+        [JsonProperty("quantity")]
+        public int Quantity { get; set; }
     }
 }

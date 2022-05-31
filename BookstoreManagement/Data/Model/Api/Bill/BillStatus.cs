@@ -8,6 +8,6 @@ namespace BookstoreManagement.Data.Model.Api
 {
     public enum BillStatus
     {
-        Pending, Paid, Cancelled
+        WAITING, PROCESSING, TRANSPORTING, COMPLETED, CANCELED
     }
 }
