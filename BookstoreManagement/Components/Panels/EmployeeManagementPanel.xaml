@@ -28,10 +28,13 @@
                            Style="{StaticResource Button}"
                            Foreground="{StaticResource SolidOrangeColor}"
                            VerticalAlignment="Center"/>
-                <Button Margin="21 0 0 0" 
-                        Background="Gray">
+                <Button Margin="21 0 0 0"
+                        Style="{StaticResource PrimaryButton}"
+                        Width="56"
+                        Height="36">
                     <materialDesign:PackIcon Kind="DeleteOutline"
-                                             VerticalAlignment="Center" />
+                                             Width="24"
+                                             Height="24"/>
                 </Button>
 
                 <StackPanel DockPanel.Dock="Right"
@@ -42,8 +45,10 @@
                         </ComboBoxItem>
                     </ComboBox>
                     <Button Padding="0"
+                            Margin="0,2"
                             Width="24"
-                            Height="24"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
                             VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Filter"
                                                  VerticalAlignment="Center" />

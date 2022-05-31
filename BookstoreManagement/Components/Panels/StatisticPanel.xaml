@@ -20,7 +20,10 @@
                         VerticalAlignment="Center"
                         Height="32"
                         Margin="0 0 0 28">
-                <Button Padding="0">
+                <Button Padding="0"
+                        Margin="0,2"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}">
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center">
                         <materialDesign:PackIcon Kind="Calendar"
@@ -37,8 +40,10 @@
                     </ComboBoxItem>
                 </ComboBox>
                 <Button Padding="0"
+                        Margin="0,2"
                         Width="24"
-                        Height="24"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
                         VerticalAlignment="Center">
                     <materialDesign:PackIcon Kind="Filter"
                                              VerticalAlignment="Center" />

@@ -130,7 +130,7 @@
     <Style x:Key="PrimaryButton"
            TargetType="Button">
         <Setter Property="MinWidth"
-                Value="97" />
+                Value="40" />
         <Setter Property="Height"
                 Value="36" />
         <Setter Property="FontFamily"

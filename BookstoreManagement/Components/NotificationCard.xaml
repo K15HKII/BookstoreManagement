@@ -17,7 +17,7 @@
                        Margin="16 0 16 16">
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="Black"
-                           Text="Tieu de"
+                           Text="{Binding Title}"
                            VerticalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Right"
@@ -44,7 +44,7 @@
                            Style="{StaticResource Body}"
                            Foreground="Black"
                            TextWrapping="Wrap"
-                           Text="Noi dung thong bao Noi dung thong baoNoi dung thong baoNoi dung thong bao Noi dung thong bao" />
+                           Text="{Binding Description}" />
             </DockPanel>
         </StackPanel>
         

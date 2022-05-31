@@ -21,7 +21,8 @@
             <StackPanel>
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidDarkPrimaryColor}"
-                           Margin="0 0 0 4"/>
+                           Margin="0 0 0 4"
+                           Text="{Binding Discount}"/>
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="{StaticResource SolidDarkPrimaryColor}"
                            Margin="0 0 0 14"/>

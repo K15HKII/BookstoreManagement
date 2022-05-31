@@ -26,46 +26,46 @@ namespace BookstoreManagement
             InitializeComponent();
 
 
-            BookProfile a = new BookProfile()
-            {
-                Name = "ABC",
-                AuthorId = 10,
-                Price = 10000,
-                PublisherName = "hi",
-                Description = "Aluha",
-            };
+            //BookProfile a = new BookProfile()
+            //{
+            //    Name = "ABC",
+            //    AuthorId = 10,
+            //    Price = 10000,
+            //    PublisherName = "hi",
+            //    Description = "Aluha",
+            //};
 
-            BookProfile b = new BookProfile()
-            {
-                Name = "ABCASDA",
-                AuthorId = 10,
-                Price = 10000,
-                Description = "Aluha"
-            };
+            //BookProfile b = new BookProfile()
+            //{
+            //    Name = "ABCASDA",
+            //    AuthorId = 10,
+            //    Price = 10000,
+            //    Description = "Aluha"
+            //};
 
-            Publisher publisher = new Publisher()
-            {
-                Name = "ABC",
-            };
+            //Publisher publisher = new Publisher()
+            //{
+            //    Name = "ABC",
+            //};
 
-            Voucher voucher = new Voucher()
-            {
-                ExpiredDate = DateTime.Now,
-            };
+            //Voucher voucher = new Voucher()
+            //{
+            //    ExpiredDate = DateTime.Now,
+            //};
 
-            List<Object> list = new List<Object>
-            {
-                a,
-                b,
-                a,
-                a,
-                b,
-                b,
-                new CartItem()
-                {
-                    BookProfile = "jawdlawd"
-                }
-            };
+            //List<Object> list = new List<Object>
+            //{
+            //    a,
+            //    b,
+            //    a,
+            //    a,
+            //    b,
+            //    b,
+            //    new CartItem()
+            //    {
+            //        BookProfile = "jawdlawd"
+            //    }
+            //};
             //itemsControl.ItemsSource = new List<Object> { a, b, a, a, a, a, a, a, a };
             //i.DataContext = a;
 

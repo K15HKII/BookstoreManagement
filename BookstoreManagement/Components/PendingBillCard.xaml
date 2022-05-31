@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              mc:Ignorable="d" 
-             d:DesignHeight="114" d:DesignWidth="449"
-             DataContext="{x:Type api:BillDetail}">
+             d:DesignHeight="114" d:DesignWidth="449">
     
     <Border CornerRadius="8"
             Background="White"
@@ -19,9 +18,8 @@
             </Grid.ColumnDefinitions>
             <Border CornerRadius="8"
                     BorderThickness="1"
-                    BorderBrush="Black"
-                    DataContext="{x:Type api:BookProfileImage}">
-                <Image Source="{Binding Image}"></Image>
+                    BorderBrush="Black">
+                <Image Source="{Binding Images}"></Image>
             </Border>
             <Grid Grid.Column="1"
                   Margin="16 14 0 14">
@@ -52,7 +50,6 @@
                                    HorizontalAlignment="Right"/>
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkPrimaryColor}"
-                                   DataContext="{x:Type api:Bill}"
                                    Text="{Binding Date}"/>
                     </StackPanel>
 

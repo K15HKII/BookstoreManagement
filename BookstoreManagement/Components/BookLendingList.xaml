@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              mc:Ignorable="d" 
              Width="928"
              x:Name="root">
@@ -62,7 +63,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate DataType="{x:Type api:Lend}">
                     <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
@@ -84,10 +85,10 @@
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="Ten sach"
+                                           Text="{Binding BookId}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="#Ma sach"
+                                           Text="{Binding Id}"
                                            Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}" />
                             </StackPanel>
@@ -95,32 +96,32 @@
                         <TextBlock Grid.Column="1"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Thể loại"
+                                   Text="{Binding Type}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="2"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Giá bìa"
+                                   Text="{Binding Price}"
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidOrangeColor}" />
 
                         <TextBlock Grid.Column="3"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Nhà cung cấp"
+                                   Text="{Binding PublisherId}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="4"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Trạng thái"
+                                   Text="{Binding State}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="5"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="02/02/2022"
+                                   Text="{Binding EndTime}"
                                    Style="{StaticResource Title}" />
 
                     </Grid>

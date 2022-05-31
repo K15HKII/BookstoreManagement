@@ -32,14 +32,6 @@ namespace BookstoreManagement.Components.Panels
             tabMarks[2] = shippedOrderSelectMark;
             selectTab(0);
 
-            BillDetail billDetail = new BillDetail()
-            {
-                BillId = 0,
-                Price = 1000
-            };
-
-            itemsControl.ItemsSource = new List<BillDetail>() { billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail };
-            itemsControl1.ItemsSource = new List<BillDetail>() { billDetail, billDetail, billDetail, billDetail, billDetail, billDetail };
         }
 
         private void selectTab(int index)

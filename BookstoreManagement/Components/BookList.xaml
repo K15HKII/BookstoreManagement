@@ -19,7 +19,7 @@
             Width="928px">
         <ItemsControl Margin="12 0 20 0" x:Name="itemsControl">
             <ItemsControl.Template> 
-                <ControlTemplate TargetType="ItemsControl">
+                <ControlTemplate TargetType="ItemsControl"> 
                     <StackPanel>
                         <Grid x:Name="PART_Header">
                             <Grid.ColumnDefinitions>
@@ -62,7 +62,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type api:BookProfile}">
+                <DataTemplate DataType="{x:Type api:Book}">
                     <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
@@ -80,14 +80,13 @@
                                     CornerRadius="4"
                                     Background="Transparent"
                                     Margin="0 0 8 0">
-                                <Image DataContext="{x:Type api:BookProfileImage}"
-                                       Source="{Binding Image}"
+                                <Image Source="{Binding Image}"
                                        x:Name="bookImage"></Image>
                             </Border>
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="{Binding Name}"
+                                           Text="{Binding Title}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
                                            Text="{Binding Id}"
@@ -98,7 +97,7 @@
                         <TextBlock Grid.Column="1"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="Thể loại"
+                                   Text="{Binding Tag}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="2"
@@ -111,8 +110,7 @@
                         <TextBlock Grid.Column="3"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   DataContext="{x:Type api:Publisher}"
-                                   Text="{Binding Name}"
+                                   Text="{Binding PublisherId}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="4"
@@ -124,7 +122,7 @@
                         <TextBlock Grid.Column="5"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text=""
+                                   Text="{Binding SoldQuantity}"
                                    Style="{StaticResource Title}" />
 
                     </Grid>

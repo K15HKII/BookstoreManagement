@@ -25,13 +25,13 @@ namespace BookstoreManagement.Components
         {
             InitializeComponent();
 
-            BookProfileImage b = new BookProfileImage()
-            {
-                Id = "1",
-                Image = @"/BookstoreManagement;component/Images/image.jpg"
-            };
+            //BookProfileImage b = new BookProfileImage()
+            //{
+            //    Id = "1",
+            //    Image = @"/BookstoreManagement;component/Images/image.jpg"
+            //};
 
-            Image1.DataContext = b;
+            //Image1.DataContext = b;
         }
     }
 }

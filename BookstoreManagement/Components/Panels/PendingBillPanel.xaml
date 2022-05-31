@@ -34,10 +34,14 @@
                                Foreground="{StaticResource SolidOrangeColor}"
                                VerticalAlignment="Center" />
                     <Button Margin="21 0 0 0"
-                            Background="Gray">
+                            Style="{StaticResource PrimaryButton}"
+                            Width="56"
+                            Height="36">
                         <materialDesign:PackIcon Kind="DeleteOutline"
-                                                 VerticalAlignment="Center" />
+                                                 Width="24"
+                                                 Height="24" />
                     </Button>
+
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="btnConfirmWaitingOrderTab"

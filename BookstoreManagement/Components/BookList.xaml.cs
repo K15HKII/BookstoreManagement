@@ -24,37 +24,6 @@ namespace BookstoreManagement.Components
         public BookList()
         {
             InitializeComponent();
-
-            BookProfile bookProfile = new BookProfile()
-            {
-                Id = "#1",
-                Name = "ABC",
-                Price = 10000,
-                PublisherId = 1
-            };
-
-            BookProfile bookProfile1 = new BookProfile()
-            {
-                Id = "#2",
-                Name = "ABC",
-                Price = 10000,
-                PublisherId = 1
-
-            };
-
-            //Publisher p = new Publisher()
-            //{
-            //    Id = 1,
-            //    Name = "a"
-            //};
-
-            //BookProfileImage profileImage = new BookProfileImage()
-            //{
-            //    Id = "#1",
-            //    Image = @"/BookstoreManagement;component/Images/image.jpg"
-            //};
-
-            itemsControl.ItemsSource = new List<BookProfile>() { bookProfile, bookProfile1 };
             
         }
 

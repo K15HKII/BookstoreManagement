@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:shape="clr-namespace:BookstoreManagement.Components.Shapes"
              mc:Ignorable="d"
              d:DesignWidth="210">
@@ -38,8 +39,10 @@
                             Margin="0 8 0 8">
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
+                               Text="{Binding Name}"
                                Margin="0 0 8 0" />
                     <TextBlock Style="{StaticResource Title}"
+                               Text="{Binding Id}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                VerticalAlignment="Bottom" />
                 </StackPanel>
