@@ -12,5 +12,19 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("id")]
         public string Id { get; set; }
 
+        [JsonProperty("name")]
+        public string Name { get; set; }
+        
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+        
+        [JsonProperty("discount_type")]
+        public DiscountType DiscountType { get; set; }
+        
+        [JsonProperty("discount")]
+        public float Discount { get; set; }
+        
+        
+        
     }
 }

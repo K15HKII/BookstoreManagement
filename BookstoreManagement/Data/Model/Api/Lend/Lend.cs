@@ -12,18 +12,17 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("userid")]
+        [JsonProperty("user_id")]
         public string UserId { get; set; }
 
-        [JsonProperty("bookprofileid")]
-        public string BookProfileId { get; set; }
+        [JsonProperty("book_id")]
+        public string BookId { get; set; }
 
-        [JsonProperty("start")]
-        public DateTime Start { get; set; }
+        [JsonProperty("start_date")]
+        public DateTime StartDate { get; set; }
 
-        [JsonProperty("end")]
-        public DateTime End { get; set; }
-
-
+        [JsonProperty("end_date")]
+        public DateTime EndDate { get; set; }
+        
     }
 }

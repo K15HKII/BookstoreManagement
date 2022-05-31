@@ -12,10 +12,10 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("id")]
         public string Id { get; set; }
 
-        [JsonProperty("transporterid")]
+        [JsonProperty("transporter_id")]
         public int TransporterId { get; set; }
 
-        [JsonProperty("transportid")]
-        public int TransportId { get; set; }
+        [JsonProperty("tracking")]
+        public string Tracking { get; set; }
     }
 }
