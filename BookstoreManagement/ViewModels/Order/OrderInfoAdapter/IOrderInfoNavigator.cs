@@ -1,6 +1,8 @@
-﻿namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
+﻿using BookstoreManagement.ViewModels.DialogView.Order;
 
-public interface IOrderInfoViewModel : INavigator
+namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
+
+public interface IOrderInfoNavigator : INavigator
 {
-    object? OpenDetailBookDialog(OrderInfoViewModel viewModel); //TODO: return edit request
+    object? OpenDetailOrdedrDialog(OrderBillViewModel viewModel); //TODO: return edit request
 }

@@ -24,15 +24,15 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             _model = model;
         }
 
-        [ObservableProperty] private object? bookImage;
+        [ObservableProperty] private object? _image;
 
-        [ObservableProperty] private object? bookName;
+        [ObservableProperty] private object? _name;
 
-        [ObservableProperty] private object? bookRate;
+        [ObservableProperty] private object? _rate;
 
-        [ObservableProperty] object? bookPrice;
+        [ObservableProperty] object? _price;
 
-        [ObservableProperty] object? bookSupplier;
+        [ObservableProperty] object? _supplier;
 
         [ICommand]
         public void OpenInfo()
