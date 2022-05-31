@@ -18,59 +18,67 @@
                                      Tag="Báo cáo" />
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        Height="32">
-                <materialDesign:PackIcon Kind="Calendar"
-                                         VerticalAlignment="Center" />
-                <ComboBox>
-                    <ComboBoxItem Content="abc" IsSelected="True">
-                    </ComboBoxItem>
-                </ComboBox>
-                <ComboBox>
+                        Height="32"
+                        Margin="0 0 0 28">
+                <Button Padding="0">
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Calendar"
+                                                 VerticalAlignment="Center" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   VerticalAlignment="Center"
+                                   Margin="8 0 0 0">04/2022 - 05/2022</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <ComboBox Margin="24 0 0 0">
                     <ComboBoxItem Content="Tháng"
                                   IsSelected="True">
                     </ComboBoxItem>
                 </ComboBox>
-                <materialDesign:PackIcon Kind="Filter"
-                                         VerticalAlignment="Center"/>
+                <Button Padding="0"
+                        Width="24"
+                        Height="24"
+                        VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Filter"
+                                             VerticalAlignment="Center" />
+                </Button>
             </StackPanel>
 
             <Border Height="316" Background="{StaticResource SolidLightGrayColor}"></Border>
 
             <DockPanel LastChildFill="False">
-                
-                <ListView x:Name="itemsControl" DockPanel.Dock="Left">
+
+                <ListView x:Name="itemsControl"
+                          Width="{Binding ElementName=p, Path=ActualWidth}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="Padding"
-                                    Value="0 0 0 8" />
+                                    Value="0 0 0 0" />
                             <Setter Property="Margin"
-                                    Value="4 0 4 0" />
+                                    Value="4 0 4 20" />
                             <Setter Property="BorderThickness"
                                     Value="0" />
                         </Style>
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:StatisticLabel Width="160"
-                                                      Height="83" />
+                            <component:StatisticLabel Width="160" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <WrapPanel Width="{Binding (FrameworkElement.ActualWidth), 
-            RelativeSource={RelativeSource AncestorType=ScrollContentPresenter}}"
-                                       ItemWidth="{Binding (ListView.View).ItemWidth, 
-            RelativeSource={RelativeSource AncestorType=ListView}}"
-                                       MinWidth="{Binding ItemWidth, RelativeSource={RelativeSource Self}}"
-                                       ItemHeight="{Binding (ListView.View).ItemHeight, 
-            RelativeSource={RelativeSource AncestorType=ListView}}" />
+                            <WrapPanel Margin="-4 0 -4 0"
+                                       IsItemsHost="True"
+                                       Orientation="Horizontal" />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
                 </ListView>
 
-                <StackPanel DockPanel.Dock="Right">
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                     <Button Content="Thêm báo cáo"></Button>
-                    <ComboBox>
+                    <ComboBox Margin="12 0 0 0">
                         <ComboBoxItem Content="Nam"
                                       IsSelected="True"></ComboBoxItem>
                     </ComboBox>

@@ -12,22 +12,36 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <h:HeaderWithSearchBar />
+            <h:HeaderWithSearchBar Tag="Đơn hàng"/>
 
-            <Grid>
+            <Grid Margin="0 25 0 0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="500"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <DockPanel Grid.Row="0"
-                           LastChildFill="False">
-                    <TextBlock Text="So luong" />
-                    <TextBlock Text="200" />
+                           LastChildFill="False"
+                           VerticalAlignment="Center"
+                           Margin="0 0 0 29">
+                    <TextBlock Text="Số lượng"
+                               Style="{StaticResource Caption}"
+                               Foreground="{StaticResource SolidDarkGrayColor}"
+                               VerticalAlignment="Center" />
+                    <TextBlock Text="200"
+                               Margin="6 0 0 0"
+                               Style="{StaticResource Button}"
+                               Foreground="{StaticResource SolidOrangeColor}"
+                               VerticalAlignment="Center" />
+                    <Button Margin="21 0 0 0"
+                            Background="Gray">
+                        <materialDesign:PackIcon Kind="DeleteOutline"
+                                                 VerticalAlignment="Center" />
+                    </Button>
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="btnConfirmWaitingOrderTab"
-                                    Width="120px"
+                                    Width="100px"
                                     Background="{x:Null}"
                                     BorderBrush="{x:Null}"
                                     Foreground="{DynamicResource SolidDarkPrimaryColor}"
@@ -36,7 +50,7 @@
                                     Padding="0"
                                     Click="btnConfirmWaitingOrderTab_Click" />
                             <Button x:Name="btnShippingOrderTab"
-                                    Width="150"
+                                    Width="120"
                                     Background="{x:Null}"
                                     BorderBrush="{x:Null}"
                                     Foreground="{DynamicResource SolidDarkPrimaryColor}"
@@ -44,7 +58,7 @@
                                     Margin="0,2"
                                     Click="btnShippingOrderTab_Click" />
                             <Button x:Name="btnShippedOrderTab"
-                                    Width="150"
+                                    Width="120"
                                     Background="{x:Null}"
                                     BorderBrush="{x:Null}"
                                     Foreground="{DynamicResource SolidDarkPrimaryColor}"
@@ -52,14 +66,14 @@
                                     Margin="0,2"
                                     Click="btnShippedOrderTab_Click" />
                             <Button x:Name="btnOrderRatingTab"
-                                    Width="120"
+                                    Width="100"
                                     Background="{x:Null}"
                                     BorderBrush="{x:Null}"
                                     Foreground="{DynamicResource SolidDarkPrimaryColor}"
                                     Content="Đánh giá"
                                     Margin="0,2" />
                             <Button x:Name="btnCanceledOrderTab"
-                                    Width="120"
+                                    Width="100"
                                     Background="{x:Null}"
                                     BorderBrush="{x:Null}"
                                     Foreground="{DynamicResource SolidDarkPrimaryColor}"
@@ -71,23 +85,23 @@
                                     Height="4">
                             <Border x:Name="confirmWaitingOrderSelectMark"
                                     BorderThickness="8"
-                                    Width="120"
+                                    Width="100"
                                     BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
                             <Border x:Name="shippingOrderSelectMark"
                                     BorderThickness="8"
-                                    Width="150"
+                                    Width="120"
                                     BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
                             <Border x:Name="shippedOrderSelectMark"
                                     BorderThickness="8"
-                                    Width="150"
+                                    Width="120"
                                     BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
                             <Border x:Name="orderRatingSelectMark"
                                     BorderThickness="8"
-                                    Width="120"
+                                    Width="100"
                                     BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
                             <Border x:Name="canceledOrderSelectMark"
                                     BorderThickness="8"
-                                    Width="120"
+                                    Width="100"
                                     BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
                         </StackPanel>
                     </StackPanel>
@@ -99,8 +113,13 @@
                                           IsSelected="True">
                             </ComboBoxItem>
                         </ComboBox>
-                        <materialDesign:PackIcon Kind="Filter"
-                                                 VerticalAlignment="Center" />
+                        <Button Padding="0"
+                                Width="24"
+                                Height="24"
+                                VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Filter"
+                                                     VerticalAlignment="Center" />
+                        </Button>
                     </StackPanel>
                 </DockPanel>
 
