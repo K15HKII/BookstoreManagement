@@ -132,7 +132,10 @@ namespace BookstoreManagement.Services
 
                 service.AddViewModel<DashboardViewModel>();
                 service.AddViewModel<ReportViewModel>();
+
+                service.AddSingleton<IBookStoreNavigator, BookStoreNavigator>();
                 service.AddViewModel<BookStoreViewModel>();
+                
                 service.AddViewModel<OrderViewModel>();
                 service.AddViewModel<VoucherViewModel>();
                 service.AddViewModel<RatingViewModel>();
