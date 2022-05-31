@@ -9,11 +9,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
+using BookstoreManagement.ViewModels.Components;
+using BookstoreManagement.ViewModels.Customer.CustomerAdapter;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
 
 namespace BookstoreManagement.ViewModels.Dashboard
 {
     public partial class DashboardViewModel : BaseViewModel<IDashboardNavigator>
     {
+        
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
@@ -28,21 +33,15 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] object? totalCollect;
-        [ObservableProperty] object? collectGrowPercent;
+        [ObservableProperty] private ObservableCollection<StatisticViewModel> _mainStatistics = new();
 
-        [ObservableProperty] object? totalPay;
-        [ObservableProperty] object? payGrowPercent;
+        [ObservableProperty] int? _waitingOrders;
 
-        [ObservableProperty] object? totalSoldProducts;
-        [ObservableProperty] object? soldProductsGrowPercent;
+        [ObservableProperty] int? _shippingOrders;
 
-        [ObservableProperty] object? waitingConfirmOrders;
+        [ObservableProperty] ObservableCollection<CustomerViewModel>? _userList;
 
-        [ObservableProperty] object? shippingOrders;
-
-        [ObservableProperty] ObservableCollection<object>? lsUsers;
-
-        [ObservableProperty] ObservableCollection<object>? lsBooks;
+        [ObservableProperty] ObservableCollection<BookDialogViewModel>? _bookList;
+        
     }
 }

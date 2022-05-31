@@ -80,7 +80,7 @@
                                 </Style>
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
-                                <DataTemplate DataType="{x:Type api:BookProfile}">
+                                <DataTemplate DataType="{x:Type api:Book}">
                                     <component:ProductCard Width="210" />
                                 </DataTemplate>
                             </ListView.ItemTemplate>

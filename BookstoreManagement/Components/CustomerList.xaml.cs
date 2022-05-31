@@ -30,7 +30,11 @@ namespace BookstoreManagement.Components
             {
                 FirstName = "a",
                 LastName = "b",
+<<<<<<< HEAD
                 Email = "@gmail.com"
+=======
+                Email = "@gmail.com",
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
             };
 
             itemsControl.ItemsSource = new List<User>() { user, user };

@@ -24,6 +24,7 @@ namespace BookstoreManagement.Components.Panels
         public BookStoragePanel()
         {
             InitializeComponent();
+<<<<<<< HEAD
 
             //BookProfile a = new BookProfile()
             //{
@@ -66,6 +67,8 @@ namespace BookstoreManagement.Components.Panels
             //    }
             //};
             //itemsControl.ItemsSource = new List<Object> { a, b, a, a, a, a, a, a, a };
+=======
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
         }
     }
 }

@@ -6,6 +6,8 @@
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             xmlns:model="clr-namespace:BookstoreManagement.Data.Model"
+             xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.DialogView.BookStore"
              mc:Ignorable="d" >
     <UserControl.Resources>
         <GridLength x:Key="InfoBookColumnWidth">2.5*</GridLength>
@@ -62,7 +64,11 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
+<<<<<<< HEAD
                 <DataTemplate DataType="{x:Type api:Book}">
+=======
+                <DataTemplate DataType="{x:Type bookStore:BookDialogViewModel}">
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
                     <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
@@ -80,7 +86,12 @@
                                     CornerRadius="4"
                                     Background="Transparent"
                                     Margin="0 0 8 0">
+<<<<<<< HEAD
                                 <Image Source="{Binding Image}"
+=======
+                                <Image DataContext="{x:Type model:Image}"
+                                       Source="{Binding Image}"
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
                                        x:Name="bookImage"></Image>
                             </Border>
                             <StackPanel Orientation="Vertical"
@@ -97,7 +108,11 @@
                         <TextBlock Grid.Column="1"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
+<<<<<<< HEAD
                                    Text="{Binding Tag}"
+=======
+                                   Text="{Binding Category}"
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="2"

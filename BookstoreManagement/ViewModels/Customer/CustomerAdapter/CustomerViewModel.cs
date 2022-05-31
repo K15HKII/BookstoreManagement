@@ -12,13 +12,13 @@ using BookstoreManagement.ViewModels.DialogView.Customer;
 
 namespace BookstoreManagement.ViewModels.Customer.CustomerAdapter
 {
-    public partial class CustomerInfoViewModel : BaseViewModel<ICustomerInfoNavigator>
+    public partial class CustomerViewModel : BaseViewModel<ICustomerInfoNavigator>
     {
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
-        public CustomerInfoViewModel(ICustomerInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public CustomerViewModel(ICustomerInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
         {
             _factory = factory;
             _model = model;

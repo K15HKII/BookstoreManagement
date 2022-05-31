@@ -68,7 +68,7 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                     <ListView.ItemTemplate>
-                        <DataTemplate DataType="{x:Type api:BookProfile}">
+                        <DataTemplate DataType="{x:Type api:Book}">
                             <component:StatisticLabel Width="160" />
                         </DataTemplate>
                     </ListView.ItemTemplate>

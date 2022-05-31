@@ -5,6 +5,7 @@
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:model="clr-namespace:BookstoreManagement.Data.Model"
              mc:Ignorable="d"
              d:DesignHeight="260"
              d:DesignWidth="210"
@@ -20,7 +21,12 @@
             </Grid.RowDefinitions>
             <Image x:Name="Image1" 
                    Height="138"
+<<<<<<< HEAD
                    Source="{Binding Images}"/>
+=======
+                   DataContext="{x:Type model:Image}"
+                   Source="{Binding Image}"/>
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
             <Grid Margin="12 15 12 12"
                   Grid.Row="1">
                 <Grid.ColumnDefinitions>

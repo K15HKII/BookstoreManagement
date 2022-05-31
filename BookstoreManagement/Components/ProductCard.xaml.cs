@@ -24,6 +24,7 @@ namespace BookstoreManagement.Components
         public ProductCard()
         {
             InitializeComponent();
+<<<<<<< HEAD
 
             //BookProfileImage b = new BookProfileImage()
             //{
@@ -32,6 +33,8 @@ namespace BookstoreManagement.Components
             //};
 
             //Image1.DataContext = b;
+=======
+>>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
         }
     }
 }
