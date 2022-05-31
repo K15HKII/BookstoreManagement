@@ -50,12 +50,21 @@ namespace BookstoreManagement.Services
     public static class ServiceConfig
     {
 
-        private static IHttpClientBuilder ConfigHttpClientBuilder(this IHttpClientBuilder builder)
+        private static IHttpClientBuilder ConfigHttpClientBuilder(this IHttpClientBuilder builder, bool auth = false, bool logging = false)
         {
-            return builder.ConfigureHttpClient(c =>
+            builder = builder.ConfigureHttpClient(c =>
             {
                 c.BaseAddress = new Uri("https://upbeat-resolver-316305.df.r.appspot.com");
-            }).AddHttpMessageHandler(() => new HttpLoggingHandler());
+            });
+            if (auth)
+            {
+                builder.AddHttpMessageHandler<HttpAuthHandler>();
+            }
+            if (logging)
+            {
+                builder.AddHttpMessageHandler(() => new HttpLoggingHandler());
+            }
+            return builder;
         }
 
         public static IHostBuilder Application(this IHostBuilder host, Application application)
@@ -86,21 +95,16 @@ namespace BookstoreManagement.Services
             host.ConfigureServices((context, service) =>
             {
                 service.AddSingleton<LoginSession>();
+                
+                RefitSettings settings = new RefitSettings(new NewtonsoftJsonContentSerializer());
+                service.AddTransient<HttpAuthHandler>();
+                service.AddRefitClient<IAuthRemote>(settings).ConfigHttpClientBuilder(false, true);
+                service.AddRefitClient<IModelRemote>(settings).ConfigHttpClientBuilder(true, true);
+                
                 service.AddSingleton<IAuthenticator, Authenticator>();
                 service.AddSingleton<ScheluderProvider>();
                 service.AddSingleton<IDialogService, DialogService>();
                 service.Decorate<IModelRemote, CacheModelRemote>();
-            });
-            return host;
-        }
-
-        public static IHostBuilder AddRetrofit(this IHostBuilder host)
-        {
-            host.ConfigureServices((context, service) =>
-            {
-                RefitSettings settings = new RefitSettings(new NewtonsoftJsonContentSerializer());
-                service.AddRefitClient<IAuthRemote>(settings).ConfigHttpClientBuilder();
-                service.AddRefitClient<IModelRemote>(settings).ConfigHttpClientBuilder();
             });
             return host;
         }
@@ -138,7 +142,8 @@ namespace BookstoreManagement.Services
 
                 service.AddSingleton<IBookStoreNavigator, BookStoreNavigator>();
                 service.AddViewModel<BookStoreViewModel>();
-                
+
+                service.AddSingleton<IOrderNavigator, OrderNavigator>();
                 service.AddViewModel<OrderViewModel>();
 
                 service.AddSingleton<IVoucherNavigator, VoucherNavigator>();
@@ -148,7 +153,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<RatingViewModel>();
 
                 service.AddSingleton<ICustomerNavigator, CustomerNavigator>();
-                service.AddViewModel<CustomerViewModel>();
+                service.AddViewModel<CustomerPanelViewModel>();
 
                 service.AddSingleton<IManagerNavigator, ManagerNavigator>();
                 service.AddViewModel<ManagerViewModel>();
@@ -185,7 +190,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<RatingExpanderViewModel>();
 
                 //Customer
-                service.AddViewModel<CustomerInfoViewModel>();
+                service.AddViewModel<CustomerViewModel>();
 
                 //Manager
                 service.AddViewModel<EmployeeInfoViewModel>();

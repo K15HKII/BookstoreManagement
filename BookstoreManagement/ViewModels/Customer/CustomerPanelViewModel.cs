@@ -14,14 +14,14 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
-    public partial class CustomerViewModel : BaseViewModel<ICustomerNavigator>
+    public partial class CustomerPanelViewModel : BaseViewModel<ICustomerNavigator>
     {
        
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
-        public CustomerViewModel(ICustomerNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public CustomerPanelViewModel(ICustomerNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
         {
             _factory = factory;
             _model = model;

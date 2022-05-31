@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -23,17 +24,16 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _factory = factory;
         }
         
-        [ObservableProperty] object? _id;
-        [ObservableProperty] object? _name;
-        [ObservableProperty] ObservableCollection<object>? _bookimages;
-        [ObservableProperty] object? _price;
-        [ObservableProperty] object? _discount;
-        [ObservableProperty] object? _priceafterdiscount;
-        [ObservableProperty] object? _quantity;
-        [ObservableProperty] object? _soldquantity;
-        [ObservableProperty] object? _supplier;
-        [ObservableProperty] object? _type;
-        [ObservableProperty] object? _description;
+        [ObservableProperty] private string? _id;
+        [ObservableProperty] private string? _name;
+        [ObservableProperty] private string? _description;
+        [ObservableProperty] private BookTag[] _tags;
+        [ObservableProperty] private string? _authorName;
+        [ObservableProperty] private string? _publisherName;
+        [ObservableProperty] private decimal? _price;
+        [ObservableProperty] private int? _quantity;
+        
+        [ObservableProperty] object? _sold;
         
         public event Action<object?>? CloseAction;
         

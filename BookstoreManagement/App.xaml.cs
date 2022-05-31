@@ -38,7 +38,6 @@ namespace BookstoreManagement
             return Host.CreateDefaultBuilder(args)
                 .Application(this)
                 .AddLogging()
-                .AddRetrofit()
                 .AddStores()
                 .AddViewStates()
                 .AddViewModels();
@@ -46,7 +45,7 @@ namespace BookstoreManagement
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            bool test = true;
+            bool test = false;
 
             if (!test)
             {

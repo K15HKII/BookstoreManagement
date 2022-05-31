@@ -24,14 +24,6 @@ namespace BookstoreManagement.Components
         public ProductCard()
         {
             InitializeComponent();
-
-            BookProfileImage b = new BookProfileImage()
-            {
-                Id = "1",
-                Image = @"/BookstoreManagement;component/Images/image.jpg"
-            };
-
-            Image1.DataContext = b;
         }
     }
 }

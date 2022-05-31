@@ -32,7 +32,7 @@
         <DataTemplate DataType="{x:Type rating:RatingViewModel}">
             <components:MainMenuItem Icon="ThumbsUpDown" Text="Rating"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
+        <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
             <components:MainMenuItem Icon="Account" Text="Customer"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
@@ -51,31 +51,31 @@
             <panels:DashboardPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type report:ReportViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:StatisticPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type bookStore:BookStoreViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:BookStoragePanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:PendingBillPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:VoucherPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type rating:RatingViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:FeedbackPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+        <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
+            <panels:UserManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:EmployeeManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:PublisherManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type lend:LendViewModel}">
-            <components:MainMenuItem Icon="Account" Text="Dashboard"/>
+            <panels:LendingPanel/>
         </DataTemplate>
     </ResourceDictionary>
     

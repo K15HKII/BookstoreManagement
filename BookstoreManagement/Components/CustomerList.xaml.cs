@@ -31,7 +31,6 @@ namespace BookstoreManagement.Components
                 FirstName = "a",
                 LastName = "b",
                 Email = "@gmail.com",
-                CreatedAt = DateTime.Now
             };
 
             itemsControl.ItemsSource = new List<User>() { user, user };

@@ -34,8 +34,7 @@ namespace BookstoreManagement.Components.Panels
 
             BillDetail billDetail = new BillDetail()
             {
-                BillId = 0,
-                Price = 1000
+                BillId = 0
             };
 
             itemsControl.ItemsSource = new List<BillDetail>() { billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail, billDetail };
