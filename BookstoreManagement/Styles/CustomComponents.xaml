@@ -267,9 +267,18 @@
         </Setter>
     </Style>
 
+
     <!--custom input-->
-    <Style x:Key="myInputWithPlaceholder"
-           TargetType="TextBox">
+    <Style x:Key="myInputWithPlaceHolder"
+           TargetType="{x:Type TextBox}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation"
+                Value="None" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
@@ -278,41 +287,57 @@
                 Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
-        <Setter Property="Width"
-                Value="328" />
+        <Setter Property="MinWidth"
+                Value="120" />
         <Setter Property="MinHeight"
                 Value="51" />
+        <Setter Property="AllowDrop"
+                Value="true" />
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBoxBase">
-                    <Grid>
-                        <Border CornerRadius="25"
-                                Background="White"
-                                BorderThickness="1">
-                            <StackPanel VerticalAlignment="Center"
-                                        Margin="24 11"
-                                        Orientation="Vertical">
-                                <TextBlock Text="{Binding ElementName=a, Path=Tag}"
-                                           Style="{DynamicResource SmallCaption}"
-                                           Margin="1 0 0 2">
-                                </TextBlock>
-                                <TextBox Padding="0"
-                                         Text="{Binding ElementName=a, Path=Content}"
-                                         Foreground="Black"
-                                         TextWrapping="Wrap"
-                                         AcceptsReturn="True"
-                                         TextBlock.LineStackingStrategy="BlockLineHeight"
-                                         TextBlock.LineHeight="20">
-                                </TextBox>
-                            </StackPanel>
-                        </Border>
-                        <!-- <ContentPresenter VerticalAlignment="Center" -->
-                        <!--                   x:Name="a" -->
-                        <!--                   Visibility="Hidden" -->
-                        <!--                   Content="{TemplateBinding Text}" -->
-                        <!--                   Tag="{TemplateBinding Tag}"> -->
-                        <!-- </ContentPresenter> -->
-                    </Grid>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border Name="Border"
+                            CornerRadius="25">
+                        <Border.Background>
+                            <SolidColorBrush Color="White" />
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel Margin="24, 12, 24, 12">
+                            <TextBlock Text="{TemplateBinding Tag}"
+                                       Padding="2 0 0 0"
+                                       Margin="0 0 0 3"
+                                       Style="{DynamicResource SmallCaption}"></TextBlock>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          HorizontalScrollBarVisibility="Disabled" />
+                        </StackPanel>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -328,23 +353,15 @@
     </Style>
 
     <Style x:Key="myPasswordBox"
-           TargetType="PasswordBox">
-        <Setter Property="PasswordBox.Foreground"
-                Value="Black" />
-        <Setter Property="PasswordBox.FontFamily"
-                Value="{DynamicResource fontFamily}" />
-        <Setter Property="PasswordBox.FontSize"
-                Value="{DynamicResource captionFontSize}" />
-        <Setter Property="PasswordBox.FontWeight"
-                Value="Regular" />
-        <Setter Property="Width"
-                Value="328" />
-        <Setter Property="MinHeight"
-                Value="51" />
-    </Style>
-
-    <Style x:Key="myInputIcon"
-           TargetType="TextBox">
+           TargetType="{x:Type PasswordBox}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation"
+                Value="None" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
@@ -352,47 +369,67 @@
         <Setter Property="TextBlock.FontSize"
                 Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
-                Value="Regular" />
-        <Setter Property="Width"
-                Value="328" />
+                Value="Bold" />
+        <Setter Property="PasswordChar"
+                Value="*" />
+        <Setter Property="MinWidth"
+                Value="120" />
         <Setter Property="MinHeight"
                 Value="51" />
+        <Setter Property="AllowDrop"
+                Value="true" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
-                    <Grid>
-                        <Border CornerRadius="25"
-                                Background="White"
-                                BorderThickness="1">
-                            <DockPanel Margin="24 12">
-                                <StackPanel VerticalAlignment="Center"
-                                            Orientation="Vertical"
-                                            DockPanel.Dock="Left">
-                                    <TextBlock Text="{Binding ElementName=a, Path=Tag}"
-                                               Style="{DynamicResource SmallCaption}"
-                                               Margin="1 0 0 2">
-                                    </TextBlock>
-                                    <TextBox Padding="0"
-                                             materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                             Foreground="Black">
-                                    </TextBox>
-                                </StackPanel>
-                                <materialDesign:PackIcon Kind="Visibility"
-                                                         Foreground="Black"
-                                                         Width="24"
-                                                         Height="24"
-                                                         DockPanel.Dock="Right"
-                                                         VerticalAlignment="Center"
-                                                         HorizontalAlignment="Right" />
-                            </DockPanel>
-                        </Border>
-                        <ContentPresenter VerticalAlignment="Center"
-                                          x:Name="a"
-                                          Visibility="Hidden"
-                                          Content="{TemplateBinding Text}"
-                                          Tag="{TemplateBinding Tag}">
-                        </ContentPresenter>
-                    </Grid>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border Name="Border"
+                            CornerRadius="25">
+                        <Border.Background>
+                            <SolidColorBrush Color="White" />
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <DockPanel Margin="24, 12, 24, 12"
+                                   LastChildFill="False">
+                            <StackPanel>
+                                <TextBlock Text="{TemplateBinding Tag}"
+                                           Padding="2 0 0 0"
+                                           Margin="0 0 0 3"
+                                           Style="{DynamicResource SmallCaption}"></TextBlock>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              HorizontalScrollBarVisibility="Disabled" />
+                            </StackPanel>
+                            <materialDesign:PackIcon Kind="Eye"
+                                                     VerticalAlignment="Center"
+                                                     DockPanel.Dock="Right"
+                                                     Width="24"
+                                                     Height="24"
+                                                     Foreground="{StaticResource SolidPrimaryColor}" />
+                        </DockPanel>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -408,7 +445,15 @@
     </Style>
 
     <Style x:Key="myInput"
-           TargetType="TextBox">
+           TargetType="{x:Type TextBox}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation"
+                Value="None" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
@@ -417,35 +462,53 @@
                 Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
-        <Setter Property="Width"
-                Value="328" />
+        <Setter Property="MinWidth"
+                Value="120" />
         <Setter Property="MinHeight"
                 Value="51" />
+        <Setter Property="AllowDrop"
+                Value="true" />
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
-                    <Grid>
-                        <Border CornerRadius="25"
-                                Background="White">
-                            <TextBox Padding="0"
-                                     VerticalAlignment="Center"
-                                     Margin="24 12"
-                                     Text="{Binding ElementName=a, Path=Content}"
-                                     Foreground="Black"
-                                     TextWrapping="Wrap"
-                                     AcceptsReturn="True"
-                                     TextBlock.LineStackingStrategy="BlockLineHeight"
-                                     TextBlock.LineHeight="20">
-                            </TextBox>
-                        </Border>
-                        <ContentPresenter VerticalAlignment="Center"
-                                          x:Name="a"
-                                          Visibility="Hidden"
-                                          Content="{TemplateBinding Text}"
-                                          Margin="24 12"
-                                          materialDesign:HintAssist.Hint="{TemplateBinding Text}">
-                        </ContentPresenter>
-                    </Grid>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border Name="Border"
+                            CornerRadius="25">
+                        <Border.Background>
+                            <SolidColorBrush Color="White" />
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <ScrollViewer Margin="24, 14, 24, 10"
+                                      x:Name="PART_ContentHost"
+                                      HorizontalScrollBarVisibility="Disabled" />
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -461,7 +524,15 @@
     </Style>
 
     <Style x:Key="mySearchInput"
-           TargetType="TextBox">
+           TargetType="{x:Type TextBox}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation"
+                Value="None" />
+        <Setter Property="FocusVisualStyle"
+                Value="{x:Null}" />
         <Setter Property="TextBlock.Foreground"
                 Value="Black" />
         <Setter Property="TextBlock.FontFamily"
@@ -470,43 +541,59 @@
                 Value="{DynamicResource captionFontSize}" />
         <Setter Property="TextBlock.FontWeight"
                 Value="Regular" />
-        <Setter Property="Width"
-                Value="663" />
+        <Setter Property="MinWidth"
+                Value="120" />
         <Setter Property="MinHeight"
                 Value="51" />
+        <Setter Property="AllowDrop"
+                Value="true" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
-                    <Grid>
-                        <Border CornerRadius="25"
-                                Background="White">
-                            <StackPanel VerticalAlignment="Center"
-                                        Orientation="Horizontal"
-                                        Margin="24 12">
-                                <materialDesign:PackIcon Kind="Search"
-                                                         Foreground="Black"
-                                                         Width="24"
-                                                         Height="24"
-                                                         VerticalAlignment="Center"
-                                                         Margin="0 0 10 0" />
-                                <TextBox Padding="0"
-                                         VerticalAlignment="Center"
-                                         materialDesign:HintAssist.Hint="{Binding ElementName=a, Path=Content}"
-                                         Foreground="Black"
-                                         TextWrapping="Wrap"
-                                         AcceptsReturn="True"
-                                         TextBlock.LineStackingStrategy="BlockLineHeight"
-                                         TextBlock.LineHeight="20">
-                                </TextBox>
-                            </StackPanel>
-
-                        </Border>
-                        <ContentPresenter VerticalAlignment="Center"
-                                          x:Name="a"
-                                          Visibility="Hidden"
-                                          Content="{TemplateBinding Text}">
-                        </ContentPresenter>
-                    </Grid>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <Border Name="Border"
+                            CornerRadius="25">
+                        <Border.Background>
+                            <SolidColorBrush Color="White" />
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource LightGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel Margin="24, 12, 24, 12"
+                                    Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search"
+                                                     Foreground="Black"
+                                                     Width="24"
+                                                     Height="24"
+                                                     VerticalAlignment="Center"
+                                                     Margin="0 0 10 0" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -520,22 +607,105 @@
             </Setter.Value>
         </Setter>
     </Style>
-
+    
     <!--custom combobox-->
-    <Style x:Key="myCombobox"
-           TargetType="ComboBox">
-        <Setter Property="Width"
-                Value="115">
-        </Setter>
-        <Setter Property="Height"
-                Value="51">
-        </Setter>
-        <Setter Property="Background"
-                Value="Transparent">
-        </Setter>
-        <Setter Property="Foreground"
-                Value="Black">
-        </Setter>
+    <ControlTemplate x:Key="ComboBoxToggleButton"
+                     TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <!--<Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                              Storyboard.TargetName="Border">
+                                    <EasingColorKeyFrame KeyTime="0"
+                                                         Value="{StaticResource DarkGrayColor}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>-->
+                    </VisualState>
+                    <VisualState x:Name="Pressed" />
+                    <VisualState x:Name="Disabled">
+                        <!--<Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                              Storyboard.TargetName="Border">
+                                    <EasingColorKeyFrame KeyTime="0"
+                                                         Value="{StaticResource DarkGrayColor}" />
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).
+                (SolidColorBrush.Color)"
+                                                              Storyboard.TargetName="Arrow">
+                                    <EasingColorKeyFrame KeyTime="0"
+                                                         Value="{StaticResource DarkGrayColor}" />
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
+                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                              Storyboard.TargetName="Border">
+                                    <EasingColorKeyFrame KeyTime="0"
+                                                         Value="{StaticResource DarkGrayColor}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>-->
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <!--<Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
+                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
+                                                              Storyboard.TargetName="Border">
+                                    <EasingColorKeyFrame KeyTime="0"
+                                                         Value="{StaticResource DarkGrayColor}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>-->
+                    </VisualState>
+                    <VisualState x:Name="Unchecked" />
+                    <VisualState x:Name="Indeterminate" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border"
+                    Grid.ColumnSpan="2"
+                    CornerRadius="25">
+                <Border.Background>
+                    <SolidColorBrush Color="White" />
+                </Border.Background>
+            </Border>
+            <Border Grid.Column="0"
+                    Margin="1"
+                    CornerRadius="25 0 0 25">
+                <Border.Background>
+                    <SolidColorBrush Color="White" />
+                </Border.Background>
+            </Border>
+            <materialDesign:PackIcon Grid.Column="1"
+                                     Kind="ArrowDropDown"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center" />
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="4"
+                                  Color="#000000"
+                                  Opacity="0.25"
+                                  Direction="-90">
+                </DropShadowEffect>
+            </Grid.Effect>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="ComboBoxTextBox"
+                     TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost"
+                Focusable="False"
+                Background="{TemplateBinding Background}" />
+    </ControlTemplate>
+
+    <Style x:Key="{x:Type ComboBox}"
+           TargetType="{x:Type ComboBox}">
         <Setter Property="SnapsToDevicePixels"
                 Value="true" />
         <Setter Property="OverridesDefaultStyle"
@@ -546,121 +716,173 @@
                 Value="Auto" />
         <Setter Property="ScrollViewer.CanContentScroll"
                 Value="true" />
+        <Setter Property="MinWidth"
+                Value="120" />
+        <Setter Property="MinHeight"
+                Value="20" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
                     <Grid>
-                        <Border Background="White"
-                                CornerRadius="25">
-                            <DockPanel LastChildFill="False"
-                                       VerticalAlignment="Center">
-
-                                <StackPanel VerticalAlignment="Center"
-                                            Margin="18 0 0 0">
-                                    <TextBlock Text="Giới tính"
-                                               Style="{DynamicResource SmallCaption}"
-                                               Margin="0 0 0 2" />
-
-                                    <TextBox Style="{x:Null}"
-                                             HorizontalAlignment="Left"
-                                             VerticalAlignment="Center"
-                                             Focusable="True"
-                                             Background="pink"
-                                             Foreground="red"
-                                             Visibility="Hidden"
-                                             IsReadOnly="{TemplateBinding IsReadOnly}" />
-
-                                </StackPanel>
-
-                                <materialDesign:PackIcon Kind="ArrowDropDown"
-                                                         Width="24"
-                                                         Height="24"
-                                                         VerticalAlignment="Center"
-                                                         DockPanel.Dock="Right"
-                                                         Margin="0 0 4 0" />
-                            </DockPanel>
-                        </Border>
-
-                        <ContentPresenter IsHitTestVisible="False"
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="PART_EditableTextBox"
+                                                                      Storyboard.TargetProperty="(TextElement.Foreground).
+                      (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource DarkGrayColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="EditStates">
+                                <VisualState x:Name="Editable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                       Storyboard.TargetName="PART_EditableTextBox">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                       Storyboard.TargetName="ContentSite">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{x:Static Visibility.Hidden}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Uneditable" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ToggleButton x:Name="ToggleButton"
+                                      Template="{StaticResource ComboBoxToggleButton}"
+                                      Grid.Column="2"
+                                      Focusable="false"
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, 
+              RelativeSource={RelativeSource TemplatedParent}}" />
+                        <ContentPresenter x:Name="ContentSite"
+                                          IsHitTestVisible="False"
                                           Content="{TemplateBinding SelectionBoxItem}"
                                           ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                          Margin="18 22 0 10"
-                                          VerticalAlignment="Center"
-                                          HorizontalAlignment="Left"
-                                          TextElement.FontFamily="{DynamicResource fontFamily}"
-                                          TextElement.Foreground="Black"
-                                          TextElement.FontSize="{DynamicResource captionFontSize}"
-                                          TextElement.FontWeight="Regular" />
-
-
-                        <Popup Name="Popup"
+                                          Margin="24 14 24 10"
+                                          VerticalAlignment="Stretch"
+                                          HorizontalAlignment="Left">
+                        </ContentPresenter>
+                        <TextBox x:Name="PART_EditableTextBox"
+                                 Style="{x:Null}"
+                                 Template="{StaticResource ComboBoxTextBox}"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Bottom"
+                                 Margin="24 12"
+                                 Focusable="True"
+                                 Background="Transparent"
+                                 Visibility="Hidden"
+                                 IsReadOnly="{TemplateBinding IsReadOnly}" />
+                        <Popup x:Name="Popup"
                                Placement="Bottom"
                                IsOpen="{TemplateBinding IsDropDownOpen}"
                                AllowsTransparency="True"
                                Focusable="False"
                                PopupAnimation="Slide">
 
-                            <Grid Name="DropDown"
+                            <Grid x:Name="DropDown"
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                 <Border x:Name="DropDownBorder"
-                                        Background="White"
-                                        CornerRadius="16" />
+                                        CornerRadius="16"
+                                        BorderBrush="Black"
+                                        BorderThickness="2"
+                                        Background="White">
+                                </Border>
                                 <ScrollViewer Margin="4,6,4,6"
                                               SnapsToDevicePixels="True">
                                     <StackPanel IsItemsHost="True"
                                                 KeyboardNavigation.DirectionalNavigation="Contained" />
                                 </ScrollViewer>
                             </Grid>
+                            <Popup.Effect>
+                                <DropShadowEffect BlurRadius="4"
+                                                  Color="#000000"
+                                                  Opacity="0.25"
+                                                  Direction="-90">
+                                </DropShadowEffect>
+                            </Popup.Effect>
                         </Popup>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems"
+                                 Value="false">
+                            <Setter TargetName="DropDownBorder"
+                                    Property="MinHeight"
+                                    Value="95" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping"
+                                 Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll"
+                                    Value="false" />
+                        </Trigger>
+                        <Trigger SourceName="Popup"
+                                 Property="AllowsTransparency"
+                                 Value="true">
+                            <Setter TargetName="DropDownBorder"
+                                    Property="CornerRadius"
+                                    Value="4" />
+                            <Setter TargetName="DropDownBorder"
+                                    Property="Margin"
+                                    Value="0,2,0,0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect BlurRadius="4"
-                                  Color="#000000"
-                                  Opacity="0.25"
-                                  Direction="-90">
-                </DropShadowEffect>
-            </Setter.Value>
-        </Setter>
-
     </Style>
 
     <Style x:Key="{x:Type ComboBoxItem}"
            TargetType="{x:Type ComboBoxItem}">
         <Setter Property="SnapsToDevicePixels"
                 Value="true" />
-        <Setter Property="Foreground"
-                Value="Black" />
         <Setter Property="OverridesDefaultStyle"
                 Value="true" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBoxItem}">
-                    <Border Name="Border"
-                            Padding="2"
-                            SnapsToDevicePixels="true">
+                    <Border x:Name="Border"
+                            Padding="24 12"
+                            SnapsToDevicePixels="true"
+                            Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource OrangeColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="SelectedUnfocused">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                      Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)">
+                                            <EasingColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource YellowColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                         <ContentPresenter />
                     </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsHighlighted"
-                                 Value="true">
-                            <Setter TargetName="Border"
-                                    Property="Background"
-                                    Value="#bcfefe" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled"
-                                 Value="false">
-                            <Setter Property="Foreground"
-                                    Value="red" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

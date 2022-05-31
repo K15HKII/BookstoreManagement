@@ -9,6 +9,7 @@
         xmlns:panel="clr-namespace:BookstoreManagement.Components.Panels"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Padding="0"
         Title="MainWindow"
@@ -16,7 +17,34 @@
         MinWidth="1280"
         WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+    </Window.Resources>
+
+    <StackPanel>
+        <TextBox Style="{StaticResource myInput}"
+                 Text="dfd"
+                 Width="348" Height="51"></TextBox>
+
+        <TextBox Text="hihidfsjdfhkjdshfksjhfkjasdhahsfkjhsdkfh" Width="100"
+                 TextWrapping="Wrap"></TextBox>
+
+        <ComboBox Width="400"
+                  Height="51">
+            <ComboBoxItem Content="abc"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+            <ComboBoxItem Content="abcd"></ComboBoxItem>
+        </ComboBox>
+
+    </StackPanel>
+
     
+
     <!--<StackPanel>
 		--><!--<ItemsControl x:Name="itemsControl">
 				<ItemsControl.Resources>
@@ -59,6 +87,7 @@
 	</Grid>-->
 
 
+    
 
     <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
                     <ItemsControl.Resources >
