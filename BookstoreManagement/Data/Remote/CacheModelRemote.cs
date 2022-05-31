@@ -126,40 +126,11 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<BookProfile>> getListBookProfile()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IObservable<BookProfile> getBookProfile(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IObservable<object> saveBookProfile(BookProfile bookProfile)
-        {
-            throw new NotImplementedException();
-        }
-
         public IObservable<object> deleteBookProfile(string id)
         {
             throw new NotImplementedException();
         }
-
-        public IObservable<List<BookProfileImage>> getListBookProfileImage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IObservable<BookProfileImage> getBookProfileImage(string id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IObservable<object> saveBookProfileImage(BookProfileImage bookProfileImage)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public IObservable<object> deleteBookProfileImage(string id)
         {

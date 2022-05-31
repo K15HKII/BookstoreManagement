@@ -16,6 +16,6 @@ namespace BookstoreManagement.Data.Model.Api
         public string Name { get; set; }
 
         [JsonProperty("description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }
