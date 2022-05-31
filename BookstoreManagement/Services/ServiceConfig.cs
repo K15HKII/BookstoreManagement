@@ -130,19 +130,41 @@ namespace BookstoreManagement.Services
                 service.AddSingleton<IHomeNavigator, HomeNavigator>();
                 service.AddViewModel<HomeViewModel>();
 
+                service.AddSingleton<IDashboardNavigator, DashboardNavigator>();
                 service.AddViewModel<DashboardViewModel>();
+
+                service.AddSingleton<IReportNavigator, ReportNavigator>();
                 service.AddViewModel<ReportViewModel>();
 
                 service.AddSingleton<IBookStoreNavigator, BookStoreNavigator>();
                 service.AddViewModel<BookStoreViewModel>();
                 
                 service.AddViewModel<OrderViewModel>();
+
+                service.AddSingleton<IVoucherNavigator, VoucherNavigator>();
                 service.AddViewModel<VoucherViewModel>();
+
+                service.AddSingleton<IRatingNavigator, RatingNavigator>();
                 service.AddViewModel<RatingViewModel>();
+
+                service.AddSingleton<ICustomerNavigator, CustomerNavigator>();
                 service.AddViewModel<CustomerViewModel>();
+
+                service.AddSingleton<IManagerNavigator, ManagerNavigator>();
                 service.AddViewModel<ManagerViewModel>();
+                
+                service.AddSingleton<ILendNavigator, LendNavigator>();
                 service.AddViewModel<LendViewModel>();
+
+                service.AddSingleton<ISupplierNavigator, SupplierNavigator>();
                 service.AddViewModel<SupplierViewModel>();
+
+                //Setting
+                service.AddSingleton<ISettingNavigator, SettingNavigator>();
+                service.AddViewModel<SettingViewModel>();
+                //Account
+                service.AddSingleton<IAccountNavigator, AccountNavigator>();
+                service.AddViewModel<AccountViewModel>();
 
                 //Adapter
                 //Home
@@ -178,12 +200,9 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<ShippingPageViewModel>();
                 service.AddViewModel<WaitingConfirmPageViewModel>();
 
-                //Setting
-                service.AddSingleton<ISettingNavigator, SettingNavigator>();
-                service.AddViewModel<SettingViewModel>();
+                
 
-                //Account
-                service.AddViewModel<AccountViewModel>();
+                
 
                 //Lend
                 service.AddViewModel<LendInfoViewModel>();

@@ -1,15 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookstoreManagement.Services;
 
-namespace BookstoreManagement.ViewModels.Rating
+namespace BookstoreManagement.ViewModels.Rating;
+
+public class RatingNavigator : IRatingNavigator
 {
-    public interface RatingNavigator : INavigator
-    {
-        void openAccountScreen();
+    private readonly IDialogService _dialogService;
 
-        void openNotificationScreen();
+    public RatingNavigator(IDialogService dialogService)
+    {
+        _dialogService = dialogService;
+    }
+    public void openAccountScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void openNotificationScreen()
+    {
+        throw new System.NotImplementedException();
     }
 }

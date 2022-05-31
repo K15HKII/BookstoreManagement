@@ -24,21 +24,21 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             _model = model;
         }
 
-        [ObservableProperty] private object? bookImage;
+        [ObservableProperty] private object? _image;
 
-        [ObservableProperty] private object? bookName;
+        [ObservableProperty] private object? _name;
 
-        [ObservableProperty] private object? bookRate;
+        [ObservableProperty] private object? _rate;
 
-        [ObservableProperty] object? bookPrice;
+        [ObservableProperty] object? _price;
 
-        [ObservableProperty] object? bookSupplier;
+        [ObservableProperty] object? _supplier;
 
         [ICommand]
-        public void OpenEdit()
+        public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditBookDialog(_factory.Create<EditBookViewModel>());
+            object? request = Navigator!.OpenInfoBookDialog(_factory.Create<BookDetailViewModel>());
 
             if (request == null)
                 return;

@@ -1,15 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.Data.Model.Api.Customer;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.DialogView.Manager;
 
-namespace BookstoreManagement.ViewModels.Manager
+namespace BookstoreManagement.ViewModels.Manager;
+
+public class ManagerNavigator : IManagerNavigator
 {
-    public interface ManagerNavigator : INavigator
-    {
-        void openAccountScreen();
+    private readonly IDialogService _dialogService;
 
-        void openNotificationScreen();
+    public ManagerNavigator(IDialogService dialogService)
+    {
+        _dialogService = dialogService;
+    }
+    public void openAccountScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void openNotificationScreen()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public UserAddRequest? OpenNewEmployeeDialog(AddEmployeeViewModel viewModel)
+    {
+        Task<object?> task = _dialogService.Show(viewModel);
+        task.Wait();
+        object? value = task.Result;
+        if (value == null)
+            return null;
+        return value as UserAddRequest;
     }
 }

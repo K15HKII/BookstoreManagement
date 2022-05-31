@@ -6,6 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookstoreManagement"
         xmlns:component="clr-namespace:BookstoreManagement.Components"
+        xmlns:panel="clr-namespace:BookstoreManagement.Components.Panels"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
         mc:Ignorable="d"
@@ -56,28 +57,24 @@
 				<component:ProductCard/>
 			</DataTemplate>
 	</Grid>-->
-	
-    <!--<ScrollViewer>
-        <component:PageItemsControl>
-            <component:PageItemsControl.ItemsTemplate>
-                <ItemsControl x:Name="itemsControl">
-                    <ItemsControl.Resources>
+
+
+
+    <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
+                    <ItemsControl.Resources >
                         <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:ProductCard/>
+                            <component:ProductCard Margin="14 0 14 57"
+                                                   Width="150px"/>
                         </DataTemplate>
                         <DataTemplate DataType="{x:Type api:CartItem}">
                             <component:ucVoucher/>
                         </DataTemplate>
                     </ItemsControl.Resources>
                     <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel></WrapPanel>
+                        <ItemsPanelTemplate >
+                            <WrapPanel Margin="-14 0 -14 0"></WrapPanel>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </component:PageItemsControl.ItemsTemplate>
-        </component:PageItemsControl>
-    </ScrollViewer>-->
-
+                </ItemsControl>-->
 	
 </Window>

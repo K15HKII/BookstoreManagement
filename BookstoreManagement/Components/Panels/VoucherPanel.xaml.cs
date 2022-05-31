@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookstoreManagement.Data.Model.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BookstoreManagement.Components
+namespace BookstoreManagement.Components.Panels
 {
     /// <summary>
-    /// Interaction logic for DashboardPage.xaml
+    /// Interaction logic for VoucherPanel.xaml
     /// </summary>
-    public partial class DashboardPage : UserControl
+    public partial class VoucherPanel : UserControl
     {
-        public DashboardPage()
+        public VoucherPanel()
         {
             InitializeComponent();
+
+            Voucher v = new Voucher()
+            {
+                ExpiredDate = DateTime.Now,
+            };
+
+            itemsControl.ItemsSource = new List<Voucher>() { v, v, v, v, v, v, v, v, v, v };
         }
     }
 }

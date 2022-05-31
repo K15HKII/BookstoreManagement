@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.DialogView.Supplier
 {
-    public partial class SupplierDetailViewModel : BaseViewModel
+    public partial class SupplierDetailViewModel : BaseViewModel, IDialog
     {
         public void dismissDialog() { }
         [ObservableProperty] object? supplierId;
@@ -18,5 +18,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         [ObservableProperty] object? supplierBookQuantity;
         [ObservableProperty] object? supplierBookType;
         [ObservableProperty] object? supplierCoopDate;
+        
+        public event Action<object?>? CloseAction;
     }
 }

@@ -6,15 +6,24 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
-             Background="CadetBlue">
+             Background="CadetBlue"
+             Width="500"
+             Height="400">
 
 
-
-    <UserControl.Resources>
-
-        
-
-    </UserControl.Resources>
+    <Grid>
+        <Button x:Name="btn"
+                Width="24"
+                
+            Background="White"
+                Click="btn_Click">
+        </Button>
+        <Popup Width="200" Height="40" Name="test1" Placement="Center">
+            <TextBlock Background="Red">hihi</TextBlock>
+        </Popup>
+    </Grid>
+    
+    
 
     <!--<StackPanel>
         --><!--<Button Style="{StaticResource SecondButton}"

@@ -1,4 +1,7 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,8 +12,16 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Dashboard
 {
-    public partial class DashboardViewModel : BaseViewModel<DashboardNavigator>
+    public partial class DashboardViewModel : BaseViewModel<IDashboardNavigator>
     {
+        private readonly IViewModelFactory _factory;
+        private readonly IModelRemote _model;
+
+        public DashboardViewModel(IDashboardNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        {
+            _factory = factory;
+            _model = model;
+        }
 
         //TODO: còn chart
         public void openAccount() { }
