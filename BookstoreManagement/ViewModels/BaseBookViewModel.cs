@@ -15,13 +15,13 @@ public partial class BaseBookViewModel<TNavigator> : BaseViewModel<TNavigator> w
     {
     }
 
-    [ObservableProperty] private string? _id;
-    [ObservableProperty] private string? _name;
-    [ObservableProperty] private string? _description;
-    [ObservableProperty] private BookTag[] _tags;
-    [ObservableProperty] private string? _authorName;
-    [ObservableProperty] private string? _publisherName;
-    [ObservableProperty] private decimal? _price;
-    [ObservableProperty] private int? _quantity;
+    //[ObservableProperty] private string? _id;
+    //[ObservableProperty] private string? _name;
+    //[ObservableProperty] private string? _description;
+    //[ObservableProperty] private BookTag[] _tags;
+    //[ObservableProperty] private string? _authorName;
+    //[ObservableProperty] private string? _publisherName;
+    //[ObservableProperty] private decimal? _price;
+    //[ObservableProperty] private int? _quantity;
     
 }

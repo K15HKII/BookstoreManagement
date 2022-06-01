@@ -34,6 +34,7 @@
 
                 <ListView x:Name="itemsControl"
                           Width="{Binding ElementName=p, Path=ActualWidth}"
+                          ItemsSource="{Binding MainStatistics}"
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">

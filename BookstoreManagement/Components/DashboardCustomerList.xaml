@@ -14,7 +14,8 @@
 
     <Border Background="White"
             Width="352px">
-        <ItemsControl x:Name="itemsControl">
+        <ItemsControl x:Name="itemsControl"
+                      ItemsSource="{Binding UserList}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type api:User}">
                     <Grid Width="352px"
