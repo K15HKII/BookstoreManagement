@@ -28,23 +28,23 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
                              Text="abc"
                              Tag="Ma khach hang" />
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
                              Text="abc"
                              Tag="Ten khach hang"
                              Grid.Column="2" />
                 </Grid>
 
-                <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
                          Text="abc"
                          Tag="So dien thoai"
                          Margin="0 0 0 8" />
-                <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
                          Text="abc"
                          Tag="Dia chi" />
@@ -63,7 +63,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
                              Text="abc"
                              Tag="Ten san pham" />
@@ -82,17 +82,17 @@
 
                     <StackPanel>
                         <!--fixing-->
-                        <ComboBox Style="{StaticResource myCombobox}"
+                        <ComboBox 
                                  Width="auto"
                                  Text="abc"
                                  Tag="Phan loai"
                                  Margin="0 0 0 8" />
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
                                  Text="abc"
                                  Tag="Gia san pham"
                                  Margin="0 0 0 8" />
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
                                  Text="abc"
                                  Tag="Voucher"
@@ -105,11 +105,11 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Width="auto"
                                      Text="abc"
                                      Tag="Ngay muon" />
-                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Width="auto"
                                      Text="abc"
                                      Tag="Ngay het han muon"

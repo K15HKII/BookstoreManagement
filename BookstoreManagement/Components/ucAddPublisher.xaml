@@ -40,7 +40,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Text="abc"
                              Tag="Ten dang nhap"
                              Width="auto"
@@ -53,24 +53,24 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="abc"
                                  Tag="Ngay sinh"
                                  Width="auto" />
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="abc"
                                  Tag="So dien thoai"
                                  Width="auto"
                                  Grid.Column="2" />
                     </Grid>
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Text="abc"
                              Tag="Email"
                              Width="auto"
                              Margin="0 0 0 12" />
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Text="abc"
                              Tag="Dia chi"
                              Width="auto"
