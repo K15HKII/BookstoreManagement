@@ -21,7 +21,6 @@
             </Grid.RowDefinitions>
             <Image x:Name="Image1" 
                    Height="138"
-                   DataContext="{x:Type model:Image}"
                    Source="{Binding Image}"/>
             <Grid Margin="12 15 12 12"
                   Grid.Row="1">
@@ -46,7 +45,7 @@
                                    Text="Cung cấp bởi"/>
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkPrimaryColor}"
-                                   Text="{Binding PublisherName}"/>
+                                   Text="{Binding PublisherId}"/>
                     </UniformGrid>
                 </UniformGrid>
                 <StackPanel Grid.Column="2"
@@ -78,8 +77,6 @@
                               HorizontalAlignment="Right"
                               Margin="0 51 0 0" />
 
-                    <!--<Border Width="24" Height="24"
-                VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="2"/>-->
                 </StackPanel>
 
             </Grid>

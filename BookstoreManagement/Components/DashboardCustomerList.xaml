@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.Customer.CustomerAdapter"
              mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -17,7 +18,7 @@
         <ItemsControl x:Name="itemsControl"
                       ItemsSource="{Binding UserList}">
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type api:User}">
+                <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
                     <Grid Width="352px"
                           Height="65px">
                         <Grid.ColumnDefinitions>
@@ -37,7 +38,7 @@
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="{Binding FullName}"
+                                           Text="{Binding Name}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
                                            Text="{Binding Email}"
@@ -51,7 +52,7 @@
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center">
 
-                            <TextBlock Text="1002"
+                            <TextBlock Text="{Binding Billquantity}"
                                        HorizontalAlignment="Right"
                                        Style="{StaticResource Title}" />
                             <TextBlock HorizontalAlignment="Right"

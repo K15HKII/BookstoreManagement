@@ -18,14 +18,17 @@
             <DockPanel>
                 <materialDesign:PackIcon Height="20" Width="20" DockPanel.Dock="Left"/>
                 <TextBlock Margin="8 0 0 0"
+                           Text="{Binding Growth}"
                            Style="{StaticResource Caption}"
                            Foreground="{StaticResource SolidPrimaryColor}" />
             </DockPanel>
 
-            <TextBlock Grid.Row="2" 
+            <TextBlock Grid.Row="2"
+                       Text="{Binding DisplayValue}"
                        Style="{StaticResource Body}"
                        Foreground="Black"/>
             <TextBlock Grid.Row="3"
+                       Text="{Binding Title}"
                        Style="{StaticResource Caption}"
                        Foreground="{StaticResource SolidSecondaryColor}"/>
         </Grid>

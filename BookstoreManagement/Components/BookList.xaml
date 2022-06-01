@@ -8,6 +8,7 @@
              xmlns:system="clr-namespace:System;assembly=System.Runtime"
              xmlns:model="clr-namespace:BookstoreManagement.Data.Model"
              xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.DialogView.BookStore"
+             xmlns:book="clr-namespace:BookstoreManagement.ViewModels.BookStore.BookInfoAdapter"
              mc:Ignorable="d" >
     <UserControl.Resources>
         <GridLength x:Key="InfoBookColumnWidth">2.5*</GridLength>
@@ -66,7 +67,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type bookStore:BookDialogViewModel}">
+                <DataTemplate DataType="{x:Type book:BookDetailViewModel}">
                     <Grid x:Name="PART_Body">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
@@ -84,8 +85,7 @@
                                     CornerRadius="4"
                                     Background="Transparent"
                                     Margin="0 0 8 0">
-                                <Image DataContext="{x:Type model:Image}"
-                                       Source="{Binding Image}"
+                                <Image Source="{Binding Image}"
                                        x:Name="bookImage"></Image>
                             </Border>
                             <StackPanel Orientation="Vertical"

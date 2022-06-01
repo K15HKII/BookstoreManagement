@@ -73,11 +73,60 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <!--cai nay mac dinh chi duy nhat 2 label nay nen hong set cung' luon-->
-                    <component:ImportantInformationLabel Width="173"
-                                                         Height="82" />
-                    <component:ImportantInformationLabel Grid.Column="2"
-                                                         Width="173"
-                                                         Height="82" />
+
+                    <Border Background="{StaticResource SolidPrimaryColor}"
+                            Width="173"
+                            Height="82"
+                            CornerRadius="16">
+                        <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="12">
+                            <TextBlock Style="{StaticResource Title}"
+                                       Text="Đang chờ xác nhận"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0 0 0 11" />
+                            <TextBlock Style="{StaticResource Heading3}"
+                                       Text="{Binding WaitingOrders}"
+                                       Foreground="{StaticResource SolidOrangeColor}"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="4"
+                                              Color="#000000"
+                                              Opacity="0.25"
+                                              Direction="-90">
+                            </DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
+
+
+                    <Border Background="{StaticResource SolidPrimaryColor}"
+                            Width="173"
+                            Height="82"
+                            CornerRadius="16"
+                            Grid.Column="2">
+                        <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="12">
+                            <TextBlock Style="{StaticResource Title}"
+                                       Text="Đang giao hàng"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0 0 0 11" />
+                            <TextBlock Style="{StaticResource Heading3}"
+                                       Text="{Binding ShippingOrders}"
+                                       Foreground="{StaticResource SolidOrangeColor}"
+                                       HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="4"
+                                              Color="#000000"
+                                              Opacity="0.25"
+                                              Direction="-90">
+                            </DropShadowEffect>
+                        </Border.Effect>
+                    </Border>
                 </Grid>
 
                 <StackPanel Margin="0 52 0 0">
@@ -85,7 +134,8 @@
                                Foreground="Black"
                                Text="Khách quen" />
                     <component:DashboardCustomerList Margin="0 8 0 0"
-                                                     Height="260" />
+                                                     Height="260" 
+                                                     DataContext="{Binding UserList}"/>
                 </StackPanel>
 
             </StackPanel>
@@ -95,7 +145,8 @@
             <TextBlock Style="{StaticResource Title}"
                        Foreground="Black"
                        Text="Sách bán chạy" />
-            <component:BookList Margin="0 8 0 0" />
+            <component:BookList Margin="0 8 0 0"
+                                DataContext="{Binding BookList}" />
         </StackPanel>
 
     </StackPanel>

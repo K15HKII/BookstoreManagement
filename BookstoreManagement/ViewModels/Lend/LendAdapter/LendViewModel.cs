@@ -25,7 +25,7 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 
         [ObservableProperty] string? _userId;
         
-        [ObservableProperty] string? _userimage;
+        [ObservableProperty] string? _userImage;
 
         [ObservableProperty] object? _start;
 

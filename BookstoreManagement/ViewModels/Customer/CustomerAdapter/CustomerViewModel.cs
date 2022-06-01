@@ -34,11 +34,11 @@ namespace BookstoreManagement.ViewModels.Customer.CustomerAdapter
 
         [ObservableProperty] object? _type;
 
-        [ObservableProperty] object? _billquantity;
+        [ObservableProperty] object? _billQuantity;
 
-        [ObservableProperty] object? _customerincome;
+        [ObservableProperty] object? _customerIncome;
 
-        [ObservableProperty] object? _createdate;
+        [ObservableProperty] object? _createDate;
 
         [ICommand]
         public void OpenEdit()

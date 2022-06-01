@@ -27,12 +27,16 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         
         [ObservableProperty] object? _iD;
 
-        [ObservableProperty] object? _date;
+        [ObservableProperty] DateTime? _date;
 
         [ObservableProperty] object? _owner;
 
         [ObservableProperty] object? _price;
-        
+
+        [ObservableProperty] object? _bookId;
+
+        [ObservableProperty] object? _unitPrice;
+
         [ICommand]
         public void OpenInfo()
         {

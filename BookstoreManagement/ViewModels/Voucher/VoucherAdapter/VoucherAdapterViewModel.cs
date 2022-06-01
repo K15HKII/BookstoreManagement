@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.Voucher;
@@ -23,17 +24,21 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             _model = model;
         }
 
-        [ObservableProperty] object? voucherTitle;
+        [ObservableProperty] string? _title;
 
-        [ObservableProperty] object? voucherDescription;
+        [ObservableProperty] string? _description;
 
-        [ObservableProperty] object? voucherExpire;
+        [ObservableProperty] DateTime? _expireDate;
 
-        [ObservableProperty] object? voucherMaxUse;
+        [ObservableProperty] object? _maxUse;
 
-        [ObservableProperty] object? voucherUsedQuantity;
+        [ObservableProperty] int? _usedQuantity;
 
-        [ObservableProperty] object? voucherApplyType;
+        [ObservableProperty] object? _applyType;
+
+        [ObservableProperty] DiscountType? _discountType;
+
+        [ObservableProperty] float? _discount;
 
         [ICommand]
         public void OpenInfo()

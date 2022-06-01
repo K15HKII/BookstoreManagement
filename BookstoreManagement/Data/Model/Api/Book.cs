@@ -32,6 +32,9 @@ namespace BookstoreManagement.Data.Model.Api
         
         [JsonProperty("publisher_id")]
         public int PublisherId { get; set; }
-        
+
+        [JsonProperty("tag")]
+        public BookTag Tag { get; set; }
+
     }
 }

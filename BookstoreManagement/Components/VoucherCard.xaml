@@ -25,11 +25,14 @@
                            Text="{Binding Discount}"/>
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="{StaticResource SolidDarkPrimaryColor}"
-                           Margin="0 0 0 14"/>
+                           Margin="0 0 0 14"
+                           Text="{Binding MaxUse}"/>
                 <TextBlock Style="{StaticResource Body}"
                            Foreground="{StaticResource SolidDarkPrimaryColor}"
+                           Text="{Binding ApplyType}"
                            Margin="0 0 0 2"/>
                 <TextBlock Style="{StaticResource SmallCaption}"
+                           Text="{Binding ApplyType}"
                            Foreground="{StaticResource SolidDarkPrimaryColor}" />
             </StackPanel>
 
@@ -43,9 +46,11 @@
                                Text="{Binding ExpiredDate}"/>
                     <TextBlock Style="{StaticResource SmallCaption}"
                                Foreground="{StaticResource SolidDarkPrimaryColor}"
-                               Margin="0 0 0 2"/>
+                               Margin="0 0 0 2"
+                               Text="Đã dùng"/>
                     <TextBlock Style="{StaticResource Button}"
-                               Foreground="{StaticResource SolidOrangeColor}" />
+                               Foreground="{StaticResource SolidOrangeColor}"
+                               Text="{Binding UsedQuantity}"/>
                 </StackPanel>
 
                 <CheckBox Style="{StaticResource myCheckBoxStyle}"

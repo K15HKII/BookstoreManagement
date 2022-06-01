@@ -8,6 +8,7 @@
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:order="clr-namespace:BookstoreManagement.ViewModels.Order"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -226,6 +227,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView x:Name="itemsControl"
+                                                  ItemsSource="{Binding LsOrders}"
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -239,7 +241,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type api:BillDetail}">
+                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -267,7 +269,7 @@
                                                             VerticalAlignment="Top"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView
+                                        <ListView ItemsSource="{Binding LsOrders}"
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -281,7 +283,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type api:BillDetail}">
+                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -299,7 +301,130 @@
                         </TabItem>
                         <TabItem Header="Đã giao"
                                  Style="{StaticResource NavigationRailItem}"
-                                 Padding="12 8"></TabItem>
+                                 Padding="12 8">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          Margin="0"
+                                          DockPanel.Dock="Top"
+                                          Background="Black"
+                                          Height="{Binding ElementName=p, Path=ActualHeight}">
+                                <component:PageItemsControl Margin="0 0 0 0"
+                                                            VerticalAlignment="Top"
+                                                            HorizontalAlignment="Left">
+                                    <component:PageItemsControl.ItemsTemplate>
+                                        <ListView ItemsSource="{Binding LsOrders}"
+                                                  Width="{Binding ElementName=p, Path=ActualWidth}"
+                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                            <ListView.ItemContainerStyle>
+                                                <Style TargetType="ListViewItem">
+                                                    <Setter Property="Padding"
+                                                            Value="0 0 0 0" />
+                                                    <Setter Property="Margin"
+                                                            Value="11 0 12 32" />
+                                                    <Setter Property="BorderThickness"
+                                                            Value="0" />
+                                                </Style>
+                                            </ListView.ItemContainerStyle>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                    <component:PendingBillCard Width="449" />
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                            <ListView.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Margin="-11 0 -12 0"
+                                                               IsItemsHost="True"
+                                                               Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListView.ItemsPanel>
+                                        </ListView>
+                                    </component:PageItemsControl.ItemsTemplate>
+                                </component:PageItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="Đánh giá"
+                                 Style="{StaticResource NavigationRailItem}"
+                                 Padding="12 8">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          Margin="0"
+                                          DockPanel.Dock="Top"
+                                          Background="Black"
+                                          Height="{Binding ElementName=p, Path=ActualHeight}">
+                                <component:PageItemsControl Margin="0 0 0 0"
+                                                            VerticalAlignment="Top"
+                                                            HorizontalAlignment="Left">
+                                    <component:PageItemsControl.ItemsTemplate>
+                                        <ListView ItemsSource="{Binding LsOrders}"
+                                                  Width="{Binding ElementName=p, Path=ActualWidth}"
+                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                            <ListView.ItemContainerStyle>
+                                                <Style TargetType="ListViewItem">
+                                                    <Setter Property="Padding"
+                                                            Value="0 0 0 0" />
+                                                    <Setter Property="Margin"
+                                                            Value="11 0 12 32" />
+                                                    <Setter Property="BorderThickness"
+                                                            Value="0" />
+                                                </Style>
+                                            </ListView.ItemContainerStyle>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                    <component:PendingBillCard Width="449" />
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                            <ListView.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Margin="-11 0 -12 0"
+                                                               IsItemsHost="True"
+                                                               Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListView.ItemsPanel>
+                                        </ListView>
+                                    </component:PageItemsControl.ItemsTemplate>
+                                </component:PageItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
+                        <TabItem Header="Đã hủy"
+                                 Style="{StaticResource NavigationRailItem}"
+                                 Padding="12 8">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                          Margin="0"
+                                          DockPanel.Dock="Top"
+                                          Background="Black"
+                                          Height="{Binding ElementName=p, Path=ActualHeight}">
+                                <component:PageItemsControl Margin="0 0 0 0"
+                                                            VerticalAlignment="Top"
+                                                            HorizontalAlignment="Left">
+                                    <component:PageItemsControl.ItemsTemplate>
+                                        <ListView ItemsSource="{Binding LsOrders}"
+                                                  Width="{Binding ElementName=p, Path=ActualWidth}"
+                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                            <ListView.ItemContainerStyle>
+                                                <Style TargetType="ListViewItem">
+                                                    <Setter Property="Padding"
+                                                            Value="0 0 0 0" />
+                                                    <Setter Property="Margin"
+                                                            Value="11 0 12 32" />
+                                                    <Setter Property="BorderThickness"
+                                                            Value="0" />
+                                                </Style>
+                                            </ListView.ItemContainerStyle>
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                    <component:PendingBillCard Width="449" />
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                            <ListView.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel Margin="-11 0 -12 0"
+                                                               IsItemsHost="True"
+                                                               Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListView.ItemsPanel>
+                                        </ListView>
+                                    </component:PageItemsControl.ItemsTemplate>
+                                </component:PageItemsControl>
+                            </ScrollViewer>
+                        </TabItem>
                     </TabControl>
                 </Grid>
             </Grid>

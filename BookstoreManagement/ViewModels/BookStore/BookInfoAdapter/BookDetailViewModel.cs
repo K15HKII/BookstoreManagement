@@ -9,6 +9,7 @@ using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using Microsoft.Toolkit.Mvvm.Input;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 {
@@ -23,6 +24,22 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             _factory = factory;
             _model = model;
         }
+
+        [ObservableProperty] object? _id;
+
+        [ObservableProperty] string? _title;
+
+        [ObservableProperty] string? _description;
+
+        [ObservableProperty] object? _stock;
+
+        [ObservableProperty] object? _authorid;
+
+        [ObservableProperty] double? _price;
+
+        [ObservableProperty] object? _publisherid;
+
+        [ObservableProperty] BookTag? _tag;
 
         [ICommand]
         public void OpenInfo()

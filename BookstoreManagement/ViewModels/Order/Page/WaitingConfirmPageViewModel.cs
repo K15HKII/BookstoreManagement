@@ -19,7 +19,7 @@ namespace BookstoreManagement.ViewModels.Order.Page
         {
             _model = model;
         }
-        [ObservableProperty] public ObservableCollection<object>? _lsorders;
+        [ObservableProperty] public ObservableCollection<object>? _lsOrders;
 
         [ObservableProperty] public object? _selectedorder;
     }
