@@ -29,9 +29,9 @@ namespace BookstoreManagement.ViewModels.Manager
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsEmployees;
+        [ObservableProperty] public ObservableCollection<object>? _lsemployees;
 
-        [ObservableProperty] public object? selectedEmployee;
+        [ObservableProperty] public object? _selectedemployee;
         
         public void AddNew()
         {

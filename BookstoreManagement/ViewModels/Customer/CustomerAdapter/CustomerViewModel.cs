@@ -24,17 +24,21 @@ namespace BookstoreManagement.ViewModels.Customer.CustomerAdapter
             _model = model;
         }
 
-        [ObservableProperty] object? customerName;
+        [ObservableProperty] object? _id;
+        
+        [ObservableProperty] object? _image;
 
-        [ObservableProperty] object? customerEmail;
+        [ObservableProperty] object? _name;
 
-        [ObservableProperty] object? customerType;
+        [ObservableProperty] object? _email;
 
-        [ObservableProperty] object? billQuantity;
+        [ObservableProperty] object? _type;
 
-        [ObservableProperty] object? customerInCome;
+        [ObservableProperty] object? _billquantity;
 
-        [ObservableProperty] object? createDate;
+        [ObservableProperty] object? _customerincome;
+
+        [ObservableProperty] object? _createdate;
 
         [ICommand]
         public void OpenEdit()

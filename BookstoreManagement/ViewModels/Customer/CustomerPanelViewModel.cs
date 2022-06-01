@@ -32,7 +32,7 @@ namespace BookstoreManagement.ViewModels.Customer
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsCustomers;
+        [ObservableProperty] public ObservableCollection<object>? _lscustomers;
 
         [ObservableProperty] public object? selectedBook;
 

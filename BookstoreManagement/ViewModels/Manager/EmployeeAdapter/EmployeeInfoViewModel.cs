@@ -25,18 +25,20 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
             _factory = factory;
             _model = model;
         }
+
+        [ObservableProperty] object? _image;
         
-        [ObservableProperty] object? employeeId;
+        [ObservableProperty] object? _id;
 
-        [ObservableProperty] object? employeeName;
+        [ObservableProperty] object? _name;
 
-        [ObservableProperty] object? employeeStatus;
+        [ObservableProperty] object? _status;
 
-        [ObservableProperty] object? employeeDescription;
+        [ObservableProperty] object? _description;
 
-        [ObservableProperty] object? employeeJoinDate;
+        [ObservableProperty] object? _joinDate;
 
-        [ObservableProperty] object? dayOffQuantity;
+        [ObservableProperty] object? _dayoffquantity;
         
         [ICommand]
         public void OpenEdit()
