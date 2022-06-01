@@ -32,7 +32,7 @@ namespace BookstoreManagement.ViewModels.Suppier
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsSuppliers;
+        [ObservableProperty] public ObservableCollection<object>? _lssuppliers;
 
         [ObservableProperty] public object? selectedSupplier;
         

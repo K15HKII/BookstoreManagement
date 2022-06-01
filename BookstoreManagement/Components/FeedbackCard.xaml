@@ -8,7 +8,7 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d"
              d:DesignWidth="448"
-             DataContext="{x:Type api:Feedback}">
+             >
 
     <UserControl.Resources>
     </UserControl.Resources>
@@ -28,7 +28,12 @@
 
                 <Border Width="176"
                         Height="176"
-                        Background="{StaticResource SolidLightGrayColor}" />
+                        Background="{StaticResource SolidLightGrayColor}" >
+                    <Border.BorderBrush>
+                        <ImageBrush
+                            ImageSource="{Binding Bookimage}"/>
+                    </Border.BorderBrush>
+                    </Border>
 
                 <Grid Grid.Column="1"
                       Margin="16 0 0 0">
@@ -39,18 +44,23 @@
                               VerticalAlignment="Top" />
                     <StackPanel>
                         <TextBlock Style="{StaticResource Title}"
+                                   Text="{Binding Id}" 
                                    Foreground="Black"
                                    Margin="0 0 0 23" />
                         <TextBlock Style="{StaticResource Caption}"
+                                   Text="Mã sản phẩm"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Margin="0 0 0 8" />
                         <TextBlock Style="{StaticResource Title}"
+                                   Text="{Binding Productid}"
                                    Foreground="Black"
                                    Margin="0 0 0 8" />
                         <TextBlock Style="{StaticResource Body}"
+                                   Text="{Binding Bookname}"
                                    Foreground="Black"
                                    Margin="0 0 0 20" />
                         <TextBlock Style="{StaticResource Body}"
+                                   Text="{Binding Rateowner}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Margin="0 0 0 8" />
                         <StackPanel Orientation="Horizontal">

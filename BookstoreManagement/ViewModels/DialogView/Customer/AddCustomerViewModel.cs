@@ -25,6 +25,10 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         [ObservableProperty]
         [Required]
         private string? _id;
+        
+        [ObservableProperty]
+        [Required]
+        private string? _image;
 
         [ObservableProperty]
         [Required]
@@ -32,7 +36,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         
         [ObservableProperty]
         [Required]
-        private string? _userName;
+        private string? _username;
 
         [ObservableProperty]
         [Required]
@@ -57,7 +61,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
 
         [ObservableProperty]
         [Required]
-        private DateTime? _createDate;
+        private DateTime? _createdate;
 
         [ObservableProperty]
         [Required]

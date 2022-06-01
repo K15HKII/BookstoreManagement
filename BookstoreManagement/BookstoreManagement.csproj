@@ -54,8 +54,4 @@
     </Page>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\BUS" />
-  </ItemGroup>
-
 </Project>

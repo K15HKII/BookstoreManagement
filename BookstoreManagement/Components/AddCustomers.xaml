@@ -16,7 +16,13 @@
                     Height="191"
                     CornerRadius="100"
                     Background="{StaticResource SolidLightGrayColor}"
-                    Margin="0 0 0 16"></Border>
+                    Margin="0 0 0 16">
+                <Border.BorderBrush>
+                    <ImageBrush
+                        ImageSource="{Binding Image}"
+                    />
+                </Border.BorderBrush>
+            </Border>
 
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
@@ -42,15 +48,15 @@
 
                 <StackPanel>
                     <TextBox
-                             Style="{StaticResource myInputWithPlaceholder}"
-                             Text="abc"
+                             Style="{StaticResource  myInputWithPlaceHolder}"
+                             Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Ten dang nhap"
                              Width="auto" 
                         Margin="0 0 0 12"/>
 
                     <ComboBox 
                              Style="{StaticResource myCombobox}"
-                             Text="abc"
+                             Text="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Gioi tinh"
                              Width="auto"
                               Margin="0 0 0 12" />
@@ -62,31 +68,31 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
-                                 Text="abc"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Text="{Binding Birth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngay sinh"
                                  Width="auto" />
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
-                                 Text="abc"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="So dien thoai"
                                  Width="auto"
                                  Grid.Column="2" />
                     </Grid>
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
-                             Text="abc"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                             Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Email"
                              Width="auto" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
                     <TextBox Style="{StaticResource myInputIcon}"
-                             Text="abc"
+                             Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Nhap Mat khau"
                              Width="auto"
                              Margin="0 0 0 12" />
                     <TextBox Style="{StaticResource myInputIcon}"
-                             Text="abc"
+                             Text="{Binding Confirmpassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Nhap lai Mat khau"
                              Width="auto"
                              Margin="0 0 0 12" />
@@ -102,6 +108,7 @@
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
                         <TextBox Style="{StaticResource myInput}"
+                                 Text="{Binding Createdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
                                  Grid.Column="1" />
                     </Grid>

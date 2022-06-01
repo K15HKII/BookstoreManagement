@@ -1,22 +1,42 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Utils;
 
 namespace BookstoreManagement.ViewModels.Rating.RatingAdapter
 {
     public partial class RatingInfoViewModel : BaseViewModel
     {
-        [ObservableProperty] object? ratingId;
+        private readonly IModelRemote _model;
 
-        [ObservableProperty] object? productId;
+        public RatingInfoViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        {
+            _model = model;
+        }
 
-        [ObservableProperty] object? bookName;
+        
+        [ObservableProperty] object? _id;
 
-        [ObservableProperty] object? rateOwner;
+        [ObservableProperty] object? _productid;
 
-        [ObservableProperty] object? starQuantity;
+        [ObservableProperty] private object? _bookimage;
+
+        [ObservableProperty] object? _bookname;
+
+        [ObservableProperty] object? _rateowner;
+
+        [ObservableProperty] object? _starquantity;
+        
+        [ObservableProperty] object? _ratingcontent;
+        
+        [ObservableProperty] ObservableCollection<object>? _lsratingimage;
+        
+        [ObservableProperty] object? _ratingreply;
     }
 }

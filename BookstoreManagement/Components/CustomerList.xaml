@@ -23,7 +23,8 @@
      
     <Border Background="White"
             Width="928px">
-        <ItemsControl Margin="12 0 20 0" x:Name="itemsControl">
+        <ItemsControl Margin="12 0 20 0" x:Name="itemsControl"
+                      ItemsSource="{Binding Lscustomers}">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <StackPanel>
@@ -107,11 +108,15 @@
                                     CornerRadius="25"
                                     Background="{StaticResource SolidLightGrayColor}"
                                     Margin="0 0 6 0">
+                                <Border.BorderBrush>
+                                    <ImageBrush
+                                        ImageSource="{Binding Image}"/>
+                                </Border.BorderBrush>
                             </Border>
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
-                                           Text="{Binding FullName}"
+                                           Text="{Binding Name}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
                                            Text="{Binding Email}"
@@ -123,25 +128,25 @@
                         <TextBlock Grid.Column="3"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text=""
+                                   Text="{Binding Type}"
                                    Style="{StaticResource Caption}" />
 
                         <TextBlock Grid.Column="4"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text=""
+                                   Text="{Binding Billquantity}"
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidOrangeColor}" />
                         <TextBlock Grid.Column="5"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text=""
+                                   Text="{Binding Customerincome}"
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Grid.Column="6"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="{Binding CreatedAt}"
+                                   Text="{Binding Createdate}"
                                    Style="{StaticResource Caption}"
                                    Foreground="Black" />
                     </Grid>

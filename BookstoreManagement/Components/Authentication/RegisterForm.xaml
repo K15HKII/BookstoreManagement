@@ -38,7 +38,7 @@
                         <DockPanel LastChildFill="False"
                                    Margin="0 0 0 12"
                                    Width="{Binding ElementName=panel_body, Path=ActualWidth}">
-                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Tag="Tên đăng nhập"
                                      Text="20520558"
                                      Width="226"></TextBox>
@@ -54,12 +54,12 @@
                         <DockPanel LastChildFill="False"
                                    Margin="0 0 0 12"
                                    Width="{Binding ElementName=panel_body, Path=ActualWidth}">
-                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Tag="Ngày sinh"
                                      Text="20520558"
                                      Width="163"></TextBox>
 
-                            <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Tag="Số điện thoại"
                                      Text="168"
                                      DockPanel.Dock="Right"
@@ -67,7 +67,7 @@
 
                         </DockPanel>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Tag="Email"
                                  Text="20520558@gm.uit.edu.vn"
                                  Margin="0 0 0 20"

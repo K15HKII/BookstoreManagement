@@ -23,17 +23,19 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
             _model = model;
         }
         
-        [ObservableProperty] object? supplierId;
+        [ObservableProperty] object? _id;
 
-        [ObservableProperty] object? supplierName;
+        [ObservableProperty] object? _image;
 
-        [ObservableProperty] object? supplierEmail;
+        [ObservableProperty] object? _name;
 
-        [ObservableProperty] object? supplierCoopDate;
+        [ObservableProperty] object? _email;
 
-        [ObservableProperty] object? supplierType;
+        [ObservableProperty] object? _coopdate;
 
-        [ObservableProperty] object? supplierQuantity;
+        [ObservableProperty] object? _type;
+
+        [ObservableProperty] object? _quantity;
         public event Action<object?>? CloseAction;
         public void OpenDetail()
         {

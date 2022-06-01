@@ -40,47 +40,49 @@
                         Orientation="Horizontal">
                 <Border Width="47px"
                         Height="47px"
+                        
                         CornerRadius="25"
                         Background="{StaticResource SolidLightGrayColor}"
                         Margin="0 0 6 0">
+                    <Border.BorderBrush>
+                        <ImageBrush
+                            ImageSource="{Binding Userimage}"/>
+                    </Border.BorderBrush>
                 </Border>
                 <StackPanel Orientation="Vertical"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left">
-                    <TextBlock Text="#01"
+                    <TextBlock Text="{Binding Id}"
                                Style="{StaticResource Title}" />
-                    <TextBlock Text="Nguyễn Khánh Huyền"
+                    <TextBlock Text="{Binding Name}"
                                Style="{StaticResource Body}"
                                Foreground="{StaticResource SolidPrimaryColor}" />
-                    <TextBlock Text="#511"
-                               Style="{StaticResource SmallCaption}"
-                               Foreground="{StaticResource SolidDarkGrayColor}" />
                 </StackPanel>
             </StackPanel>
 
             <TextBlock Grid.Column="1"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Text="x3"
+                       Text="{Binding Quantity}"
                        Style="{StaticResource Body}"
                        Foreground="{StaticResource SolidOrangeColor}" />
 
             <TextBlock Grid.Column="2"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Text="10/04/2022"
+                       Text="{Binding Start}"
                        Style="{StaticResource Caption}"
                        Foreground="{StaticResource SolidDarkPrimaryColor}" />
             <TextBlock Grid.Column="3"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Text="10/07/2022"
+                       Text="{Binding End}"
                        Style="{StaticResource Caption}"
                        Foreground="{StaticResource SolidDarkPrimaryColor}" />
             <TextBlock Grid.Column="4"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
-                       Text="Đang mượn"
+                       Text="{Binding State}"
                        Style="{StaticResource Caption}"
                        Foreground="{StaticResource SolidDarkPrimaryColor}" />
             <Grid Grid.Column="5"
