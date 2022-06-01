@@ -24,17 +24,6 @@ namespace BookstoreManagement.Components
         public ProductCard()
         {
             InitializeComponent();
-<<<<<<< HEAD
-
-            //BookProfileImage b = new BookProfileImage()
-            //{
-            //    Id = "1",
-            //    Image = @"/BookstoreManagement;component/Images/image.jpg"
-            //};
-
-            //Image1.DataContext = b;
-=======
->>>>>>> a903ef5613d624aea08f683fe505e7ae2bd36909
         }
     }
 }
