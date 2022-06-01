@@ -17,19 +17,18 @@
                     Background="{StaticResource SolidLightGrayColor}"
                     Margin="0 0 0 16"></Border>
 
-            <StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
                         Margin="0 0 0 32">
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="#Ma nha xuat ban"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="Black"
-                           Text="Nobita"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
+                           Text="#Ma"
+                           HorizontalAlignment="Center" />
+                <TextBox Style="{StaticResource myInput}"
+                         Foreground="Black"
+                         Text="Nobita"
+                         Width="210"
+                         HorizontalAlignment="Center" />
             </StackPanel>
 
             <Grid>
@@ -40,12 +39,6 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                             Text="abc"
-                             Tag="Ten dang nhap"
-                             Width="auto"
-                             Margin="0 0 0 12" />
-
                     <Grid Margin="0 0 0 12">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />

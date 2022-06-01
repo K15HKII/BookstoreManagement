@@ -18,21 +18,19 @@
                     Background="{StaticResource SolidLightGrayColor}"
                     Margin="0 0 0 16"></Border>
 
-            <StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
                         Margin="0 0 0 32">
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="#Ma nhan vien"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="Black"
-                           Text="Nobita"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
+                           Text="#Ma"
+                           HorizontalAlignment="Center" />
+                <TextBox Style="{StaticResource myInput}"
+                         Foreground="Black"
+                         Text="Nobita"
+                         Width="210"
+                         HorizontalAlignment="Center" />
             </StackPanel>
-
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />

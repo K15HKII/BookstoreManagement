@@ -32,30 +32,11 @@
             </StackPanel>
 
             <StackPanel Margin="0 0 0 29">
-                <Button Width="auto"
+                <Button Style="{StaticResource myButtonForShowDialog}"
+                        Width="auto"
                         Height="50"
-                        Style="{StaticResource myButtonForShowDialog}"
-                        Margin="0 0 0 10"
-                        x:Name="btnUpdateCustomerInfo">
-                    <DockPanel Width="{Binding ElementName=btnUpdateCustomerInfo, Path=ActualWidth}">
-                        <materialDesign:PackIcon Kind="User"
-                                                 Width="24"
-                                                 Height="24"
-                                                 Foreground="White"
-                                                 DockPanel.Dock="Left"
-                                                 Margin="24 0 0 0 "></materialDesign:PackIcon>
-                        <materialDesign:PackIcon Kind="User"
-                                                 Width="24"
-                                                 Height="24"
-                                                 Foreground="White"
-                                                 DockPanel.Dock="Right"
-                                                 Margin="0 0 24 0"></materialDesign:PackIcon>
-                        <TextBlock Style="{StaticResource Button}"
-                                   Foreground="White"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Text="Thong tin ca nhan" />
-                    </DockPanel>
+                        Content="Thong tin ca nhan"
+                        Margin="0 0 0 10">
                 </Button>
 
                 <StackPanel>

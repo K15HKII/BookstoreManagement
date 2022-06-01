@@ -18,19 +18,18 @@
                     Background="{StaticResource SolidLightGrayColor}"
                     Margin="0 0 0 16"></Border>
 
-            <StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Vertical"
                         HorizontalAlignment="Center"
                         Margin="0 0 0 32">
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
                            Text="#Ma khach hang"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
-                <TextBlock Style="{StaticResource Heading3}"
+                           HorizontalAlignment="Center" />
+                <TextBox Style="{StaticResource myInput}"
                            Foreground="Black"
                            Text="Nobita"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
+                         Width="210"
+                           HorizontalAlignment="Center"/>
             </StackPanel>
 
             <Grid>
@@ -42,14 +41,13 @@
 
                 <StackPanel>
                     <TextBox
-                             Style="{StaticResource myInputWithPlaceholder}"
+                             Style="{StaticResource myInputWithPlaceHolder}"
                              Text="abc"
                              Tag="Ten dang nhap"
                              Width="auto" 
                         Margin="0 0 0 12"/>
 
                     <ComboBox 
-                             Style="{StaticResource myCombobox}"
                              Text="abc"
                              Tag="Gioi tinh"
                              Width="auto"
@@ -62,31 +60,29 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="abc"
                                  Tag="Ngay sinh"
                                  Width="auto" />
-                        <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="abc"
                                  Tag="So dien thoai"
                                  Width="auto"
                                  Grid.Column="2" />
                     </Grid>
 
-                    <TextBox Style="{StaticResource myInputWithPlaceholder}"
+                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Text="abc"
                              Tag="Email"
                              Width="auto" />
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
-                    <TextBox Style="{StaticResource myInputIcon}"
-                             Text="abc"
+                    <PasswordBox Style="{StaticResource myPasswordBox}"
                              Tag="Nhap Mat khau"
                              Width="auto"
                              Margin="0 0 0 12" />
-                    <TextBox Style="{StaticResource myInputIcon}"
-                             Text="abc"
+                    <PasswordBox Style="{StaticResource myPasswordBox}"
                              Tag="Nhap lai Mat khau"
                              Width="auto"
                              Margin="0 0 0 12" />

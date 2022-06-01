@@ -20,30 +20,9 @@
     <Window.Resources>
     </Window.Resources>
 
-    <StackPanel>
-        <TextBox Style="{StaticResource myInput}"
-                 Text="dfd"
-                 Width="348" Height="51"></TextBox>
+    <panel:PendingBillPanel Width="928"/>
 
-        <TextBox Text="hihidfsjdfhkjdshfksjhfkjasdhahsfkjhsdkfh" Width="100"
-                 TextWrapping="Wrap"></TextBox>
 
-        <ComboBox Width="400"
-                  Height="51">
-            <ComboBoxItem Content="abc"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-            <ComboBoxItem Content="abcd"></ComboBoxItem>
-        </ComboBox>
-
-    </StackPanel>
-
-    
 
     <!--<StackPanel>
 		--><!--<ItemsControl x:Name="itemsControl">

@@ -26,41 +26,6 @@ namespace BookstoreManagement.Components.Panels
         public PendingBillPanel()
         {
             InitializeComponent();
-            transitioner.SelectedIndex = 0;
-            tabMarks[0] = confirmWaitingOrderSelectMark;
-            tabMarks[1] = shippingOrderSelectMark;
-            tabMarks[2] = shippedOrderSelectMark;
-            selectTab(0);
-        }
-
-        private void selectTab(int index)
-        {
-            foreach (var mark in tabMarks) mark.Visibility = Visibility.Hidden;
-            tabMarks[index].Visibility = Visibility.Visible;
-        }
-
-        private void btnMediaTab_Click(object sender, RoutedEventArgs e)
-        {
-            transitioner.SelectedIndex = 0;
-            selectTab(0);
-        }
-
-        private void btnConfirmWaitingOrderTab_Click(object sender, RoutedEventArgs e)
-        {
-            transitioner.SelectedIndex = 0;
-            selectTab(0);
-        }
-
-        private void btnShippingOrderTab_Click(object sender, RoutedEventArgs e)
-        {
-            transitioner.SelectedIndex = 1;
-            selectTab(1);
-        }
-
-        private void btnShippedOrderTab_Click(object sender, RoutedEventArgs e)
-        {
-            transitioner.SelectedIndex = 2;
-            selectTab(2);
         }
     }
 }

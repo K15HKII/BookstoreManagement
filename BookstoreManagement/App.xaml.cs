@@ -45,7 +45,7 @@ namespace BookstoreManagement
 
         private void OnStartup(object sender, StartupEventArgs e)
         {
-            bool test = false;
+            bool test = true;
 
             if (!test)
             {

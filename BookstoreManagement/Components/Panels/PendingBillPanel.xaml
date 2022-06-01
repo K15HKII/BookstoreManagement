@@ -10,9 +10,160 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TabItem}"
+               x:Key="NavigationRailItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid x:Name="Root"
+                              Cursor="Hand">
+                            <Grid>
+                                <Border x:Name="MouseOverBorder"
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="{Binding Path=(materialDesign:NavigationRailAssist.SelectionCornerRadius), RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                        Opacity=".08"
+                                        Visibility="Hidden" />
+                                <materialDesign:Ripple x:Name="contentPresenter"
+                                                       Padding="{TemplateBinding Padding}"
+                                                       HorizontalContentAlignment="Center"
+                                                       VerticalContentAlignment="Center"
+                                                       ClipToBounds="True"
+                                                       Content="{TemplateBinding Header}"
+                                                       ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                                                       ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                       ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                                       Focusable="False"
+                                                       Opacity=".52"
+                                                       RecognizesAccessKey="True"
+                                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                       TextBlock.FontSize="15"
+                                                       TextBlock.FontWeight="Medium"
+                                                       TextOptions.TextFormattingMode="Ideal"
+                                                       TextOptions.TextRenderingMode="Auto">
+                                    <materialDesign:Ripple.Clip>
+                                        <MultiBinding Converter="{StaticResource BorderClipConverter}">
+                                            <Binding ElementName="MouseOverBorder"
+                                                     Path="ActualWidth" />
+                                            <Binding ElementName="MouseOverBorder"
+                                                     Path="ActualHeight" />
+                                            <Binding ElementName="MouseOverBorder"
+                                                     Path="CornerRadius" />
+                                            <Binding ElementName="MouseOverBorder"
+                                                     Path="BorderThickness" />
+                                        </MultiBinding>
+                                    </materialDesign:Ripple.Clip>
+                                </materialDesign:Ripple>
+                            </Grid>
+                            <Border x:Name="SelectionHighlightBorder"
+                                    Visibility="Hidden">
+                                <Border x:Name="PART_BackgroundSelection"
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="{Binding Path=(materialDesign:NavigationRailAssist.SelectionCornerRadius), RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                        Opacity="0.12" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled"
+                                     Value="False">
+                                <Setter Property="Opacity"
+                                        Value="0.38" />
+                            </Trigger>
+                            <Trigger SourceName="Root"
+                                     Property="IsMouseOver"
+                                     Value="True">
+                                <Setter TargetName="MouseOverBorder"
+                                        Property="Visibility"
+                                        Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter TargetName="contentPresenter"
+                                        Property="Opacity"
+                                        Value="1" />
+                                <Setter TargetName="contentPresenter"
+                                        Property="TextElement.Foreground"
+                                        Value="{StaticResource SolidDarkPrimaryColor}" />
+                            </Trigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected"
+                                               Value="True" />
+                                    <Condition Property="materialDesign:ColorZoneAssist.Mode"
+                                               Value="Standard" />
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="contentPresenter"
+                                        Property="Foreground"
+                                        Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </MultiTrigger>
+
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}"
+                                               Value="True" />
+                                    <Condition Binding="{Binding Path=(materialDesign:NavigationRailAssist.ShowSelectionBackground), RelativeSource={RelativeSource AncestorType={x:Type TabControl}}}"
+                                               Value="True" />
+                                </MultiDataTrigger.Conditions>
+                                <Setter TargetName="SelectionHighlightBorder"
+                                        Property="Visibility"
+                                        Value="Visible" />
+                            </MultiDataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TabItem}"
+               x:Key="A">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <ContentPresenter ContentSource="Header"
+                                          Panel.ZIndex="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TabControl}"
+               x:Key="NavigationRail">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="ItemContainerStyle"
+                    Value="{StaticResource A}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <DockPanel Background="{TemplateBinding Background}"
+                                   KeyboardNavigation.TabNavigation="Local">
+                            <StackPanel x:Name="HeaderPanel"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Focusable="False"
+                                        IsItemsHost="True"
+                                        Orientation="Horizontal"
+                                        DockPanel.Dock="Top"/>
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              Margin="{TemplateBinding Padding}"
+                                              ContentSource="SelectedContent"
+                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                              Focusable="False"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            </ContentPresenter>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
         <StackPanel>
-            <h:HeaderWithSearchBar Tag="Đơn hàng"/>
+            <h:HeaderWithSearchBar Tag="Đơn hàng" />
 
             <Grid Margin="0 25 0 0">
                 <Grid.RowDefinitions>
@@ -24,6 +175,7 @@
                            LastChildFill="False"
                            VerticalAlignment="Center"
                            Margin="0 0 0 29">
+
                     <TextBlock Text="Số lượng"
                                Style="{StaticResource Caption}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
@@ -42,74 +194,6 @@
                                                  Height="24" />
                     </Button>
 
-                    <StackPanel HorizontalAlignment="Center">
-                        <StackPanel Orientation="Horizontal">
-                            <Button x:Name="btnConfirmWaitingOrderTab"
-                                    Width="100px"
-                                    Background="{x:Null}"
-                                    BorderBrush="{x:Null}"
-                                    Foreground="{DynamicResource SolidDarkPrimaryColor}"
-                                    Content="Chờ xác nhận"
-                                    Margin="0,2"
-                                    Padding="0"
-                                    Click="btnConfirmWaitingOrderTab_Click" />
-                            <Button x:Name="btnShippingOrderTab"
-                                    Width="120"
-                                    Background="{x:Null}"
-                                    BorderBrush="{x:Null}"
-                                    Foreground="{DynamicResource SolidDarkPrimaryColor}"
-                                    Content="Đang vận chuyển"
-                                    Margin="0,2"
-                                    Click="btnShippingOrderTab_Click" />
-                            <Button x:Name="btnShippedOrderTab"
-                                    Width="120"
-                                    Background="{x:Null}"
-                                    BorderBrush="{x:Null}"
-                                    Foreground="{DynamicResource SolidDarkPrimaryColor}"
-                                    Content="Đã vận chuyển"
-                                    Margin="0,2"
-                                    Click="btnShippedOrderTab_Click" />
-                            <Button x:Name="btnOrderRatingTab"
-                                    Width="100"
-                                    Background="{x:Null}"
-                                    BorderBrush="{x:Null}"
-                                    Foreground="{DynamicResource SolidDarkPrimaryColor}"
-                                    Content="Đánh giá"
-                                    Margin="0,2" />
-                            <Button x:Name="btnCanceledOrderTab"
-                                    Width="100"
-                                    Background="{x:Null}"
-                                    BorderBrush="{x:Null}"
-                                    Foreground="{DynamicResource SolidDarkPrimaryColor}"
-                                    Content="Đã hủy"
-                                    Margin="0,2" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    DockPanel.Dock="Top"
-                                    Height="4">
-                            <Border x:Name="confirmWaitingOrderSelectMark"
-                                    BorderThickness="8"
-                                    Width="100"
-                                    BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
-                            <Border x:Name="shippingOrderSelectMark"
-                                    BorderThickness="8"
-                                    Width="120"
-                                    BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
-                            <Border x:Name="shippedOrderSelectMark"
-                                    BorderThickness="8"
-                                    Width="120"
-                                    BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
-                            <Border x:Name="orderRatingSelectMark"
-                                    BorderThickness="8"
-                                    Width="100"
-                                    BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
-                            <Border x:Name="canceledOrderSelectMark"
-                                    BorderThickness="8"
-                                    Width="100"
-                                    BorderBrush="{StaticResource SolidDarkPrimaryColor}" />
-                        </StackPanel>
-                    </StackPanel>
-
                     <StackPanel DockPanel.Dock="Right"
                                 Orientation="Horizontal">
                         <ComboBox>
@@ -127,11 +211,11 @@
                     </StackPanel>
                 </DockPanel>
 
-                <Grid Grid.Row="1"
-                      x:Name="p">
-                    <materialDesign:Transitioner x:Name="transitioner"
-                                                 SelectedIndex="0">
-                        <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect None}">
+                <Grid Grid.Row="1" Name="p">
+                    <TabControl Style="{StaticResource NavigationRail}">
+                        <TabItem Style="{StaticResource NavigationRailItem}"
+                                 Padding="12 8"
+                                 Header="Chờ xác nhận">
                             <ScrollViewer VerticalScrollBarVisibility="Auto"
                                           Margin="0"
                                           DockPanel.Dock="Top"
@@ -170,9 +254,10 @@
                                     </component:PageItemsControl.ItemsTemplate>
                                 </component:PageItemsControl>
                             </ScrollViewer>
-                        </materialDesign:TransitionerSlide>
-
-                        <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect None}">
+                        </TabItem>
+                        <TabItem Header="Đang giao"
+                                 Style="{StaticResource NavigationRailItem}"
+                                 Padding="12 8">
                             <ScrollViewer VerticalScrollBarVisibility="Auto"
                                           Margin="0"
                                           DockPanel.Dock="Top"
@@ -182,7 +267,7 @@
                                                             VerticalAlignment="Top"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView x:Name="itemsControl1"
+                                        <ListView
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -211,53 +296,15 @@
                                     </component:PageItemsControl.ItemsTemplate>
                                 </component:PageItemsControl>
                             </ScrollViewer>
-                        </materialDesign:TransitionerSlide>
-
-                        <materialDesign:TransitionerSlide OpeningEffect="{materialDesign:TransitionEffect None}">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          Margin="0"
-                                          DockPanel.Dock="Top"
-                                          Background="Black"
-                                          Height="{Binding ElementName=p, Path=ActualHeight}">
-                                <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            HorizontalAlignment="Left">
-                                    <component:PageItemsControl.ItemsTemplate>
-                                        <ListView x:Name="itemsControl3"
-                                                  Width="{Binding ElementName=p, Path=ActualWidth}"
-                                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                            <ListView.ItemContainerStyle>
-                                                <Style TargetType="ListViewItem">
-                                                    <Setter Property="Padding"
-                                                            Value="0 0 0 0" />
-                                                    <Setter Property="Margin"
-                                                            Value="11 0 12 32" />
-                                                    <Setter Property="BorderThickness"
-                                                            Value="0" />
-                                                </Style>
-                                            </ListView.ItemContainerStyle>
-                                            <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type api:BillDetail}">
-                                                    <component:PendingBillCard Width="449" />
-                                                </DataTemplate>
-                                            </ListView.ItemTemplate>
-                                            <ListView.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <WrapPanel Margin="-11 0 -12 0"
-                                                               IsItemsHost="True"
-                                                               Orientation="Horizontal" />
-                                                </ItemsPanelTemplate>
-                                            </ListView.ItemsPanel>
-                                        </ListView>
-                                    </component:PageItemsControl.ItemsTemplate>
-                                </component:PageItemsControl>
-                            </ScrollViewer>
-                        </materialDesign:TransitionerSlide>
-                    </materialDesign:Transitioner>
+                        </TabItem>
+                        <TabItem Header="Đã giao"
+                                 Style="{StaticResource NavigationRailItem}"
+                                 Padding="12 8"></TabItem>
+                    </TabControl>
                 </Grid>
             </Grid>
         </StackPanel>
-
+        
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
                 Background="Black"
                 VerticalAlignment="Bottom"
