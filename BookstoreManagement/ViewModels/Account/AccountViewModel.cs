@@ -39,9 +39,9 @@ namespace BookstoreManagement.ViewModels.Account
 
         [ObservableProperty] object? _email;
 
-        [ObservableProperty] object? _phonenum;
+        [ObservableProperty] object? _phoneNum;
 
-        [ObservableProperty] object? _createdate;
+        [ObservableProperty] object? _createDate;
 
         [ObservableProperty] object? _gender;
 

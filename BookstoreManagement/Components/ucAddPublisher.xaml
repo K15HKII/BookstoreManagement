@@ -33,7 +33,7 @@
                            Margin="0 0 16 0" />
                 <TextBox Style="{StaticResource myInput}"
                            Foreground="Black"
-                           Text="Nobita"
+                           Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            VerticalAlignment="Center"
                            Margin="0 0 16 0" />
             </StackPanel>
@@ -54,7 +54,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                                 Text="{Binding Createdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Text="{Binding CreateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngay thành lập"
                                  Width="auto" />
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
@@ -90,7 +90,7 @@
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
                         <TextBox Style="{StaticResource myInput}"
-                                 Text="{Binding Coopdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Text="{Binding CoopDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
                                  Grid.Column="1" />
                     </Grid>
@@ -106,7 +106,7 @@
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
                         <TextBox Style="{StaticResource myInput}"
-                                 Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Text="{Binding BookType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
                                  Grid.Column="1" />
                     </Grid>

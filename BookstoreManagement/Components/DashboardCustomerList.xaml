@@ -52,7 +52,7 @@
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center">
 
-                            <TextBlock Text="{Binding Billquantity}"
+                            <TextBlock Text="{Binding BillQuantity}"
                                        HorizontalAlignment="Right"
                                        Style="{StaticResource Title}" />
                             <TextBlock HorizontalAlignment="Right"

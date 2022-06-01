@@ -36,7 +36,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         
         [ObservableProperty]
         [Required]
-        private string? _username;
+        private string? _userName;
 
         [ObservableProperty]
         [Required]
@@ -44,7 +44,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
 
         [ObservableProperty]
         [Required]
-        private string? _confirmpassword;
+        private string? _confirmPassword;
 
         [ObservableProperty]
         [Required]
@@ -61,7 +61,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
 
         [ObservableProperty]
         [Required]
-        private DateTime? _createdate;
+        private DateTime? _createDate;
 
         [ObservableProperty]
         [Required]

@@ -16,12 +16,18 @@
                         Height="191"
                         CornerRadius="100"
                         Background="{StaticResource SolidLightGrayColor}"
-                        Margin="0 0 0 16" />
+                        Margin="0 0 0 16" >
+                    <Border.BorderBrush>
+                        <ImageBrush
+                            ImageSource="{Binding Image}"
+                        />
+                    </Border.BorderBrush>
+                    </Border>
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidOrangeColor}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Text="Chuc vu"
+                           Text="{Binding Position}"
                            Margin="0 0 0 16"/>
                 <StackPanel Orientation="Horizontal"
                             VerticalAlignment="Bottom"
@@ -29,11 +35,11 @@
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                VerticalAlignment="Center"
-                               Text="#Ma nhan vien" />
+                               Text="{Binding Id}" />
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
                                Margin="12 0 0 0"
-                               Text="Nobita" />
+                               Text="{Binding Name}" />
                 </StackPanel>
             </StackPanel>
 
@@ -55,7 +61,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Phone}" />
                         </DockPanel>
                     </Border>
 
@@ -68,7 +74,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Birth}" />
                         </DockPanel>
                     </Border>
 
@@ -81,7 +87,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Gender}" />
                         </DockPanel>
                     </Border>
 
@@ -94,7 +100,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Address}" />
                         </DockPanel>
                     </Border>
                 </StackPanel>
@@ -107,7 +113,7 @@
                            Text="So ngay nghi" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidOrangeColor}"
-                           Text="5"
+                           Text="{Binding DayOffs}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -119,7 +125,7 @@
                            VerticalAlignment="Center" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="20"
+                           Text="{Binding DayOffMax}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -130,7 +136,7 @@
                            Text="Tinh cach" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="chamchi"
+                           Text="{Binding Character}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -141,7 +147,7 @@
                            Text="Ngay tham gia" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="02/02/2022"
+                           Text="{Binding CreateDay}"
                            DockPanel.Dock="Right"
                            VerticalAlignment="Center" />
             </DockPanel>

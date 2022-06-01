@@ -28,7 +28,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         
         [ObservableProperty] 
         [Required]
-        private string? _username;
+        private string? _userName;
 
         [ObservableProperty] 
         [Required]
@@ -39,7 +39,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         private string? _name;
         
         [ObservableProperty] 
-        private DateTime? _daycreate;
+        private DateTime? _dayCreate;
         
         [ObservableProperty] 
         [Required]

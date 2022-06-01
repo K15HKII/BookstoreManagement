@@ -24,7 +24,7 @@
     <Border Background="White"
             Width="928px">
         <ItemsControl Margin="12 0 20 0" x:Name="itemsControl"
-                      ItemsSource="{Binding Lscustomers}">
+                      ItemsSource="{Binding LsCustomers}">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <StackPanel>
@@ -134,19 +134,19 @@
                         <TextBlock Grid.Column="4"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="{Binding Billquantity}"
+                                   Text="{Binding BillQuantity}"
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidOrangeColor}" />
                         <TextBlock Grid.Column="5"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="{Binding Customerincome}"
+                                   Text="{Binding CustomerIncome}"
                                    Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Grid.Column="6"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="{Binding Createdate}"
+                                   Text="{Binding CreateDate}"
                                    Style="{StaticResource Caption}"
                                    Foreground="Black" />
                     </Grid>

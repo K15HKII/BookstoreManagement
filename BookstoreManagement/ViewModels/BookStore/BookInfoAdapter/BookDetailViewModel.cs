@@ -33,11 +33,11 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 
         [ObservableProperty] object? _stock;
 
-        [ObservableProperty] object? _authorid;
+        [ObservableProperty] object? _authorId;
 
         [ObservableProperty] double? _price;
 
-        [ObservableProperty] object? _publisherid;
+        [ObservableProperty] object? _publisherId;
 
         [ObservableProperty] BookTag? _tag;
 

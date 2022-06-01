@@ -73,7 +73,7 @@
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                Margin="0 0 8 0" />
                     <TextBlock Style="{StaticResource Caption}"
-                               Text="{Binding Joindate}"
+                               Text="{Binding JoinDate}"
                                Foreground="{StaticResource SolidPrimaryColor}" />
                 </StackPanel>
 
@@ -90,7 +90,7 @@
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                Margin="0 0 0 2" />
                     <TextBlock Style="{StaticResource Title}"
-                               Text="{Binding Dayoffquantity}"
+                               Text="{Binding DayOffQuantity}"
                                Foreground="{StaticResource SolidOrangeColor}" />
                 </StackPanel>
 

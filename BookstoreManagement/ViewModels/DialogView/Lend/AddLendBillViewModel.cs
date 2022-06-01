@@ -24,11 +24,11 @@ namespace BookstoreManagement.ViewModels.DialogView
 
         [ObservableProperty] 
         [Required]
-        private string? _customerid;
+        private string? _customerId;
         
         [ObservableProperty]
         [Required]
-        private string? _customername;
+        private string? _customerName;
         
         [ObservableProperty] 
         [Required]
@@ -38,26 +38,30 @@ namespace BookstoreManagement.ViewModels.DialogView
         [Required]
         private string? _customerAddress;
         
-        [NotNull]
-        [ItemNotNull]
-        public List<Book> PublisherSource
-        {
-            get
-            {
-                List<Book>? publisherSource = null;
-                Dispose(_model.getListBook(), result => publisherSource = result);
-                return publisherSource!;
-            }
-        }
-        [ObservableProperty] private Book? _book;
+        [ObservableProperty] 
+        [Required]
+        private string? _lendBookName;
+        
+        // [NotNull]
+        // [ItemNotNull]
+        // public List<Book> PublisherSource
+        // {
+        //     get
+        //     {
+        //         List<Book>? publisherSource = null;
+        //         Dispose(_model.getListBook(), result => publisherSource = result);
+        //         return publisherSource!;
+        //     }
+        // }
+        // [ObservableProperty] private Book? _book;
         
 //        [ObservableProperty] object? lendBookId;
 //        [ObservableProperty] object? lendBookName;
 
         [ObservableProperty]
         [Required]
-        private string? _quantity;
-        
+        private string? _voucher;
+
         [ObservableProperty]
         [Required]
         private int? _price;
@@ -68,11 +72,15 @@ namespace BookstoreManagement.ViewModels.DialogView
         
         [ObservableProperty]
         [Required]
-        private DateTime? _lenddate;
+        private DateTime? _lendDate;
         
         [ObservableProperty] 
         [Required]
-        private DateTime? _lendexpired;
+        private DateTime? _lendExpired;
+        
+        [ObservableProperty] 
+        [Required]
+        private string? _bookImage;
         
         [ObservableProperty]
         [Required]

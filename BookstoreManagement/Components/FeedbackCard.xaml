@@ -31,7 +31,7 @@
                         Background="{StaticResource SolidLightGrayColor}" >
                     <Border.BorderBrush>
                         <ImageBrush
-                            ImageSource="{Binding Bookimage}"/>
+                            ImageSource="{Binding BookImage}"/>
                     </Border.BorderBrush>
                     </Border>
 
@@ -52,15 +52,15 @@
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Margin="0 0 0 8" />
                         <TextBlock Style="{StaticResource Title}"
-                                   Text="{Binding Productid}"
+                                   Text="{Binding ProductId}"
                                    Foreground="Black"
                                    Margin="0 0 0 8" />
                         <TextBlock Style="{StaticResource Body}"
-                                   Text="{Binding Bookname}"
+                                   Text="{Binding BookName}"
                                    Foreground="Black"
                                    Margin="0 0 0 20" />
                         <TextBlock Style="{StaticResource Body}"
-                                   Text="{Binding Rateowner}"
+                                   Text="{Binding RateOwner}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Margin="0 0 0 8" />
                         <StackPanel Orientation="Horizontal">
@@ -98,6 +98,7 @@
                                Text="Noi dung"
                                Margin="0 0 0 8" />
                     <TextBox Style="{StaticResource myInput}"
+                             Text="{Binding RatingContent}"
                              Width="{Binding ElementName=root, Path=ActualWidth}" />
                 </StackPanel>
 
@@ -121,6 +122,7 @@
                                Text="Phan hoi"
                                Margin="0 0 0 8" />
                     <TextBox Style="{StaticResource myInput}"
+                             Text="{Binding RatingReply, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Width="{Binding ElementName=root, Path=ActualWidth}"
                              materialDesign:HintAssist.Hint="Viet o day..." />
 

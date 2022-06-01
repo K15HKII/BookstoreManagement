@@ -16,18 +16,24 @@
                         Height="191"
                         CornerRadius="100"
                         Background="{StaticResource SolidLightGrayColor}"
-                        Margin="0 0 0 16" />
-                <StackPanel Orientation="Horizontal"
-                            VerticalAlignment="Bottom"
-                            HorizontalAlignment="Center">
+                        Margin="0 0 0 16" >
+                    <Border.BorderBrush>
+                        <ImageBrush
+                            ImageSource="{Binding Image}"
+                        />
+                    </Border.BorderBrush>
+                    </Border>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Center">
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                VerticalAlignment="Center"
-                               Text="#Ma nha cung cap" />
+                               Text="{Binding Id}" />
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
                                Margin="12 0 0 0"
-                               Text="Nobita" />
+                               Text="{Binding Name}" />
                 </StackPanel>
             </StackPanel>
 
@@ -49,7 +55,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Phone}" />
                         </DockPanel>
                     </Border>
 
@@ -57,12 +63,12 @@
                         <DockPanel LastChildFill="False">
                             <TextBlock Style="{StaticResource Caption}"
                                        Foreground="{StaticResource SolidDarkGrayColor}"
-                                       Text="Gioi tinh"
+                                       Text="Email"
                                        VerticalAlignment="Center" />
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Email}" />
                         </DockPanel>
                     </Border>
 
@@ -75,7 +81,7 @@
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
                                        DockPanel.Dock="Right"
-                                       Text="@..." />
+                                       Text="{Binding Address}" />
                         </DockPanel>
                     </Border>
                 </StackPanel>
@@ -88,7 +94,7 @@
                            Text="Da cung cap" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidOrangeColor}"
-                           Text="10.000"
+                           Text="{Binding BookQuantity}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -99,7 +105,7 @@
                            Text="The loai" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="van hoc"
+                           Text="{Binding BookType}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -110,7 +116,7 @@
                            Text="Ngay tham gia" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="02/02/2022"
+                           Text="{Binding CoopDate}"
                            DockPanel.Dock="Right"
                            VerticalAlignment="Center" />
             </DockPanel>

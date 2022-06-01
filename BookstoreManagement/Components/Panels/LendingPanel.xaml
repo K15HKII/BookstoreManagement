@@ -223,6 +223,7 @@
                                                         HorizontalAlignment="Left">
                                 <component:PageItemsControl.ItemsTemplate>
                                     <ListView x:Name="itemsControl"
+                                              ItemsSource="{Binding Books}"
                                               Width="{Binding ElementName=p, Path=ActualWidth}"
                                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                         <ListView.ItemContainerStyle>

@@ -23,20 +23,20 @@ namespace BookstoreManagement.ViewModels.Rating.RatingAdapter
         
         [ObservableProperty] object? _id;
 
-        [ObservableProperty] object? _productid;
+        [ObservableProperty] object? _productId;
 
-        [ObservableProperty] private object? _bookimage;
+        [ObservableProperty] private object? _bookImage;
 
-        [ObservableProperty] object? _bookname;
+        [ObservableProperty] object? _bookName;
 
-        [ObservableProperty] object? _rateowner;
+        [ObservableProperty] object? _rateOwner;
 
-        [ObservableProperty] object? _starquantity;
+        [ObservableProperty] object? _starQuantity;
         
-        [ObservableProperty] object? _ratingcontent;
+        [ObservableProperty] object? _ratingContent;
         
-        [ObservableProperty] ObservableCollection<object>? _lsratingimage;
+        [ObservableProperty] ObservableCollection<object>? _lsRatingImage;
         
-        [ObservableProperty] object? _ratingreply;
+        [ObservableProperty] object? _RatingReply;
     }
 }

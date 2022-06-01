@@ -30,16 +30,17 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
 
         [ObservableProperty] object? _id;
         [ObservableProperty] object? _name;
+        [ObservableProperty] object? _image;
         [ObservableProperty] object? _phone;
         [ObservableProperty] object? _birth;
         [ObservableProperty] object? _gender;
         [ObservableProperty] object? _address;
-        [ObservableProperty] object? _facebook;
+        [ObservableProperty] object? _faceBook;
         [ObservableProperty] object? _instagram;
-        [ObservableProperty] object? _orderbillquantity;
-        [ObservableProperty] object? _boughtbillquantity;
-        [ObservableProperty] object? _incomecustomer;
-        [ObservableProperty] object? _customercreatedate;
+        [ObservableProperty] object? _orderBillQuantity;
+        [ObservableProperty] object? _boughtBillQuantity;
+        [ObservableProperty] object? _incomeCustomer;
+        [ObservableProperty] object? _customerCreateDate;
 
         public event Action<object?>? CloseAction;
         [ICommand]

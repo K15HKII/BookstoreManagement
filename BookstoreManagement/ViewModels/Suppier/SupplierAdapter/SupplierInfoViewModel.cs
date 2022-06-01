@@ -31,7 +31,7 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 
         [ObservableProperty] object? _email;
 
-        [ObservableProperty] object? _coopdate;
+        [ObservableProperty] object? _coopDate;
 
         [ObservableProperty] object? _type;
 

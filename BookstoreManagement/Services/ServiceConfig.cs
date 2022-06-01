@@ -186,7 +186,6 @@ namespace BookstoreManagement.Services
 
                 //Rating
                 service.AddViewModel<RatingInfoViewModel>();
-                service.AddViewModel<RatingExpanderViewModel>();
 
                 //Customer
                 service.AddViewModel<CustomerViewModel>();

@@ -28,8 +28,8 @@ namespace BookstoreManagement.ViewModels.Rating
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? lsRatingViews;
+        [ObservableProperty] public ObservableCollection<object>? _lsRatingViews;
 
-        [ObservableProperty] public object? selectedRatingView;
+        [ObservableProperty] public object? _selectedRatingView;
     }
 }

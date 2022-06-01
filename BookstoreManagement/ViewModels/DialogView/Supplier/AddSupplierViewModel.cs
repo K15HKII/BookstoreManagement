@@ -41,15 +41,15 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         
         [ObservableProperty]
         [Required]
-        private DateTime? _coopdate;
+        private DateTime? _coopDate;
         
         [ObservableProperty]
         [Required]
-        private DateTime? _createdate;
+        private DateTime? _createDate;
 
         [ObservableProperty] 
         [Required]
-        private string? _booktype;
+        private string? _bookType;
         
         [ObservableProperty]
         [Required]

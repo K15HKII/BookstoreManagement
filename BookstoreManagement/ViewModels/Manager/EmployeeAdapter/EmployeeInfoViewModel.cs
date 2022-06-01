@@ -38,7 +38,7 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 
         [ObservableProperty] object? _joinDate;
 
-        [ObservableProperty] object? _dayoffquantity;
+        [ObservableProperty] object? _dayOffQuantity;
         
         [ICommand]
         public void OpenEdit()

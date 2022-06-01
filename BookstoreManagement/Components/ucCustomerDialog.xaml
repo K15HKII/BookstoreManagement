@@ -28,18 +28,24 @@
                             Height="191"
                             CornerRadius="100"
                             Background="{StaticResource SolidLightGrayColor}"
-                            Margin="0 0 0 16" />
-                    <StackPanel Orientation="Horizontal"
+                            Margin="0 0 0 16" >
+                        <Border.BorderBrush>
+                            <ImageBrush
+                                ImageSource="{Binding Image}"
+                            />
+                        </Border.BorderBrush>
+                        </Border>
+                        <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Bottom"
                                 HorizontalAlignment="Center">
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    VerticalAlignment="Center"
-                                   Text="#Ma khach hang" />
+                                   Text="{Binding Id}" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
                                    Margin="12 0 0 0"
-                                   Text="Nobita" />
+                                   Text="{Binding Name}" />
                     </StackPanel>
                 </StackPanel>
 
@@ -70,7 +76,7 @@
                                     <TextBlock Style="{StaticResource Body}"
                                                Foreground="Black"
                                                DockPanel.Dock="Right"
-                                               Text="@..." />
+                                               Text="{Binding FaceBook}" />
                                 </DockPanel>
 
 
@@ -85,7 +91,7 @@
                                     <TextBlock Style="{StaticResource Body}"
                                                Foreground="Black"
                                                DockPanel.Dock="Right"
-                                               Text="@..." />
+                                               Text="{Binding Instagram}" />
                                 </DockPanel>
 
 
@@ -122,7 +128,7 @@
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
                                            DockPanel.Dock="Right"
-                                           Text="@..." />
+                                           Text="{Binding Phone}" />
                             </DockPanel>
                         </Border>
 
@@ -135,7 +141,7 @@
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
                                            DockPanel.Dock="Right"
-                                           Text="@..." />
+                                           Text="{Binding Birth}" />
                             </DockPanel>
                         </Border>
 
@@ -148,7 +154,7 @@
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
                                            DockPanel.Dock="Right"
-                                           Text="@..." />
+                                           Text="{Binding Gender}" />
                             </DockPanel>
                         </Border>
 
@@ -161,7 +167,7 @@
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
                                            DockPanel.Dock="Right"
-                                           Text="@..." />
+                                           Text="{Binding Address}" />
                             </DockPanel>
                         </Border>
                     </StackPanel>
@@ -188,7 +194,7 @@
                            Text="Don da mua" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidOrangeColor}"
-                           Text="1.002"
+                           Text="{Binding OrderBillQuantity}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -200,7 +206,7 @@
                            VerticalAlignment="Center" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="1.012"
+                           Text="{Binding BoughtBillQuantity}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -211,7 +217,7 @@
                            Text="Thu nhap tu khach hang" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="{StaticResource SolidOrangeColor}"
-                           Text="d10.000.000"
+                           Text="{Binding IncomeCustomer}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -222,7 +228,7 @@
                            Text="Ngay tham gia" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="02/02/2022"
+                           Text="{Binding CustomerCreateDate}"
                            DockPanel.Dock="Right" 
                            VerticalAlignment="Center"/>
             </DockPanel>
