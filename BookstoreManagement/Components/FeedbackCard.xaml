@@ -63,28 +63,10 @@
                                    Text="{Binding RateOwner}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Margin="0 0 0 8" />
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Star"
-                                                     Width="24"
-                                                     Height="24"
-                                                     Foreground="{StaticResource SolidYellowColor}" />
-                            <materialDesign:PackIcon Kind="Star"
-                                                     Width="24"
-                                                     Height="24"
-                                                     Foreground="{StaticResource SolidYellowColor}" />
-                            <materialDesign:PackIcon Kind="Star"
-                                                     Width="24"
-                                                     Height="24"
-                                                     Foreground="{StaticResource SolidYellowColor}" />
-                            <materialDesign:PackIcon Kind="Star"
-                                                     Width="24"
-                                                     Height="24"
-                                                     Foreground="{StaticResource SolidYellowColor}" />
-                            <materialDesign:PackIcon Kind="Star"
-                                                     Width="24"
-                                                     Height="24"
-                                                     Foreground="{StaticResource SolidYellowColor}" />
-                        </StackPanel>
+                        <materialDesign:RatingBar Value="{Binding StarQuantity}"
+                                                  Max="5"
+                                                  Foreground="{StaticResource SolidYellowColor}"
+                                                  x:Name="CustomRatingBar" />
                     </StackPanel>
                 </Grid>
 

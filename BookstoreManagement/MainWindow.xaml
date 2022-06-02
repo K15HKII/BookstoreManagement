@@ -20,69 +20,16 @@
     <Window.Resources>
     </Window.Resources>
 
-    <panel:PendingBillPanel Width="928"/>
+    <Grid>
+        <materialDesign:RatingBar Value="3"
+                                  Max="5"
+                                  Foreground="{StaticResource SolidYellowColor}"
+                                  x:Name="CustomRatingBar" />
 
+        <TextBlock Text="{Binding ElementName=CustomRatingBar, Path=Value, StringFormat=Rating: {0}, Mode=TwoWay}"
+                   VerticalAlignment="Top"
+                   Margin="0,40,0,0" />
+    </Grid>
 
-
-    <!--<StackPanel>
-		--><!--<ItemsControl x:Name="itemsControl">
-				<ItemsControl.Resources>
-					<DataTemplate DataType="{x:Type api:BookProfile}">
-						<component:ProductCard/>
-					</DataTemplate>
-				</ItemsControl.Resources>
-				<ItemsControl.ItemsPanel>
-					<ItemsPanelTemplate>
-						<WrapPanel></WrapPanel>
-					</ItemsPanelTemplate>
-				</ItemsControl.ItemsPanel>
-		</ItemsControl>--><!--
-
-		<component:ProductCard 
-			x:Name="i"
-			DataContext="{x:Type api:BookProfile}"/>
-
-        --><!--<component:BookList x:Name="test"
-                            DataContext="{x:Type api:BookProfile}"
-                            Width="928"/>
-
-        <component:CustomerList DataContext="{x:Type api:User}"
-                                Width="928"/>-->
-
-        <!--<component:PublisherCard			
-			x:Name="ii"
-			DataContext="{x:Type api:Publisher}"/>
-
-		<component:VoucherCard
-			x:Name="iii"
-			Width="447"
-			DataContext="{x:Type api:Voucher}"/>--><!--
-	</StackPanel>
-
-	--><!--<Grid x:Name="itemsControl">
-			<DataTemplate DataType="{x:Type api:BookProfile}">
-				<component:ProductCard/>
-			</DataTemplate>
-	</Grid>-->
-
-
-    
-
-    <!--<ItemsControl x:Name="itemsControl" Padding="0" Margin="0">
-                    <ItemsControl.Resources >
-                        <DataTemplate DataType="{x:Type api:BookProfile}">
-                            <component:ProductCard Margin="14 0 14 57"
-                                                   Width="150px"/>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type api:CartItem}">
-                            <component:ucVoucher/>
-                        </DataTemplate>
-                    </ItemsControl.Resources>
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate >
-                            <WrapPanel Margin="-14 0 -14 0"></WrapPanel>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>-->
 	
 </Window>
