@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for BookLendingList.xaml
+    /// Interaction logic for LendingDialog.xaml
     /// </summary>
-    public partial class BookLendingList : UserControl
+    public partial class LendingDialog : UserControl
     {
-        public BookLendingList()
+        public LendingDialog()
         {
             InitializeComponent();
         }

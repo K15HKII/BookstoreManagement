@@ -1,0 +1,253 @@
+﻿<UserControl x:Class="BookstoreManagement.Components.LendingDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BookstoreManagement.Components"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignWidth="735">
+    
+    <Border CornerRadius="16"
+            Background="White"
+            Padding="42 20 42 32">
+        <StackPanel x:Name="root">
+
+            <DockPanel LastChildFill="False"
+                       Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="# Ma don"
+                           VerticalAlignment="Center" />
+                <StackPanel DockPanel.Dock="Right"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource Caption}"
+                               Foreground="{StaticResource SolidDarkGrayColor}"
+                               Text="Ngay tao don"
+                               Margin="0 0 12 0"
+                               VerticalAlignment="Center" />
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="Black"
+                               Text="02/02/2022" />
+                </StackPanel>
+
+            </DockPanel>
+
+            <StackPanel Margin="0 0 0 24">
+                <StackPanel Orientation="Horizontal"
+                            Margin="0 0 0 12">
+                    <materialDesign:PackIcon Kind="User"
+                                             Width="24"
+                                             Height="24"
+                                             Foreground="{StaticResource SolidPrimaryColor}" />
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Text="Nobita"
+                               Margin="4 0 0 0" />
+                </StackPanel>
+                <DockPanel LastChildFill="False">
+                    <TextBlock Style="{StaticResource Caption}"
+                               Foreground="{StaticResource SolidDarkGrayColor}"
+                               Text="So dien thoai"
+                               VerticalAlignment="Center" />
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidPrimaryColor}"
+                               Text="09476186xx"
+                               DockPanel.Dock="Right"
+                               VerticalAlignment="Center" />
+                </DockPanel>
+                <DockPanel LastChildFill="False">
+                    <TextBlock Style="{StaticResource Caption}"
+                               Foreground="{StaticResource SolidDarkGrayColor}"
+                               Text="Email"
+                               VerticalAlignment="Center"
+                               Margin="0 0 0 2" />
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidPrimaryColor}"
+                               Text="20520558@gm.uit.edu.vn"
+                               DockPanel.Dock="Right"
+                               VerticalAlignment="Center" />
+                </DockPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 24">
+                <StackPanel Orientation="Horizontal"
+                            Margin="0 0 0 12">
+                    <materialDesign:PackIcon Kind="Cart"
+                                             Width="24"
+                                             Height="24"
+                                             Foreground="{StaticResource SolidPrimaryColor}" />
+                    <TextBlock Style="{StaticResource Heading3}"
+                               Foreground="Black"
+                               Text="Don hang"
+                               Margin="4 0 0 0" />
+                </StackPanel>
+
+                <DockPanel LastChildFill="False"
+                           Margin="0 0 16 0"
+                           Height="103">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="70"
+                                Height="70"
+                                Background="{StaticResource SolidLightGrayColor}" />
+                        <StackPanel Margin="10 0 0 0">
+                            <TextBlock Style="{StaticResource Body}"
+                                       Foreground="Black"
+                                       Text="{Binding BookName}"
+                                       Margin="0 0 0 4" />
+                            <TextBlock Style="{StaticResource Caption}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       Text="{Binding BookType}" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Right"
+                                VerticalAlignment="Center">
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="{StaticResource SolidDarkPrimaryColor}"
+                                   Text="{Binding BookPrice}" />
+                    </StackPanel>
+                </DockPanel>
+
+                <Border Padding="0 0 0 16"
+                        CornerRadius="6"
+                        Background="White">
+                    <DockPanel Margin="14 0 16 0"
+                               LastChildFill="False"
+                               Background="Transparent">
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="{StaticResource SolidDarkGrayColor}"
+                                   Text="Note"
+                                   VerticalAlignment="Center" />
+                        <TextBlock Style="{StaticResource Body}"
+                                   DockPanel.Dock="Right"
+                                   Foreground="{StaticResource SolidOrangeColor}"
+                                   Text="Thanh tien: 120.000"
+                                   VerticalAlignment="Center" />
+                    </DockPanel>
+                </Border>
+            </StackPanel>
+
+            <Grid Margin="0 0 0 24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="294" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 0 0 12">
+                        <materialDesign:PackIcon Kind="Voucher"
+                                                 Width="24"
+                                                 Height="24"
+                                                 Foreground="{StaticResource SolidPrimaryColor}" />
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="Voucher"
+                                   Margin="4 0 0 0" />
+                    </StackPanel>
+                    <local:ucVoucher />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 0 0 12">
+                        <materialDesign:PackIcon Kind="CreditCard"
+                                                 Width="24"
+                                                 Height="24"
+                                                 Foreground="{StaticResource SolidPrimaryColor}" />
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="Hinh thuc thanh toan"
+                                   Margin="4 0 0 0" />
+                    </StackPanel>
+
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="Black"
+                               Text="" />
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="Trạng thái"
+                           Margin="0 0 0 4" />
+                <TextBlock Style="{StaticResource Body}"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Text="{Binding State}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
+                           Text="Ghi chu"
+                           Margin="0 0 0 4" />
+                <TextBlock Style="{StaticResource Body}"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Text="{Binding Note}" />
+            </StackPanel>
+
+            <Border Padding="24 16"
+                    Margin="0 0 0 24"
+                    CornerRadius="0 0 8 8"
+                    Background="White">
+                <StackPanel Background="Transparent">
+                    <DockPanel LastChildFill="False"
+                               Margin="0 0 0 11">
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="Black"
+                                   Text="Tong tien hang" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="Black"
+                                   Text="240.000d"
+                                   DockPanel.Dock="Right" />
+                    </DockPanel>
+                    <DockPanel LastChildFill="False"
+                               Margin="0 0 0 11">
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="Black"
+                                   Text="Giam gia" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="Black"
+                                   Text="-60.000d"
+                                   DockPanel.Dock="Right" />
+                    </DockPanel>
+                    <DockPanel LastChildFill="False">
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="Tong tien" />
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="200.000d"
+                                   DockPanel.Dock="Right" />
+                    </DockPanel>
+                </StackPanel>
+
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="4"
+                                      Color="#000000"
+                                      Opacity="0.25"
+                                      Direction="-90">
+                    </DropShadowEffect>
+                </Border.Effect>
+            </Border>
+
+            <!--button-->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Style="{StaticResource SecondButton}"
+                        Width="97"
+                        Margin="0 0 16 0"
+                        Content="Huy"></Button>
+                <Button Style="{StaticResource PrimaryButton}"
+                        Width="97"
+                        Content="Cap nhat"></Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+</UserControl>

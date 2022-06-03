@@ -6,100 +6,63 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d"
-             d:DesignWidth="928">
-
-    <UserControl.Resources>
-        <GridLength x:Key="InfoCustomerColumnWidth">2*</GridLength>
-        <GridLength x:Key="LendQuantityColumnWidth">*</GridLength>
-        <GridLength x:Key="LendDateColumnWidth">1.5*</GridLength>
-        <GridLength x:Key="PayBackDateColumnWidth">1.5*</GridLength>
-        <GridLength x:Key="StateColumnWidth">1.5*</GridLength>
-        <GridLength x:Key="CheckboxColumnWidth">24</GridLength>
-    </UserControl.Resources>
+             d:DesignHeight="114"
+             d:DesignWidth="449">
 
     <Border CornerRadius="8"
-            Background="White">
-
-        <StackPanel Background="Transparent"
-                    Margin="0 0 0 8">
-
-            <Grid VerticalAlignment="Center"
-              Margin="20 12"
-              Background="Transparent">
+            Background="White"
+            Padding="0 0 20 0">
+        <Grid Background="Transparent">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{StaticResource InfoCustomerColumnWidth}" />
-                <ColumnDefinition Width="{StaticResource LendQuantityColumnWidth}" />
-                <ColumnDefinition Width="{StaticResource LendDateColumnWidth}" />
-                <ColumnDefinition Width="{StaticResource PayBackDateColumnWidth}" />
-                <ColumnDefinition Width="{StaticResource StateColumnWidth}" />
-                <ColumnDefinition Width="{StaticResource CheckboxColumnWidth}" />
+                <ColumnDefinition Width="114" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
+            <Border CornerRadius="8"
+                    BorderThickness="1"
+                    BorderBrush="Black">
+                <Image Source="{Binding BookImage}" />
+            </Border>
+            <Grid Grid.Column="1"
+                  Margin="16 14 0 14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="67" />
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Name="infoOfCustomer"
-                        Grid.Column="0"
-                        Orientation="Horizontal">
-                <Border Width="47px"
-                        Height="47px"
-                        
-                        CornerRadius="25"
-                        Background="{StaticResource SolidLightGrayColor}"
-                        Margin="0 0 6 0">
-                    <Border.BorderBrush>
-                        <ImageBrush
-                            ImageSource="{Binding UserImage}"/>
-                    </Border.BorderBrush>
-                </Border>
-                <StackPanel Orientation="Vertical"
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding Id}"
-                               Style="{StaticResource Title}" />
-                    <TextBlock Text="{Binding Name}"
-                               Style="{StaticResource Body}"
-                               Foreground="{StaticResource SolidPrimaryColor}" />
+                <StackPanel>
+                    <TextBlock Style="{StaticResource Title}"
+                               Foreground="Black"
+                               Margin="0 0 0 6"
+                               Text="{Binding ID}" />
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidPrimaryColor}"
+                               Text="{Binding CustomerName}"
+                               Margin="0 0 0 16" />
+                    <TextBlock Style="{StaticResource Body}"
+                               Foreground="{StaticResource SolidOrangeColor}"
+                               Text="{Binding Price}" />
                 </StackPanel>
-            </StackPanel>
 
-            <TextBlock Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding Quantity}"
-                       Style="{StaticResource Body}"
-                       Foreground="{StaticResource SolidOrangeColor}" />
+                <StackPanel Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource SmallCaption}"
+                                   Foreground="{StaticResource SolidDarkGrayColor}"
+                                   Margin="0 0 0 2"
+                                   Text="Ngày tạo đơn"
+                                   HorizontalAlignment="Right" />
+                        <TextBlock Style="{StaticResource Caption}"
+                                   Foreground="{StaticResource SolidDarkPrimaryColor}"
+                                   Text="{Binding LendDate}" />
+                    </StackPanel>
 
-            <TextBlock Grid.Column="2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding Start}"
-                       Style="{StaticResource Caption}"
-                       Foreground="{StaticResource SolidDarkPrimaryColor}" />
-            <TextBlock Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding End}"
-                       Style="{StaticResource Caption}"
-                       Foreground="{StaticResource SolidDarkPrimaryColor}" />
-            <TextBlock Grid.Column="4"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding State}"
-                       Style="{StaticResource Caption}"
-                       Foreground="{StaticResource SolidDarkPrimaryColor}" />
-            <Grid Grid.Column="5"
-                  VerticalAlignment="Center">
-                <CheckBox Style="{StaticResource myCheckBoxStyle}"
-                          Width="24"
-                          Height="24" />
+                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
+                              Width="24"
+                              Height="24"
+                              HorizontalAlignment="Right"
+                              Margin="0 34 0 0" />
+                </StackPanel>
             </Grid>
         </Grid>
-
-            <local:BookLendingList 
-                Margin="0 0 0 8"
-                Visibility="Collapsed"/>
-
-            <ToggleButton Style="{StaticResource myExpanderButton}" />
-
-        </StackPanel>
 
         <Border.Effect>
             <DropShadowEffect BlurRadius="4"
@@ -108,6 +71,7 @@
                               Direction="-90">
             </DropShadowEffect>
         </Border.Effect>
+
     </Border>
 
 </UserControl>

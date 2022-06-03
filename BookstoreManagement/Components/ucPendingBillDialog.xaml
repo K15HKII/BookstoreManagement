@@ -218,6 +218,17 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
+                           Text="Trạng thái"
+                           Margin="0 0 0 4" />
+                <TextBlock Style="{StaticResource Body}"
+                           Foreground="Black"
+                           TextWrapping="Wrap"
+                           Text="{Binding State}" />
+            </StackPanel>
+
+            <StackPanel Margin="0 0 0 24">
+                <TextBlock Style="{StaticResource Heading3}"
+                           Foreground="Black"
                            Text="Ghi chu"
                            Margin="0 0 0 4" />
                 <TextBlock Style="{StaticResource Body}"

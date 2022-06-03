@@ -8,6 +8,7 @@
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
+             xmlns:lend="clr-namespace:BookstoreManagement.ViewModels.Lend.LendAdapter"
              mc:Ignorable="d" 
              d:DesignHeight="664" 
              d:DesignWidth="928">
@@ -223,7 +224,7 @@
                                                         HorizontalAlignment="Left">
                                 <component:PageItemsControl.ItemsTemplate>
                                     <ListView x:Name="itemsControl"
-                                              ItemsSource="{Binding Books}"
+                                              ItemsSource="{Binding}"
                                               Width="{Binding ElementName=p, Path=ActualWidth}"
                                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                         <ListView.ItemContainerStyle>
@@ -237,7 +238,7 @@
                                             </Style>
                                         </ListView.ItemContainerStyle>
                                         <ListView.ItemTemplate>
-                                            <DataTemplate>
+                                            <DataTemplate DataType="{x:Type lend:LendViewModel}">
                                                 <component:LendingCard Width="928" />
                                             </DataTemplate>
                                         </ListView.ItemTemplate>

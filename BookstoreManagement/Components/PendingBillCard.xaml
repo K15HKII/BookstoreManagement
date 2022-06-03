@@ -19,8 +19,7 @@
             </Grid.ColumnDefinitions>
             <Border CornerRadius="8"
                     BorderThickness="1"
-                    BorderBrush="Black"
-                    DataContext="{x:Type model:Image}">
+                    BorderBrush="Black">
                 <Image Source="{Binding Image}"/>
             </Border>
             <Grid Grid.Column="1"

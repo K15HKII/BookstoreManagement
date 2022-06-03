@@ -44,10 +44,6 @@
                          Text="{Binding CustomerPhone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Tag="So dien thoai"
                          Margin="0 0 0 8" />
-                <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}"
-                         Text="{Binding CustomerAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Tag="Dia chi" />
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">
