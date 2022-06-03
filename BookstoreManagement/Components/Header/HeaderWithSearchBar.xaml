@@ -20,7 +20,7 @@
                    VerticalAlignment="Center"
                    Margin="0 0 8 0"></TextBlock>
 
-        <TextBox Style="{StaticResource mySearchInput}"></TextBox>
+        <TextBox Style="{StaticResource mySearchInput}" Width="663" Height="51"></TextBox>
 
         <StackPanel Orientation="Horizontal"
                     VerticalAlignment="Center"

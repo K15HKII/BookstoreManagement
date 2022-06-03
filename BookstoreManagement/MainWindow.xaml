@@ -20,16 +20,6 @@
     <Window.Resources>
     </Window.Resources>
 
-    <Grid>
-        <materialDesign:RatingBar Value="3"
-                                  Max="5"
-                                  Foreground="{StaticResource SolidYellowColor}"
-                                  x:Name="CustomRatingBar" />
-
-        <TextBlock Text="{Binding ElementName=CustomRatingBar, Path=Value, StringFormat=Rating: {0}, Mode=TwoWay}"
-                   VerticalAlignment="Top"
-                   Margin="0,40,0,0" />
-    </Grid>
-
-	
+    
+    
 </Window>
