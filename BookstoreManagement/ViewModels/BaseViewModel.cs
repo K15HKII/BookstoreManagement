@@ -1,4 +1,5 @@
 ﻿using System;
+using System.DirectoryServices.ActiveDirectory;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows.Media.TextFormatting;
@@ -35,16 +36,29 @@ public abstract partial class BaseViewModel : ObservableValidator
 
     protected readonly CompositeDisposable _disposables = new CompositeDisposable();
 
+    private bool _init = false;
+
     public ScheluderProvider ScheluderProvider { get; }
 
-    protected BaseViewModel(ScheluderProvider scheluderProvider)
+    protected BaseViewModel(ScheluderProvider scheluderProvider) : this()
     {
         ScheluderProvider = scheluderProvider;
     }
 
     protected BaseViewModel()
     {
+        _Initialize();
+    }
 
+    protected void Initialize() {}
+
+    private void _Initialize()
+    {
+        if (!_init)
+        {
+            Initialize();
+            _init = true;
+        }
     }
 
     public void Dispose(IDisposable disposable)
