@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
-             xmlns:shape="clr-namespace:BookstoreManagement.Components.Shapes"
              mc:Ignorable="d"
              d:DesignWidth="210">
 
@@ -19,7 +18,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <shape:EmployeeFlag Margin="164 0 8 0" />
+            <local:EmployeeFlag Margin="164 0 8 0" />
 
             <StackPanel Background="Transparent"
                         Grid.Row="1"

@@ -6,11 +6,9 @@
         xmlns:local="clr-namespace:BookstoreManagement"
         xmlns:login="clr-namespace:BookstoreManagement.ViewModels.Login"
         xmlns:viewModels="clr-namespace:BookstoreManagement.ViewModels"
-        xmlns:authentication="clr-namespace:BookstoreManagement.Components.Authentication"
         xmlns:views="clr-namespace:BookstoreManagement.Views"
         xmlns:components="clr-namespace:BookstoreManagement.Components"
         xmlns:setting="clr-namespace:BookstoreManagement.ViewModels.Setting"
-        xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels"
         xmlns:account="clr-namespace:BookstoreManagement.ViewModels.Account"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
@@ -24,14 +22,14 @@
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type login:LoginViewModel}">
                     <components:LoadingMask Loading="{Binding IsLoading}">
-                        <authentication:LoginForm/>
+                        <components:LoginForm/>
                     </components:LoadingMask>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">
                     <views:HomeView/>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type setting:SettingViewModel}">
-                    <panels:SettingPanel/>
+                    <components:SettingPanel/>
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type account:AccountViewModel}">
 

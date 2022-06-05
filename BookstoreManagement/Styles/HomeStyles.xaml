@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:dashboard="clr-namespace:BookstoreManagement.ViewModels.Dashboard"
                     xmlns:components="clr-namespace:BookstoreManagement.Components"
-                    xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels"
                     xmlns:report="clr-namespace:BookstoreManagement.ViewModels.Report"
                     xmlns:lend="clr-namespace:BookstoreManagement.ViewModels.Lend"
                     xmlns:suppier="clr-namespace:BookstoreManagement.ViewModels.Suppier"
@@ -48,34 +47,34 @@
     
     <ResourceDictionary x:Key="TabContentDataTemplates">
         <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
-            <panels:DashboardPanel/>
+            <components:DashboardPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type report:ReportPanelViewModel}">
-            <panels:StatisticPanel/>
+            <components:StatisticPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type bookStore:BookPanelViewModel}">
-            <panels:BookStoragePanel/>
+            <components:BookStoragePanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
-            <panels:PendingBillPanel/>
+            <components:PendingBillPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
-            <panels:VoucherPanel/>
+            <components:VoucherPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type rating:RatingViewModel}">
-            <panels:FeedbackPanel/>
+            <components:FeedbackPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
-            <panels:UserManagementPanel/>
+            <components:UserManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
-            <panels:EmployeeManagementPanel/>
+            <components:EmployeeManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
-            <panels:PublisherManagementPanel/>
+            <components:PublisherManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type lend:LendViewModel}">
-            <panels:LendingPanel/>
+            <components:LendingPanel/>
         </DataTemplate>
     </ResourceDictionary>
     

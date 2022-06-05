@@ -1,13 +1,11 @@
-﻿<UserControl x:Class="BookstoreManagement.Components.Panels.VoucherPanel"
+﻿<UserControl x:Class="BookstoreManagement.Components.VoucherPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
-             xmlns:local="clr-namespace:BookstoreManagement.Components.Panels"
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
              xmlns:voucher="clr-namespace:BookstoreManagement.ViewModels.Voucher.VoucherAdapter"
              mc:Ignorable="d"
              d:DesignWidth="928"
@@ -15,7 +13,7 @@
     
     <Grid>
         <StackPanel>
-            <h:HeaderWithSearchBar Tag="Voucher" />
+            <component:HeaderWithSearchBar Tag="Voucher" />
 
             <DockPanel LastChildFill="False"
                        Height="36"

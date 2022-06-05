@@ -1,20 +1,18 @@
-﻿<UserControl x:Class="BookstoreManagement.Components.Panels.StatisticPanel"
+﻿<UserControl x:Class="BookstoreManagement.Components.StatisticPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
-             xmlns:local="clr-namespace:BookstoreManagement.Components.Panels"
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:h="clr-namespace:BookstoreManagement.Components.Header"
              xmlns:statistic="clr-namespace:BookstoreManagement.ViewModels.Components"
              mc:Ignorable="d"
              d:DesignWidth="928">
     
     <StackPanel>
         <StackPanel>
-            <h:HeaderNoWithSearchBar Width="928"
+            <component:HeaderNoWithSearchBar Width="928"
                                      Height="89"
                                      Tag="Báo cáo" />
             <StackPanel Orientation="Horizontal"
