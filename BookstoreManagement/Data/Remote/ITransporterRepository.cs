@@ -9,15 +9,15 @@ public interface ITransporterRepository
 {
     #region Transporter
     [Get("/api/transporter")]
-    IObservable<List<Transporter>> getListTransporter();
+    IObservable<List<Transporter>> GetTransporters();
 
     [Get("/api/transporter")]
-    IObservable<Transporter> getTransporter(int id);
+    IObservable<Transporter> GetTransporter(int id);
 
     [Post("/api/transporter")]
-    IObservable<Object> saveTransporter(Transporter transporter);
+    IObservable<Object> SaveTransporter(Transporter transporter);
 
     [Delete("/api/transporter")]
-    IObservable<Object> deleteTransporter(int id);
+    IObservable<Object> DeleteTransporter(int id);
     #endregion
 }

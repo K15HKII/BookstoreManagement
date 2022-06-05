@@ -99,6 +99,10 @@ namespace BookstoreManagement.Components
         private static IEnumerable<int> DefaultReferencePageSelector(int currentPage, int maxPage)
         {
             List<int> result = new List<int>();
+            if (maxPage == 0)
+            {
+                return result;
+            }
             int maxLength = 5;
 
             int current = Math.Max(1, Math.Min(maxPage, currentPage));
@@ -316,7 +320,7 @@ namespace BookstoreManagement.Components
             nameof(MaxPage),
             typeof(int),
             typeof(PageItemsNavigationBar),
-            new FrameworkPropertyMetadata(1, OnMaxPageChanged));
+            new FrameworkPropertyMetadata(0, OnMaxPageChanged));
 
         public int MaxPage
         {

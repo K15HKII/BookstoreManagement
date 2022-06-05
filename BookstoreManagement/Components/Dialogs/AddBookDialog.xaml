@@ -24,7 +24,7 @@
                            Text="Ten san pham"
                            Margin="0 0 0 8" />
                 <TextBox Width="{Binding ElementName=root, Path=ActualWidth}"
-                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                         Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <Grid Margin="0 0 0 24">
@@ -47,8 +47,8 @@
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
-                             Text="abc"
-                             Width="auto" />
+                             Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Width="auto"/>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -64,7 +64,7 @@
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
-                             Text="abc"
+                             Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Width="auto" />
                 </Grid>
 
@@ -75,9 +75,12 @@
                            Foreground="Black"
                            Text="Nha cung cap"
                            Margin="0 0 0 8" />
-                <ComboBox Width="{Binding ElementName=root, Path=ActualWidth}" />
+                <ComboBox Width="{Binding ElementName=root, Path=ActualWidth}" 
+                          ItemsSource="{Binding Source={StaticResource PublisherProvider}, Path=Source}"
+                          SelectedItem="{Binding PublisherId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="Name"/>
             </StackPanel>
-
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
@@ -140,10 +143,11 @@
                         HorizontalAlignment="Right">
                 <Button Style="{StaticResource SecondButton}"
                         Width="97"
+                        Command="{Binding CloseCommand}"
                         Margin="0 0 16 0"
                         Content="Huy"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
-                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                        Command="{Binding AcceptCommand}"
                         Width="97"
                         Content="Them"></Button>
             </StackPanel>

@@ -29,8 +29,8 @@ public partial class BaseBookViewModel : BaseViewModel
     [ObservableProperty] [Required] [MinLength(1)] private string? _title;
     [ObservableProperty] private string? _description;
     [ObservableProperty] private BookTag[] _tags;
-    [ObservableProperty] private string? _authorName;
-    [ObservableProperty] private string? _publisherName;
+    [ObservableProperty] private string? _authorId;
+    [ObservableProperty] private string? _publisherId;
     [ObservableProperty] [Required] [Range(Double.Epsilon, Double.MaxValue)] private double? _price;
     [ObservableProperty] [Range(1, Int64.MaxValue)] private int _quantity = 1;
     [ObservableProperty] private ObservableCollection<string> _imageIds = new();

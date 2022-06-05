@@ -73,6 +73,14 @@ namespace BookstoreManagement.Components
             };
             ReferenceCollection = new ObservableCollection<object>();
         }
+
+        protected override void OnItemsSourceChanged(IEnumerable oldValue, IEnumerable newValue)
+        {
+            base.OnItemsSourceChanged(oldValue, newValue);
+            RefreshMaxPage();
+            UpdateReferenceItems();
+        }
+
         #endregion
 
         #region Properties
@@ -159,7 +167,7 @@ namespace BookstoreManagement.Components
             nameof(CurrentPage),
             typeof(int),
             typeof(PageItemsControl),
-            new FrameworkPropertyMetadata(1, OnCurrentPageChanged));
+            new FrameworkPropertyMetadata(0, OnCurrentPageChanged));
 
         private static void OnCurrentPageChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -185,7 +193,7 @@ namespace BookstoreManagement.Components
            nameof(MaxPage),
            typeof(int),
            typeof(PageItemsControl),
-           new FrameworkPropertyMetadata(1, OnMaxPageChanged));
+           new FrameworkPropertyMetadata(0, OnMaxPageChanged));
 
         private static void OnMaxPageChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

@@ -106,22 +106,22 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Transporter>> getListTransporter()
+        public IObservable<List<Transporter>> GetTransporters()
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<Transporter> getTransporter(int id)
+        public IObservable<Transporter> GetTransporter(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> saveTransporter(Transporter transporter)
+        public IObservable<object> SaveTransporter(Transporter transporter)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteTransporter(int id)
+        public IObservable<object> DeleteTransporter(int id)
         {
             throw new NotImplementedException();
         }

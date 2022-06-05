@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="Styles/Color.xaml"/>
                 <ResourceDictionary Source="Styles/CustomComponents.xaml"/>
                 <ResourceDictionary Source="Styles/Text.xaml"/>
+                <ResourceDictionary Source="Resources/Providers.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

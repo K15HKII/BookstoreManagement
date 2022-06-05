@@ -40,6 +40,7 @@ using BookstoreManagement.Views.ViewStates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Refit;
 
 namespace BookstoreManagement.Services
@@ -94,7 +95,10 @@ namespace BookstoreManagement.Services
             {
                 service.AddSingleton<LoginSession>();
                 
-                RefitSettings settings = new RefitSettings(new NewtonsoftJsonContentSerializer());
+                RefitSettings settings = new RefitSettings(new NewtonsoftJsonContentSerializer(new JsonSerializerSettings()
+                {
+                    NullValueHandling = NullValueHandling.Ignore
+                }));
                 service.AddTransient<HttpAuthHandler>();
                 service.AddRefitClient<IAuthRemote>(settings).ConfigHttpClientBuilder(false, true);
                 service.AddRefitClient<IModelRemote>(settings).ConfigHttpClientBuilder(true, true);

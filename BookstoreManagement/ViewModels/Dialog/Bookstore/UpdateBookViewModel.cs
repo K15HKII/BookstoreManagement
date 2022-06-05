@@ -25,9 +25,6 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _model = model;
         }
 
-        [ObservableProperty] [Required] [MinLength(1)]
-        private string? test = "";
-
         public BookUpdateRequest? ToRequest()
         {
             ValidateProperties();
