@@ -8,16 +8,19 @@ namespace BookstoreManagement.Data.Remote;
 public interface IBookRepository
 {
     #region Book
-    [Get("/api/model/book")]
-    IObservable<List<Book>> getListBook();
+    [Get("/api/book/search")]
+    IObservable<List<Book>> GetBooks();
 
-    [Get("/api/model/book")]
-    IObservable<Book> getBook(string id);
+    [Get("/api/book/info/{id}")]
+    IObservable<Book> GetBook(string id);
 
-    [Post("/api/model/book")]
-    IObservable<Object> saveBook(Book book);
+    [Post("/api/book")]
+    IObservable<Book> CreateBook(BookUpdateRequest request);
 
-    [Delete("/api/model/book")]
-    IObservable<Object> deleteBook(string id);
+    [Post("/api/book/{id}")]
+    IObservable<Book> UpdateBook(string id, BookUpdateRequest request);
+
+    [Delete("/api/book/{id}")]
+    IObservable<Object> DeleteBook(string id);
     #endregion
 }

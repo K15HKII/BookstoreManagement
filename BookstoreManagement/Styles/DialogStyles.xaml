@@ -2,7 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.DialogView.BookStore"
                     xmlns:components="clr-namespace:BookstoreManagement.Components">
-    <DataTemplate DataType="{x:Type bookStore:AddBookViewModel}">
-        <components:ucAddBook/>
-    </DataTemplate>
+    <ResourceDictionary x:Key="DialogTemplates">
+        <DataTemplate DataType="{x:Type bookStore:UpdateBookViewModel}">
+            <components:AddBook/>
+        </DataTemplate>
+    </ResourceDictionary>
 </ResourceDictionary>

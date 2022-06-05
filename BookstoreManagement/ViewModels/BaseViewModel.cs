@@ -1,33 +1,12 @@
 ﻿using System;
-using System.DirectoryServices.ActiveDirectory;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Windows.Media.TextFormatting;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels;
-
-public abstract class BaseViewModel<N> : BaseViewModel where N : INavigator
-{
-
-    protected N? Navigator { get; set; }
-
-    protected BaseViewModel(N? navigator, ScheluderProvider scheluderProvider) : base(scheluderProvider)
-    {
-        Navigator = navigator;
-    }
-
-    protected BaseViewModel(ScheluderProvider scheluderProvider) : base(scheluderProvider)
-    {
-    }
-
-    protected BaseViewModel() : base(null)
-    {
-
-    }
-
-}
 
 public abstract partial class BaseViewModel : ObservableValidator
 {
@@ -35,8 +14,6 @@ public abstract partial class BaseViewModel : ObservableValidator
     [ObservableProperty] private bool _isLoading = false;
 
     protected readonly CompositeDisposable _disposables = new CompositeDisposable();
-
-    private bool _init = false;
 
     public ScheluderProvider ScheluderProvider { get; }
 
@@ -47,18 +24,6 @@ public abstract partial class BaseViewModel : ObservableValidator
 
     protected BaseViewModel()
     {
-        _Initialize();
-    }
-
-    protected void Initialize() {}
-
-    private void _Initialize()
-    {
-        if (!_init)
-        {
-            Initialize();
-            _init = true;
-        }
     }
 
     public void Dispose(IDisposable disposable)
@@ -72,6 +37,18 @@ public abstract partial class BaseViewModel : ObservableValidator
             .SubscribeOn(ScheluderProvider.IO())
             .ObserveOn(ScheluderProvider.UI())
             .Subscribe(action));
+    }
+    
+    protected void ValidateProperties()
+    {
+        foreach (var propertyInfo in GetType().GetProperties())
+        {
+            bool validate = propertyInfo.GetCustomAttributes(typeof(ValidationAttribute), true).Any();
+            if (validate)
+            {
+                ValidateProperty(propertyInfo.GetValue(this), propertyInfo.Name);
+            }
+        }
     }
 
 }

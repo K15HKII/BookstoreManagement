@@ -3,29 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
-             xmlns:local="clr-namespace:BookstoreManagement.Components"
-             xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.Customer.CustomerAdapter"
+             xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.DialogView.Customer"
              mc:Ignorable="d">
-
     <UserControl.Resources>
         <GridLength x:Key="InfoCustomerColumnWidth">*</GridLength>
         <GridLength x:Key="OrderedQuantityColumnWidth">64</GridLength>
     </UserControl.Resources>
-
     <Border Background="White"
             Width="352px">
-        <ItemsControl x:Name="itemsControl"
-                      ItemsSource="{Binding UserList}">
+        <ItemsControl ItemsSource="{Binding}">
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type customer:CustomerViewModel}">
+                <DataTemplate DataType="{x:Type customer:CustomerDetailViewModel}">
                     <Grid Width="352px"
                           Height="65px">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoCustomerColumnWidth}" />
                             <ColumnDefinition Width="{StaticResource OrderedQuantityColumnWidth}" />
                         </Grid.ColumnDefinitions>
-
                         <StackPanel Name="infoOfCustomer"
                                     Grid.Column="0"
                                     Orientation="Horizontal">
@@ -33,8 +27,7 @@
                                     Height="47px"
                                     CornerRadius="25"
                                     Background="{StaticResource SolidLightGrayColor}"
-                                    Margin="0 0 6 0">
-                            </Border>
+                                    Margin="0 0 6 0" />
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
@@ -46,12 +39,10 @@
                                            Foreground="{StaticResource SolidDarkGrayColor}" />
                             </StackPanel>
                         </StackPanel>
-
                         <StackPanel Grid.Column="1"
                                     Orientation="Vertical"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center">
-
                             <TextBlock Text="{Binding BillQuantity}"
                                        HorizontalAlignment="Right"
                                        Style="{StaticResource Title}" />
@@ -59,13 +50,10 @@
                                        Text="Đơn hàng"
                                        Style="{StaticResource Caption}"
                                        Foreground="{StaticResource SolidDarkGrayColor}" />
-
                         </StackPanel>
                     </Grid>
-
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
     </Border>
-
 </UserControl>

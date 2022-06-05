@@ -13,13 +13,15 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
 {
-    public partial class VoucherAdapterViewModel : BaseViewModel<IVoucherAdapterNavigator>
+    public partial class VoucherAdapterViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IVoucherAdapterNavigator _navigator;
 
-        public VoucherAdapterViewModel(IVoucherAdapterNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public VoucherAdapterViewModel(IVoucherAdapterNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -44,7 +46,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
         public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenDetailVoucherDialog(_factory.Create<VoucherDetailViewModel>());
+            object? request = _navigator.OpenDetailVoucherDialog(_factory.Create<VoucherDetailViewModel>());
 
             if (request == null)
                 return;

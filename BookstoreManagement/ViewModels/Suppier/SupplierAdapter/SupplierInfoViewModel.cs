@@ -12,12 +12,13 @@ using BookstoreManagement.ViewModels.DialogView.Supplier;
 
 namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 {
-    public partial class SupplierInfoViewModel : BaseViewModel<ISupplierInfoNavigator>, IDialog
+    public partial class SupplierInfoViewModel : BaseViewModel, IDialog
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly ISupplierInfoNavigator _navigator;
 
-        public SupplierInfoViewModel(ISupplierInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public SupplierInfoViewModel(ISupplierInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
             _factory = factory;
             _model = model;
@@ -40,7 +41,7 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
         public void OpenDetail()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenDetailSupplierDialog(_factory.Create<SupplierDetailViewModel>());
+            object? request = _navigator.OpenDetailSupplierDialog(_factory.Create<SupplierDetailViewModel>());
 
             if (request == null)
                 return;

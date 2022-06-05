@@ -16,13 +16,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Suppier
 {
-    public partial class SupplierViewModel : BaseViewModel<ISupplierNavigator>
+    public partial class SupplierViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly ISupplierNavigator _navigator;
 
-        public SupplierViewModel(ISupplierNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public SupplierViewModel(ISupplierNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -39,7 +41,7 @@ namespace BookstoreManagement.ViewModels.Suppier
         [ICommand]
         public void AddNew()
         {
-            PublisherAddRequest? request = Navigator!.OpenNewSupplierDialog(_factory.Create<AddSupplierViewModel>());
+            PublisherAddRequest? request = _navigator.OpenNewSupplierDialog(_factory.Create<AddSupplierViewModel>());
             if (request == null)
                 return;
 

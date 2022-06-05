@@ -15,32 +15,20 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Customer
 {
-    public partial class CustomerDetailViewModel : BaseViewModel<ICustomerDetailNavigator>, IDialog
+    public partial class CustomerDetailViewModel : BaseUserViewModel, IDialog
     {
         //TODO: thiếu function cho cập nhật
         
         private readonly IModelRemote _model;
         private readonly IViewModelFactory _factory;
+        private readonly ICustomerDetailNavigator _navigator;
 
-        public CustomerDetailViewModel(ICustomerDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public CustomerDetailViewModel(ICustomerDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _model = model;
             _factory = factory;
         }
-
-        [ObservableProperty] object? _id;
-        [ObservableProperty] object? _name;
-        [ObservableProperty] object? _image;
-        [ObservableProperty] object? _phone;
-        [ObservableProperty] object? _birth;
-        [ObservableProperty] object? _gender;
-        [ObservableProperty] object? _address;
-        [ObservableProperty] object? _faceBook;
-        [ObservableProperty] object? _instagram;
-        [ObservableProperty] object? _orderBillQuantity;
-        [ObservableProperty] object? _boughtBillQuantity;
-        [ObservableProperty] object? _incomeCustomer;
-        [ObservableProperty] object? _customerCreateDate;
 
         public event Action<object?>? CloseAction;
         [ICommand]
@@ -53,7 +41,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         public void OpenEdit()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditCustomerDialog(_factory.Create<EditCustomerViewModel>());
+            object? request = _navigator.OpenEditCustomerDialog(_factory.Create<EditCustomerViewModel>());
 
             if (request == null)
                 return;
@@ -65,7 +53,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         public void OpenChangePass()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenChangePassWord(_factory.Create<EditPassWordViewModel>());
+            object? request = _navigator.OpenChangePassWord(_factory.Create<EditPassWordViewModel>());
 
             if (request == null)
                 return;
@@ -77,7 +65,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         public void OpenSocialLink()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenSocialLink(_factory.Create<SocialLinkViewModel>());
+            object? request = _navigator.OpenSocialLink(_factory.Create<SocialLinkViewModel>());
 
             if (request == null)
                 return;
@@ -89,7 +77,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         public void OpenDeleteAccount()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenDeleteCustomer(_factory.Create<DeleteAccountViewModel>());
+            object? request = _navigator.OpenDeleteCustomer(_factory.Create<DeleteAccountViewModel>());
 
             if (request == null)
                 return;

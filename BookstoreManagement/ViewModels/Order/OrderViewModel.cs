@@ -15,13 +15,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Order
 {
-    public partial class OrderViewModel : BaseViewModel<IOrderNavigator>
+    public partial class OrderViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IOrderNavigator _navigator;
 
-        public OrderViewModel(IOrderNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public OrderViewModel(IOrderNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -41,7 +43,7 @@ namespace BookstoreManagement.ViewModels.Order
         [ICommand]
         public void AddNew()
         {
-            BillAddRequest? request = Navigator!.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
+            BillAddRequest? request = _navigator.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
             if (request == null)
                 return;
 

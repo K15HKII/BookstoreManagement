@@ -18,14 +18,6 @@ namespace BookstoreManagement.ViewModels.Customer
         {
             _dialogService = dialogService;
         }
-        public void openAccountScreen()
-        {
-            throw new NotImplementedException();
-        }
-        public void openNotificationScreen()
-        {
-            throw new NotImplementedException();
-        }
 
         public UserAddRequest? openAddCustomerDialog(AddCustomerViewModel viewModel)
         {

@@ -1,6 +1,8 @@
-﻿namespace BookstoreManagement.ViewModels.DialogView.BookStore;
+﻿using BookstoreManagement.Data.Model.Api;
+
+namespace BookstoreManagement.ViewModels.DialogView.BookStore;
 
 public interface IBookDetailNavigator : INavigator
 {
-    object? OpenEditBookDialog(EditBookViewModel viewModel);
+    BookUpdateRequest? OpenEditBookDialog(UpdateBookViewModel viewModel);
 }

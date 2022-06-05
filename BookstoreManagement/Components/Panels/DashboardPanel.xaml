@@ -146,7 +146,7 @@
                        Foreground="Black"
                        Text="Sách bán chạy" />
             <component:BookList Margin="0 8 0 0"
-                                DataContext="{Binding BookList}" />
+                                DataContext="{Binding BookList}"/>
         </StackPanel>
 
     </StackPanel>

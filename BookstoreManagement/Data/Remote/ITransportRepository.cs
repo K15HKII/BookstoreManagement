@@ -8,16 +8,16 @@ namespace BookstoreManagement.Data.Remote;
 public interface ITransportRepository
 {
     #region Transport
-    [Get("/api/model/transport")]
+    [Get("/api/transport")]
     IObservable<List<Transport>> getListTransport();
 
-    [Get("/api/model/transport")]
+    [Get("/api/transport")]
     IObservable<Transport> getTransport(string id);
 
-    [Post("/api/model/transport")]
+    [Post("/api/transport")]
     IObservable<Object> saveTransport(Transport transport);
 
-    [Delete("/api/model/transport")]
+    [Delete("/api/transport")]
     IObservable<Object> deleteTransport(string id);
     #endregion
 }

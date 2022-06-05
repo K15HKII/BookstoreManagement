@@ -12,15 +12,19 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Login
 {
-    public partial class LoginViewModel : BaseViewModel<ILoginNavigator>
+    public partial class LoginViewModel : BaseViewModel
     {
 
         private readonly IAuthenticator _authenticator;
+        private readonly ILoginNavigator _navigator;
 
         public LoginViewModel(ScheluderProvider scheluder, IAuthenticator authenticator, ILoginNavigator navigator) : base(scheluder)
         {
             _authenticator = authenticator;
-            Navigator = navigator;
+            _navigator = navigator;
+            Username = "admin";
+            Password = "admin";
+            Login();
         }
 
         [ObservableProperty] [Required]
@@ -31,20 +35,20 @@ namespace BookstoreManagement.ViewModels.Login
         [ICommand]
         public void Login()
         {
-            // ValidateAllProperties();
-            //
-            // if (HasErrors)
-            // {
-            //     return;
-            // }
+            ValidateAllProperties();
+            
+            if (HasErrors)
+            {
+                return;
+            }
 
             IsLoading = true;
-            Navigator!.openApp();
-            // Dispose(_authenticator.Authenticate(Username!, Password!), res =>
-            // {
-            //     IsLoading = false;
-            //     Navigator!.openApp();
-            // });
+            Dispose(_authenticator.Authenticate(Username!, Password!), res =>
+            {
+                IsLoading = false;
+                if (res)
+                    _navigator.openApp();
+            });
         }
 
     }

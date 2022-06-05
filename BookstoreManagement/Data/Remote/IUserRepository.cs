@@ -8,16 +8,16 @@ namespace BookstoreManagement.Data.Remote;
 public interface IUserRepository
 {
     #region User 
-    [Get("/api/model/user")]
+    [Get("/api/user")]
     IObservable<List<User>> getListUser();
 
-    [Get("/api/model/user")]
+    [Get("/api/user")]
     IObservable<User> getUser(string id);
 
-    [Post("/api/model/user")]
+    [Post("/api/user")]
     IObservable<Object> saveUser(User user);
 
-    [Delete("/api/model/user")]
+    [Delete("/api/user")]
     IObservable<Object> deleteUser(string id);
     #endregion
 }

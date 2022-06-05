@@ -10,10 +10,10 @@ namespace BookstoreManagement.Data.Model.Auth
     public class LoginResponse
     {
 
-        [JsonProperty("access_token")]
+        [JsonProperty("x-access-token")]
         public string? AccessToken { get; set; }
 
-        [JsonProperty("refresh_token")]
+        [JsonProperty("x-refresh-token")]
         public string? RefreshToken { get; set; }
 
         [JsonProperty(Required = Required.Always, PropertyName = "authenticated")]

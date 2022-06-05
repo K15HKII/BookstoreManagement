@@ -8,16 +8,19 @@ namespace BookstoreManagement.Data.Remote;
 public interface IPublisherRepository
 {
     #region Publisher
-    [Get("/api/model/publisher")]
-    IObservable<List<Publisher>> getListPublisher();
+    [Get("/api/publisher")]
+    IObservable<List<Publisher>> GetPublishers();
 
-    [Get("/api/model/publisher")]
-    IObservable<Publisher> getPublisher(int id);
+    [Get("/api/publisher")]
+    IObservable<Publisher> GetPublisher(int id);
 
-    [Post("/api/model/publisher")]
-    IObservable<Object> savePublisher(Publisher publisher);
+    [Post("/api/publisher")]
+    IObservable<Publisher> CreatePublisher([Body] Publisher publisher);
+    
+    [Put("/api/publisher/{id}")]
+    IObservable<Publisher> UpdatePublisher(int id, [Body] Publisher publisher);
 
-    [Delete("/api/model/publisher")]
-    IObservable<Object> deletePublisher(int id);
+    [Delete("/api/publisher")]
+    IObservable<Object> DeletePublisher(int id);
     #endregion
 }

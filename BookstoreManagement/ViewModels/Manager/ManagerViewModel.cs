@@ -14,13 +14,15 @@ using BookstoreManagement.ViewModels.DialogView.Manager;
 
 namespace BookstoreManagement.ViewModels.Manager
 {
-    public partial class ManagerViewModel : BaseViewModel<IManagerNavigator>
+    public partial class ManagerViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IManagerNavigator _navigator;
 
-        public ManagerViewModel(IManagerNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public ManagerViewModel(IManagerNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -35,7 +37,7 @@ namespace BookstoreManagement.ViewModels.Manager
         
         public void AddNew()
         {
-            UserAddRequest? request = Navigator!.OpenNewEmployeeDialog(_factory.Create<AddEmployeeViewModel>());
+            UserAddRequest? request = _navigator.OpenNewEmployeeDialog(_factory.Create<AddEmployeeViewModel>());
             if (request == null)
                 return;
 

@@ -13,6 +13,11 @@
     <UserControl.Resources>
     </UserControl.Resources>
     <materialDesign:DialogHost>
+        <materialDesign:DialogHost.DialogContentTemplate>
+            <DataTemplate>
+                <ContentControl Content="{Binding}" Resources="{StaticResource DialogTemplates}"/>
+            </DataTemplate>
+        </materialDesign:DialogHost.DialogContentTemplate>
         <components:LoadingMask>
             <components:MainMenu>
                 <components:MainMenu.FloatingContent>

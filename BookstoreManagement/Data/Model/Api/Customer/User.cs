@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Newtonsoft.Json;
 
 namespace BookstoreManagement.Data.Model.Api
 {
@@ -48,6 +44,6 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("refresh_token")]
         public string? Refresh_token { get; set; }
 
-        public String FullName { get { return FirstName + " " + LastName; } }
+        public String FullName => FirstName + " " + LastName;
     }
 }

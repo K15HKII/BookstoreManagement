@@ -14,23 +14,21 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
-    public partial class CustomerPanelViewModel : BaseViewModel<ICustomerNavigator>
+    public partial class CustomerPanelViewModel : PanelViewModel
     {
-       
-
+        
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly ICustomerNavigator _navigator;
 
-        public CustomerPanelViewModel(ICustomerNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public CustomerPanelViewModel(ICustomerNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
         
         // Thiếu mở dialog thêm khách hàng và filter và xoá
-        public void openAccount() { }
-
-        public void openNotificaiton() { }
 
         [ObservableProperty] public ObservableCollection<object>? _lsCustomers;
 
@@ -40,7 +38,7 @@ namespace BookstoreManagement.ViewModels.Customer
         [ICommand]
         public void AddNew()
         {
-            UserAddRequest? request = Navigator!.openAddCustomerDialog(_factory.Create<AddCustomerViewModel>());
+            UserAddRequest? request = _navigator.openAddCustomerDialog(_factory.Create<AddCustomerViewModel>());
             if (request == null)
                 return;
 

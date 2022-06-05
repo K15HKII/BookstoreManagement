@@ -1,37 +1,65 @@
-﻿using BookstoreManagement.Annotations;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reactive.Linq;
+using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.Components;
-using BookstoreManagement.ViewModels.Customer.CustomerAdapter;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Customer;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels.Dashboard
 {
-    public partial class DashboardViewModel : BaseViewModel<IDashboardNavigator>
+    public partial class DashboardViewModel : PanelViewModel
     {
-        
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IDashboardNavigator _navigator;
 
-        public DashboardViewModel(IDashboardNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public DashboardViewModel(IDashboardNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
+            IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
+        }
+
+        protected void Initialize()
+        {
+            Dispose(_model.GetTopCustomers()
+                .Select(users => users.Select(user =>
+                {
+                    CustomerDetailViewModel vm = _factory.Create<CustomerDetailViewModel>();
+                    vm.SetUser(user);
+                    return vm;
+                })), users =>
+            {
+                UserList.Clear();
+                foreach (var vm in users)
+                {
+                    UserList.Add(vm);
+                }
+            });
+
+            Dispose(_model.GetBooks()
+                .Select(books => books.Select(book =>
+                {
+                    BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
+                    vm.SetBook(book);
+                    return vm;
+                })), books =>
+            {
+                BookList.Clear();
+                foreach (var vm in books)
+                {
+                    BookList.Add(vm);
+                }
+            });
         }
 
         //TODO: còn chart
-        public void openAccount() { }
-
-        public void openNotificaiton() { }
 
         [ObservableProperty] private ObservableCollection<StatisticViewModel> _mainStatistics = new();
 
@@ -39,9 +67,8 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         [ObservableProperty] int? _shippingOrders;
 
-        [ObservableProperty] ObservableCollection<CustomerViewModel>? _userList;
+        [ObservableProperty] ObservableCollection<CustomerDetailViewModel> _userList = new();
 
-        [ObservableProperty] ObservableCollection<BookDialogViewModel>? _bookList;
-        
+        [ObservableProperty] ObservableCollection<BookDialogViewModel> _bookList = new();
     }
 }

@@ -8,16 +8,16 @@ namespace BookstoreManagement.Data.Remote;
 public interface ILendRepository
 {
     #region Lend
-    [Get("/api/model/lend")]
+    [Get("/api/lend")]
     IObservable<List<Lend>> getListLend();
 
-    [Get("/api/model/lend")]
+    [Get("/api/lend")]
     IObservable<Lend> getLend(string id);
 
-    [Post("/api/model/lend")]
+    [Post("/api/lend")]
     IObservable<Object> saveLend(Lend lend);
 
-    [Delete("/api/model/lend")]
+    [Delete("/api/lend")]
     IObservable<Object> deleteLend(string id);
     #endregion
 }

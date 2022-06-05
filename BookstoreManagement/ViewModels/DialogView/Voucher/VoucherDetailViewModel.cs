@@ -7,13 +7,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Voucher;
 
-public partial class VoucherDetailViewModel : BaseViewModel<IVoucherDetailNavigator>, IDialog
+public partial class VoucherDetailViewModel : BaseViewModel, IDialog
 {
     private readonly IViewModelFactory _factory;
     private readonly IModelRemote _model;
+    private readonly IVoucherDetailNavigator _navigator;
 
-    public VoucherDetailViewModel(IVoucherDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+    public VoucherDetailViewModel(IVoucherDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
     {
+        _navigator = navigator;
         _factory = factory;
         _model = model;
     }
@@ -53,7 +55,7 @@ public partial class VoucherDetailViewModel : BaseViewModel<IVoucherDetailNaviga
     public void OpenEdit()
     {
         //TODO: cast to edit request
-        object? request = Navigator!.OpenEditVoucherDialog(_factory.Create<EditVoucherViewModel>());
+        object? request = _navigator.OpenEditVoucherDialog(_factory.Create<EditVoucherViewModel>());
 
         if (request == null)
             return;

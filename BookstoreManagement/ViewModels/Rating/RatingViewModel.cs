@@ -12,13 +12,15 @@ using BookstoreManagement.ViewModels.BookStore;
 
 namespace BookstoreManagement.ViewModels.Rating
 {
-    public partial class RatingViewModel : BaseViewModel<IRatingNavigator>
+    public partial class RatingViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IRatingNavigator _navigator;
 
-        public RatingViewModel(IRatingNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public RatingViewModel(IRatingNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }

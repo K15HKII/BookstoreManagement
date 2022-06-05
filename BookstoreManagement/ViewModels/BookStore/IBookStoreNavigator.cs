@@ -14,6 +14,7 @@ namespace BookstoreManagement.ViewModels.BookStore
 
         void openNotificationScreen();
 
-        BookProfileAddRequest? OpenNewBookDialog(AddBookViewModel viewModel);
+        Task<BookUpdateRequest?> OpenUpdateBookDialog(UpdateBookViewModel viewModel);
+
     }
 }

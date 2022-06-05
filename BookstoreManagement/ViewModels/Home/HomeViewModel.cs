@@ -14,13 +14,14 @@ using BookstoreManagement.ViewModels.Rating;
 using BookstoreManagement.ViewModels.Report;
 using BookstoreManagement.ViewModels.Suppier;
 using BookstoreManagement.ViewModels.Voucher;
+using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.Logging;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels
 {
-    public partial class HomeViewModel : BaseViewModel<IHomeNavigator>
+    public partial class HomeViewModel : BaseViewModel
     {
 
         [ObservableProperty] private ObservableCollection<BaseViewModel> _tabContents;
@@ -30,9 +31,11 @@ namespace BookstoreManagement.ViewModels
         private readonly ILogger<HomeViewModel> _logger;
         private readonly IDialogService _dialogService;
         private readonly IViewModelFactory _factory;
+        private readonly IHomeNavigator _navigator;
 
-        public HomeViewModel(IHomeNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IDialogService dialogService, ILogger<HomeViewModel> logger) : base(navigator, scheluderProvider)
+        public HomeViewModel(IHomeNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IDialogService dialogService, ILogger<HomeViewModel> logger) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _dialogService = dialogService;
             _logger = logger;
@@ -52,15 +55,21 @@ namespace BookstoreManagement.ViewModels
         }
 
         [ICommand]
+        public async void TestDialog()
+        {
+            await DialogHost.Show(_factory.Create<UpdateBookViewModel>());
+        }
+
+        [ICommand]
         public void Logout()
         {
-            Navigator!.Logout();
+            _navigator.Logout();
         }
 
         [ICommand]
         public void OpenSetting()
         {
-            Navigator!.OpenSetting();
+            _navigator.OpenSetting();
         }
 
     }

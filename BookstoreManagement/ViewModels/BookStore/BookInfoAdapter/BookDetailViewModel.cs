@@ -13,16 +13,24 @@ using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 {
-    public partial class BookDetailViewModel : BaseBookViewModel<IBookInfoNavigator>
+    public partial class BookDetailViewModel : BaseBookViewModel
     {
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
 
-        public BookDetailViewModel(IBookInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
             _factory = factory;
             _model = model;
+        }
+        
+        public void SetBook(Book book)
+        {
+            this.Id = book.Id;
+            this.Title = book.Title;
+            this.Description = book.Description;
+            //TODO:
         }
 
         [ObservableProperty] object? _id;
@@ -45,13 +53,13 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenInfoBookDialog(_factory.Create<DialogView.BookStore.BookDialogViewModel>());
+            /*object? request = _navigator.OpenInfoBookDialog(_factory.Create<DialogView.BookStore.BookDialogViewModel>());
 
             if (request == null)
-                return;
+                return;*/
 
             //TODO: send request to server
         }
-
+        
     }
 }

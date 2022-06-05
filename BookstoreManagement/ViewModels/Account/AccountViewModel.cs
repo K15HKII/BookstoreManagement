@@ -19,13 +19,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Account
 {
-    public partial class AccountViewModel : BaseViewModel<IAccountNavigator>
+    public partial class AccountViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IAccountNavigator _navigator;
 
-        public AccountViewModel(IAccountNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public AccountViewModel(IAccountNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -54,7 +56,7 @@ namespace BookstoreManagement.ViewModels.Account
         [ICommand]
         public void EditAccount()
         {
-            UserEditRequest? request = Navigator!.OpenEditAccount(_factory.Create<EditAccountViewModel>());
+            UserEditRequest? request = _navigator.OpenEditAccount(_factory.Create<EditAccountViewModel>());
             if (request == null)
                 return;
 
@@ -65,7 +67,7 @@ namespace BookstoreManagement.ViewModels.Account
         public void OpenChangePass()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenChangePassWord(_factory.Create<EditPassWordViewModel>());
+            object? request = _navigator.OpenChangePassWord(_factory.Create<EditPassWordViewModel>());
 
             if (request == null)
                 return;
@@ -77,7 +79,7 @@ namespace BookstoreManagement.ViewModels.Account
         public void OpenSocialLink()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenSocialLink(_factory.Create<SocialLinkViewModel>());
+            object? request = _navigator.OpenSocialLink(_factory.Create<SocialLinkViewModel>());
 
             if (request == null)
                 return;
@@ -89,7 +91,7 @@ namespace BookstoreManagement.ViewModels.Account
         public void OpenDeleteAccount()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenDeleteAccount(_factory.Create<DeleteAccountViewModel>());
+            object? request = _navigator.OpenDeleteAccount(_factory.Create<DeleteAccountViewModel>());
 
             if (request == null)
                 return;

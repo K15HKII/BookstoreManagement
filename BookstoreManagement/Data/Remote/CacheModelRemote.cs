@@ -40,48 +40,68 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Author>> getListAuthor()
+        public IObservable<List<Author>> GetAuthors()
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<Author> getAuthor(int id)
+        public IObservable<Author> GetAuthor(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> saveAuthor(Author author)
+        IObservable<Author> IAuthorRepository.CreateAuthor(Author author)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteAuthor(int id)
+        public IObservable<Author> UpdateAuthor(int id, Author author)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Publisher>> getListPublisher()
+        public IObservable<object> CreateAuthor(Author author)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> DeleteAuthor(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<List<Publisher>> GetPublishers()
         {
             if (_publishers == null)
             {
                 return _model
-                    .getListPublisher()
+                    .GetPublishers()
                     .Do(result => _publishers = result);
             }
             return Observable.Empty(_publishers);
         }
 
-        public IObservable<Publisher> getPublisher(int id)
+        public IObservable<Publisher> GetPublisher(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> savePublisher(Publisher publisher)
+        IObservable<Publisher> IPublisherRepository.CreatePublisher(Publisher publisher)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deletePublisher(int id)
+        public IObservable<Publisher> UpdatePublisher(int id, Publisher publisher)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> CreatePublisher(Publisher publisher)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> DeletePublisher(int id)
         {
             throw new NotImplementedException();
         }
@@ -137,22 +157,32 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Book>> getListBook()
+        public IObservable<List<Book>> GetBooks()
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<Book> getBook(string id)
+        public IObservable<Book> GetBook(string id)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> saveBook(Book book)
+        public IObservable<Book> CreateBook(BookUpdateRequest request)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteBook(string id)
+        public IObservable<Book> UpdateBook(string id, BookUpdateRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> CreateBook(Book book)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> DeleteBook(string id)
         {
             throw new NotImplementedException();
         }
@@ -293,6 +323,11 @@ namespace BookstoreManagement.Data.Remote
         }
 
         public IObservable<object> deleteWildVoucher(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<List<User>> GetTopCustomers()
         {
             throw new NotImplementedException();
         }

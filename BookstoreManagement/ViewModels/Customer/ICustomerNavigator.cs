@@ -10,9 +10,6 @@ namespace BookstoreManagement.ViewModels.Customer
 {
     public interface ICustomerNavigator : INavigator
     {
-        void openAccountScreen();
-
-        void openNotificationScreen();
 
         UserAddRequest? openAddCustomerDialog(AddCustomerViewModel viewModel);
     }

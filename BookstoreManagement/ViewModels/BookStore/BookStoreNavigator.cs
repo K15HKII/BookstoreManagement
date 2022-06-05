@@ -29,14 +29,12 @@ namespace BookstoreManagement.ViewModels.BookStore
             throw new NotImplementedException();
         }
 
-        public BookProfileAddRequest? OpenNewBookDialog(AddBookViewModel viewModel)
+        public async Task<BookUpdateRequest?> OpenUpdateBookDialog(UpdateBookViewModel viewModel)
         {
-            Task<object?> task = _dialogService.Show(viewModel);
-            task.Wait();
-            object? value = task.Result;
+            object? value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
-            return value as BookProfileAddRequest;
+            return value as BookUpdateRequest;
         }
     }
 }

@@ -8,16 +8,16 @@ namespace BookstoreManagement.Data.Remote;
 public interface ICartItemRepository
 {
     #region CartItem
-    [Get("/api/model/cart")]
+    [Get("/api/cart")]
     IObservable<List<CartItem>> getListCartItem();
 
-    [Get("/api/model/cart")]
+    [Get("/api/cart")]
     IObservable<CartItem> getCartItem(string id);
 
-    [Post("/api/model/cart")]
+    [Post("/api/cart")]
     IObservable<Object> saveCartItem(CartItem cartItem);
 
-    [Delete("/api/model/cart")]
+    [Delete("/api/cart")]
     IObservable<Object> deleteCartItem(string id);
     #endregion
 }

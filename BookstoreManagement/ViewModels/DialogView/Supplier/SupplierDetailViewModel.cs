@@ -13,13 +13,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Supplier
 {
-    public partial class SupplierDetailViewModel : BaseViewModel<ISupplierDetailNavigator>, IDialog
+    public partial class SupplierDetailViewModel : BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
         private readonly IViewModelFactory _factory;
+        private readonly ISupplierDetailNavigator _navigator;
 
-        public SupplierDetailViewModel(ISupplierDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public SupplierDetailViewModel(ISupplierDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _model = model;
             _factory = factory;
         }
@@ -45,7 +47,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         public void OpenEdit()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditSupplierDialog(_factory.Create<EditSupplierViewModel>());
+            object? request = _navigator.OpenEditSupplierDialog(_factory.Create<EditSupplierViewModel>());
 
             if (request == null)
                 return;

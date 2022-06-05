@@ -13,19 +13,22 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.BookStore
 {
-    public partial class BookDialogViewModel : BaseBookViewModel<IBookDetailNavigator>, IDialog
+    public partial class BookDialogViewModel : BaseBookViewModel, IDialog
     {
+        
         private readonly IModelRemote _model;
         private readonly IViewModelFactory _factory;
+        private readonly IBookDetailNavigator _navigator;
 
-        public BookDialogViewModel(IBookDetailNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookDialogViewModel(IBookDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _model = model;
             _factory = factory;
         }
 
         [ObservableProperty] object? _sold;
-        
+
         public event Action<object?>? CloseAction;
         
         [ICommand]
@@ -37,13 +40,14 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         [ICommand]
         public void OpenEdit()
         {
-            //TODO: cast to edit request
-            object? request = Navigator!.OpenEditBookDialog(_factory.Create<EditBookViewModel>());
-
+            BookUpdateRequest? request = _navigator.OpenEditBookDialog(_factory.Create<UpdateBookViewModel>());
             if (request == null)
                 return;
 
-            //TODO: send request to server
+            Dispose(_model.CreateBook(request!), book =>
+            {
+                Console.WriteLine("Book updated successfully");
+            });
         }
     }
 }

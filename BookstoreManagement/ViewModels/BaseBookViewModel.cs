@@ -1,27 +1,38 @@
-﻿using BookstoreManagement.Annotations;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace BookstoreManagement.ViewModels;
 
-public partial class BaseBookViewModel<TNavigator> : BaseViewModel<TNavigator> where TNavigator : INavigator
+public partial class BaseBookViewModel : BaseViewModel
 {
-    public BaseBookViewModel(TNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider) : base(navigator, scheluderProvider)
-    {
-    }
-
+    
     public BaseBookViewModel([NotNull] ScheluderProvider scheluderProvider) : base(scheluderProvider)
     {
     }
 
-    //[ObservableProperty] private string? _id;
-    //[ObservableProperty] private string? _name;
-    //[ObservableProperty] private string? _description;
-    //[ObservableProperty] private BookTag[] _tags;
-    //[ObservableProperty] private string? _authorName;
-    //[ObservableProperty] private string? _publisherName;
-    //[ObservableProperty] private decimal? _price;
-    //[ObservableProperty] private int? _quantity;
-    
+    public void SetBook(Book book)
+    {
+        this.Id = book.Id;
+        this.Title = book.Title;
+        this.Description = book.Description;
+        //TODO:
+    }
+
+    [ObservableProperty] private string? _id;
+    [ObservableProperty] [Required] [MinLength(1)] private string? _title;
+    [ObservableProperty] private string? _description;
+    [ObservableProperty] private BookTag[] _tags;
+    [ObservableProperty] private string? _authorName;
+    [ObservableProperty] private string? _publisherName;
+    [ObservableProperty] [Required] [Range(Double.Epsilon, Double.MaxValue)] private double? _price;
+    [ObservableProperty] [Range(1, Int64.MaxValue)] private int _quantity = 1;
+    [ObservableProperty] private ObservableCollection<string> _imageIds = new();
+
 }

@@ -17,13 +17,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Lend
 {
-    public partial class LendViewModel : BaseViewModel<ILendNavigator>
+    public partial class LendViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly ILendNavigator _navigator;
 
-        public LendViewModel(ILendNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public LendViewModel(ILendNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -75,7 +77,7 @@ namespace BookstoreManagement.ViewModels.Lend
         [ICommand]
         public void AddNew()
         {
-            LendAddRequest? request = Navigator!.OpenNewLendBillDialog(_factory.Create<AddLendBillViewModel>());
+            LendAddRequest? request = _navigator.OpenNewLendBillDialog(_factory.Create<AddLendBillViewModel>());
             if (request == null)
                 return;
 

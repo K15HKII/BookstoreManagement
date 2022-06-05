@@ -5,44 +5,42 @@ using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Services.Common;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels;
+using BookstoreManagement.ViewModels.Account;
 using BookstoreManagement.ViewModels.BookStore;
+using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.Customer;
-using BookstoreManagement.ViewModels.Customer.CustomerAdapter;
 using BookstoreManagement.ViewModels.Dashboard;
+using BookstoreManagement.ViewModels.DialogView;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Customer;
+using BookstoreManagement.ViewModels.DialogView.Manager;
+using BookstoreManagement.ViewModels.DialogView.Order;
+using BookstoreManagement.ViewModels.DialogView.Order.Adapter;
+using BookstoreManagement.ViewModels.DialogView.Supplier;
+using BookstoreManagement.ViewModels.DialogView.Voucher;
+using BookstoreManagement.ViewModels.Home;
 using BookstoreManagement.ViewModels.Home.BookAdapter;
 using BookstoreManagement.ViewModels.Home.UserAdapter;
 using BookstoreManagement.ViewModels.Lend;
+using BookstoreManagement.ViewModels.Login;
 using BookstoreManagement.ViewModels.Manager;
 using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 using BookstoreManagement.ViewModels.Order;
 using BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
+using BookstoreManagement.ViewModels.Order.Page;
 using BookstoreManagement.ViewModels.Rating;
 using BookstoreManagement.ViewModels.Rating.RatingAdapter;
 using BookstoreManagement.ViewModels.Report;
+using BookstoreManagement.ViewModels.Setting;
 using BookstoreManagement.ViewModels.Suppier;
 using BookstoreManagement.ViewModels.Suppier.SupplierAdapter;
 using BookstoreManagement.ViewModels.Voucher;
 using BookstoreManagement.ViewModels.Voucher.VoucherAdapter;
-using BookstoreManagement.ViewModels.Order.Page;
-using BookstoreManagement.ViewModels.Account;
-using BookstoreManagement.ViewModels.Login;
+using BookstoreManagement.Views.ViewStates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Refit;
-using BookstoreManagement.ViewModels.Setting;
-using BookstoreManagement.ViewModels.DialogView.BookStore;
-using BookstoreManagement.ViewModels.DialogView.Order;
-using BookstoreManagement.ViewModels.DialogView.Order.Adapter;
-using BookstoreManagement.ViewModels.DialogView.Voucher;
-using BookstoreManagement.ViewModels.DialogView.Customer;
-using BookstoreManagement.ViewModels.DialogView.Manager;
-using BookstoreManagement.ViewModels.DialogView.Supplier;
-using BookstoreManagement.ViewModels.DialogView;
-using BookstoreManagement.ViewModels.Home;
-using BookstoreManagement.Views.ViewStates;
-using BookDetailViewModel = BookstoreManagement.ViewModels.BookStore.BookInfoAdapter.BookDetailViewModel;
-using LendViewModel = BookstoreManagement.ViewModels.Lend.LendAdapter.LendViewModel;
 
 namespace BookstoreManagement.Services
 {
@@ -53,7 +51,8 @@ namespace BookstoreManagement.Services
         {
             builder = builder.ConfigureHttpClient(c =>
             {
-                c.BaseAddress = new Uri("https://upbeat-resolver-316305.df.r.appspot.com");
+                //c.BaseAddress = new Uri("https://upbeat-resolver-316305.df.r.appspot.com");
+                c.BaseAddress = new Uri("http://localhost:3000");
             });
             if (auth)
             {
@@ -103,7 +102,7 @@ namespace BookstoreManagement.Services
                 service.AddSingleton<IAuthenticator, Authenticator>();
                 service.AddSingleton<ScheluderProvider>();
                 service.AddSingleton<IDialogService, DialogService>();
-                service.Decorate<IModelRemote, CacheModelRemote>();
+                //service.Decorate<IModelRemote, CacheModelRemote>();
             });
             return host;
         }
@@ -158,7 +157,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<ManagerViewModel>();
                 
                 service.AddSingleton<ILendNavigator, LendNavigator>();
-                service.AddViewModel<ViewModels.Lend.LendViewModel>();
+                service.AddViewModel<LendViewModel>();
 
                 service.AddSingleton<ISupplierNavigator, SupplierNavigator>();
                 service.AddViewModel<SupplierViewModel>();
@@ -187,9 +186,6 @@ namespace BookstoreManagement.Services
                 //Rating
                 service.AddViewModel<RatingInfoViewModel>();
 
-                //Customer
-                service.AddViewModel<CustomerViewModel>();
-
                 //Manager
                 service.AddViewModel<EmployeeInfoViewModel>();
 
@@ -208,14 +204,14 @@ namespace BookstoreManagement.Services
                 
 
                 //Lend
-                service.AddViewModel<LendViewModel>();
+                service.AddViewModel<ViewModels.Lend.LendAdapter.LendViewModel>();
 
 
                 //Dialog
                 //BookStore.DetailView
-                service.AddViewModel<ViewModels.DialogView.BookStore.BookDialogViewModel>();
-                service.AddViewModel<AddBookViewModel>();
-                service.AddViewModel<EditBookViewModel>();
+                service.AddSingleton<IBookDetailNavigator, BookDetailNavigator>();
+                service.AddViewModel<BookDialogViewModel>();
+                service.AddViewModel<UpdateBookViewModel>();
 
                 //Order
                 service.AddViewModel<OrderBillViewModel>();
@@ -226,6 +222,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<AddVoucherViewModel>();
 
                 //Customer
+                service.AddSingleton<ICustomerDetailNavigator, CustomerDetailNavigator>();
                 service.AddViewModel<CustomerDetailViewModel>();
                 service.AddViewModel<AddCustomerViewModel>();
                 service.AddViewModel<EditCustomerViewModel>();

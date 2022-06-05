@@ -12,11 +12,9 @@
              mc:Ignorable="d" 
              d:DesignWidth="928"
              Height="664">
-
     <Grid>
         <StackPanel>
             <h:HeaderWithSearchBar Tag="Kho Sách" />
-
             <DockPanel LastChildFill="False"
                        Height="36"
                        VerticalAlignment="Center"
@@ -65,11 +63,10 @@
                         AncestorType={x:Type Grid}}, Path=ActualHeight}">
                 <component:PageItemsControl Margin="0 0 0 0"
                                             Width="928" VerticalAlignment="Top"
+                                            ItemsSource="{Binding Books}"
                                             HorizontalAlignment="Left">
                     <component:PageItemsControl.ItemsTemplate>
-                        <ListView x:Name="itemsControl"
-                                  ItemsSource="{Binding}"
-                                  Width="{Binding ElementName=p, Path=ActualWidth}"
+                        <ListView Width="{Binding ElementName=p, Path=ActualWidth}"
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="ListViewItem">
@@ -102,6 +99,7 @@
                 Background="Black"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
+                Command="{Binding AddNewCommand}"
                 Margin="0 0 0 29">
             <materialDesign:PackIcon Kind="Add"
                                      Foreground="White" />

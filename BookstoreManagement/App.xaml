@@ -11,9 +11,9 @@
                 <ResourceDictionary Source="Themes/Generic.xaml"/>
                 <ResourceDictionary Source="Styles/HomeStyles.xaml"/>
                 <ResourceDictionary Source="Styles/DialogStyles.xaml"/>
-                <ResourceDictionary Source="Styles/Color.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Styles/CustomComponents.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Styles/Text.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Styles/Color.xaml"/>
+                <ResourceDictionary Source="Styles/CustomComponents.xaml"/>
+                <ResourceDictionary Source="Styles/Text.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

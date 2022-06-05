@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
@@ -14,35 +15,56 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.BookStore
 {
-    public partial class BookPanelViewModel : BaseViewModel<IBookStoreNavigator>
+    public partial class BookPanelViewModel : PanelViewModel
     {
-
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IBookStoreNavigator _navigator;
 
-        public BookPanelViewModel(IBookStoreNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public BookPanelViewModel(IBookStoreNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
+            IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
         }
 
-        // Thiếu mở dialog thêm sách
-        public void openAccount() { }
+        private void Initialize()
+        {
+            Dispose(_model.GetBooks().Select(books => books.Select(book =>
+            {
+                BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
+                vm.SetBook(book);
+                return vm;
+            })), books =>
+            {
+                Books.Clear();
+                foreach (var vm in books)
+                {
+                    Books.Add(vm);
+                }
+            });
+        }
 
-        public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<BookDialogViewModel>? _books;
+        [ObservableProperty] private ObservableCollection<BookDialogViewModel> _books = new();
 
-        [ObservableProperty] public ObservableCollection<BookDialogViewModel>? _selectedBooks;
+        [ObservableProperty] private ObservableCollection<BookDialogViewModel> _selectedBooks = new();
 
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            BookProfileAddRequest? request = Navigator!.OpenNewBookDialog(_factory.Create<AddBookViewModel>());
+            BookUpdateRequest? request = await _navigator.OpenUpdateBookDialog(_factory.Create<UpdateBookViewModel>());
             if (request == null)
                 return;
 
-            //TODO: Send request through IModelRemote
+            Dispose(_model.CreateBook(request!), book =>
+            {
+                Console.WriteLine("Book created successfully");
+                Initialize();
+                //TODO: Notify
+            });
         }
 
     }

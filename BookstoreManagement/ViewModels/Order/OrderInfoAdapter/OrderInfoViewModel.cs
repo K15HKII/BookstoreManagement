@@ -1,26 +1,22 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
-using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
-using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Order;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
 {
-    public partial class OrderInfoViewModel : BaseViewModel<IOrderInfoNavigator>
+    public partial class OrderInfoViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IOrderInfoNavigator _navigator;
 
-        public OrderInfoViewModel(IOrderInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public OrderInfoViewModel(IOrderInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -41,7 +37,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenDetailOrdedrDialog(_factory.Create<OrderBillViewModel>());
+            object? request = _navigator.OpenDetailOrdedrDialog(_factory.Create<OrderBillViewModel>());
 
             if (request == null)
                 return;

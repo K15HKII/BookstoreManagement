@@ -9,16 +9,20 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Setting
 {
-    public partial class SettingViewModel : BaseViewModel<ISettingNavigator>
+    public partial class SettingViewModel : BaseViewModel
     {
-        public SettingViewModel(ISettingNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider) : base(navigator, scheluderProvider)
+        
+        private readonly ISettingNavigator _navigator;
+        
+        public SettingViewModel(ISettingNavigator navigator, [NotNull] ScheluderProvider scheluderProvider) : base(scheluderProvider)
         {
+            _navigator = navigator;
         }
 
         [ICommand]
         public void Backward()
         {
-            Navigator!.Backward();
+            _navigator.Backward();
         }
     }
 }

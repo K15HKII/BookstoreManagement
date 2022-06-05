@@ -13,7 +13,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Voucher
 {
-    public partial class EditVoucherViewModel: BaseViewModel, IDialog
+    public partial class EditVoucherViewModel : BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
 

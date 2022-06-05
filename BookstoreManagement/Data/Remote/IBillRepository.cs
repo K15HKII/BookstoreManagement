@@ -8,16 +8,16 @@ namespace BookstoreManagement.Data.Remote;
 public interface IBillRepository
 {
     #region Bill
-    [Get("/api/model/bill")]
+    [Get("/api/bill")]
     IObservable<List<Bill>> getListBill();
 
-    [Get("/api/model/bill")]
+    [Get("/api/bill")]
     IObservable<Bill> getBill(int id);
 
-    [Post("/api/model/bill")]
+    [Post("/api/bill")]
     IObservable<Object> saveBill(Bill bill);
 
-    [Delete("/api/model/bill")]
+    [Delete("/api/bill")]
     IObservable<Object> deleteBill(int id);
     #endregion
 }

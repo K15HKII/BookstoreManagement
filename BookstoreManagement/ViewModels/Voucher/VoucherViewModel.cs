@@ -14,13 +14,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Voucher
 {
-    public partial class VoucherViewModel : BaseViewModel<IVoucherNavigator>
+    public partial class VoucherViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IVoucherNavigator _navigator;
 
-        public VoucherViewModel(IVoucherNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public VoucherViewModel(IVoucherNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -33,15 +35,16 @@ namespace BookstoreManagement.ViewModels.Voucher
         [ObservableProperty] public ObservableCollection<object>? lsVouchers;
 
         [ObservableProperty] public object? selectedVoucher;
-        
+
         [ICommand]
         public void AddNew()
         {
-            VoucherAddRequest? request = Navigator!.OpenAddVoucherDialog(_factory.Create<AddVoucherViewModel>());
+            VoucherAddRequest? request = _navigator.OpenAddVoucherDialog(_factory.Create<AddVoucherViewModel>());
             if (request == null)
                 return;
 
             //TODO: Send request through IModelRemote
         }
+        
     }
 }

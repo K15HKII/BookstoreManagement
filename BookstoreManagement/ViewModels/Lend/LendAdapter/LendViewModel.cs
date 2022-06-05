@@ -33,7 +33,7 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 
         [ObservableProperty] object? _state;
 
-        [ObservableProperty] ObservableCollection<BaseBookViewModel<DumpNavigator>>? _books;
+        [ObservableProperty] ObservableCollection<BaseBookViewModel>? _books;
 
         [ObservableProperty] bool? _selected;
     }

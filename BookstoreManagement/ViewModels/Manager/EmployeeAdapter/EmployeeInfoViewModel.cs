@@ -15,13 +15,15 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 {
-    public partial class EmployeeInfoViewModel : BaseViewModel<IEmployeeInfoNavigator>
+    public partial class EmployeeInfoViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IEmployeeInfoNavigator _navigator;
 
-        public EmployeeInfoViewModel(IEmployeeInfoNavigator? navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider)
+        public EmployeeInfoViewModel(IEmployeeInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -44,7 +46,7 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
         public void OpenEdit()
         {
             //TODO: cast to edit request
-            object? request = Navigator!.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
+            object? request = _navigator.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
 
             if (request == null)
                 return;
