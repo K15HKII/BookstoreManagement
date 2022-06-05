@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace BookstoreManagement.Data.Model.Api;
 
-public class BillAddRequest
+public class BillUpdateRequest
 {
     [JsonProperty("date")]
     public DateTime Date { get; set; }

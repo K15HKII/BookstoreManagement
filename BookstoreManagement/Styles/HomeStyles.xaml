@@ -25,7 +25,7 @@
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
             <components:MainMenuItem Icon="DotsHorizontalCircle" Text="Order"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
+        <DataTemplate DataType="{x:Type voucher:VoucherPanelViewModel}">
             <components:MainMenuItem Icon="Tag" Text="Voucher"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type rating:RatingViewModel}">
@@ -58,7 +58,7 @@
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
             <components:PendingBillPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type voucher:VoucherViewModel}">
+        <DataTemplate DataType="{x:Type voucher:VoucherPanelViewModel}">
             <components:VoucherPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type rating:RatingViewModel}">

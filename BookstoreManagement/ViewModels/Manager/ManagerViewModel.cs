@@ -11,6 +11,7 @@ using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Manager;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Manager
 {
@@ -35,9 +36,10 @@ namespace BookstoreManagement.ViewModels.Manager
 
         [ObservableProperty] public object? _selectedemployee;
         
-        public void AddNew()
+        [ICommand]
+        public async void AddNew()
         {
-            UserAddRequest? request = _navigator.OpenNewEmployeeDialog(_factory.Create<AddEmployeeViewModel>());
+            UserUpdateRequest? request = await _navigator.OpenNewEmployeeDialog(_factory.Create<AddEmployeeViewModel>());
             if (request == null)
                 return;
 

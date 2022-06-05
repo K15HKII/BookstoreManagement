@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BookstoreManagement.Components.ucAddLendBill"
+﻿<UserControl x:Class="BookstoreManagement.Components.ucAddPendingBill"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,7 +13,7 @@
         <StackPanel x:Name="root">
             <TextBlock Style="{StaticResource Title}"
                        Foreground="{StaticResource SolidDarkGrayColor}"
-                       Text="# Ma don muon"
+                       Text="# Ma don hang"
                        Margin="0 0 0 24" />
 
             <StackPanel Margin="0 0 0 24">
@@ -24,26 +24,30 @@
                 <Grid Margin="0 0 0 8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
-                        <ColumnDefinition  Width="24" />
+                        <ColumnDefinition  Width="24"/>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
-                             Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Text="abc"
                              Tag="Ma khach hang" />
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
-                             Text="{Binding CustomerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             Tag="Ten khach hang"
-                             Grid.Column="2" />
+                             Text="abc"
+                             Tag="Ten khach hang" 
+                             Grid.Column="2"/>
                 </Grid>
-
+                
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
-                         Text="{Binding CustomerPhone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="abc"
                          Tag="So dien thoai"
                          Margin="0 0 0 8" />
+                <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                         Width="{Binding ElementName=root, Path=ActualWidth}"
+                         Text="abc"
+                         Tag="Dia chi" />
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">
@@ -61,7 +65,7 @@
 
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
-                             Text="{Binding LendBookName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Text="abc"
                              Tag="Ten san pham" />
                     <!--custom quantity-->
                     <Border Grid.Column="2"></Border>
@@ -72,58 +76,34 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition Width="195" />
+                        <ColumnDefinition Width="8"/>
+                        <ColumnDefinition Width="195"/>
                     </Grid.ColumnDefinitions>
 
                     <StackPanel>
-                        <!--fixing-->
-                        <ComboBox 
-                                 Width="auto"
-                                 Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        <!--fix combobox-->
+                        <ComboBox Width="auto"
+                                 Text="abc"
                                  Tag="Phan loai"
                                  Margin="0 0 0 8" />
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
-                                 Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 Text="abc"
                                  Tag="Gia san pham"
                                  Margin="0 0 0 8" />
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
-                                 Text="{Binding Voucher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                 Tag="Voucher"
-                                 Margin="0 0 0 8"/>
-
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition  Width="24" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                                     Width="auto"
-                                     Text="{Binding LendDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     Tag="Ngay muon" />
-                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                                     Width="auto"
-                                     Text="{Binding LendExpired, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     Tag="Ngay het han muon"
-                                     Grid.Column="2" />
-                        </Grid>
+                                 Text="abc"
+                                 Tag="Voucher"/>
                     </StackPanel>
 
                     <Border Grid.Column="2"
                             Background="{StaticResource SolidLightGrayColor}">
-                        <Border.BorderBrush>
-                            <ImageBrush
-                                ImageSource="{Binding BookImage}"
-                            />
-                        </Border.BorderBrush>
+                        
                     </Border>
                 </Grid>
 
-
+                
             </StackPanel>
 
             <!--<Grid Margin="0 0 0 24">
@@ -208,9 +188,7 @@
                            Margin="0 0 0 8"
                            VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal">
-                    -->
-            <!--image-->
-            <!--
+                    --><!--image--><!--
                     <ListView>
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -236,17 +214,18 @@
                            Text="Ghi chu"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
-                         Text="{Binding Note, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Width="{Binding ElementName=root, Path=ActualWidth}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Style="{StaticResource SecondButton}"
+                        Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
                         Content="Huy"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
+                        Command="{Binding AcceptCommand}"
                         Width="97"
                         Content="Them"></Button>
             </StackPanel>

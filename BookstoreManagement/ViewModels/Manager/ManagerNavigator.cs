@@ -24,13 +24,11 @@ public class ManagerNavigator : IManagerNavigator
         throw new System.NotImplementedException();
     }
 
-    public UserAddRequest? OpenNewEmployeeDialog(AddEmployeeViewModel viewModel)
+    public async Task< UserUpdateRequest?> OpenNewEmployeeDialog(AddEmployeeViewModel viewModel)
     {
-        Task<object?> task = _dialogService.Show(viewModel);
-        task.Wait();
-        object? value = task.Result;
+        object value = await _dialogService.Show(viewModel);
         if (value == null)
             return null;
-        return value as UserAddRequest;
+        return value as UserUpdateRequest;
     }
 }

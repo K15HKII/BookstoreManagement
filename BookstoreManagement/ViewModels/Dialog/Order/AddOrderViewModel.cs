@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -28,12 +29,31 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         [ObservableProperty] object? _address;
         [ObservableProperty] object? _description;
         
+        public BillUpdateRequest? ToAddRequest()
+        {
+            ValidateAllProperties();
+
+            if (HasErrors)
+                return null;
+
+            return new BillUpdateRequest()
+            {
+
+            };
+        }
+        
         public event Action<object?>? CloseAction;
         
         [ICommand]
         public void Close()
         {
             CloseAction?.Invoke(null);
+        }
+        
+        [ICommand]
+        public void Accept()
+        {
+            CloseAction?.Invoke(ToAddRequest());
         }
     }
 }

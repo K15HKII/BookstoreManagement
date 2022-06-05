@@ -30,15 +30,15 @@ namespace BookstoreManagement.ViewModels.Customer
         
         // Thiếu mở dialog thêm khách hàng và filter và xoá
 
-        [ObservableProperty] public ObservableCollection<object>? _lsCustomers;
+        [ObservableProperty] public ObservableCollection<object>? _lsCustomers = new();
 
-        [ObservableProperty] public object? selectedBook;
+        [ObservableProperty] public object? selectedBook = new();
 
 
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            UserAddRequest? request = _navigator.openAddCustomerDialog(_factory.Create<AddCustomerViewModel>());
+            UserUpdateRequest? request = await _navigator.openAddCustomerDialog(_factory.Create<AddCustomerViewModel>());
             if (request == null)
                 return;
 

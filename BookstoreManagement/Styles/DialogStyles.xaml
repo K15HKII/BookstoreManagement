@@ -1,10 +1,40 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.DialogView.BookStore"
-                    xmlns:components="clr-namespace:BookstoreManagement.Components">
+                    xmlns:components="clr-namespace:BookstoreManagement.Components"
+                    xmlns:supplier="clr-namespace:BookstoreManagement.ViewModels.DialogView.Supplier"
+                    xmlns:voucher="clr-namespace:BookstoreManagement.ViewModels.DialogView.Voucher"
+                    xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.DialogView.Customer"
+                    xmlns:manager="clr-namespace:BookstoreManagement.ViewModels.DialogView.Manager"
+                    xmlns:dialogView="clr-namespace:BookstoreManagement.ViewModels.DialogView"
+                    xmlns:order="clr-namespace:BookstoreManagement.ViewModels.DialogView.Order">
     <ResourceDictionary x:Key="DialogTemplates">
         <DataTemplate DataType="{x:Type bookStore:UpdateBookViewModel}">
             <components:AddBookDialog/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type supplier:AddSupplierViewModel}">
+            <components:ucAddPublisher/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type voucher:AddVoucherViewModel}">
+            <components:ucAddVoucher/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type customer:AddCustomerViewModel}">
+            <components:AddCustomer/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type manager:AddEmployeeViewModel}">
+            <components:ucAddEmployee/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type dialogView:AddLendBillViewModel}">
+            <components:ucAddLendBill/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type order:AddOrderViewModel}">
+            <components:ucAddPendingBill/>
         </DataTemplate>
     </ResourceDictionary>
 </ResourceDictionary>

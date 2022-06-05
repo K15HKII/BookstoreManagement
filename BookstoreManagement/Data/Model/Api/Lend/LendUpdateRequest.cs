@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace BookstoreManagement.Data.Model.Api;
 
-public class LendAddRequest
+public class LendUpdateRequest
 {
     [JsonProperty("userid")]
     public string UserId { get; set; }

@@ -14,6 +14,6 @@ namespace BookstoreManagement.ViewModels.Manager
 
         void openNotificationScreen();
         
-        UserAddRequest? OpenNewEmployeeDialog(AddEmployeeViewModel viewModel);
+        Task<UserUpdateRequest?> OpenNewEmployeeDialog(AddEmployeeViewModel viewModel);
     }
 }

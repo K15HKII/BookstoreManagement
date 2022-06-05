@@ -86,14 +86,14 @@ namespace BookstoreManagement.ViewModels.DialogView
         [Required]
         private string? _note;
         
-        public LendAddRequest? ToAddRequest()
+        public LendUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new LendAddRequest()
+            return new LendUpdateRequest()
             {
 
             };
@@ -102,6 +102,12 @@ namespace BookstoreManagement.ViewModels.DialogView
         public event Action<object?>? CloseAction;
         [ICommand]
         public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+        
+        [ICommand]
+        public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
         }

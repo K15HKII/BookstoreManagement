@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.Data.Model.Api.Customer
 {
-    public class UserAddRequest
+    public class UserUpdateRequest
     {
         [JsonProperty("image")]
         public string Image { get; set; }

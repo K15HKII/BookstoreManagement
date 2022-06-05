@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.ViewModels.DialogView.Customer
 {
-    public partial class AddCustomerViewModel : BaseViewModel
+    public partial class AddCustomerViewModel : BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
 
@@ -67,14 +67,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         [Required]
         private string? _email;
 
-        public UserAddRequest? ToAddRequest()
+        public UserUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new UserAddRequest()
+            return new UserUpdateRequest()
             {
 
             };
@@ -84,6 +84,12 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
 
         [ICommand]
         public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+        
+        [ICommand]
+        public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
         }

@@ -61,14 +61,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         [Required]
         private string? _email;
         
-        public UserAddRequest? ToAddRequest()
+        public UserUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new UserAddRequest()
+            return new UserUpdateRequest()
             {
 
             };
@@ -76,6 +76,12 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         public event Action<object?>? CloseAction;
         [ICommand]
         public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+        
+        [ICommand]
+        public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
         }
