@@ -69,7 +69,8 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
 
             return new PublisherUpdateRequest()
             {
-
+                //TODO: Chưa tự generate id
+                Name = Name,
             };
         }
 

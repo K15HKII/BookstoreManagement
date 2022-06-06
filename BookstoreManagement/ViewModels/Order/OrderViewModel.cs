@@ -32,7 +32,7 @@ namespace BookstoreManagement.ViewModels.Order
 
         private void Initialize()
         {
-            throw new NotImplementedException();
+            
         }
 
         //TODO: Thiếu mở dialog xoá đơn và thêm đơn hàng

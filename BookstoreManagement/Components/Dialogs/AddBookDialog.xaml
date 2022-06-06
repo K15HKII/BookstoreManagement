@@ -136,6 +136,7 @@
                            Text="Mo ta"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
+                         Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Width="{Binding ElementName=root, Path=ActualWidth}" />
             </StackPanel>
 

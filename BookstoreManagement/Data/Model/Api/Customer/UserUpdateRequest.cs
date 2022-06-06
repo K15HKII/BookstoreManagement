@@ -9,26 +9,35 @@ namespace BookstoreManagement.Data.Model.Api.Customer
 {
     public class UserUpdateRequest
     {
-        [JsonProperty("image")]
-        public string Image { get; set; }
-
         [JsonProperty("firstname")]
         public string? FirstName { get; set; }
 
         [JsonProperty("lastname")]
         public string? LastName { get; set; }
+        
+        [JsonProperty("email")]
+        public string? Email { get; set; }
+        
+        [JsonProperty("username")]
+        public string Username { get; set; }
+        
+        [JsonProperty("age")]
+        public int? Age { get; set; }
 
         [JsonProperty("phone")]
         public string? Phone { get; set; }
-
-        [JsonProperty("username")]
-        public string Username { get; set; }
+        
+        [JsonProperty("gender")]
+        public Gender Gender { get; set; } 
+        
+        [JsonProperty("birthday")]
+        public DateTime? Birthday { get; set; }
 
         [JsonProperty("password")]
         public string Password { get; set; }
-
-        [JsonProperty("email")]
-        public string? Email { get; set; }
+        
+        [JsonProperty("salt")]
+        public string Salt { get; set; }
 
         [JsonProperty("role")]
         public Role? Role { get; set; }
@@ -36,24 +45,6 @@ namespace BookstoreManagement.Data.Model.Api.Customer
         [JsonProperty("refresh_token")]
         public string? Refresh_token { get; set; }
 
-        [JsonProperty("created_at")]
-        public DateTime CreatedAt { get; set; }
-
-        [JsonProperty("updated_at")]
-        public DateTime UpdatedAt { get; set; }
-
-        [JsonProperty("is_active")]
-        public bool Is_Active { get; set; }
-
-        [JsonProperty("is_verified")]
-        public bool Is_Verified { get; set; }
-
-        [JsonProperty("is_locked")]
-        public bool Is_Locked { get; set; }
-
-        [JsonProperty("is_blocked")]
-        public bool Is_Blocked { get; set; }
-
-        public String FullName { get { return FirstName + " " + LastName; } }
+        public String FullName => FirstName + " " + LastName;
     }
 }

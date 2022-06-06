@@ -198,6 +198,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<VoucherAdapterViewModel>();
 
                 //Rating
+                service.AddSingleton<IRatingInfoNavigator, RatingInfoNavigator>();
                 service.AddViewModel<RatingInfoViewModel>();
 
                 //Manager
