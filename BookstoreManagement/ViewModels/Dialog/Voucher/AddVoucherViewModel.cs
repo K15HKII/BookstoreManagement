@@ -54,14 +54,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
         [Required]
         private string? _morecondition;
 
-        public VoucherAddRequest? ToAddRequest()
+        public VoucherUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new VoucherAddRequest()
+            return new VoucherUpdateRequest()
             {
 
             };
@@ -71,6 +71,11 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
 
         [ICommand]
         public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+        [ICommand]
+        public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
         }

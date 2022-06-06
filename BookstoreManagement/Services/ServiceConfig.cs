@@ -149,7 +149,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<OrderViewModel>();
 
                 service.AddSingleton<IVoucherNavigator, VoucherNavigator>();
-                service.AddViewModel<VoucherViewModel>();
+                service.AddViewModel<VoucherPanelViewModel>();
 
                 service.AddSingleton<IRatingNavigator, RatingNavigator>();
                 service.AddViewModel<RatingViewModel>();

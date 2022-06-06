@@ -11,6 +11,6 @@ namespace BookstoreManagement.ViewModels.Customer
     public interface ICustomerNavigator : INavigator
     {
 
-        UserAddRequest? openAddCustomerDialog(AddCustomerViewModel viewModel);
+        Task<UserUpdateRequest?> openAddCustomerDialog(AddCustomerViewModel viewModel);
     }
 }

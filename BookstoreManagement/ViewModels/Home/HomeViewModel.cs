@@ -45,7 +45,7 @@ namespace BookstoreManagement.ViewModels
                 factory.Create<ReportPanelViewModel>(),
                 factory.Create<BookPanelViewModel>(),
                 factory.Create<OrderViewModel>(),
-                factory.Create<VoucherViewModel>(),
+                factory.Create<VoucherPanelViewModel>(),
                 factory.Create<RatingViewModel>(),
                 factory.Create<CustomerPanelViewModel>(),
                 factory.Create<ManagerViewModel>(),

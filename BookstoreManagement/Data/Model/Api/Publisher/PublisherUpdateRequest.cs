@@ -2,7 +2,7 @@
 
 namespace BookstoreManagement.Data.Model.Api;
 
-public class PublisherAddRequest
+public class PublisherUpdateRequest
 {
     [JsonProperty("name")]
     public string Name { get; set; }

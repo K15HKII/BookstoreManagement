@@ -60,14 +60,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         private string? _email;
 
 
-        public PublisherAddRequest? ToAddRequest()
+        public PublisherUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();
 
             if (HasErrors)
                 return null;
 
-            return new PublisherAddRequest()
+            return new PublisherUpdateRequest()
             {
 
             };
@@ -77,6 +77,12 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
 
         [ICommand]
         public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+        
+        [ICommand]
+        public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;
@@ -38,7 +39,8 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         [ObservableProperty] object? _shippingfee;
         [ObservableProperty] object? _discountprice;
         [ObservableProperty] object? _totalmoney;
-
+        
+        
         public event Action<object?>? CloseAction;
         
         [ICommand]
@@ -46,5 +48,6 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         {
             CloseAction?.Invoke(null);
         }
+        
     }
 }

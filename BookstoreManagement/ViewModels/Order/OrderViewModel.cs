@@ -41,9 +41,9 @@ namespace BookstoreManagement.ViewModels.Order
         [ObservableProperty] public object? orderBillQuantity;
         
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            BillAddRequest? request = _navigator.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
+            BillUpdateRequest? request = await _navigator.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
             if (request == null)
                 return;
 

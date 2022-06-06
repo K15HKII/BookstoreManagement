@@ -14,32 +14,33 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Voucher
 {
-    public partial class VoucherViewModel : BaseViewModel
+    public partial class VoucherPanelViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly IVoucherNavigator _navigator;
 
-        public VoucherViewModel(IVoucherNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public VoucherPanelViewModel(IVoucherNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
         }
-
-        //Thiếu dialog thêm voucher
-        public void openAccount() { }
-
-        public void openNotificaiton() { }
 
         [ObservableProperty] public ObservableCollection<object>? lsVouchers;
 
         [ObservableProperty] public object? selectedVoucher;
+        
+        private void Initialize()
+        {
+            
+        }
 
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            VoucherAddRequest? request = _navigator.OpenAddVoucherDialog(_factory.Create<AddVoucherViewModel>());
+            VoucherUpdateRequest? request = await _navigator.OpenAddVoucherDialog(_factory.Create<AddVoucherViewModel>());
             if (request == null)
                 return;
 

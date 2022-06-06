@@ -75,9 +75,9 @@ namespace BookstoreManagement.ViewModels.Lend
         [ObservableProperty] public ObservableCollection<LendViewModel> _selectedLends;
         
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            LendAddRequest? request = _navigator.OpenNewLendBillDialog(_factory.Create<AddLendBillViewModel>());
+            LendUpdateRequest? request = await _navigator.OpenNewLendBillDialog(_factory.Create<AddLendBillViewModel>());
             if (request == null)
                 return;
 

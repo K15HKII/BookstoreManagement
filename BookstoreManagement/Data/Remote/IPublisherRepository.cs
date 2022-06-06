@@ -15,7 +15,7 @@ public interface IPublisherRepository
     IObservable<Publisher> GetPublisher(int id);
 
     [Post("/api/publisher")]
-    IObservable<Publisher> CreatePublisher([Body] Publisher publisher);
+    IObservable<Publisher> CreatePublisher(PublisherUpdateRequest request);
     
     [Put("/api/publisher/{id}")]
     IObservable<Publisher> UpdatePublisher(int id, [Body] Publisher publisher);

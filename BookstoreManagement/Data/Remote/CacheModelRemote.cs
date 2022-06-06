@@ -86,7 +86,7 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        IObservable<Publisher> IPublisherRepository.CreatePublisher(Publisher publisher)
+        IObservable<Publisher> IPublisherRepository.CreatePublisher(PublisherUpdateRequest request)
         {
             throw new NotImplementedException();
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.Data.Model.Api
 {
-    public class VoucherAddRequest 
+    public class VoucherUpdateRequest 
     {
 
         [JsonProperty("userid")]

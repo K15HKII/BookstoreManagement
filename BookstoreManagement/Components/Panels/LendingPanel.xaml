@@ -302,6 +302,7 @@
 
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                Command="{Binding AddNewCommand}"
                 Background="Black"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"

@@ -29,14 +29,12 @@ namespace BookstoreManagement.ViewModels.Order
             throw new NotImplementedException();
         }
 
-        public BillAddRequest? OpenNewOrderDialog(AddOrderViewModel viewModel)
+        public async Task<BillUpdateRequest?> OpenNewOrderDialog(AddOrderViewModel viewModel)
         {
-            Task<object?> task = _dialogService.Show(viewModel);
-            task.Wait();
-            object? value = task.Result;
+            object value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
-            return value as BillAddRequest;
+            return value as BillUpdateRequest;
         }
     }
 }

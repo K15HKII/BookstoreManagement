@@ -19,14 +19,12 @@ namespace BookstoreManagement.ViewModels.Customer
             _dialogService = dialogService;
         }
 
-        public UserAddRequest? openAddCustomerDialog(AddCustomerViewModel viewModel)
+        public async Task<UserUpdateRequest?> openAddCustomerDialog(AddCustomerViewModel viewModel)
         {
-            Task<object?> task = _dialogService.Show(viewModel);
-            task.Wait();
-            object? value = task.Result;
+            object value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
-            return value as UserAddRequest;
+            return value as UserUpdateRequest;
         }
 
         

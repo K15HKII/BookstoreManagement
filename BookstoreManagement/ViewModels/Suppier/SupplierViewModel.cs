@@ -28,24 +28,29 @@ namespace BookstoreManagement.ViewModels.Suppier
             _factory = factory;
             _model = model;
         }
-        
+
         // Thiếu mở dialog thêm nhà cung cấp, xoá, filter
         public void openAccount() { }
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? _lsSuppliers;
+        [ObservableProperty] public ObservableCollection<object>? _lsSuppliers = new();
 
-        [ObservableProperty] public object? _selectedSupplier;
+        [ObservableProperty] public object? _selectedSupplier = new();
         
         [ICommand]
-        public void AddNew()
+        public async void AddNew()
         {
-            PublisherAddRequest? request = _navigator.OpenNewSupplierDialog(_factory.Create<AddSupplierViewModel>());
+            PublisherUpdateRequest? request = await _navigator.OpenNewSupplierDialog(_factory.Create<AddSupplierViewModel>());
             if (request == null)
                 return;
 
-            //TODO: Send request through IModelRemote
+            Dispose(_model.CreatePublisher(request!), book =>
+            {
+                Console.WriteLine("Publisher created successfully");
+                /*Initialize();*/
+                //TODO: Notify
+            });
         }
     }
 }
