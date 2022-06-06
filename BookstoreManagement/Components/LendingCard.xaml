@@ -33,10 +33,10 @@
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="Black"
                                Margin="0 0 0 6"
-                               Text="{Binding ID}" />
+                               Text="#01" />
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="{StaticResource SolidPrimaryColor}"
-                               Text="{Binding CustomerName}"
+                               Text="{Binding UserName}" 
                                Margin="0 0 0 16" />
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="{StaticResource SolidOrangeColor}"
@@ -52,7 +52,7 @@
                                    HorizontalAlignment="Right" />
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkPrimaryColor}"
-                                   Text="{Binding LendDate}" />
+                                   Text="{Binding Start}" />
                     </StackPanel>
 
                     <CheckBox Style="{StaticResource myCheckBoxStyle}"

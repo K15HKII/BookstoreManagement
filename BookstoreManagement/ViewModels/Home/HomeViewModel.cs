@@ -41,7 +41,7 @@ namespace BookstoreManagement.ViewModels
             _logger = logger;
             _tabContents = new()
             {
-                factory.Create<DashboardViewModel>(),
+                factory.Create<DashBoardPanelViewModel>(),
                 factory.Create<ReportPanelViewModel>(),
                 factory.Create<BookPanelViewModel>(),
                 factory.Create<OrderViewModel>(),

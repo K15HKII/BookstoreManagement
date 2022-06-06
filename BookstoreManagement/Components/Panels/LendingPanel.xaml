@@ -236,7 +236,7 @@
                                             </Style>
                                         </ListView.ItemContainerStyle>
                                         <ListView.ItemTemplate>
-                                            <DataTemplate DataType="{x:Type lend:LendViewModel}">
+                                            <DataTemplate DataType="{x:Type lend:LendInfoViewModel}">
                                                 <component:LendingCard Width="928" />
                                             </DataTemplate>
                                         </ListView.ItemTemplate>

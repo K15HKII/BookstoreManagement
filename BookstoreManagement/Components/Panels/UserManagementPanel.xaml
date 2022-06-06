@@ -10,6 +10,16 @@
              mc:Ignorable="d"
              d:DesignWidth="928"
              Height="664">
+
+    <UserControl.Resources>
+        <GridLength x:Key="CheckboxColumnWidth">24</GridLength>
+        <GridLength x:Key="OrdinalColumnWidth">50</GridLength>
+        <GridLength x:Key="InfoCustomerColumnWidth">2*</GridLength>
+        <GridLength x:Key="CategoryColumnWidth">1.1*</GridLength>
+        <GridLength x:Key="OrderedQuantityColumnWidth">*</GridLength>
+        <GridLength x:Key="ProfitFromCustomerColumnWidth">1.5*</GridLength>
+        <GridLength x:Key="PaticipationDateColumnWidth">1.5*</GridLength>
+    </UserControl.Resources>
     <Grid>
         <StackPanel>
             <component:HeaderWithSearchBar Tag="Khách hàng" />

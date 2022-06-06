@@ -14,11 +14,9 @@ public class BookDetailNavigator : IBookDetailNavigator
         _dialogService = dialogService;
     }
 
-    public BookUpdateRequest? OpenEditBookDialog(UpdateBookViewModel viewModel)
+    public async Task<BookUpdateRequest?> OpenEditBookDialog(UpdateBookViewModel viewModel)
     {
-        Task<object?> task = _dialogService.Show(viewModel);
-        task.Wait();
-        object? value = task.Result;
+        object value = await _dialogService.Show(viewModel);
         if (value == null)
             return null;
         return value as BookUpdateRequest;

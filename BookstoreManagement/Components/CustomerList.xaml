@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.DialogView.Customer"
+             xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.Customer.adapter"
              mc:Ignorable="d">
 
 
@@ -20,7 +20,7 @@
     <Border Background="White"
             Width="928px">
         <ItemsControl Margin="12 0 20 0" x:Name="itemsControl"
-                      ItemsSource="{Binding LsCustomers}">
+                      ItemsSource="{Binding Customers}">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <StackPanel>
@@ -71,7 +71,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate DataType="{x:Type customer:CustomerDetailViewModel}">
+                <DataTemplate DataType="{x:Type customer:CustomerInfoViewModel}">
                     <Grid x:Name="PART_Body"
                           VerticalAlignment="Center"
                           Height="65px" Width="928px">

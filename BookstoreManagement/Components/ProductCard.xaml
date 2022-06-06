@@ -32,7 +32,7 @@
 
                 <UniformGrid Rows="3">
                     <TextBlock Style="{StaticResource Title}"
-                               Text="{Binding Name}"
+                               Text="{Binding Title}"
                                Foreground="Black" />
                     <TextBlock Margin="0 6 0 0"
                                Foreground="{StaticResource SolidOrangeColor}"

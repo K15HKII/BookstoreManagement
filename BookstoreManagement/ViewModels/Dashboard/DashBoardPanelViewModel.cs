@@ -11,13 +11,13 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels.Dashboard
 {
-    public partial class DashboardViewModel : PanelViewModel
+    public partial class DashBoardPanelViewModel : PanelViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly IDashboardNavigator _navigator;
 
-        public DashboardViewModel(IDashboardNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
+        public DashBoardPanelViewModel(IDashboardNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
             IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
             _navigator = navigator;

@@ -13,7 +13,7 @@
                     xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.BookStore">
     
     <ResourceDictionary x:Key="TabHeaderDataTemplates">
-        <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
+        <DataTemplate DataType="{x:Type dashboard:DashBoardPanelViewModel}">
             <components:MainMenuItem Icon="ViewDashboard" Text="Dashboard"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type report:ReportPanelViewModel}">
@@ -46,7 +46,7 @@
     </ResourceDictionary>
     
     <ResourceDictionary x:Key="TabContentDataTemplates">
-        <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
+        <DataTemplate DataType="{x:Type dashboard:DashBoardPanelViewModel}">
             <components:DashboardPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type report:ReportPanelViewModel}">

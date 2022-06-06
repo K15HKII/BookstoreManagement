@@ -11,8 +11,8 @@ public interface IUserRepository
     [Get("/api/user")]
     IObservable<List<User>> getListUser();
 
-    [Get("/api/user")]
-    IObservable<User> getUser(string id);
+    [Get("/api/user/{id}")]
+    IObservable<User> getUser( string id);
 
     [Post("/api/user")]
     IObservable<Object> saveUser(User user);

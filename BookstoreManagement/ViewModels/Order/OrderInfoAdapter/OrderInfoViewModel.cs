@@ -1,5 +1,6 @@
 ﻿using System;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.Order;
@@ -20,8 +21,13 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             _factory = factory;
             _model = model;
         }
-        
-        [ObservableProperty] object? _iD;
+
+        public void SetOrder(Bill bill)
+        {
+            this.Id = bill.Id;
+        }
+
+        [ObservableProperty] int? _id;
 
         [ObservableProperty] DateTime? _date;
 

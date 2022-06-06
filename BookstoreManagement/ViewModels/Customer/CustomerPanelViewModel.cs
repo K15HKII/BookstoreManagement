@@ -5,12 +5,15 @@ using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.Customer;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
+using System.Reactive.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.Customer.adapter;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
@@ -26,13 +29,33 @@ namespace BookstoreManagement.ViewModels.Customer
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
         }
-        
+
+        private void Initialize()
+        {
+            Dispose(_model.getListUser().Select(users => users.Select(user =>
+            {
+                CustomerInfoViewModel vm = _factory.Create<CustomerInfoViewModel>();
+                vm.SetUser(user);
+                return vm;
+            })), books =>
+            {
+                Customers.Clear();
+                foreach (var vm in books)
+                {
+                    Customers.Add(vm);
+                }
+            });
+        }
+
         // Thiếu mở dialog thêm khách hàng và filter và xoá
 
-        [ObservableProperty] public ObservableCollection<object>? _lsCustomers = new();
+        [ObservableProperty] public ObservableCollection<CustomerInfoViewModel>? _customers = new();
 
-        [ObservableProperty] public object? selectedBook = new();
+        [ObservableProperty] string? _name;
+
+        [ObservableProperty] string? _email;
 
 
         [ICommand]

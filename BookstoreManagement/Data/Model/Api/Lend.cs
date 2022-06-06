@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookstoreManagement.Data.Model.Api
+namespace BookstoreManagement.Data.Model
 {
     public class Lend
     {
@@ -17,6 +17,9 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("book_id")]
         public string BookId { get; set; }
+        
+        [JsonProperty("unit_price")]
+        public double UnitPrice { get; set; }
 
         [JsonProperty("start_date")]
         public DateTime StartDate { get; set; }

@@ -12,10 +12,12 @@ using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Manager;
 using Microsoft.Toolkit.Mvvm.Input;
+using System.Reactive.Linq;
+using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 
 namespace BookstoreManagement.ViewModels.Manager
 {
-    public partial class ManagerViewModel : BaseViewModel
+    public partial class ManagerViewModel : PanelViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
@@ -26,15 +28,33 @@ namespace BookstoreManagement.ViewModels.Manager
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            Dispose(_model.getListUser().Select(users => users.Select(user =>
+            {
+                EmployeeInfoViewModel vm = _factory.Create<EmployeeInfoViewModel>();
+                vm.SetEmployee(user);
+                return vm;
+            })), users =>
+            {
+                LsEmployees.Clear();
+                foreach (var vm in users)
+                {
+                    LsEmployees.Add(vm);
+                }
+            });
         }
         // Thiếu mở dialog thêm nhân viên, xoá, filter
         public void openAccount() { }
 
         public void openNotificaiton() { }
 
-        [ObservableProperty] public ObservableCollection<object>? _lsEmployees;
+        [ObservableProperty] private ObservableCollection<EmployeeInfoViewModel>? _lsEmployees = new();
 
-        [ObservableProperty] public object? _selectedemployee;
+        [ObservableProperty] private ObservableCollection<EmployeeInfoViewModel> _selectedemployee = new();
         
         [ICommand]
         public async void AddNew()

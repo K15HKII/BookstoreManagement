@@ -8,12 +8,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using BookstoreManagement.ViewModels.Components;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Report
 {
-    public partial class ReportPanelViewModel : BaseViewModel
+    public partial class ReportPanelViewModel : PanelViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;

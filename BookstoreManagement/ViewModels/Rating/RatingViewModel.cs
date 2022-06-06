@@ -12,7 +12,7 @@ using BookstoreManagement.ViewModels.BookStore;
 
 namespace BookstoreManagement.ViewModels.Rating
 {
-    public partial class RatingViewModel : BaseViewModel
+    public partial class RatingViewModel : PanelViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;

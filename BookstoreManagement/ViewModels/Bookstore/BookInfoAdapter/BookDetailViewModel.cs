@@ -18,9 +18,11 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
+        private readonly IBookInfoNavigator _navigator;
 
         public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
+            _navigator = navigator;
             _factory = factory;
             _model = model;
         }
@@ -29,6 +31,8 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         {
             this.Id = book.Id;
             this.Title = book.Title;
+            this.Price = book.Price;
+            this.PublisherId = book.PublisherId;
             this.Description = book.Description;
             //TODO:
         }
@@ -40,8 +44,6 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ObservableProperty] string? _description;
 
         [ObservableProperty] object? _stock;
-
-        [ObservableProperty] object? _authorId;
 
         [ObservableProperty] double? _price;
 

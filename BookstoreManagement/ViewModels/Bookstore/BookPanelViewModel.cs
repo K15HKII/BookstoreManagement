@@ -10,6 +10,7 @@ using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
+using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using Microsoft.Toolkit.Mvvm.Input;
 
@@ -34,7 +35,7 @@ namespace BookstoreManagement.ViewModels.BookStore
         {
             Dispose(_model.GetBooks().Select(books => books.Select(book =>
             {
-                BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
+                BookDetailViewModel vm = _factory.Create<BookDetailViewModel>();
                 vm.SetBook(book);
                 return vm;
             })), books =>
@@ -48,9 +49,9 @@ namespace BookstoreManagement.ViewModels.BookStore
         }
 
 
-        [ObservableProperty] private ObservableCollection<BookDialogViewModel> _books = new();
+        [ObservableProperty] private ObservableCollection<BookDetailViewModel> _books = new();
 
-        [ObservableProperty] private ObservableCollection<BookDialogViewModel> _selectedBooks = new();
+        [ObservableProperty] private ObservableCollection<BookDetailViewModel> _selectedBooks = new();
 
         [ICommand]
         public async void AddNew()

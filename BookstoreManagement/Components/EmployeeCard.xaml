@@ -45,7 +45,7 @@
                                Text="{Binding Name}"
                                Margin="0 0 8 0" />
                     <TextBlock Style="{StaticResource Title}"
-                               Text="{Binding Id}"
+                               Text="#1"
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                VerticalAlignment="Bottom" />
                 </StackPanel>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,11 @@ using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Supplier;
 using Microsoft.Toolkit.Mvvm.Input;
+using BookstoreManagement.ViewModels.Suppier.SupplierAdapter;
 
 namespace BookstoreManagement.ViewModels.Suppier
 {
-    public partial class SupplierViewModel : BaseViewModel
+    public partial class SupplierViewModel : PanelViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
@@ -27,6 +29,24 @@ namespace BookstoreManagement.ViewModels.Suppier
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            Dispose(_model.GetPublishers().Select(publishers => publishers.Select(publisher =>
+            {
+                SupplierInfoViewModel vm = _factory.Create<SupplierInfoViewModel>();
+                vm.SetPublisher(publisher);
+                return vm;
+            })), books =>
+            {
+                LsSuppliers.Clear();
+                foreach (var vm in books)
+                {
+                    LsSuppliers.Add(vm);
+                }
+            });
         }
 
         // Thiếu mở dialog thêm nhà cung cấp, xoá, filter

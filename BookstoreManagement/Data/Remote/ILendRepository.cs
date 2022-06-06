@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BookstoreManagement.Data.Model;
 using BookstoreManagement.Data.Model.Api;
 using Refit;
 

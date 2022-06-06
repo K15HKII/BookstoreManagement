@@ -38,9 +38,9 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         }
         
         [ICommand]
-        public void OpenEdit()
+        public async void OpenEdit()
         {
-            BookUpdateRequest? request = _navigator.OpenEditBookDialog(_factory.Create<UpdateBookViewModel>());
+            BookUpdateRequest? request = await _navigator.OpenEditBookDialog(_factory.Create<UpdateBookViewModel>());
             if (request == null)
                 return;
 

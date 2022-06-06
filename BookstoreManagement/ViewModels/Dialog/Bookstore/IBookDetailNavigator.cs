@@ -1,8 +1,9 @@
-﻿using BookstoreManagement.Data.Model.Api;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.DialogView.BookStore;
 
 public interface IBookDetailNavigator : INavigator
 {
-    BookUpdateRequest? OpenEditBookDialog(UpdateBookViewModel viewModel);
+    Task<BookUpdateRequest?> OpenEditBookDialog(UpdateBookViewModel viewModel);
 }

@@ -9,10 +9,11 @@ using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.DialogView.Supplier;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 {
-    public partial class SupplierInfoViewModel : BaseViewModel, IDialog
+    public partial class SupplierInfoViewModel : BaseViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
@@ -22,11 +23,18 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
         {
             _factory = factory;
             _model = model;
+            _navigator = navigator;
         }
-        
-        [ObservableProperty] object? _id;
 
-        [ObservableProperty] object? _image;
+        public void SetPublisher(Publisher publisher)
+        {
+            this.Id = "#" + publisher.Id.ToString();
+            this.Name = publisher.Name;
+        }
+
+        [ObservableProperty] string? _id;
+
+        [ObservableProperty] string? _image;
 
         [ObservableProperty] object? _name;
 
@@ -37,6 +45,8 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
         [ObservableProperty] object? _type;
 
         [ObservableProperty] object? _quantity;
+
+
         public event Action<object?>? CloseAction;
         public void OpenDetail()
         {

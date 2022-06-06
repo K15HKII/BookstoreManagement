@@ -9,6 +9,7 @@ using BookstoreManagement.ViewModels.Account;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.Customer;
+using BookstoreManagement.ViewModels.Customer.adapter;
 using BookstoreManagement.ViewModels.Dashboard;
 using BookstoreManagement.ViewModels.DialogView;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
@@ -22,6 +23,7 @@ using BookstoreManagement.ViewModels.Home;
 using BookstoreManagement.ViewModels.Home.BookAdapter;
 using BookstoreManagement.ViewModels.Home.UserAdapter;
 using BookstoreManagement.ViewModels.Lend;
+using BookstoreManagement.ViewModels.Lend.LendAdapter;
 using BookstoreManagement.ViewModels.Login;
 using BookstoreManagement.ViewModels.Manager;
 using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
@@ -42,6 +44,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Refit;
+using LendNavigator = BookstoreManagement.ViewModels.Lend.LendNavigator;
 
 namespace BookstoreManagement.Services
 {
@@ -137,7 +140,7 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<HomeViewModel>();
 
                 service.AddSingleton<IDashboardNavigator, DashboardNavigator>();
-                service.AddViewModel<DashboardViewModel>();
+                service.AddViewModel<DashBoardPanelViewModel>();
 
                 service.AddSingleton<IReportNavigator, ReportNavigator>();
                 service.AddViewModel<ReportPanelViewModel>();
@@ -179,21 +182,30 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<BookAdapterViewModel>();
 
                 //BookStore
+                service.AddSingleton<IBookInfoNavigator, BookInfoNavigator>();
                 service.AddViewModel<BookDetailViewModel>();
 
+                //Customer
+                service.AddSingleton<ICustomerInfoNavigator, CustomerInfoNavigator>();
+                service.AddViewModel<CustomerInfoViewModel>();
+
                 //Order
+                service.AddSingleton<IOrderInfoNavigator, OrderInfoNavigator>();
                 service.AddViewModel<OrderInfoViewModel>();
 
                 //Voucher
+                service.AddSingleton<IVoucherAdapterNavigator, VoucherAdapterNavigator>();
                 service.AddViewModel<VoucherAdapterViewModel>();
 
                 //Rating
                 service.AddViewModel<RatingInfoViewModel>();
 
                 //Manager
+                service.AddSingleton<IEmployeeInfoNavigator, EmployeeInfoNavigator>();
                 service.AddViewModel<EmployeeInfoViewModel>();
 
                 //Supplier
+                service.AddSingleton<ISupplierInfoNavigator, SupplierInfoNavigator>();
                 service.AddViewModel<SupplierInfoViewModel>();
 
                 //OrderPage
@@ -208,7 +220,8 @@ namespace BookstoreManagement.Services
                 
 
                 //Lend
-                service.AddViewModel<ViewModels.Lend.LendAdapter.LendViewModel>();
+                service.AddSingleton<ILendInfoNavigator, LendInfoNavigator>();
+                service.AddViewModel<LendInfoViewModel>();
 
 
                 //Dialog

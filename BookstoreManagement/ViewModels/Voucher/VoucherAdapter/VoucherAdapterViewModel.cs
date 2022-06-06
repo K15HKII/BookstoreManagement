@@ -25,6 +25,13 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             _factory = factory;
             _model = model;
         }
+        
+        public void SetVoucher(Data.Model.Api.Voucher voucher)
+        {
+            this.Code = voucher.Code;
+        }
+
+        [ObservableProperty] string? code;
 
         [ObservableProperty] string? _title;
 

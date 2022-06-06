@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookstoreManagement.Data.Remote
 {
-    public interface IModelRemote : IStatisticRepository, IAuthorRepository, IPublisherRepository, IBookRepository, ITransporterRepository, ITransportRepository, IUserRepository, ICartItemRepository, IBillRepository
+    public interface IModelRemote : IStatisticRepository, IAuthorRepository, IPublisherRepository, IBookRepository, ITransporterRepository, ITransportRepository, IUserRepository, ICartItemRepository, IBillRepository, ILendRepository
     {
     }
 }

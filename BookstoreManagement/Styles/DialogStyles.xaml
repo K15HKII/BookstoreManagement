@@ -36,5 +36,6 @@
         <DataTemplate DataType="{x:Type order:AddOrderViewModel}">
             <components:ucAddPendingBill/>
         </DataTemplate>
+        
     </ResourceDictionary>
 </ResourceDictionary>

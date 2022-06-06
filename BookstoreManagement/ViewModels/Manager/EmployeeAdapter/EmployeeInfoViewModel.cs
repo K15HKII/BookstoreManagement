@@ -11,6 +11,7 @@ using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Customer;
 using BookstoreManagement.ViewModels.DialogView.Manager;
+using BookstoreManagement.Data.Model.Api;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
@@ -28,11 +29,17 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
             _model = model;
         }
 
-        [ObservableProperty] object? _image;
-        
-        [ObservableProperty] object? _id;
+        public void SetEmployee(User user)
+        {
+            this.Id = user.Id;
+            this.Name = user.FirstName + user.LastName;
+        }
 
-        [ObservableProperty] object? _name;
+        [ObservableProperty] string? _image;
+        
+        [ObservableProperty] string? _id;
+
+        [ObservableProperty] string? _name;
 
         [ObservableProperty] object? _status;
 
