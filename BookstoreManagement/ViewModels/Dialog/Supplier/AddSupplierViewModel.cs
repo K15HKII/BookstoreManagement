@@ -24,11 +24,9 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         //TODO: thiết kế nhà cung cấp chưa đúng còn thiếu
 
         [ObservableProperty]
-        [Required]
         private string? _image;
         
         [ObservableProperty]
-        [Required]
         private string? _id;
 
         [ObservableProperty]
@@ -36,27 +34,21 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         private string? _name;
         
         [ObservableProperty]
-        [Required]
         private string? _address;
         
         [ObservableProperty]
-        [Required]
         private DateTime? _coopDate;
         
         [ObservableProperty]
-        [Required]
         private DateTime? _createDate;
 
-        [ObservableProperty] 
-        [Required]
+        [ObservableProperty]
         private string? _bookType;
         
         [ObservableProperty]
-        [Required]
         private string? _phone;
         
         [ObservableProperty]
-        [Required]
         private string? _email;
 
 
@@ -86,6 +78,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         public void Accept()
         {
             CloseAction?.Invoke(ToAddRequest());
+            
         }
     }
 }

@@ -32,7 +32,7 @@ namespace BookstoreManagement.ViewModels.Suppier
             Initialize();
         }
 
-        private void Initialize()
+        public void Initialize()
         {
             Dispose(_model.GetPublishers().Select(publishers => publishers.Select(publisher =>
             {
@@ -68,7 +68,7 @@ namespace BookstoreManagement.ViewModels.Suppier
             Dispose(_model.CreatePublisher(request!), book =>
             {
                 Console.WriteLine("Publisher created successfully");
-                /*Initialize();*/
+                Initialize();
                 //TODO: Notify
             });
         }
