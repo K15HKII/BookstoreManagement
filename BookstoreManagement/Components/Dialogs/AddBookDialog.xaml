@@ -15,7 +15,7 @@
         <StackPanel x:Name="root">
             <TextBlock Style="{StaticResource Title}"
                        Foreground="{StaticResource SolidDarkGrayColor}"
-                       Text="# Ma san pham"
+                       Text="{Binding Id}"
                        Margin="0 0 0 24" />
 
             <StackPanel Margin="0 0 0 24">
@@ -23,7 +23,8 @@
                            Foreground="Black"
                            Text="Ten san pham"
                            Margin="0 0 0 8" />
-                <TextBox Width="{Binding ElementName=root, Path=ActualWidth}"
+                <TextBox Width="auto"
+                         Style="{StaticResource myInput}"
                          Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
@@ -75,7 +76,7 @@
                            Foreground="Black"
                            Text="Nha cung cap"
                            Margin="0 0 0 8" />
-                <ComboBox Width="{Binding ElementName=root, Path=ActualWidth}" 
+                <ComboBox Width="auto" 
                           ItemsSource="{Binding Source={StaticResource PublisherProvider}, Path=Source}"
                           SelectedItem="{Binding PublisherId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           SelectedValuePath="Id"
@@ -99,7 +100,7 @@
                 </ListView>
                 <TextBox Style="{StaticResource myInput}"
                          Text="them"
-                         Width="{Binding ElementName=root, Path=ActualWidth}" />
+                         Width="auto" />
 
             </StackPanel>
 
@@ -122,10 +123,12 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <!--open file dialog-->
                     <Button Padding="0"
                             Width="138"
                             Height="138">
-                        <ContentControl Content="{StaticResource btnAddImage}" />
+                        <ContentControl Content="{StaticResource btnAddImage}" 
+/>
                     </Button>
                 </StackPanel>
             </StackPanel>
@@ -137,7 +140,7 @@
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
                          Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}" />
+                         Width="auto" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"

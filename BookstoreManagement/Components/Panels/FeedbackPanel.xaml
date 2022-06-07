@@ -55,7 +55,7 @@
                 </StackPanel>
             </DockPanel>
 
-            <ScrollViewer Background="Black"
+            <ScrollViewer 
                           Margin="0"
                           x:Name="p"
                           VerticalScrollBarVisibility="Auto"

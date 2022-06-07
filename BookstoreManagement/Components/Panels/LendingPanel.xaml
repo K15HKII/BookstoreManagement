@@ -215,7 +215,6 @@
                         <ScrollViewer VerticalScrollBarVisibility="Auto"
                                       Margin="0"
                                       DockPanel.Dock="Top"
-                                      Background="Black"
                                       Height="{Binding ElementName=p, Path=ActualHeight}">
                             <component:PageItemsControl Margin="0 0 0 0"
                                                         VerticalAlignment="Top"
@@ -258,7 +257,6 @@
                         <ScrollViewer VerticalScrollBarVisibility="Auto"
                                       Margin="0"
                                       DockPanel.Dock="Top"
-                                      Background="Black"
                                       Height="{Binding ElementName=p, Path=ActualHeight}">
                             <component:PageItemsControl Margin="0 0 0 0"
                                                         VerticalAlignment="Top"

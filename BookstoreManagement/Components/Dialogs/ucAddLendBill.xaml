@@ -1,12 +1,12 @@
 ﻿<UserControl x:Class="BookstoreManagement.Components.ucAddLendBill"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignWidth="735">
-    
+
     <Border CornerRadius="16"
             Background="White"
             Padding="42 20 42 32">
@@ -40,7 +40,7 @@
                 </Grid>
 
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}"
+                         Width="auto"
                          Text="{Binding CustomerPhone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Tag="So dien thoai"
                          Margin="0 0 0 8" />
@@ -78,11 +78,11 @@
 
                     <StackPanel>
                         <!--fixing-->
-                        <ComboBox 
-                                 Width="auto"
-                                 Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                 Tag="Phan loai"
-                                 Margin="0 0 0 8" />
+                        <ComboBox Width="auto"
+                                  Height="52"
+                                  Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                  Tag="Phan loai"
+                                  Margin="0 0 0 8" />
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
                                  Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -92,7 +92,7 @@
                                  Width="auto"
                                  Text="{Binding Voucher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Voucher"
-                                 Margin="0 0 0 8"/>
+                                 Margin="0 0 0 8" />
 
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -116,9 +116,7 @@
                     <Border Grid.Column="2"
                             Background="{StaticResource SolidLightGrayColor}">
                         <Border.BorderBrush>
-                            <ImageBrush
-                                ImageSource="{Binding BookImage}"
-                            />
+                            <ImageBrush ImageSource="{Binding BookImage}" />
                         </Border.BorderBrush>
                     </Border>
                 </Grid>

@@ -18,6 +18,9 @@
     <Window.Resources>
     </Window.Resources>
 
-    
-    
+    <ComboBox Width="40"
+              Height="50"
+              Tag="sdflkahskdfhskadf"
+              />
+
 </Window>

@@ -55,7 +55,7 @@
                 </StackPanel>
             </DockPanel>
 
-            <ScrollViewer Background="Black" x:Name="p"
+            <ScrollViewer x:Name="p"
                           VerticalScrollBarVisibility="Auto"
                           Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                         AncestorType={x:Type Grid}}, Path=ActualHeight}">

@@ -681,6 +681,7 @@
                 <Border.Background>
                     <SolidColorBrush Color="White" />
                 </Border.Background>
+                <TextBlock Text="{TemplateBinding Tag}" />
             </Border>
             <materialDesign:PackIcon Grid.Column="1"
                                      Kind="ArrowDropDown"
@@ -759,11 +760,13 @@
                         </VisualStateManager.VisualStateGroups>
                         <ToggleButton x:Name="ToggleButton"
                                       Template="{StaticResource ComboBoxToggleButton}"
+                                      Tag="{TemplateBinding Tag}"
                                       Grid.Column="2"
                                       Focusable="false"
                                       ClickMode="Press"
                                       IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, 
-              RelativeSource={RelativeSource TemplatedParent}}" />
+              RelativeSource={RelativeSource TemplatedParent}}">
+                        </ToggleButton>
                         <ContentPresenter x:Name="ContentSite"
                                           IsHitTestVisible="False"
                                           Content="{TemplateBinding SelectionBoxItem}"
