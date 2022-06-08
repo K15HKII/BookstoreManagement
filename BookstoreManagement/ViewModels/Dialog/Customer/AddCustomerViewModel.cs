@@ -1,5 +1,4 @@
 ﻿using BookstoreManagement.Annotations;
-using BookstoreManagement.Data.Model.Api.Customer;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
@@ -10,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.DialogView.Customer
 {

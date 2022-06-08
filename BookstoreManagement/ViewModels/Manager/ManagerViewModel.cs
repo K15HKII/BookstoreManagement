@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
-using BookstoreManagement.Data.Model.Api.Customer;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Manager;
 using Microsoft.Toolkit.Mvvm.Input;
 using System.Reactive.Linq;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 
 namespace BookstoreManagement.ViewModels.Manager

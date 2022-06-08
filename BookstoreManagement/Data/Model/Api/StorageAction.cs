@@ -1,4 +1,4 @@
-﻿namespace BookstoreManagement.Data.Model;
+﻿namespace BookstoreManagement.Data.Model.Api;
 
 public enum StorageAction
 {

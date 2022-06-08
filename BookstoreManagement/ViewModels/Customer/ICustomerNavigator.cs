@@ -1,10 +1,10 @@
-﻿using BookstoreManagement.Data.Model.Api.Customer;
-using BookstoreManagement.ViewModels.DialogView.Customer;
+﻿using BookstoreManagement.ViewModels.DialogView.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.Customer
 {

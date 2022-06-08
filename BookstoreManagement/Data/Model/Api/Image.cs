@@ -1,7 +1,6 @@
-﻿using BookstoreManagement.Data.Model.Api;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace BookstoreManagement.Data.Model;
+namespace BookstoreManagement.Data.Model.Api;
 
 public abstract class Image : Media
 {

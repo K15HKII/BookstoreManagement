@@ -221,6 +221,7 @@
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
                                                             VerticalAlignment="Top"
+                                                            ItemsSource="{Binding WaitingBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView x:Name="itemsControl"
@@ -263,6 +264,7 @@
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
                                                             VerticalAlignment="Top"
+                                                            ItemsSource="{Binding ShippingBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView ItemsSource="{Binding LsOrders}"
@@ -304,6 +306,7 @@
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
                                                             VerticalAlignment="Top"
+                                                            ItemsSource="{Binding RatingBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView ItemsSource="{Binding LsOrders}"
@@ -345,6 +348,7 @@
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
                                                             VerticalAlignment="Top"
+                                                            ItemsSource="{Binding FinishBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView ItemsSource="{Binding LsOrders}"
@@ -386,6 +390,7 @@
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
                                                             VerticalAlignment="Top"
+                                                            ItemsSource="{Binding CancelledLends}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView ItemsSource="{Binding LsOrders}"

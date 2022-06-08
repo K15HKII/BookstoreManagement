@@ -32,6 +32,7 @@ namespace BookstoreManagement.Services
                 {
                     var result = await req.Content.ReadAsStringAsync();
 
+                    Console.WriteLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
                     Console.WriteLine($"{msg} Content:");
                     Console.WriteLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
 
@@ -68,6 +69,7 @@ namespace BookstoreManagement.Services
                     var result = await resp.Content.ReadAsStringAsync();
                     end = DateTime.Now;
 
+                    Console.WriteLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
                     Console.WriteLine($"{msg} Content:");
                     Console.WriteLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
                     Console.WriteLine($"{msg} Duration: {end - start}");

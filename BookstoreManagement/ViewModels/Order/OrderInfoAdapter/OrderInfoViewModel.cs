@@ -25,7 +25,10 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         public void SetOrder(Bill bill)
         {
             this.Id = bill.Id;
+            this._status = bill.BillStatus ?? BillStatus.WAITING;
         }
+        
+        [ObservableProperty] private BillStatus _status;
 
         [ObservableProperty] int? _id;
 

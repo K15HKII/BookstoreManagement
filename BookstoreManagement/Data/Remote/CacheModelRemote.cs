@@ -188,22 +188,22 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Bill>> getListBill()
+        public IObservable<List<Bill>> GetBills()
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<Bill> getBill(int id)
+        public IObservable<Bill> GetBill(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> saveBill(Bill bill)
+        public IObservable<object> SaveBill(Bill bill)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteBill(int id)
+        public IObservable<object> DeleteBill(int id)
         {
             throw new NotImplementedException();
         }

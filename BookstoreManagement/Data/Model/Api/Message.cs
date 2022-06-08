@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace BookstoreManagement.Data.Model;
+namespace BookstoreManagement.Data.Model.Api;
 
 public class Message
 {

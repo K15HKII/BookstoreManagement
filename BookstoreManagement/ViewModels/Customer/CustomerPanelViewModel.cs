@@ -1,5 +1,4 @@
 ﻿using BookstoreManagement.Annotations;
-using BookstoreManagement.Data.Model.Api.Customer;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.Customer;
@@ -12,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.Customer.adapter;
 

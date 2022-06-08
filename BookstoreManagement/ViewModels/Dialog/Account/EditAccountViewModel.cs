@@ -1,6 +1,6 @@
 ﻿using System;
 using BookstoreManagement.Annotations;
-using BookstoreManagement.Data.Model.Api.Customer;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;

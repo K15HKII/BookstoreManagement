@@ -32,20 +32,50 @@ namespace BookstoreManagement.ViewModels.Order
 
         private void Initialize()
         {
-            
+            Dispose(_model.GetBills(), bills =>
+            {
+                UpdateBills(bills.Select(bill =>
+                {
+                    OrderInfoViewModel vm = _factory.Create<OrderInfoViewModel>();
+                    vm.SetOrder(bill);
+                    return vm;
+                }));
+            });
         }
 
-        //TODO: Thiếu mở dialog xoá đơn và thêm đơn hàng
+        private void UpdateBills(IEnumerable<OrderInfoViewModel> vms)
+        {
+            Bills.Clear();
+            foreach (var vm in vms)
+            {
+                Bills.Add(vm);
+            }
+            Filter(Bills, WaitingBills, vm => vm.Status == BillStatus.WAITING);
+            Filter(Bills, ShippingBills, vm => vm.Status == BillStatus.TRANSPORTING);
+            Filter(Bills, RatingBills, vm => vm.Status == BillStatus.PROCESSING);
+            Filter(Bills, FinishBills, vm => vm.Status == BillStatus.COMPLETED);
+            Filter(Bills, CancelledLends, vm => vm.Status == BillStatus.CANCELLED);
+        }
 
-        public void openAccount() { }
+        private void Filter(ObservableCollection<OrderInfoViewModel> from, ObservableCollection<OrderInfoViewModel> to,
+            Predicate<OrderInfoViewModel> vm)
+        {
+            to.Clear();
+            foreach (var orderInfoViewModel in from)
+            {
+                if (vm(orderInfoViewModel))
+                {
+                    to.Add(orderInfoViewModel);
+                }
+            }
+        }
 
-        public void openNotificaiton() { }
-
-        [ObservableProperty] private ObservableCollection<OrderInfoViewModel>? _waitingBills;
-        [ObservableProperty] private ObservableCollection<OrderInfoViewModel>? _shippingBills;
-        [ObservableProperty] private ObservableCollection<OrderInfoViewModel>? _ratingBills;
-        [ObservableProperty] private ObservableCollection<OrderInfoViewModel>? _finishBills;
-        [ObservableProperty] private ObservableCollection<OrderInfoViewModel>? _cancelledLends;
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _bills = new();
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _waitingBills = new();
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _shippingBills = new();
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _ratingBills = new();
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _finishBills = new();
+        [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _cancelledLends = new();
 
         [ObservableProperty] public ObservableCollection<object>? selectedBills;
 

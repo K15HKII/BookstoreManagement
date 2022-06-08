@@ -1,15 +1,10 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 {
@@ -26,7 +21,7 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
             _factory = factory;
         }
 
-        public void SetLend(Data.Model.Lend lend)
+        public void SetLend(Data.Model.Api.Lend lend)
         {
             this.Id = lend.Id;
             this.UserId = lend.UserId;

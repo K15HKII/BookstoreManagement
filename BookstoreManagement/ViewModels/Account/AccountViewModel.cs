@@ -8,7 +8,6 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
-using BookstoreManagement.Data.Model.Api.Customer;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.Account;
 using BookstoreManagement.ViewModels.DialogView.BookStore;

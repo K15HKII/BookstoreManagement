@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
-using BookstoreManagement.Data.Model.Api.Customer;
 using BookstoreManagement.Services;
 using BookstoreManagement.ViewModels.DialogView.Manager;
 
