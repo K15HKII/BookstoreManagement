@@ -7,6 +7,7 @@
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:order="clr-namespace:BookstoreManagement.ViewModels.Order"
+             xmlns:orderInfoAdapter="clr-namespace:BookstoreManagement.ViewModels.Order.OrderInfoAdapter"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -225,7 +226,6 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView x:Name="itemsControl"
-                                                  ItemsSource="{Binding LsOrders}"
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -239,7 +239,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -267,7 +267,7 @@
                                                             ItemsSource="{Binding ShippingBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView ItemsSource="{Binding LsOrders}"
+                                        <ListView
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -281,7 +281,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -309,7 +309,7 @@
                                                             ItemsSource="{Binding RatingBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView ItemsSource="{Binding LsOrders}"
+                                        <ListView
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -323,7 +323,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -351,7 +351,7 @@
                                                             ItemsSource="{Binding FinishBills}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView ItemsSource="{Binding LsOrders}"
+                                        <ListView
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -365,7 +365,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
@@ -393,7 +393,7 @@
                                                             ItemsSource="{Binding CancelledLends}"
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
-                                        <ListView ItemsSource="{Binding LsOrders}"
+                                        <ListView
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -407,7 +407,7 @@
                                                 </Style>
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type order:OrderViewModel}">
+                                                <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
                                                     <component:PendingBillCard Width="449" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>

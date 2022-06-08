@@ -35,7 +35,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         [ObservableProperty] DateTime? _date;
 
         [ObservableProperty] object? _owner;
-
+            
         [ObservableProperty] object? _price;
 
         [ObservableProperty] object? _bookId;
