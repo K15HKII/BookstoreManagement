@@ -50,13 +50,14 @@ namespace BookstoreManagement.Services
 {
     public static class ServiceConfig
     {
+        
+        public static readonly string BASE_URL = "https://upbeat-resolver-316305.df.r.appspot.com";
 
         private static IHttpClientBuilder ConfigHttpClientBuilder(this IHttpClientBuilder builder, bool auth = false, bool logging = false)
         {
             builder = builder.ConfigureHttpClient(c =>
             {
-                //c.BaseAddress = new Uri("https://upbeat-resolver-316305.df.r.appspot.com");
-                c.BaseAddress = new Uri("http://localhost:3000");
+                c.BaseAddress = new Uri(BASE_URL);
             });
             if (auth)
             {

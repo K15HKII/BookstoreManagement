@@ -12,6 +12,7 @@
 
     <local:TextFormatConverter x:Key="ToStringConverter"/>
     <converters1:BooleanVisibility x:Key="DefaultVisibilityConverter"/>
+    <converters1:UriImageConverter x:Key="UriImageConverter"/>
 
     <Style TargetType="{x:Type local:LoadingMask}">
         <Setter Property="Template">

@@ -54,7 +54,7 @@ namespace BookstoreManagement.ViewModels.Order
             Filter(Bills, ShippingBills, vm => vm.Status == BillStatus.TRANSPORTING);
             Filter(Bills, RatingBills, vm => vm.Status == BillStatus.PROCESSING);
             Filter(Bills, FinishBills, vm => vm.Status == BillStatus.COMPLETED);
-            Filter(Bills, CancelledLends, vm => vm.Status == BillStatus.CANCELLED);
+            Filter(Bills, CancelledLends, vm => vm.Status == BillStatus.CANCELED);
         }
 
         private void Filter(ObservableCollection<OrderInfoViewModel> from, ObservableCollection<OrderInfoViewModel> to,

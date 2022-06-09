@@ -35,6 +35,9 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("tag")]
         public BookTag Tag { get; set; }
+        
+        [JsonProperty("images")]
+        public List<Image>? Images { get; set; }
 
     }
 }

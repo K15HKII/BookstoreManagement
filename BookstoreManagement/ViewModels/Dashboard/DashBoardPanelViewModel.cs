@@ -28,7 +28,7 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         protected void Initialize()
         {
-            Dispose(_model.GetTopCustomers()
+            /*Dispose(_model.GetTopCustomers()
                 .Select(users => users.Select(user =>
                 {
                     CustomerDetailViewModel vm = _factory.Create<CustomerDetailViewModel>();
@@ -41,7 +41,7 @@ namespace BookstoreManagement.ViewModels.Dashboard
                 {
                     UserList.Add(vm);
                 }
-            });
+            });*/
 
             Dispose(_model.GetBooks()
                 .Select(books => books.Select(book =>

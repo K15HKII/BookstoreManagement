@@ -34,7 +34,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             this.Price = book.Price;
             this.PublisherId = book.PublisherId;
             this.Description = book.Description;
-            //TODO:
+            this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
         }
 
         [ObservableProperty] object? _id;
@@ -50,6 +50,8 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ObservableProperty] object? _publisherId;
 
         [ObservableProperty] BookTag? _tag;
+
+        [ObservableProperty] private string? _display;
 
         [ICommand]
         public void OpenInfo()

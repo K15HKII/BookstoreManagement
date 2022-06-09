@@ -21,7 +21,7 @@
             </Grid.RowDefinitions>
             <Image x:Name="Image1" 
                    Height="138"
-                   Source="{Binding Image}"/>
+                   Source="{Binding Display, Converter={StaticResource UriImageConverter}, IsAsync=True}"/>
             <Grid Margin="12 15 12 12"
                   Grid.Row="1">
                 <Grid.ColumnDefinitions>
