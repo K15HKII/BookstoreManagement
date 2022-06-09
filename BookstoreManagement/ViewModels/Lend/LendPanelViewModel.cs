@@ -29,48 +29,30 @@ namespace BookstoreManagement.ViewModels.Lend
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
         }
         
         private void Initialize()
         {
-            Dispose(_model.getListLend().Select(lends => lends.Select(lend =>
+            Dispose(_model.GetLends().Select(lends => lends.Select(lend =>
             {
                 LendInfoViewModel vm = _factory.Create<LendInfoViewModel>();
                 vm.SetLend(lend);
                 return vm;
             })), books =>
             {
-                /*Books.Clear();
+                Source.Clear();
                 foreach (var vm in books)
                 {
-                    Books.Add(vm);
-                }*/
+                    Source.Add(vm);
+                }
+                Filter(Source, UsingLends, vm => vm.Status == LendStatus.USING);
+                Filter(Source, FinishLends, vm => vm.Status == LendStatus.FINISHED);
+                Filter(Source, CancelledLends, vm => vm.Status == LendStatus.CANCELED);
             });
         }
-        // Thiếu mở dialog thêm đơn mượn, xoá, filter
-        public void openAccount() { }
 
-        public void openNotificaiton() { }
-
-        private ObservableCollection<LendInfoViewModel> _sourceLends;
-        public ObservableCollection<LendInfoViewModel>? SourceLends
-        {
-            get => _sourceLends;
-            set
-            {
-                _sourceLends = value;
-                _sourceLends.CollectionChanged += (sender, args) =>
-                {
-                    //TODO: apply filter logic
-                    filter(_sourceLends, WaitingLends, model =>
-                    {
-                        return true;
-                    });
-                };
-            }
-        }
-
-        private void filter(ObservableCollection<LendInfoViewModel> source, ObservableCollection<LendInfoViewModel> target,
+        private void Filter(ObservableCollection<LendInfoViewModel> source, ObservableCollection<LendInfoViewModel> target,
             Func<LendInfoViewModel, bool> predicate)
         {
             //TODO: tạo filter cho list Lend
@@ -84,10 +66,10 @@ namespace BookstoreManagement.ViewModels.Lend
             }
         }
 
-        [ObservableProperty] private ObservableCollection<LendInfoViewModel>? _waitingLends;
-        [ObservableProperty] private ObservableCollection<LendInfoViewModel>? _usingLends;
-        [ObservableProperty] private ObservableCollection<LendInfoViewModel>? _finishLends;
-        [ObservableProperty] private ObservableCollection<LendInfoViewModel>? _cancelledLends;
+        [ObservableProperty] private ObservableCollection<LendInfoViewModel> _source = new();
+        [ObservableProperty] private ObservableCollection<LendInfoViewModel> _usingLends = new();
+        [ObservableProperty] private ObservableCollection<LendInfoViewModel> _finishLends = new();
+        [ObservableProperty] private ObservableCollection<LendInfoViewModel> _cancelledLends = new();
 
 
         [ObservableProperty] public ObservableCollection<LendInfoViewModel> _selectedLends;

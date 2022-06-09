@@ -17,6 +17,9 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("unit_price")]
         public double UnitPrice { get; set; }
 
+        [JsonProperty("tags")]
+        public LendStatus Status { get; set; }
+
         [JsonProperty("start_date")]
         public DateTime StartDate { get; set; }
 

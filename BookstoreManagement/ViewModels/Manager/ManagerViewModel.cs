@@ -33,7 +33,7 @@ namespace BookstoreManagement.ViewModels.Manager
 
         private void Initialize()
         {
-            Dispose(_model.getListUser().Select(users => users.Select(user =>
+            Dispose(_model.GetUsers().Select(users => users.Select(user =>
             {
                 EmployeeInfoViewModel vm = _factory.Create<EmployeeInfoViewModel>();
                 vm.SetEmployee(user);

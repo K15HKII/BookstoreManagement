@@ -9,15 +9,15 @@ public interface IUserRepository
 {
     #region User 
     [Get("/api/user")]
-    IObservable<List<User>> getListUser();
+    IObservable<List<User>> GetUsers();
 
     [Get("/api/user/{id}")]
-    IObservable<User> getUser( string id);
+    IObservable<User> GetUser( string id);
 
     [Post("/api/user")]
-    IObservable<Object> saveUser(User user);
+    IObservable<Object> SaveUser(User user);
 
     [Delete("/api/user")]
-    IObservable<Object> deleteUser(string id);
+    IObservable<Object> DeleteUser(string id);
     #endregion
 }

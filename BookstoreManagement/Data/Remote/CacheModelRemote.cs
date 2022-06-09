@@ -21,22 +21,22 @@ namespace BookstoreManagement.Data.Remote
             _model = model;
         }
 
-        public IObservable<List<User>> getListUser()
+        public IObservable<List<User>> GetUsers()
         {
-            return _model.getListUser();
+            return _model.GetUsers();
         }
 
-        public IObservable<User> getUser(string id)
+        public IObservable<User> GetUser(string id)
         {
-            return _model.getUser(id);
+            return _model.GetUser(id);
         }
 
-        public IObservable<object> saveUser(User user)
+        public IObservable<object> SaveUser(User user)
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteUser(string id)
+        public IObservable<object> DeleteUser(string id)
         {
             throw new NotImplementedException();
         }
@@ -248,12 +248,17 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<List<Lend>> getListLend()
+        public IObservable<List<Lend>> GetLends()
         {
             throw new NotImplementedException();
         }
 
-        public IObservable<Lend> getLend(string id)
+        public IObservable<Lend> GetLend(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<object> SaveLend(string id, Lend lend)
         {
             throw new NotImplementedException();
         }
@@ -263,7 +268,7 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
-        public IObservable<object> deleteLend(string id)
+        public IObservable<object> DeleteLend(string id)
         {
             throw new NotImplementedException();
         }
@@ -329,6 +334,11 @@ namespace BookstoreManagement.Data.Remote
         }
 
         public IObservable<List<User>> GetTopCustomers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<List<Feedback>> GetFeedbacks()
         {
             throw new NotImplementedException();
         }

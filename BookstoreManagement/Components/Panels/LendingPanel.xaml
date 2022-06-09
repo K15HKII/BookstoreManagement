@@ -211,17 +211,17 @@
                 <TabControl Style="{StaticResource NavigationRail}">
                     <TabItem Style="{StaticResource NavigationRailItem}"
                              Padding="12 8"
-                             Header="Chờ xác nhận">
+                             Header="Đã thuê">
                         <ScrollViewer VerticalScrollBarVisibility="Auto"
                                       Margin="0"
                                       DockPanel.Dock="Top"
                                       Height="{Binding ElementName=p, Path=ActualHeight}">
                             <component:PageItemsControl Margin="0 0 0 0"
                                                         VerticalAlignment="Top"
+                                                        ItemsSource="{Binding FinishLends}"
                                                         HorizontalAlignment="Left">
                                 <component:PageItemsControl.ItemsTemplate>
                                     <ListView x:Name="itemsControl"
-                                              ItemsSource="{Binding}"
                                               Width="{Binding ElementName=p, Path=ActualWidth}"
                                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                         <ListView.ItemContainerStyle>
@@ -260,6 +260,7 @@
                                       Height="{Binding ElementName=p, Path=ActualHeight}">
                             <component:PageItemsControl Margin="0 0 0 0"
                                                         VerticalAlignment="Top"
+                                                        ItemsSource="{Binding UsingLends}"
                                                         HorizontalAlignment="Left">
                                 <component:PageItemsControl.ItemsTemplate>
                                     <ListView x:Name="itemsControl1"
@@ -292,9 +293,48 @@
                             </component:PageItemsControl>
                         </ScrollViewer>
                     </TabItem>
-                    <TabItem Header="Đã giao"
+                    <TabItem Header="Đã hủy"
                              Style="{StaticResource NavigationRailItem}"
-                             Padding="12 8"></TabItem>
+                             Padding="12 8">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      Margin="0"
+                                      DockPanel.Dock="Top"
+                                      Height="{Binding ElementName=p, Path=ActualHeight}">
+                            <component:PageItemsControl Margin="0 0 0 0"
+                                                        VerticalAlignment="Top"
+                                                        ItemsSource="{Binding CancelledLends}"
+                                                        HorizontalAlignment="Left">
+                                <component:PageItemsControl.ItemsTemplate>
+                                    <ListView
+                                              Width="{Binding ElementName=p, Path=ActualWidth}"
+                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                        <ListView.ItemContainerStyle>
+                                            <Style TargetType="ListViewItem">
+                                                <Setter Property="Padding"
+                                                        Value="0 0 0 0" />
+                                                <Setter Property="Margin"
+                                                        Value="11 0 12 32" />
+                                                <Setter Property="BorderThickness"
+                                                        Value="0" />
+                                            </Style>
+                                        </ListView.ItemContainerStyle>
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <component:LendingCard Width="928" />
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                        <ListView.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel Margin="-11 0 -12 0"
+                                                           IsItemsHost="True"
+                                                           Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ListView.ItemsPanel>
+                                    </ListView>
+                                </component:PageItemsControl.ItemsTemplate>
+                            </component:PageItemsControl>
+                        </ScrollViewer>
+                    </TabItem>
                 </TabControl>
             </Grid>
 

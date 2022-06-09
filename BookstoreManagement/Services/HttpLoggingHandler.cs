@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,25 +17,27 @@ namespace BookstoreManagement.Services
             var id = Guid.NewGuid().ToString();
             var msg = $"[{id} -   Request]";
 
-            Console.WriteLine($"{msg}========Start==========");
-            Console.WriteLine($"{msg} {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
-            Console.WriteLine($"{msg} Host: {req.RequestUri.Scheme}://{req.RequestUri.Host}");
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"{msg}========Start==========");
+            sb.AppendLine($"{msg} {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
+            sb.AppendLine($"{msg} Host: {req.RequestUri.Scheme}://{req.RequestUri.Host}");
 
             foreach (var header in req.Headers)
-                Console.WriteLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
+                sb.AppendLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
 
             if (req.Content != null)
             {
                 foreach (var header in req.Content.Headers)
-                    Console.WriteLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
+                    sb.AppendLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
 
                 if (req.Content is StringContent || this.IsTextBasedContentType(req.Headers) || this.IsTextBasedContentType(req.Content.Headers))
                 {
                     var result = await req.Content.ReadAsStringAsync();
 
-                    Console.WriteLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
-                    Console.WriteLine($"{msg} Content:");
-                    Console.WriteLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
+                    sb.AppendLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
+                    sb.AppendLine($"{msg} Content:");
+                    sb.AppendLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
 
                 }
             }
@@ -45,23 +48,23 @@ namespace BookstoreManagement.Services
 
             var end = DateTime.Now;
 
-            Console.WriteLine($"{msg} Duration: {end - start}");
-            Console.WriteLine($"{msg}==========End==========");
+            sb.AppendLine($"{msg} Duration: {end - start}");
+            sb.AppendLine($"{msg}==========End==========");
 
             msg = $"[{id} - Response]";
-            Console.WriteLine($"{msg}=========Start=========");
+            sb.AppendLine($"{msg}=========Start=========");
 
             var resp = response;
 
-            Console.WriteLine($"{msg} {req.RequestUri.Scheme.ToUpper()}/{resp.Version} {(int)resp.StatusCode} {resp.ReasonPhrase}");
+            sb.AppendLine($"{msg} {req.RequestUri.Scheme.ToUpper()}/{resp.Version} {(int)resp.StatusCode} {resp.ReasonPhrase}");
 
             foreach (var header in resp.Headers)
-                Console.WriteLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
+                sb.AppendLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
 
             if (resp.Content != null)
             {
                 foreach (var header in resp.Content.Headers)
-                    Console.WriteLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
+                    sb.AppendLine($"{msg} {header.Key}: {string.Join(", ", header.Value)}");
 
                 if (resp.Content is StringContent || this.IsTextBasedContentType(resp.Headers) || this.IsTextBasedContentType(resp.Content.Headers))
                 {
@@ -69,14 +72,15 @@ namespace BookstoreManagement.Services
                     var result = await resp.Content.ReadAsStringAsync();
                     end = DateTime.Now;
 
-                    Console.WriteLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
-                    Console.WriteLine($"{msg} Content:");
-                    Console.WriteLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
-                    Console.WriteLine($"{msg} Duration: {end - start}");
+                    sb.AppendLine($"{msg} From: {req.Method} {req.RequestUri.PathAndQuery} {req.RequestUri.Scheme}/{req.Version}");
+                    sb.AppendLine($"{msg} Content:");
+                    sb.AppendLine($"{msg} {string.Join("", result.Cast<char>().Take(255))}...");
+                    sb.AppendLine($"{msg} Duration: {end - start}");
                 }
             }
 
-            Console.WriteLine($"{msg}==========End==========");
+            sb.AppendLine($"{msg}==========End==========");
+            Console.WriteLine(sb);
             return response;
         }
 
