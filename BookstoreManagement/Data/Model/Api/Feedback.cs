@@ -10,5 +10,5 @@ public class Feedback : Message
     public List<ReplyFeedback> Replies { get; set; }
     
     [JsonProperty("rating")]
-    public int Rating { get; set; }
+    public double Rating { get; set; }
 }

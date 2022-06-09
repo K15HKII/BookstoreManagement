@@ -51,8 +51,8 @@ namespace BookstoreManagement.Services
     public static class ServiceConfig
     {
         
-        public static readonly string BASE_URL = "https://upbeat-resolver-316305.df.r.appspot.com";
-        // public static readonly string BASE_URL = "http://localhost:3000";
+        // public static readonly string BASE_URL = "https://upbeat-resolver-316305.df.r.appspot.com";
+        public static readonly string BASE_URL = "http://localhost:3000";
 
         private static IHttpClientBuilder ConfigHttpClientBuilder(this IHttpClientBuilder builder, bool auth = false, bool logging = false)
         {

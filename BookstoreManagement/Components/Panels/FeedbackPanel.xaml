@@ -63,10 +63,10 @@
                         AncestorType={x:Type Grid}}, Path=ActualHeight}">
                 <component:PageItemsControl Margin="0 0 0 0"
                                             VerticalAlignment="Top"
+                                            ItemsSource="{Binding Feedbacks}"
                                             HorizontalAlignment="Left">
                     <component:PageItemsControl.ItemsTemplate>
                         <ListView x:Name="itemsControl"
-                                  ItemsSource="{Binding LsRatingViews}"
                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                             <ListView.ItemContainerStyle>

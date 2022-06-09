@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 
@@ -38,5 +39,11 @@ namespace BookstoreManagement.ViewModels.Rating.RatingAdapter
         [ObservableProperty] ObservableCollection<object>? _lsRatingImage;
         
         [ObservableProperty] object? _RatingReply;
+
+        public void SetFeedback(Feedback feedback)
+        {
+            Id = feedback.Id;
+            RatingContent = feedback.Text;
+        }
     }
 }

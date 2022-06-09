@@ -25,12 +25,13 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         {
             this.Id = lend.Id;
             this.UserId = lend.UserId;
-            User cus = _model.getUser(lend.UserId).Wait();
+            User cus = _model.GetUser(lend.UserId).Wait();
             this.UserName = cus.FirstName + cus.LastName;
             this.Price = lend.UnitPrice;
             this.BookId = lend.BookId;
             this.Start = lend.StartDate;
             this.End = lend.EndDate;
+            this.Status = lend.Status;
         }
 
         [ObservableProperty] string? _id;
@@ -52,5 +53,7 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         [ObservableProperty] string? _bookId;
 
         [ObservableProperty] bool? _selected;
+
+        [ObservableProperty] private LendStatus? _status;
     }
 }

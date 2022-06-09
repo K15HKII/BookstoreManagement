@@ -34,7 +34,7 @@ namespace BookstoreManagement.ViewModels.Customer
 
         private void Initialize()
         {
-            Dispose(_model.getListUser().Select(users => users.Select(user =>
+            Dispose(_model.GetUsers().Select(users => users.Select(user =>
             {
                 CustomerInfoViewModel vm = _factory.Create<CustomerInfoViewModel>();
                 vm.SetUser(user);

@@ -9,6 +9,7 @@ using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore;
+using BookstoreManagement.ViewModels.Rating.RatingAdapter;
 
 namespace BookstoreManagement.ViewModels.Rating
 {
@@ -23,14 +24,24 @@ namespace BookstoreManagement.ViewModels.Rating
             _navigator = navigator;
             _factory = factory;
             _model = model;
+            Initialize();
         }
-        
-        //Thiếu xoá đánh giá
-        public void openAccount() { }
 
-        public void openNotificaiton() { }
+        public void Initialize()
+        {
+            Dispose(_model.GetFeedbacks(), feedbacks =>
+            {
+                Feedbacks.Clear();
+                feedbacks.ForEach(feedback =>
+                {
+                    RatingInfoViewModel vm = _factory.Create<RatingInfoViewModel>();
+                    vm.SetFeedback(feedback);
+                    Feedbacks.Add(vm);
+                });
+            });
+        }
 
-        [ObservableProperty] public ObservableCollection<object>? _lsRatingViews;
+        [ObservableProperty] public ObservableCollection<RatingInfoViewModel> _feedbacks = new();
 
         [ObservableProperty] public object? _selectedRatingView;
     }
