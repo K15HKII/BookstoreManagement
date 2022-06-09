@@ -24,11 +24,12 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
             _model = model;
         }
 
-        public void SetUser(User user)
+        public void SetUser(User user,int count)
         {
-            this.Id = user.Id;
+            this.Id = "#" + count;
             this.Name = user.FirstName + user.LastName;
             this.Email = user.Email;
+            this.CreateDate = user.CreateAt.Value.ToString("dd/MM/yyyy");
             /*this.QuantityOrders = user;
             this.Description = user.Description;*/
             //TODO:
@@ -39,6 +40,6 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
         [ObservableProperty] string? _email;
         [ObservableProperty] int? _quantityOrders;
         [ObservableProperty] float? _inCome;
-        [ObservableProperty] DateTime? _createDate;
+        [ObservableProperty] string? _createDate;
     }
 }

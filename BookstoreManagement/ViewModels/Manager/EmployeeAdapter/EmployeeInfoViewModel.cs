@@ -31,8 +31,9 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 
         public void SetEmployee(User user)
         {
-            this.Id = user.Id;
+            this.Id = "#" + user.Id;
             this.Name = user.FirstName + user.LastName;
+            this.JoinDate = user.CreateAt.Value.ToString("dd/MM/yyyy");
         }
 
         [ObservableProperty] string? _image;
@@ -45,7 +46,7 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 
         [ObservableProperty] object? _description;
 
-        [ObservableProperty] object? _joinDate;
+        [ObservableProperty] string? _joinDate;
 
         [ObservableProperty] object? _dayOffQuantity;
         

@@ -38,11 +38,12 @@ namespace BookstoreManagement.ViewModels.Suppier
             {
                 SupplierInfoViewModel vm = _factory.Create<SupplierInfoViewModel>();
                 vm.SetPublisher(publisher);
+                Quantity++;
                 return vm;
-            })), books =>
+            })), publishers =>
             {
                 LsSuppliers.Clear();
-                foreach (var vm in books)
+                foreach (var vm in publishers)
                 {
                     LsSuppliers.Add(vm);
                 }
@@ -55,6 +56,8 @@ namespace BookstoreManagement.ViewModels.Suppier
         public void openNotificaiton() { }
 
         [ObservableProperty] public ObservableCollection<object>? _lsSuppliers = new();
+
+        [ObservableProperty] public int _quantity;
 
         [ObservableProperty] public object? _selectedSupplier = new();
         

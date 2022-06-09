@@ -23,35 +23,27 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
         }
 
         [ObservableProperty]
-        [Required]
-        private string? _id;
+        private string? _code;
         
         [ObservableProperty]
-        [Required]
         private int? _discount;
         
-        [ObservableProperty] 
-        [Required]
+        [ObservableProperty]
         private int? _quantity;
         
         [ObservableProperty]
-        [Required]
         private DateTime? _datestart;
         
         [ObservableProperty]
-        [Required]
         private DateTime? _dateexpired;
         
         [ObservableProperty]
-        [Required]
         private int? _maxuse;
         
         [ObservableProperty]
-        [Required]
         private string? _condition;
         
         [ObservableProperty]
-        [Required]
         private string? _morecondition;
 
         public VoucherUpdateRequest? ToAddRequest()
@@ -63,7 +55,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
 
             return new VoucherUpdateRequest()
             {
-
+                
             };
         }
 

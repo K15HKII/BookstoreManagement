@@ -20,7 +20,7 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         private readonly IViewModelFactory _factory;
         private readonly IBookDetailNavigator _navigator;
 
-        public BookDialogViewModel(IBookDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public BookDialogViewModel(IBookDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
         {
             _navigator = navigator;
             _model = model;

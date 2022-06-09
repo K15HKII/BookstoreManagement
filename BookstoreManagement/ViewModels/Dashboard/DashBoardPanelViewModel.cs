@@ -16,6 +16,7 @@ namespace BookstoreManagement.ViewModels.Dashboard
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly IDashboardNavigator _navigator;
+        int count = 0;
 
         public DashBoardPanelViewModel(IDashboardNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
             IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
@@ -47,7 +48,8 @@ namespace BookstoreManagement.ViewModels.Dashboard
                 .Select(books => books.Select(book =>
                 {
                     BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
-                    vm.SetBook(book);
+                    count++;
+                    vm.SetBook(book,count);
                     return vm;
                 })), books =>
             {

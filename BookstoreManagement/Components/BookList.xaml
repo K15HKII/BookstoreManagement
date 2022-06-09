@@ -109,13 +109,13 @@
                         <TextBlock Grid.Column="3"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text="{Binding PublisherId}"
+                                   Text="{Binding Publisher}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="4"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Text=""
+                                   Text="{Binding Status}"
                                    Style="{StaticResource Title}" />
 
                         <TextBlock Grid.Column="5"

@@ -34,20 +34,23 @@ namespace BookstoreManagement.ViewModels.Voucher
 
     [ObservableProperty] public ObservableCollection<VoucherAdapterViewModel>? _lsVouchers;
 
+    [ObservableProperty] private int _quantity = 0;
+
     [ObservableProperty] public ObservableCollection<VoucherAdapterViewModel>? _selectedVoucher;
 
     private void Initialize()
     {
         //TODO: cần tạo IVoucherRepository
-        /*Dispose(_model.().Select(vouchers => vouchers.Select(voucher =>
+        /*Dispose(_model.getListVoucherProfile().Select(vouchers => vouchers.Select(voucher =>
         {
             VoucherAdapterViewModel vm = _factory.Create<VoucherAdapterViewModel>();
+            Quantity++;
             vm.SetVoucher(voucher);
             return vm;
-        })), books =>
+        })), vouchers =>
         {
             LsVouchers.Clear();
-            foreach (var vm in books)
+            foreach (var vm in vouchers)
             {
                 LsVouchers.Add(vm);
             }

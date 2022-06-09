@@ -24,7 +24,14 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("discount")]
         public float Discount { get; set; }
         
+        [JsonProperty("require_book_tags")]
+        public List<BookTag> RequireBookTags { get; set; }
         
+        [JsonProperty("require_book_count")]
+        public int RequireBookCount { get; set; }
+        
+        [JsonProperty("require_min_value")]
+        public int RequireMinValue { get; set; }
         
     }
 }

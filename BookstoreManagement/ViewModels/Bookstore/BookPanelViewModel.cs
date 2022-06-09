@@ -36,6 +36,7 @@ namespace BookstoreManagement.ViewModels.BookStore
             Dispose(_model.GetBooks().Select(books => books.Select(book =>
             {
                 BookDetailViewModel vm = _factory.Create<BookDetailViewModel>();
+                Quantity++;
                 vm.SetBook(book);
                 return vm;
             })), books =>
@@ -50,6 +51,8 @@ namespace BookstoreManagement.ViewModels.BookStore
 
 
         [ObservableProperty] private ObservableCollection<BookDetailViewModel> _books = new();
+
+        [ObservableProperty] private int _quantity = 0;
 
         [ObservableProperty] private ObservableCollection<BookDetailViewModel> _selectedBooks = new();
 

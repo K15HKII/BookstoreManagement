@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
@@ -20,7 +21,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         private readonly IModelRemote _model;
         private readonly IBookInfoNavigator _navigator;
 
-        public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
         {
             _navigator = navigator;
             _factory = factory;
@@ -31,8 +32,9 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         {
             this.Id = book.Id;
             this.Title = book.Title;
-            this.Price = book.Price;
-            this.PublisherId = book.PublisherId;
+            this.Price = (double)book.Price + "đ";
+            Publisher pub = _model.GetPublisher(book.PublisherId).Wait();
+            this.Publisher = pub.Name;
             this.Description = book.Description;
             this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
         }
@@ -45,9 +47,11 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 
         [ObservableProperty] object? _stock;
 
-        [ObservableProperty] double? _price;
+        [ObservableProperty] string? _price;
 
         [ObservableProperty] object? _publisherId;
+        
+        [ObservableProperty] string? _publisher;
 
         [ObservableProperty] BookTag? _tag;
 

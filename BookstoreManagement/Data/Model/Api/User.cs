@@ -43,6 +43,9 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("refresh_token")]
         public string? Refresh_token { get; set; }
+        
+        [JsonProperty("created_at")]
+        public DateTime? CreateAt { get; set; }
 
         public String FullName => FirstName + " " + LastName;
     }

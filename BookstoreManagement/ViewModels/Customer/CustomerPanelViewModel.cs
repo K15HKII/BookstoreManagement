@@ -23,6 +23,7 @@ namespace BookstoreManagement.ViewModels.Customer
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly ICustomerNavigator _navigator;
+        int count = 0;
 
         public CustomerPanelViewModel(ICustomerNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
@@ -37,7 +38,9 @@ namespace BookstoreManagement.ViewModels.Customer
             Dispose(_model.getListUser().Select(users => users.Select(user =>
             {
                 CustomerInfoViewModel vm = _factory.Create<CustomerInfoViewModel>();
-                vm.SetUser(user);
+                count++;
+                Quantity++;
+                vm.SetUser(user,count);
                 return vm;
             })), books =>
             {
@@ -52,6 +55,8 @@ namespace BookstoreManagement.ViewModels.Customer
         // Thiếu mở dialog thêm khách hàng và filter và xoá
 
         [ObservableProperty] public ObservableCollection<CustomerInfoViewModel>? _customers = new();
+
+        [ObservableProperty] private int _quantity = 0;
 
         [ObservableProperty] string? _name;
 

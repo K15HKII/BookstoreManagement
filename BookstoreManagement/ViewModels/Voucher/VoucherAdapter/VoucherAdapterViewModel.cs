@@ -26,24 +26,26 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             _model = model;
         }
         
-        public void SetVoucher(Data.Model.Api.Voucher voucher)
+        public void SetVoucher(VoucherProfile voucher)
         {
-            this.Code = voucher.Code;
+            this.Name = voucher.Discount + "% " + voucher.Name;
+            this.Description = voucher.Description;
+            this.ApplyType = "Áp dụng cho Sách thể loại ";
+            /*for(int i = 0;i< voucher.RequireBookTags.Count;i++)
+            {
+                this.ApplyType += voucher.RequireBookTags[i] + ",";
+            }*/
+
+            this.RequireMinValue = voucher.RequireMinValue;
         }
 
-        [ObservableProperty] string? code;
-
-        [ObservableProperty] string? _title;
+        [ObservableProperty] string? _name;
 
         [ObservableProperty] string? _description;
 
-        [ObservableProperty] DateTime? _expireDate;
+        [ObservableProperty] int? _requireMinValue;
 
-        [ObservableProperty] object? _maxUse;
-
-        [ObservableProperty] int? _usedQuantity;
-
-        [ObservableProperty] object? _applyType;
+        [ObservableProperty] string? _applyType;
 
         [ObservableProperty] DiscountType? _discountType;
 

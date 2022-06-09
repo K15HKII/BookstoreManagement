@@ -37,6 +37,7 @@ namespace BookstoreManagement.ViewModels.Manager
             {
                 EmployeeInfoViewModel vm = _factory.Create<EmployeeInfoViewModel>();
                 vm.SetEmployee(user);
+                Quantity++;
                 return vm;
             })), users =>
             {
@@ -55,6 +56,8 @@ namespace BookstoreManagement.ViewModels.Manager
         [ObservableProperty] private ObservableCollection<EmployeeInfoViewModel>? _lsEmployees = new();
 
         [ObservableProperty] private ObservableCollection<EmployeeInfoViewModel> _selectedemployee = new();
+
+        [ObservableProperty] private int _quantity = 0;
         
         [ICommand]
         public async void AddNew()

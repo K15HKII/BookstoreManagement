@@ -20,7 +20,7 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
 
         private readonly IModelRemote _model;
 
-        public UpdateBookViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public UpdateBookViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider,model)
         {
             _model = model;
         }
