@@ -163,7 +163,7 @@
 
     <Grid>
         <StackPanel>
-            <component:HeaderWithSearchBar Tag="Cho thuee" />
+            <component:HeaderWithSearchBar Tag="Thuê sách" />
 
             <DockPanel LastChildFill="False"
                        Height="36"

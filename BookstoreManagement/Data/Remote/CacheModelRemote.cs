@@ -208,6 +208,11 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
+        /*public IObservable<List<BillDetail>> getBillDetails(int billId)
+        {
+            throw new NotImplementedException();
+        }*/
+
         public IObservable<List<BillDetail>> getListBillDetail()
         {
             throw new NotImplementedException();

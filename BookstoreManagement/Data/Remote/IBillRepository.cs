@@ -20,4 +20,10 @@ public interface IBillRepository
     [Delete("/api/bill")]
     IObservable<Object> DeleteBill(int id);
     #endregion
+    
+    /*#region BillDetail
+    [Get("/api/billdetail/{bill_id}")]
+    IObservable<List<BillDetail>> getBillDetails([AliasAs("bill_id")] int billId);
+
+    #endregion*/
 }

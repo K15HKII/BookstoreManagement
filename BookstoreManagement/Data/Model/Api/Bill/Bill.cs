@@ -15,11 +15,11 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
         
-        [JsonProperty("userid")]
+        [JsonProperty("user_id")]
         public string UserId { get; set; }
         
         [JsonProperty("address_id")]
-        public string AddressId { get; set; }
+        public long AddressId { get; set; }
 
         [JsonProperty("status")]
         public BillStatus? BillStatus { get; set; }

@@ -52,6 +52,7 @@ namespace BookstoreManagement.Components
     /// </summary>
     public class PageItemsControl : ItemsControl
     {
+        //TODO: Bug chuyển trang qua rồi quay lại thì mất chuyển trang
 
         #region Constructors
         static PageItemsControl()

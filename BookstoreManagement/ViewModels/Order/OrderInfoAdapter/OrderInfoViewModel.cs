@@ -33,11 +33,11 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             User user = _model.GetUser(bill.UserId).Wait();
             this.Owner = user.FirstName + user.LastName;
             double temp = 0;
-            for (int i = 0; i < bill.ListBillDetail.Capacity; i++)
+            for (int i = 0; i < bill.ListBillDetail.Count; i++)
             {
                 temp += bill.ListBillDetail[i].UnitPrice;
             }
-            this.Price = temp.ToString("C0") + "đ";
+            this.Price = temp.ToString("C") + "đ";
         }
         
         [ObservableProperty] private BillStatus _status;
