@@ -180,7 +180,7 @@
                                Style="{StaticResource Caption}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
                                VerticalAlignment="Center" />
-                    <TextBlock Text="200"
+                    <TextBlock Text="{Binding Quantity}"
                                Margin="6 0 0 0"
                                Style="{StaticResource Button}"
                                Foreground="{StaticResource SolidOrangeColor}"
@@ -226,6 +226,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView x:Name="itemsControl"
+                                                  
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -268,6 +269,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
+                                            
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -310,6 +312,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
+                                            
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -352,6 +355,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
+                                            
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
@@ -394,6 +398,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
+                                                  
                                                   Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>

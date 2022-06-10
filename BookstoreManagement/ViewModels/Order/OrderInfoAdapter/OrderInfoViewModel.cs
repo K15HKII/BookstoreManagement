@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reactive.Linq;
+using System.Windows.Documents;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
@@ -24,24 +27,30 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
 
         public void SetOrder(Bill bill)
         {
-            this.Id = bill.Id;
-            this._status = bill.BillStatus ?? BillStatus.WAITING;
+            this.Id = "#" + bill.Id;
+            this.Date = bill.CreatedAt.Value.ToString("dd/MM/yyyy");
+            this.Status = bill.BillStatus ?? BillStatus.WAITING;
+            User user = _model.GetUser(bill.UserId).Wait();
+            this.Owner = user.FirstName + user.LastName;
+            double temp = 0;
+            for (int i = 0; i < bill.ListBillDetail.Capacity; i++)
+            {
+                temp += bill.ListBillDetail[i].UnitPrice;
+            }
+            this.Price = temp.ToString("C0") + "đ";
         }
         
         [ObservableProperty] private BillStatus _status;
 
-        [ObservableProperty] int? _id;
+        [ObservableProperty] string? _id;
 
-        [ObservableProperty] DateTime? _date;
+        [ObservableProperty] string? _date;
 
-        [ObservableProperty] object? _owner;
+        [ObservableProperty] string? _owner;
             
-        [ObservableProperty] object? _price;
+        [ObservableProperty] string? _price;
 
         [ObservableProperty] object? _bookId;
-
-        [ObservableProperty] object? _unitPrice;
-
         [ICommand]
         public void OpenInfo()
         {

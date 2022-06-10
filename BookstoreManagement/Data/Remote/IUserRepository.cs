@@ -12,7 +12,7 @@ public interface IUserRepository
     IObservable<List<User>> GetUsers();
 
     [Get("/api/user/{id}")]
-    IObservable<User> GetUser( string id);
+    IObservable<User> GetUser([AliasAs("id")] string id);
 
     [Post("/api/user")]
     IObservable<Object> SaveUser(User user);

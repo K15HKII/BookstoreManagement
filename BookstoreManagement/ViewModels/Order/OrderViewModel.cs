@@ -37,6 +37,7 @@ namespace BookstoreManagement.ViewModels.Order
                 UpdateBills(bills.Select(bill =>
                 {
                     OrderInfoViewModel vm = _factory.Create<OrderInfoViewModel>();
+                    Quantity++;
                     vm.SetOrder(bill);
                     return vm;
                 }));
@@ -76,6 +77,7 @@ namespace BookstoreManagement.ViewModels.Order
         [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _ratingBills = new();
         [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _finishBills = new();
         [ObservableProperty] private ObservableCollection<OrderInfoViewModel> _cancelledLends = new();
+        [ObservableProperty] private int _quantity = 0;
 
         [ObservableProperty] public ObservableCollection<object>? selectedBills;
 

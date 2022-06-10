@@ -29,7 +29,7 @@ namespace BookstoreManagement.ViewModels.Rating
 
         public void Initialize()
         {
-            Dispose(_model.GetFeedbacks(), feedbacks =>
+            /*Dispose(_model.GetFeedbacks(), feedbacks =>
             {
                 Feedbacks.Clear();
                 feedbacks.ForEach(feedback =>
@@ -38,7 +38,7 @@ namespace BookstoreManagement.ViewModels.Rating
                     vm.SetFeedback(feedback);
                     Feedbacks.Add(vm);
                 });
-            });
+            });*/
         }
 
         [ObservableProperty] public ObservableCollection<RatingInfoViewModel> _feedbacks = new();
