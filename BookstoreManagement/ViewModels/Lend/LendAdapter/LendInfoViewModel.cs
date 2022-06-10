@@ -21,15 +21,15 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
             _factory = factory;
         }
 
-        public void SetLend(Data.Model.Api.Lend lend)
+        public void SetLend(Data.Model.Api.Lend lend, int count)
         {
-            this.Id = lend.Id;
+            this.Id = "#" + count;
             this.UserId = lend.UserId;
             User cus = _model.GetUser(lend.UserId).Wait();
             this.UserName = cus.FirstName + cus.LastName;
-            this.Price = lend.UnitPrice;
+            this.Price = lend.UnitPrice.ToString("C") + "đ";
             this.BookId = lend.BookId;
-            this.Start = lend.StartDate;
+            this.Start = lend.StartDate.Date.ToString("dd/MM/yyyy");
             this.End = lend.EndDate;
             this.Status = lend.Status;
         }
@@ -42,9 +42,9 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         
         [ObservableProperty] string? _userImage;
 
-        [ObservableProperty] double? _price;
+        [ObservableProperty] string? _price;
 
-        [ObservableProperty] DateTime? _start;
+        [ObservableProperty] string? _start;
 
         [ObservableProperty] DateTime? _end;
 

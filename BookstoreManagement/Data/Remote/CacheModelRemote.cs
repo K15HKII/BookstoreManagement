@@ -343,6 +343,11 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
+        public IObservable<StatisticResult> GetBookRate(int book_id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IObservable<List<Feedback>> GetFeedbacks()
         {
             throw new NotImplementedException();

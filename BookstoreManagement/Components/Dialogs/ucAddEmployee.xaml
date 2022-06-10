@@ -56,6 +56,8 @@
                     <ComboBox Text="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
                               SelectedValue="{Binding Path=Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              DisplayMemberPath="Display"
+                              SelectedValuePath="Value"
                               Tag="Gioi tinh"
                               Width="auto"
                               Height="52"

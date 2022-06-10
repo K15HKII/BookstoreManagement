@@ -23,6 +23,7 @@ namespace BookstoreManagement.ViewModels.Lend
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly ILendNavigator _navigator;
+        private int count = 0;
 
         public LendViewModel(ILendNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
@@ -37,7 +38,9 @@ namespace BookstoreManagement.ViewModels.Lend
             Dispose(_model.GetLends().Select(lends => lends.Select(lend =>
             {
                 LendInfoViewModel vm = _factory.Create<LendInfoViewModel>();
-                vm.SetLend(lend);
+                Quantity++;
+                ++count;
+                vm.SetLend(lend, count);
                 return vm;
             })), books =>
             {
@@ -55,7 +58,6 @@ namespace BookstoreManagement.ViewModels.Lend
         private void Filter(ObservableCollection<LendInfoViewModel> source, ObservableCollection<LendInfoViewModel> target,
             Func<LendInfoViewModel, bool> predicate)
         {
-            //TODO: tạo filter cho list Lend
             target.Clear();
             foreach (var item in source)
             {
@@ -70,6 +72,7 @@ namespace BookstoreManagement.ViewModels.Lend
         [ObservableProperty] private ObservableCollection<LendInfoViewModel> _usingLends = new();
         [ObservableProperty] private ObservableCollection<LendInfoViewModel> _finishLends = new();
         [ObservableProperty] private ObservableCollection<LendInfoViewModel> _cancelledLends = new();
+        [ObservableProperty] private int _quantity = 0;
 
 
         [ObservableProperty] public ObservableCollection<LendInfoViewModel> _selectedLends;

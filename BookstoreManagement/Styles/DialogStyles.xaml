@@ -37,5 +37,9 @@
             <components:ucAddPendingBill/>
         </DataTemplate>
         
+        <DataTemplate DataType="{x:Type bookStore:BookDialogViewModel}">
+            <components:ucBookItemDialog/>
+        </DataTemplate>
+        
     </ResourceDictionary>
 </ResourceDictionary>

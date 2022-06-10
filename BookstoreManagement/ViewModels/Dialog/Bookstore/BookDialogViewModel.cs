@@ -25,7 +25,10 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _navigator = navigator;
             _model = model;
             _factory = factory;
+            
         }
+
+        [ObservableProperty] private string? _id;
 
         [ObservableProperty] object? _sold;
 

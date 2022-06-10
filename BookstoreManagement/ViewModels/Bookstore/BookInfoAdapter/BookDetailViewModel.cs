@@ -30,6 +30,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         
         public void SetBook(Book book)
         {
+            this._book = book;
             this.Id = book.Id;
             this.Title = book.Title;
             this.Price = (double)book.Price + "đ";
@@ -38,6 +39,8 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             this.Description = book.Description;
             this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
         }
+
+        private Book _book;
 
         [ObservableProperty] object? _id;
 
@@ -60,11 +63,13 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ICommand]
         public void OpenInfo()
         {
+            BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
+            vm.SetBook(this._book,0);
             //TODO: cast to edit request
-            /*object? request = _navigator.OpenInfoBookDialog(_factory.Create<DialogView.BookStore.BookDialogViewModel>());
+            object? request = _navigator.OpenInfoBookDialog(vm);
 
             if (request == null)
-                return;*/
+                return;
 
             //TODO: send request to server
         }

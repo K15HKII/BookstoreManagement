@@ -78,7 +78,11 @@
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
                                 <DataTemplate DataType="{x:Type book:BookDetailViewModel}">
+                                    <Grid>
                                     <component:ProductCard Width="210" />
+                                    <Button Width="auto" Height="auto"
+                                            Command="{Binding OpenInfoCommand}"></Button>
+                                    </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                             <ListView.ItemsPanel>

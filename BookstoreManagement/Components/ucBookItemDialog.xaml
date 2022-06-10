@@ -20,7 +20,7 @@
                            VerticalAlignment="Center"/>
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Ten san pham"/>
+                           Text="{Binding Title}"/>
             </StackPanel>
 
             <DockPanel LastChildFill="False"
