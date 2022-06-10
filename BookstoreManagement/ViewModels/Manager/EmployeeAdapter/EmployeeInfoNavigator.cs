@@ -4,14 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Services;
 
 namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 {
     public class EmployeeInfoNavigator : IEmployeeInfoNavigator
     {
-        public object? OpenEditEmployeeDialog(EditEmployeeViewModel viewModel)
+        private readonly IDialogService _dialogService;
+
+        public EmployeeInfoNavigator(IDialogService dialogService)
         {
-            throw new NotImplementedException();
+            _dialogService = dialogService;
+        }
+        public object? OpenDetailEmployeeDialog(EmployeeDetailViewModel viewModel)
+        {
+            object? value = _dialogService.Show(viewModel);
+            if (value == null)
+                return null;
+            return value;
         }
     }
 }

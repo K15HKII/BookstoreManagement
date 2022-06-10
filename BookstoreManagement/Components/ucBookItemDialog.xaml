@@ -15,7 +15,7 @@
                         Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="# Ma san pham"
+                           Text="{Binding Id}"
                            Margin="0 0 12 0" 
                            VerticalAlignment="Center"/>
                 <TextBlock Style="{StaticResource Heading3}"
@@ -27,10 +27,10 @@
                        Margin="0 0 0 16">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Gia" />
+                           Text="Giá" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="d120.000" 
+                           Text="{Binding Price}" 
                            DockPanel.Dock="Right"/>
             </DockPanel>
 
@@ -38,7 +38,7 @@
                        Margin="0 0 0 12">
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="Black"
-                           Text="Giam gia" 
+                           Text="Giảm giá" 
                            VerticalAlignment="Center"/>
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
@@ -50,7 +50,7 @@
                        Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="Black"
-                           Text="Con lai"
+                           Text="Còn lại"
                            VerticalAlignment="Center" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidOrangeColor}"
@@ -62,10 +62,10 @@
                        Margin="0 0 0 16">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="So luong" />
+                           Text="Số lượng" />
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="5.000"
+                           Text="{Binding Quantity}"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
@@ -73,23 +73,23 @@
                        Margin="0 0 0 12">
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="Black"
-                           Text="Da ban"
+                           Text="Đã bán"
                            VerticalAlignment="Center" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidOrangeColor}"
-                           Text="4.999"
+                           Text="Chưa có"
                            DockPanel.Dock="Right" />
             </DockPanel>
 
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Nha cung cap"
+                           Text="Nhà cung cấp"
                            VerticalAlignment="Center"
                            Margin="0 0 0 8"/>
                 <TextBlock Style="{StaticResource Body}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
-                           Text="NXB Kim dong"
+                           Text="{Binding Publisher}"
                            VerticalAlignment="Center" />
             </StackPanel>
 
@@ -97,7 +97,7 @@
                 Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Phan loai"
+                           Text="Phân loại"
                            VerticalAlignment="Center"
                            Margin="0 0 0 16" />
 
@@ -119,14 +119,13 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Mo ta"
+                           Text="Mô tả"
                            VerticalAlignment="Center"
                            Margin="0 0 0 8" />
                 <TextBlock Style="{StaticResource Body}"
                            Foreground="Black"
                            TextWrapping="Wrap"
-                           Text="NXB Kim dong NXB Kim dong NXB Kim dong NXB Kim dong NXB Kim dong NXB Kim dongNXB Kim dongNXB Kim dong"
-                           VerticalAlignment="Center" />
+                           Text="{Binding Description}" />
             </StackPanel>
 
 
@@ -134,12 +133,13 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Style="{StaticResource SecondButton}"
+                        Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"/>
                 <Button Style="{StaticResource PrimaryButton}"
                         Width="97"
-                        Content="Cap nhat"></Button>
+                        Content="Cập nhật"/>
             </StackPanel>
             
         </StackPanel>

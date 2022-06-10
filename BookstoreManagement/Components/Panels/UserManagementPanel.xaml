@@ -130,6 +130,7 @@
                             </ItemsControl.Template>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="{x:Type customer:CustomerDetailViewModel}">
+                                    <Grid>
                                     <Grid x:Name="PART_Body"
                                           VerticalAlignment="Center"
                                           Height="65px" Width="928px">
@@ -203,6 +204,9 @@
                                                    Text="{Binding CreateDate}"
                                                    Style="{StaticResource Caption}"
                                                    Foreground="Black" />
+                                    </Grid>
+                                        <Button Height="auto" Width="auto"
+                                                Command="{Binding OpenInfoCommand}"></Button>
                                     </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>

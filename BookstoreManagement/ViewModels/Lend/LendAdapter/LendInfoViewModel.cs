@@ -4,7 +4,9 @@ using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
+using BookstoreManagement.ViewModels.DialogView;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 {
@@ -55,5 +57,15 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         [ObservableProperty] bool? _selected;
 
         [ObservableProperty] private LendStatus? _status;
+
+        [ICommand]
+        public void OpenInfo()
+        {
+            //TODO: không mở được info
+            object? request = _navigator.OpenInfoLendDialog(_factory.Create<LendBillDetailViewModel>());
+
+            if (request == null)
+                return;
+        }
     }
 }

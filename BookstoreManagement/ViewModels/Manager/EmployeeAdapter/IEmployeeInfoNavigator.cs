@@ -5,5 +5,5 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 
 public interface IEmployeeInfoNavigator : INavigator
 {
-    object? OpenEditEmployeeDialog(EditEmployeeViewModel viewModel); //TODO: return edit request
+    object? OpenDetailEmployeeDialog(EmployeeDetailViewModel viewModel); //TODO: return edit request
 }

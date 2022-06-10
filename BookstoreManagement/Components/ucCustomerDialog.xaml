@@ -141,7 +141,7 @@
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
                                            DockPanel.Dock="Right"
-                                           Text="{Binding Birth}" />
+                                           Text="{Binding BirthDay}" />
                             </DockPanel>
                         </Border>
 
@@ -228,7 +228,7 @@
                            Text="Ngay tham gia" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="{Binding CustomerCreateDate}"
+                           Text="{Binding CreateAt}"
                            DockPanel.Dock="Right" 
                            VerticalAlignment="Center"/>
             </DockPanel>
@@ -237,6 +237,7 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Style="{StaticResource SecondButton}"
+                        Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
                         Content="Huy"></Button>

@@ -31,10 +31,12 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
 
         public void SetEmployee(User user)
         {
+            this.user = user;
             this.Id = "#" + user.Id;
             this.Name = user.FirstName + user.LastName;
             this.JoinDate = user.CreateAt.Value.ToString("dd/MM/yyyy");
         }
+        private User user;
 
         [ObservableProperty] string? _image;
         
@@ -51,15 +53,16 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
         [ObservableProperty] object? _dayOffQuantity;
         
         [ICommand]
-        public void OpenEdit()
+        public void OpenInfo()
         {
             //TODO: cast to edit request
-            object? request = _navigator.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
+            EmployeeDetailViewModel vm = _factory.Create<EmployeeDetailViewModel>();
+            vm.SetEmployee(this.user);
+            object? request = _navigator.OpenDetailEmployeeDialog(vm);
 
             if (request == null)
                 return;
-
-            //TODO: send request to server
+            
         }
     }
 }

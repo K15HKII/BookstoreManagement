@@ -36,7 +36,8 @@ namespace BookstoreManagement.ViewModels.BookStore
             Dispose(_model.GetBooks().Select(books => books.Select(book =>
             {
                 BookDetailViewModel vm = _factory.Create<BookDetailViewModel>();
-                Quantity++;
+                ++Quantity;
+                string a = Quantity.ToString();
                 vm.SetBook(book);
                 return vm;
             })), books =>

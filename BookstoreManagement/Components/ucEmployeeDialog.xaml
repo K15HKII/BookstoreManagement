@@ -156,6 +156,7 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
                 <Button Style="{StaticResource SecondButton}"
+                        Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
                         Content="Huy"></Button>

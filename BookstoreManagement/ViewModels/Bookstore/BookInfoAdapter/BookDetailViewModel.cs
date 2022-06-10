@@ -42,7 +42,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 
         private Book _book;
 
-        [ObservableProperty] object? _id;
+        [ObservableProperty] string? _id;
 
         [ObservableProperty] string? _title;
 
@@ -50,7 +50,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 
         [ObservableProperty] object? _stock;
 
-        [ObservableProperty] string? _price;
+        [ObservableProperty] object? _price;
 
         [ObservableProperty] object? _publisherId;
         
@@ -64,7 +64,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         public void OpenInfo()
         {
             BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
-            vm.SetBook(this._book,0);
+            vm.SetBook(this._book,this.Id);
             //TODO: cast to edit request
             object? request = _navigator.OpenInfoBookDialog(vm);
 

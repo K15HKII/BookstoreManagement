@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
@@ -28,6 +29,24 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
             _navigator = navigator;
             _model = model;
             _factory = factory;
+        }
+
+        [ObservableProperty] private string? _createAt;
+        [ObservableProperty] private string? _phone;
+        [ObservableProperty] private string? _birthDay;
+        [ObservableProperty] private string? _gender;
+        [ObservableProperty] private string? _address;
+        
+        public void SetUser(User user) 
+        {
+            this.Name = user.FirstName + user.LastName;
+            this.Email = user.Email;
+            this.Phone = user.Phone;
+            this.Gender = user.Gender.ToString();
+            /*this.Address = */
+            /*this.BirthDay = user.BirthDay.Value.ToString("dd/MM/yyyy");*/
+            this.CreateAt = user.CreateAt.Value.ToString("dd/MM/yyyy");
+            
         }
 
         public event Action<object?>? CloseAction;

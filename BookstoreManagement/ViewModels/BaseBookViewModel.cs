@@ -20,7 +20,7 @@ public partial class BaseBookViewModel : BaseViewModel
         _model = model;
     }
 
-    public void SetBook(Book book, int count)
+    public void SetBook(Book book, string count)
     {
         this.Id = "#"+count;
         this.Title = book.Title;
@@ -32,13 +32,12 @@ public partial class BaseBookViewModel : BaseViewModel
         if (this.Quantity > 0)
         {
             this.Status = "Còn hàng";
-            
         }
         else
         {
             this.Status = "Hêt hàng";
         }
-        
+        this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
     }
 
     [ObservableProperty] private string? _id;
@@ -47,6 +46,7 @@ public partial class BaseBookViewModel : BaseViewModel
     [ObservableProperty] private BookTag[] _tags;
     [ObservableProperty] private string? _authorId;
     [ObservableProperty] private string? _publisher;
+    [ObservableProperty] private string? _display;
     [ObservableProperty] [Required] [Range(Double.Epsilon, Double.MaxValue)] private double? _price;
     [ObservableProperty] private string? _status;
     [ObservableProperty] [Range(1, Int64.MaxValue)] private int _quantity = 0;

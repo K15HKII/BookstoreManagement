@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Customer;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Customer.adapter
 {
@@ -23,12 +26,12 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
             _factory = factory;
             _model = model;
         }
-
+        private User user;
         public void SetUser(User user,int count)
         {
+            this.user = user;
             this.Id = "#" + count;
             this.Name = user.FirstName + user.LastName;
-            this.Email = user.Email;
             this.CreateDate = user.CreateAt.Value.ToString("dd/MM/yyyy");
             /*this.QuantityOrders = user;
             this.Description = user.Description;*/
@@ -41,5 +44,19 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
         [ObservableProperty] int? _quantityOrders;
         [ObservableProperty] float? _inCome;
         [ObservableProperty] string? _createDate;
+        
+        [ICommand]
+        public void OpenInfo()
+        {
+            CustomerDetailViewModel vm = _factory.Create<CustomerDetailViewModel>();
+            vm.SetUser(this.user);
+            object? request = _navigator.OpenDetailUserDialog(vm);
+
+            if (request == null)
+                return;
+
+            //TODO: send request to server
+        }
+
     }
 }

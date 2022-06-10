@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
@@ -26,6 +27,13 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
             _factory = factory;
         }
         
+        public void SetPublisher(Publisher publisher)
+        {
+            this.Id = publisher.Id;
+            this.Name = publisher.Name;
+            this.Description = publisher.Description;
+        }
+        
         [ObservableProperty] object? _id;
         [ObservableProperty] object? _image;
         [ObservableProperty] object? _name;
@@ -35,6 +43,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         [ObservableProperty] object? _bookQuantity;
         [ObservableProperty] object? _bookType;
         [ObservableProperty] object? _coopDate;
+        [ObservableProperty] object? _description;
         
         public event Action<object?>? CloseAction;
         [ICommand]
@@ -46,13 +55,13 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         [ICommand]
         public void OpenEdit()
         {
-            //TODO: cast to edit request
+            /*//TODO: cast to edit request
             object? request = _navigator.OpenEditSupplierDialog(_factory.Create<EditSupplierViewModel>());
 
             if (request == null)
                 return;
 
-            //TODO: send request to server
+            //TODO: send request to server*/
         }
     }
 }

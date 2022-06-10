@@ -25,11 +25,10 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _navigator = navigator;
             _model = model;
             _factory = factory;
-            
         }
 
-        [ObservableProperty] private string? _id;
-
+         public Book _book;
+        
         [ObservableProperty] object? _sold;
 
         public event Action<object?>? CloseAction;
@@ -43,7 +42,9 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         [ICommand]
         public async void OpenEdit()
         {
-            BookUpdateRequest? request = await _navigator.OpenEditBookDialog(_factory.Create<UpdateBookViewModel>());
+            UpdateBookViewModel vm = _factory.Create<UpdateBookViewModel>();
+            vm.SetBook(this._book,this._book.Id);
+            BookUpdateRequest? request = await _navigator.OpenEditBookDialog(vm);
             if (request == null)
                 return;
 

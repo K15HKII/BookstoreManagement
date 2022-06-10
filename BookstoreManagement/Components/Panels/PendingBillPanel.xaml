@@ -241,7 +241,12 @@
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
+                                                    <Grid>
                                                     <component:PendingBillCard Width="449" />
+                                                    <Button Width="auto"
+                                                            Height="auto"
+                                                            Command="{Binding OpenInfoCommand}"></Button>
+                                                    </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                             <ListView.ItemsPanel>
@@ -284,7 +289,12 @@
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
+                                                  <Grid>
                                                     <component:PendingBillCard Width="449" />
+                                                    <Button Height="auto"
+                                                            Width="auto"
+                                                            Command="{Binding OpenInfoCommand}"></Button>
+                                                  </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                             <ListView.ItemsPanel>
@@ -327,7 +337,12 @@
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
+                                                    <Grid>
                                                     <component:PendingBillCard Width="449" />
+                                                    <Button Height="auto"
+                                                            Width="auto"
+                                                            Command="{Binding OpenInfoCommand}"></Button>
+                                                    </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                             <ListView.ItemsPanel>
@@ -370,7 +385,13 @@
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
+                                                    <Grid>
                                                     <component:PendingBillCard Width="449" />
+                                                    <Button
+                                                        Height="auto"
+                                                        Width="auto"
+                                                        Command="{Binding OpenInfoCommand}"></Button>
+                                                    </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                             <ListView.ItemsPanel>
@@ -398,8 +419,7 @@
                                                             HorizontalAlignment="Left">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
-                                                  
-                                                  Width="{Binding ElementName=p, Path=ActualWidth}"
+                                            Width="{Binding ElementName=p, Path=ActualWidth}"
                                                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                                             <ListView.ItemContainerStyle>
                                                 <Style TargetType="ListViewItem">
@@ -413,7 +433,12 @@
                                             </ListView.ItemContainerStyle>
                                             <ListView.ItemTemplate>
                                                 <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
+                                                    <Grid>
                                                     <component:PendingBillCard Width="449" />
+                                                    <Button Height="auto"
+                                                            Width="auto"
+                                                            Command="{Binding OpenInfoCommand}"></Button>
+                                                    </Grid>
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                             <ListView.ItemsPanel>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
@@ -23,6 +24,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
             _navigator = navigator;
             _model = model;
             _factory = factory;
+        }
+        
+        public void SetEmployee(User employee)
+        {
+            this.Id = employee.Id;
+            this.Name = employee.FullName;
+            this.Gender = employee.Gender.ToString();
+            this.CreateDay = employee.CreateAt.Value.ToString("dd/MM/yyyy");
         }
 
         [ObservableProperty] object? _id;
@@ -49,12 +58,11 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         public void OpenEdit()
         {
             //TODO: cast to edit request
-            object? request = _navigator.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
+            /*object? request = _navigator.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
 
             if (request == null)
                 return;
-
-            //TODO: send request to server
+                */
         }
     }
 }

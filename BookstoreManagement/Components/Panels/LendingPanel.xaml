@@ -236,7 +236,12 @@
                                         </ListView.ItemContainerStyle>
                                         <ListView.ItemTemplate>
                                             <DataTemplate DataType="{x:Type lend:LendInfoViewModel}">
+                                                <Grid>
                                                 <component:LendingCard Width="928" />
+                                                <Button Height="auto"
+                                                        Width="auto"
+                                                        Command="{Binding OpenInfoCommand}"></Button>
+                                                </Grid>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                         <ListView.ItemsPanel>
@@ -278,7 +283,13 @@
                                         </ListView.ItemContainerStyle>
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
+                                                <Grid>
                                                 <component:LendingCard Width="928" />
+                                                <Button
+                                                    Height="auto"
+                                                    Width="auto"
+                                                    Command="{Binding OpenInfoCommand}"></Button>
+                                                </Grid>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                         <ListView.ItemsPanel>
@@ -320,7 +331,12 @@
                                         </ListView.ItemContainerStyle>
                                         <ListView.ItemTemplate>
                                             <DataTemplate>
+                                                <Grid>
                                                 <component:LendingCard Width="928" />
+                                                <Button Height="auto"
+                                                        Width="auto"
+                                                        Command="{Binding OpenInfoCommand}"></Button>
+                                                </Grid>
                                             </DataTemplate>
                                         </ListView.ItemTemplate>
                                         <ListView.ItemsPanel>

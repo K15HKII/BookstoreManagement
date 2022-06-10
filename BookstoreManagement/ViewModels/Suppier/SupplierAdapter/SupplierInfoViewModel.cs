@@ -10,6 +10,7 @@ using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.DialogView.Supplier;
 using BookstoreManagement.Data.Model.Api;
+using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 {
@@ -28,9 +29,12 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 
         public void SetPublisher(Publisher publisher)
         {
+            this._publisher = publisher;
             this.Id = "#" + publisher.Id.ToString();
             this.Name = publisher.Name;
         }
+        
+        private Publisher _publisher;
 
         [ObservableProperty] string? _id;
 
@@ -48,15 +52,17 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 
 
         public event Action<object?>? CloseAction;
+        [ICommand]
         public void OpenDetail()
         {
-            //TODO: cast to edit request
-            object? request = _navigator.OpenDetailSupplierDialog(_factory.Create<SupplierDetailViewModel>());
+            //TODO: factory tạo viewModel không được
+            SupplierDetailViewModel vm = _factory.Create<SupplierDetailViewModel>();
+            vm.SetPublisher(_publisher);
+            object? request = _navigator.OpenDetailSupplierDialog(vm);
 
             if (request == null)
                 return;
-
-            //TODO: send request to server
+            
         }
     }
 }

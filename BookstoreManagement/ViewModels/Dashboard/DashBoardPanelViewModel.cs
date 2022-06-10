@@ -48,8 +48,9 @@ namespace BookstoreManagement.ViewModels.Dashboard
                 .Select(books => books.Select(book =>
                 {
                     BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
-                    count++;
-                    vm.SetBook(book,count);
+                    ++count;
+                    string a = count.ToString();
+                    vm.SetBook(book,a);
                     return vm;
                 })), books =>
             {

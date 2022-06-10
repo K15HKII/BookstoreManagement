@@ -25,6 +25,8 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _model = model;
         }
 
+        public Book book;
+
         public BookUpdateRequest? ToRequest()
         {
             ValidateProperties();

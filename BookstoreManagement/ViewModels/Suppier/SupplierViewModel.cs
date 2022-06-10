@@ -51,9 +51,6 @@ namespace BookstoreManagement.ViewModels.Suppier
         }
 
         // Thiếu mở dialog thêm nhà cung cấp, xoá, filter
-        public void openAccount() { }
-
-        public void openNotificaiton() { }
 
         [ObservableProperty] public ObservableCollection<object>? _lsSuppliers = new();
 

@@ -19,5 +19,7 @@ public interface IUserRepository
 
     [Delete("/api/user")]
     IObservable<Object> DeleteUser(string id);
+    
+    //TODO: Lấy địa chỉ người dùng và bank
     #endregion
 }

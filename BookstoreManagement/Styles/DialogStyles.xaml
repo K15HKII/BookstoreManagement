@@ -41,5 +41,25 @@
             <components:ucBookItemDialog/>
         </DataTemplate>
         
+        <DataTemplate DataType="{x:Type customer:CustomerDetailViewModel}">
+            <components:ucCustomerDialog/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type manager:EmployeeDetailViewModel}">
+            <components:ucEmployeeDialog/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type supplier:SupplierDetailViewModel}">
+            <components:ucPublisherDialog/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type order:OrderBillViewModel}">
+            <components:ucPendingBillDialog/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type dialogView:LendBillDetailViewModel}">
+            <components:LendingDialog/>
+        </DataTemplate>
+        
     </ResourceDictionary>
 </ResourceDictionary>

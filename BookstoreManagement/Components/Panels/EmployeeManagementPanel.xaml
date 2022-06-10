@@ -80,7 +80,11 @@
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
                                 <DataTemplate DataType="{x:Type api:User}">
-                                    <component:EmployeeCard Width="210" />
+                                    <Grid>
+                                        <component:EmployeeCard Width="210" />
+                                        <Button Height="auto" Width="auto"
+                                                Command="{Binding OpenInfoCommand}"></Button>
+                                    </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                             <ListView.ItemsPanel>

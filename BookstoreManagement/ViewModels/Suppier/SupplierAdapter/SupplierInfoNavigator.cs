@@ -4,14 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.DialogView.Manager;
 
 namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 {
     public class SupplierInfoNavigator : ISupplierInfoNavigator
     {
+        private readonly IDialogService _dialogService;
+
+        public SupplierInfoNavigator(IDialogService dialogService)
+        {
+            _dialogService = dialogService;
+        }
         public object? OpenDetailSupplierDialog(SupplierDetailViewModel viewModel)
         {
-            throw new NotImplementedException();
+            object? value = _dialogService.Show(viewModel);
+            if (value == null)
+                return null;
+            return value;
         }
     }
 }

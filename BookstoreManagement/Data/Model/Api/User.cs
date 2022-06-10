@@ -30,7 +30,7 @@ namespace BookstoreManagement.Data.Model.Api
         public Gender Gender { get; set; } 
         
         [JsonProperty("birthday")]
-        public DateTime? Birthday { get; set; }
+        public DateTime? BirthDay { get; set; }
 
         [JsonProperty("password")]
         public string Password { get; set; }
