@@ -37,11 +37,20 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             for (int i = 0; i < bill.ListBillDetail.Count; i++)
             {
                 temp += bill.ListBillDetail[i].UnitPrice;
+                if (i == 0)
+                {
+                    Dispose(_model.GetBook(bill.ListBillDetail[i].BookId), book =>
+                    {
+                        Image = book.Images == null || book.Images.Count == 0 ? null : book.Images[0];
+                    });
+                }
             }
             this.Price = temp.ToString("C") + "đ";
         }
 
-        private Bill current; 
+        private Bill current;
+
+        [ObservableProperty] private Image? _image;
 
         [ObservableProperty] private BillStatus _status;
 

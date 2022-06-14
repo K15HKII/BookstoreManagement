@@ -7,6 +7,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:components="clr-namespace:BookstoreManagement.Components"
              xmlns:orderInfoAdapter="clr-namespace:BookstoreManagement.ViewModels.Order.OrderInfoAdapter"
+             xmlns:storage="clr-namespace:BookstoreManagement.ViewModels.Storage"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
              d:DesignHeight="664" d:DesignWidth="928">
 
@@ -71,7 +73,7 @@
                         </ControlTemplate>
                     </ItemsControl.Template>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate DataType="{x:Type storage:BookItemViewModel}">
                             <Grid x:Name="PART_Body">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
@@ -89,7 +91,7 @@
                                             CornerRadius="4"
                                             Background="Transparent"
                                             Margin="0 0 8 0">
-                                        <Image Source="{Binding Image}"
+                                        <Image Source="{Binding Image, Converter={StaticResource UriImageConverter}, IsAsync=True}"
                                                x:Name="bookImage" />
                                     </Border>
                                     <StackPanel Orientation="Vertical"
@@ -122,11 +124,11 @@
                                                Text="{Binding Publisher}"
                                                Style="{StaticResource Title}" />-->
 
-                                <TextBlock Grid.Column="4"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Left"
-                                           Text="{Binding Quantity}"
-                                           Style="{StaticResource Title}" />
+                                <xctk:SingleUpDown Grid.Column="4"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    Value="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                    FormatString="N2" Increment="1"/>
 
                                 <!--<TextBlock Grid.Column="5"
                                                VerticalAlignment="Center"
@@ -192,15 +194,5 @@
                 </ItemsControl>
             </Grid>
         </StackPanel>
-
-        <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Command="{Binding AddNewCommand}"
-                Background="{StaticResource SolidPrimaryColor}"
-                VerticalAlignment="Bottom"
-                HorizontalAlignment="Right"
-                Margin="0 0 0 29">
-            <materialDesign:PackIcon Kind="Add"
-                                     Foreground="White" />
-        </Button>
     </Grid>
 </UserControl>

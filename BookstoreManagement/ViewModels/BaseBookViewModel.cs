@@ -44,6 +44,7 @@ public partial class BaseBookViewModel : BaseViewModel
         }
 
         this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
+        Image = book.Images == null || book.Images.Count == 0 ? null : book.Images![0];
     }
 
     protected Book current;
@@ -59,6 +60,7 @@ public partial class BaseBookViewModel : BaseViewModel
     [ObservableProperty] private string? _publisher;
     [ObservableProperty] private string? _publisherId;
     [ObservableProperty] private string? _display;
+    [ObservableProperty] private Image? _image;
 
     [ObservableProperty] [Required] [Range(Double.Epsilon, Double.MaxValue)]
     private double? _price;

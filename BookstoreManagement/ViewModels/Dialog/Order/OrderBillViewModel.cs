@@ -31,7 +31,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         
         public void setOrder(Bill bill)
         {
-            this.Id = "#" + bill.Id;
+            this.Id = bill.Id;
             this.CreateAt = bill.CreatedAt;
             Dispose(_model.GetUser(bill.UserId), user =>
             {
