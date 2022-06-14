@@ -73,7 +73,8 @@
                               Width="auto"
                               Height="52"
                               Tag="Gioi tinh"
-                              Margin="0 0 0 12" />
+                              Margin="0 0 0 12"
+                              Padding="24 20 24 10"/>
 
                     <Grid Margin="0 0 0 12">
                         <Grid.ColumnDefinitions>

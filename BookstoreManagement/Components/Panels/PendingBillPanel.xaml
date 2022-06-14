@@ -199,7 +199,7 @@
 
                     <StackPanel DockPanel.Dock="Right"
                                 Orientation="Horizontal">
-                        <ComboBox>
+                        <ComboBox Padding="24 11 24 10">
                             <ComboBoxItem Content="Tháng"
                                           IsSelected="True">
                             </ComboBoxItem>

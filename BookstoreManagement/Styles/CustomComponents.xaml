@@ -746,7 +746,7 @@
                 <Grid>
                     <TextBlock Text="{TemplateBinding Tag}"
                                Margin="24 8 0 0"
-                               Style="{DynamicResource SmallCaption}" />
+                               Style="{DynamicResource SmallCaption}"/>
                     
                 </Grid>
             </Border>
@@ -839,7 +839,7 @@
                                           Content="{TemplateBinding SelectionBoxItem}"
                                           ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                          Margin="24 20 24 10"
+                                          Margin="{TemplateBinding Padding}"
                                           VerticalAlignment="Stretch"
                                           HorizontalAlignment="Left">
                         </ContentPresenter>
