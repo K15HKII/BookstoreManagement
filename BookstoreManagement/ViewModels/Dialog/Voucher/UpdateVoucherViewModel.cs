@@ -21,6 +21,26 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
         {
             _model = model;
         }
+        
+        public void SetVoucher(VoucherProfile voucher)
+        {
+            /*this.Name = voucher.Discount + "% " + voucher.Name;
+            this.Description = voucher.Description;
+            this.ApplyType = "Áp dụng cho Sách thể loại ";
+            for(int i = 0;i< voucher.RequireBookTags.Count;i++)
+            {
+                if(i==voucher.RequireBookTags.Count-1)
+                {
+                    this.ApplyType += voucher.RequireBookTags[i];
+                }
+                else
+                {
+                    this.ApplyType += voucher.RequireBookTags[i] + ", ";
+                }
+            }
+
+            this.RequireMinValue = voucher.RequireMinValue;*/
+        }
 
         [ObservableProperty]
         private string? _code;
@@ -55,7 +75,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Voucher
 
             return new VoucherUpdateRequest()
             {
-                
+                //TODO: thêm function add hoặc update cho voucher
             };
         }
 

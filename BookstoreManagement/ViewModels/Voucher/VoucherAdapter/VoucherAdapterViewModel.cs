@@ -29,6 +29,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
         
         public void SetVoucher(VoucherProfile voucher)
         {
+            this.current = voucher;
             this.Name = voucher.Discount + "% " + voucher.Name;
             this.Description = voucher.Description;
             this.ApplyType = "Áp dụng cho Sách thể loại ";
@@ -47,6 +48,8 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             this.RequireMinValue = voucher.RequireMinValue;
         }
 
+        private VoucherProfile current;
+        
         [ObservableProperty] string? _name;
 
         [ObservableProperty] string? _description;
@@ -63,7 +66,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
         public async void OpenInfo()
         {
             VoucherDetailViewModel vm = _factory.Create<VoucherDetailViewModel>();
-            
+            vm.SetVoucher(current);
             object? request = await _navigator.OpenDetailVoucherDialog(vm);
 
             if (request == null)

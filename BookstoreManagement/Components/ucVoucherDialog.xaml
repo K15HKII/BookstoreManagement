@@ -7,8 +7,8 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d" 
              d:DesignWidth="735">
-    <!--<materialDesign:DialogHost
-        Identifier="edit">-->
+    <materialDesign:DialogHost
+        Identifier="edit">
         <Border CornerRadius="16"
                     Background="White"
                     Padding="42 20 42 32">
@@ -19,12 +19,12 @@
                                Margin="0 0 0 24">
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="# Ma voucher"
+                                   Text="{Binding Id}"
                                    VerticalAlignment="Center" />
                         <StackPanel DockPanel.Dock="Right"
                                     VerticalAlignment="Center"
                                     Orientation="Horizontal">
-                            <TextBlock Style="{StaticResource Caption}"
+                            <!--<TextBlock Style="{StaticResource Caption}"
                                        Foreground="{StaticResource SolidDarkGrayColor}"
                                        Text="Ngay tao"
                                        Margin="0 0 12 0"
@@ -40,7 +40,7 @@
                                        VerticalAlignment="Center" />
                             <TextBlock Style="{StaticResource Body}"
                                        Foreground="Black"
-                                       Text="02/02/2022" />
+                                       Text="02/02/2022" />-->
                         </StackPanel>
         
                     </DockPanel>
@@ -59,44 +59,44 @@
                         </StackPanel>
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="{StaticResource SolidOrangeColor}"
-                                   Text="20%"
+                                   Text="{Binding Discount}"
                                    DockPanel.Dock="Right"/>
                     </DockPanel>
         
                     <DockPanel LastChildFill="False"
                                Margin="0 0 0 24">
-                        <TextBlock Style="{StaticResource Caption}"
+                        <!--<TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Text="Toi da" 
                                    VerticalAlignment="Center"/>
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="Black"
                                    Text="d100.000"
-                                   DockPanel.Dock="Right" />
+                                   DockPanel.Dock="Right" />-->
                     </DockPanel>
         
                     <DockPanel LastChildFill="False"
                                Margin="0 0 0 24">
-                        <TextBlock Style="{StaticResource Caption}"
+                        <!--<TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Text="So luong"
                                    VerticalAlignment="Center" />
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Text="100"
-                                   DockPanel.Dock="Right" />
+                                   DockPanel.Dock="Right" />-->
                     </DockPanel>
         
                     <DockPanel LastChildFill="False"
                                Margin="0 0 0 24">
-                        <TextBlock Style="{StaticResource Caption}"
+                        <!--<TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Text="Da dung"
                                    VerticalAlignment="Center" />
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidOrangeColor}"
                                    Text="50"
-                                   DockPanel.Dock="Right" />
+                                   DockPanel.Dock="Right" />-->
                     </DockPanel>
         
                     <StackPanel Margin="0 0 0 24">
@@ -107,7 +107,7 @@
                                    Margin="0 0 0 4"/>
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="Black"
-                                   Text=""
+                                   Text="{Binding RequireMinValue}"
                                    DockPanel.Dock="Right" />
                     </StackPanel>
         
@@ -119,7 +119,7 @@
                                    Margin="0 0 0 4" />
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="Black"
-                                   Text=""
+                                   Text="{Binding ApplyType}"
                                    DockPanel.Dock="Right" />
                     </StackPanel>
         
@@ -127,10 +127,12 @@
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Right">
                         <Button Style="{StaticResource SecondButton}"
+                                Command="{Binding CloseCommand}"
                                 Width="97"
                                 Margin="0 0 16 0"
                                 Content="Huy"></Button>
                         <Button Style="{StaticResource PrimaryButton}"
+                                Command="{Binding OpenEditCommand}"
                                 Width="97"
                                 Content="Cap nhat"></Button>
                     </StackPanel>
@@ -138,6 +140,6 @@
                 </StackPanel>
                 
             </Border>
-    <!--</materialDesign:DialogHost>-->
+    </materialDesign:DialogHost>
     
 </UserControl>

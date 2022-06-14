@@ -63,5 +63,9 @@
             <components:LendingDialog/>
         </DataTemplate>
         
+        <DataTemplate DataType="{x:Type voucher:VoucherDetailViewModel}">
+            <components:ucVoucherDialog/>
+        </DataTemplate>
+
     </ResourceDictionary>
 </ResourceDictionary>
