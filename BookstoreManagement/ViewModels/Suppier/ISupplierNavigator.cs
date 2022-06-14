@@ -14,6 +14,6 @@ namespace BookstoreManagement.ViewModels.Suppier
 
         void openNotificationScreen();
         
-        Task<PublisherUpdateRequest?> OpenNewSupplierDialog(AddSupplierViewModel viewModel);
+        Task<PublisherUpdateRequest?> OpenNewSupplierDialog(UpdateSupplierViewModel viewModel);
     }
 }

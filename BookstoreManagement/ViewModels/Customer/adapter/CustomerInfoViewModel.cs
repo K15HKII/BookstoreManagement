@@ -14,13 +14,13 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Customer.adapter
 {
-    public partial class CustomerInfoViewModel : BaseViewModel
+    public partial class CustomerInfoViewModel : BaseUserViewModel
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly ICustomerInfoNavigator _navigator;
 
-        public CustomerInfoViewModel(ICustomerInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model)
+        public CustomerInfoViewModel(ICustomerInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
         {
             _navigator = navigator;
             _factory = factory;
@@ -46,11 +46,11 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
         [ObservableProperty] string? _createDate;
         
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
             CustomerDetailViewModel vm = _factory.Create<CustomerDetailViewModel>();
             vm.SetUser(this.user);
-            object? request = _navigator.OpenDetailUserDialog(vm);
+            object? request = await _navigator.OpenDetailUserDialog(vm);
 
             if (request == null)
                 return;

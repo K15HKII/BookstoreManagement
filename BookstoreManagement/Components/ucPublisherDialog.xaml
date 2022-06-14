@@ -7,132 +7,137 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d" 
              d:DesignWidth="735">
-    <Border CornerRadius="16"
-            Background="White">
-        <StackPanel Background="Transparent">
-            <StackPanel HorizontalAlignment="Center"
-                        Margin="0 0 0 29">
-                <Border Width="191"
-                        Height="191"
-                        CornerRadius="100"
-                        Background="{StaticResource SolidLightGrayColor}"
-                        Margin="0 0 0 16" >
-                    <Border.BorderBrush>
-                        <ImageBrush
-                            ImageSource="{Binding Image}"
-                        />
-                    </Border.BorderBrush>
-                    </Border>
+    <materialDesign:DialogHost
+        Identifier="edit">
+        <Border CornerRadius="16"
+                    Background="White">
+                <StackPanel Background="Transparent">
+                    <StackPanel HorizontalAlignment="Center"
+                                Margin="0 0 0 29">
+                        <Border Width="191"
+                                Height="191"
+                                CornerRadius="100"
+                                Background="{StaticResource SolidLightGrayColor}"
+                                Margin="0 0 0 16" >
+                            <Border.BorderBrush>
+                                <ImageBrush
+                                    ImageSource="{Binding Image}"
+                                />
+                            </Border.BorderBrush>
+                            </Border>
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Bottom"
+                                        HorizontalAlignment="Center">
+                            <TextBlock Style="{StaticResource Title}"
+                                       Foreground="{StaticResource SolidDarkGrayColor}"
+                                       VerticalAlignment="Center"
+                                       Text="{Binding Id}" />
+                            <TextBlock Style="{StaticResource Heading3}"
+                                       Foreground="Black"
+                                       Margin="12 0 0 0"
+                                       Text="{Binding Name}" />
+                        </StackPanel>
+                    </StackPanel>
+        
+                    <StackPanel Margin="0 0 0 29">
+                        <Button Style="{StaticResource myButtonForShowDialog}"
+                                Width="auto"
+                                Height="50"
+                                Content="Thong tin ca nhan"
+                                Margin="0 0 0 10">
+                        </Button>
+        
+                        <StackPanel>
+                            <Border Padding="12 8">
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}"
+                                               Text="So dien thoai"
+                                               VerticalAlignment="Center" />
+                                    <TextBlock Style="{StaticResource Body}"
+                                               Foreground="Black"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding Phone}" />
+                                </DockPanel>
+                            </Border>
+        
+                            <Border Padding="12 8">
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}"
+                                               Text="Email"
+                                               VerticalAlignment="Center" />
+                                    <TextBlock Style="{StaticResource Body}"
+                                               Foreground="Black"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding Email}" />
+                                </DockPanel>
+                            </Border>
+        
+                            <Border Padding="12 8">
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}"
+                                               Text="Dia chi"
+                                               VerticalAlignment="Center" />
+                                    <TextBlock Style="{StaticResource Body}"
+                                               Foreground="Black"
+                                               DockPanel.Dock="Right"
+                                               Text="{Binding Address}" />
+                                </DockPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+        
+                    <DockPanel LastChildFill="False"
+                               Margin="0 0 0 29">
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="Da cung cap" />
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="{StaticResource SolidOrangeColor}"
+                                   Text="{Binding BookQuantity}"
+                                   DockPanel.Dock="Right" />
+                    </DockPanel>
+        
+                    <DockPanel LastChildFill="False"
+                               Margin="0 0 0 24">
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="The loai" />
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="{StaticResource SolidPrimaryColor}"
+                                   Text="{Binding BookType}"
+                                   DockPanel.Dock="Right" />
+                    </DockPanel>
+        
+                    <DockPanel LastChildFill="False"
+                               Margin="0 0 0 32">
+                        <TextBlock Style="{StaticResource Heading3}"
+                                   Foreground="Black"
+                                   Text="Ngay tham gia" />
+                        <TextBlock Style="{StaticResource Title}"
+                                   Foreground="{StaticResource SolidPrimaryColor}"
+                                   Text="{Binding CoopDate}"
+                                   DockPanel.Dock="Right"
+                                   VerticalAlignment="Center" />
+                    </DockPanel>
+        
+                    <!--button-->
                     <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Bottom"
-                                HorizontalAlignment="Center">
-                    <TextBlock Style="{StaticResource Title}"
-                               Foreground="{StaticResource SolidDarkGrayColor}"
-                               VerticalAlignment="Center"
-                               Text="{Binding Id}" />
-                    <TextBlock Style="{StaticResource Heading3}"
-                               Foreground="Black"
-                               Margin="12 0 0 0"
-                               Text="{Binding Name}" />
+                                HorizontalAlignment="Right">
+                        <Button Style="{StaticResource SecondButton}"
+                                Command="{Binding CloseCommand}"
+                                Width="97"
+                                Margin="0 0 16 0"
+                                Content="Huy"></Button>
+                        <Button Style="{StaticResource PrimaryButton}"
+                                Command="{Binding OpenEditCommand}"
+                                Width="97"
+                                Content="Cap nhat"></Button>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
-
-            <StackPanel Margin="0 0 0 29">
-                <Button Style="{StaticResource myButtonForShowDialog}"
-                        Width="auto"
-                        Height="50"
-                        Content="Thong tin ca nhan"
-                        Margin="0 0 0 10">
-                </Button>
-
-                <StackPanel>
-                    <Border Padding="12 8">
-                        <DockPanel LastChildFill="False">
-                            <TextBlock Style="{StaticResource Caption}"
-                                       Foreground="{StaticResource SolidDarkGrayColor}"
-                                       Text="So dien thoai"
-                                       VerticalAlignment="Center" />
-                            <TextBlock Style="{StaticResource Body}"
-                                       Foreground="Black"
-                                       DockPanel.Dock="Right"
-                                       Text="{Binding Phone}" />
-                        </DockPanel>
-                    </Border>
-
-                    <Border Padding="12 8">
-                        <DockPanel LastChildFill="False">
-                            <TextBlock Style="{StaticResource Caption}"
-                                       Foreground="{StaticResource SolidDarkGrayColor}"
-                                       Text="Email"
-                                       VerticalAlignment="Center" />
-                            <TextBlock Style="{StaticResource Body}"
-                                       Foreground="Black"
-                                       DockPanel.Dock="Right"
-                                       Text="{Binding Email}" />
-                        </DockPanel>
-                    </Border>
-
-                    <Border Padding="12 8">
-                        <DockPanel LastChildFill="False">
-                            <TextBlock Style="{StaticResource Caption}"
-                                       Foreground="{StaticResource SolidDarkGrayColor}"
-                                       Text="Dia chi"
-                                       VerticalAlignment="Center" />
-                            <TextBlock Style="{StaticResource Body}"
-                                       Foreground="Black"
-                                       DockPanel.Dock="Right"
-                                       Text="{Binding Address}" />
-                        </DockPanel>
-                    </Border>
-                </StackPanel>
-            </StackPanel>
-
-            <DockPanel LastChildFill="False"
-                       Margin="0 0 0 29">
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="Black"
-                           Text="Da cung cap" />
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="{StaticResource SolidOrangeColor}"
-                           Text="{Binding BookQuantity}"
-                           DockPanel.Dock="Right" />
-            </DockPanel>
-
-            <DockPanel LastChildFill="False"
-                       Margin="0 0 0 24">
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="Black"
-                           Text="The loai" />
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="{Binding BookType}"
-                           DockPanel.Dock="Right" />
-            </DockPanel>
-
-            <DockPanel LastChildFill="False"
-                       Margin="0 0 0 32">
-                <TextBlock Style="{StaticResource Heading3}"
-                           Foreground="Black"
-                           Text="Ngay tham gia" />
-                <TextBlock Style="{StaticResource Title}"
-                           Foreground="{StaticResource SolidPrimaryColor}"
-                           Text="{Binding CoopDate}"
-                           DockPanel.Dock="Right"
-                           VerticalAlignment="Center" />
-            </DockPanel>
-
-            <!--button-->
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Right">
-                <Button Style="{StaticResource SecondButton}"
-                        Command="{Binding CloseCommand}"
-                        Width="97"
-                        Margin="0 0 16 0"
-                        Content="Huy"></Button>
-                <Button Style="{StaticResource PrimaryButton}"
-                        Width="97"
-                        Content="Cap nhat"></Button>
-            </StackPanel>
-        </StackPanel>
-    </Border>
+            </Border>
+    </materialDesign:DialogHost>
+    
 </UserControl>

@@ -38,9 +38,8 @@ namespace BookstoreManagement.ViewModels.Dialog.Customer
                 Username = UserName,
                 Phone = Phone,
                 Gender = (Gender)Gender,
-                Birthday = Birth,
-                Create_at = CreateDate,
-                Role = Type
+                Birthday = BirthDay,
+                Create_at = CreateAt,
             };
         } 
 

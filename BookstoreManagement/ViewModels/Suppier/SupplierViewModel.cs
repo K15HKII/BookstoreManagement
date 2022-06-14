@@ -61,7 +61,7 @@ namespace BookstoreManagement.ViewModels.Suppier
         [ICommand]
         public async void AddNew()
         {
-            PublisherUpdateRequest? request = await _navigator.OpenNewSupplierDialog(_factory.Create<AddSupplierViewModel>());
+            PublisherUpdateRequest? request = await _navigator.OpenNewSupplierDialog(_factory.Create<UpdateSupplierViewModel>());
             if (request == null)
                 return;
 

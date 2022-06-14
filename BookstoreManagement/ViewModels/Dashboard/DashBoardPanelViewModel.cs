@@ -1,8 +1,11 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Media;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.Components;
@@ -64,43 +67,66 @@ namespace BookstoreManagement.ViewModels.Dashboard
                     BookList.Add(vm);
                 }
             });
+            
+            Dispose(_model.GetBills(), bills =>
+            {
+                chartCalculate(TimeUnit.DAY, bills);
+            });
         }
 
         //TODO: còn chart
-
-        [ObservableProperty] private SeriesCollection _seriesCollection = new SeriesCollection
+        public void chartCalculate(TimeUnit unit, List<Bill> bills)
         {
-            new LineSeries
+            DateTime[] dateTimes = bills.Select(bill => bill.CreatedAt).ToArray();
+            DateTime min = dateTimes.Min();
+            DateTime max = dateTimes.Max();
+            chartCalculate(min, max, unit, bills);
+        }
+        
+        public void chartCalculate(DateTime from, DateTime to, TimeUnit unit, List<Bill> bills)
+        {
+            long fromMilisecond = from.Miliseconds();
+            long toMilisecond = to.Miliseconds();
+            double per = unit.Miliseconds();
+
+            double start = fromMilisecond;
+            double next = fromMilisecond + per;
+
+           List<ObservableValue> values = new();
+            while (start < toMilisecond)
             {
-                Values = new ChartValues<ObservableValue>
-                {
-                    new ObservableValue(3),
-                    new ObservableValue(5),
-                    new ObservableValue(2),
-                    new ObservableValue(7),
-                    new ObservableValue(7),
-                    new ObservableValue(4)
-                },
-                PointGeometrySize = 0,
-                StrokeThickness = 4,
-                Fill = Brushes.Transparent
-            },
-            new LineSeries
-            {
-                Values = new ChartValues<ObservableValue>
-                {
-                    new ObservableValue(3),
-                    new ObservableValue(4),
-                    new ObservableValue(6),
-                    new ObservableValue(8),
-                    new ObservableValue(7),
-                    new ObservableValue(5)
-                },
-                PointGeometrySize = 0,
-                StrokeThickness = 4,
-                Fill = Brushes.Transparent
+                var filter = bills.Where(bill =>
+                    {
+                        var miliseconds = bill.CreatedAt.Miliseconds();
+                        return miliseconds >= start && miliseconds < next;
+                    })
+                    .SelectMany(bill => bill.ListBillDetail);
+                double sum = filter.Sum(x => x.UnitPrice * x.Quantity);
+                values.Add(new ObservableValue(sum));
+                start = next;
+                next += per;
             }
-        };
+            StatisticData = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = new ChartValues<ObservableValue>(values),
+                    PointGeometrySize = 0,
+                    StrokeThickness = 4,
+                    Fill = Brushes.Transparent
+                }
+            };
+        }
+        
+        [ObservableProperty] private SeriesCollection _statisticData;
+        /*public SeriesCollection StatisticData
+        {
+            get => _statisticData;
+            set {
+                _statisticData = value;
+                OnPropertyChanged(nameof(StatisticData));
+            }   
+        }*/
         
         [ObservableProperty] private ObservableCollection<StatisticViewModel> _mainStatistics = new();
 

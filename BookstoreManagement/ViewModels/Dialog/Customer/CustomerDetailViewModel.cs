@@ -8,6 +8,7 @@ using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
+using BookstoreManagement.ViewModels.Dialog.Customer;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Customer.DeleteAccount;
 using BookstoreManagement.ViewModels.DialogView.Customer.Password;
@@ -24,30 +25,11 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         private readonly IViewModelFactory _factory;
         private readonly ICustomerDetailNavigator _navigator;
 
-        public CustomerDetailViewModel(ICustomerDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider, factory, model)
+        public CustomerDetailViewModel(ICustomerDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider, model)
         {
             _navigator = navigator;
             _model = model;
             _factory = factory;
-        }
-
-        [ObservableProperty] private string? _createAt;
-        [ObservableProperty] private string? _phone;
-        [ObservableProperty] private string? _birthDay;
-        [ObservableProperty] private string? _gender;
-        [ObservableProperty] private string? _address;
-        [ObservableProperty] private Image? _image;
-        
-        public void SetUser(User user) 
-        {
-            this.Name = user.FirstName + user.LastName;
-            this.Email = user.Email;
-            this.Phone = user.Phone;
-            this.Gender = user.Gender.ToString();
-            this.Image = user.Avatar;
-            /*this.Address = */
-            /*this.BirthDay = user.BirthDay.Value.ToString("dd/MM/yyyy");*/
-            this.CreateAt = user.CreateAt.Value.ToString("dd/MM/yyyy");
         }
 
         public event Action<object?>? CloseAction;
@@ -58,10 +40,11 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         }
         
         [ICommand]
-        public void OpenEdit()
+        public async void OpenEdit()
         {
-            //TODO: cast to edit request
-            object? request = _navigator.OpenEditCustomerDialog(_factory.Create<EditCustomerViewModel>());
+            UpdateCustomerViewModel vm = _factory.Create<UpdateCustomerViewModel>();
+            vm.SetUser(current);
+            object? request = await _navigator.OpenEditCustomerDialog(vm);
 
             if (request == null)
                 return;
