@@ -7,13 +7,15 @@
                     xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.DialogView.Customer"
                     xmlns:manager="clr-namespace:BookstoreManagement.ViewModels.DialogView.Manager"
                     xmlns:dialogView="clr-namespace:BookstoreManagement.ViewModels.DialogView"
-                    xmlns:order="clr-namespace:BookstoreManagement.ViewModels.DialogView.Order">
+                    xmlns:order="clr-namespace:BookstoreManagement.ViewModels.DialogView.Order"
+                    xmlns:bookstoreManagement="clr-namespace:BookstoreManagement"
+                    xmlns:customer1="clr-namespace:BookstoreManagement.ViewModels.Dialog.Customer">
     <ResourceDictionary x:Key="DialogTemplates">
         <DataTemplate DataType="{x:Type bookStore:UpdateBookViewModel}">
             <components:AddBookDialog/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type supplier:AddSupplierViewModel}">
+        <DataTemplate DataType="{x:Type supplier:UpdateSupplierViewModel}">
             <components:ucAddPublisher/>
         </DataTemplate>
         
@@ -21,11 +23,11 @@
             <components:ucAddVoucher/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type customer:AddCustomerViewModel}">
+        <DataTemplate DataType="{x:Type customer1:UpdateCustomerViewModel}">
             <components:AddCustomer/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type manager:AddEmployeeViewModel}">
+        <DataTemplate DataType="{x:Type manager:UpdateEmployeeViewModel}">
             <components:ucAddEmployee/>
         </DataTemplate>
         

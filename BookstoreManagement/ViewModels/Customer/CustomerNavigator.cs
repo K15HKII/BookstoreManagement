@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.ViewModels.Dialog.Customer;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
@@ -19,7 +20,7 @@ namespace BookstoreManagement.ViewModels.Customer
             _dialogService = dialogService;
         }
 
-        public async Task<UserUpdateRequest?> openAddCustomerDialog(AddCustomerViewModel viewModel)
+        public async Task<UserUpdateRequest?> openUpdateCustomerDialog(UpdateCustomerViewModel viewModel)
         {
             object value = await _dialogService.Show(viewModel);
             if (value == null)

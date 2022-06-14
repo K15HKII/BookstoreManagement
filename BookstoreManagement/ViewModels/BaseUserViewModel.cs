@@ -19,6 +19,7 @@ public abstract partial class BaseUserViewModel : BaseViewModel
 
     public void SetUser(User user)
     {
+        current = user;
         this.Id = user.Id;
         this.Name = user.FullName;
         this.Email = user.Email;
@@ -29,6 +30,8 @@ public abstract partial class BaseUserViewModel : BaseViewModel
         this.Birth = user.BirthDay;
         this.CreateDate = user.CreateAt;
     }
+
+    protected User current;
 
     [ObservableProperty]
     [Required]

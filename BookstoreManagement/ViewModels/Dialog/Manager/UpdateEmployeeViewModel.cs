@@ -13,54 +13,19 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Manager
 {
-    public partial class AddEmployeeViewModel : BaseViewModel, IDialog
+    public partial class UpdateEmployeeViewModel : BaseUserViewModel, IDialog
     {
         private readonly IModelRemote _model;
 
-        public AddEmployeeViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public UpdateEmployeeViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider,model)
         {
             _model = model;
         }
 
-        [ObservableProperty]
-        [Required]
-        private string? _id;
-        
-        [ObservableProperty] 
-        [Required]
-        private string? _userName;
-
-        [ObservableProperty] 
-        [Required]
-        private string? _image;
-        
-        [ObservableProperty] 
-        [Required]
-        private string? _name;
-        
-        [ObservableProperty] 
-        private DateTime? _dayCreate;
-        
-        [ObservableProperty] 
-        [Required]
-        private string? _gender;
-        
         [ObservableProperty] 
         [Required]
         private string? _character;
-        
-        [ObservableProperty] 
-        [Required]
-        private DateTime? _birth;
-        
-        [ObservableProperty]
-        [Required]
-        private string? _phone;
-        
-        [ObservableProperty] 
-        [Required]
-        private string? _email;
-        
+
         public UserUpdateRequest? ToAddRequest()
         {
             ValidateAllProperties();

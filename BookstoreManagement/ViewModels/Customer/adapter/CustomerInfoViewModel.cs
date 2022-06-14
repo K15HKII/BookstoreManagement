@@ -46,11 +46,11 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
         [ObservableProperty] string? _createDate;
         
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
             CustomerDetailViewModel vm = _factory.Create<CustomerDetailViewModel>();
             vm.SetUser(this.user);
-            object? request = _navigator.OpenDetailUserDialog(vm);
+            object? request = await _navigator.OpenDetailUserDialog(vm);
 
             if (request == null)
                 return;

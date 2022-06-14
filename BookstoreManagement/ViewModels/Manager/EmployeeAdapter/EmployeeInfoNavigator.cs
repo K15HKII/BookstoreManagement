@@ -16,9 +16,9 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
         {
             _dialogService = dialogService;
         }
-        public object? OpenDetailEmployeeDialog(EmployeeDetailViewModel viewModel)
+        public async Task<object?> OpenDetailEmployeeDialog(EmployeeDetailViewModel viewModel)
         {
-            object? value = _dialogService.Show(viewModel);
+            object? value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
             return value;

@@ -20,9 +20,4 @@ public class BookInfoNavigator : IBookInfoNavigator
             return null;
         return value;
     }
-
-    object? IBookInfoNavigator.OpenInfoBookDialog(BookDialogViewModel viewModel)
-    {
-        throw new System.NotImplementedException();
-    }
 }

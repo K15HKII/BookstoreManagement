@@ -67,13 +67,11 @@
                              Width="auto"
                              Margin="0 0 0 12" />
 
-                    <ComboBox Text="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
-                              SelectedValue="{Binding Path=Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    <ComboBox ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
+                              SelectedValue="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               DisplayMemberPath="Display"
                               SelectedValuePath="Value"
                               Width="auto"
-                              Tag="Gioi tinh"
                               Height="52"
                               Margin="0 0 0 12" />
 
@@ -85,7 +83,9 @@
                         </Grid.ColumnDefinitions>
 
                         <!--ngaysinh-->
-                        <DatePicker />
+                        <DatePicker
+                            Text="{Binding BirthDay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            />
                         <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Birth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngày sinh"
@@ -127,7 +127,8 @@
                                    VerticalAlignment="Center" />
 
                         <!--ngay thm gia-->
-                        <DatePicker Grid.Column="1"/>
+                        <DatePicker Grid.Column="1"
+                                    Text="{Binding CreateAt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                         <!--<TextBox Style="{StaticResource myInput}"
                                  Text="{Binding CreateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

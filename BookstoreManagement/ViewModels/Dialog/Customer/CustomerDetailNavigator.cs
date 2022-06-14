@@ -1,4 +1,9 @@
-﻿using BookstoreManagement.ViewModels.DialogView.Customer.DeleteAccount;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.Dialog.Customer;
+using BookstoreManagement.ViewModels.DialogView.BookStore;
+using BookstoreManagement.ViewModels.DialogView.Customer.DeleteAccount;
 using BookstoreManagement.ViewModels.DialogView.Customer.Password;
 using BookstoreManagement.ViewModels.DialogView.Customer.SocialLink;
 
@@ -6,9 +11,19 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer;
 
 public class CustomerDetailNavigator : ICustomerDetailNavigator
 {
-    public object? OpenEditCustomerDialog(EditCustomerViewModel viewModel)
+    private readonly IDialogService _dialogService;
+
+    public CustomerDetailNavigator(IDialogService dialogService)
     {
-        throw new System.NotImplementedException();
+        _dialogService = dialogService;
+    }
+    
+    public async Task<UserUpdateRequest?> OpenEditCustomerDialog(UpdateCustomerViewModel viewModel)
+    {
+        object value = await _dialogService.Show(viewModel,"edit");
+        if (value == null)
+            return null;
+        return value as UserUpdateRequest;
     }
 
     public object? OpenChangePassWord(EditPassWordViewModel viewModel)

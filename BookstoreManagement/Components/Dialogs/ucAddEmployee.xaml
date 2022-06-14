@@ -65,7 +65,7 @@
                              Width="auto"
                              Margin="0 0 0 12" />
 
-                    <ComboBox Text="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    <ComboBox 
                               ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
                               SelectedValue="{Binding Path=Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               DisplayMemberPath="Display"

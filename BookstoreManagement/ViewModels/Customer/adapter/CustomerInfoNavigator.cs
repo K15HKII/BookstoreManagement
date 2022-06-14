@@ -18,9 +18,9 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
             _dialogService = dialogService;
         }
 
-        public object? OpenDetailUserDialog(CustomerDetailViewModel viewModel)
+        public async Task<object?> OpenDetailUserDialog(CustomerDetailViewModel viewModel)
         {
-            object? value = _dialogService.Show(viewModel);
+            object? value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
             return value;

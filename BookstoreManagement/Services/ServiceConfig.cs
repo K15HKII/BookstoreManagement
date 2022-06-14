@@ -11,6 +11,7 @@ using BookstoreManagement.ViewModels.BookStore.BookInfoAdapter;
 using BookstoreManagement.ViewModels.Customer;
 using BookstoreManagement.ViewModels.Customer.adapter;
 using BookstoreManagement.ViewModels.Dashboard;
+using BookstoreManagement.ViewModels.Dialog.Customer;
 using BookstoreManagement.ViewModels.DialogView;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Customer;
@@ -244,22 +245,21 @@ namespace BookstoreManagement.Services
                 //Customer
                 service.AddSingleton<ICustomerDetailNavigator, CustomerDetailNavigator>();
                 service.AddViewModel<CustomerDetailViewModel>();
-                service.AddViewModel<AddCustomerViewModel>();
-                service.AddViewModel<EditCustomerViewModel>();
+                service.AddViewModel<UpdateCustomerViewModel>();
+                
 
                 //Manager
+                service.AddSingleton<IEmployeeDetailNavigator, EmployeeDetailNavigator>();
                 service.AddViewModel<EmployeeDetailViewModel>();
-                service.AddViewModel<AddEmployeeViewModel>();
-                service.AddViewModel<EditEmployeeViewModel>();
+                service.AddViewModel<UpdateEmployeeViewModel>();
 
                 //Supplier
+                service.AddSingleton<ISupplierDetailNavigator, SupplierDetailNavigator>();
                 service.AddViewModel<SupplierDetailViewModel>();
-                service.AddViewModel<AddSupplierViewModel>();
-                service.AddViewModel<EditSupplierViewModel>();
+                service.AddViewModel<UpdateSupplierViewModel>();
 
                 //Lend
                 service.AddViewModel<AddLendBillViewModel>();
-                
                 service.AddSingleton<IViewModelFactory, ViewModelFactory>();
             });
             return host;

@@ -62,7 +62,7 @@ namespace BookstoreManagement.ViewModels.Manager
         [ICommand]
         public async void AddNew()
         {
-            UserUpdateRequest? request = await _navigator.OpenNewEmployeeDialog(_factory.Create<AddEmployeeViewModel>());
+            UserUpdateRequest? request = await _navigator.OpenNewEmployeeDialog(_factory.Create<UpdateEmployeeViewModel>());
             if (request == null)
                 return;
 

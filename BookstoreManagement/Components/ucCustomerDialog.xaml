@@ -12,7 +12,9 @@
         
     </UserControl.Resources>
 
-    <Border CornerRadius="16"
+    <materialDesign:DialogHost
+        Identifier="edit">
+        <Border CornerRadius="16"
             Background="White"
             Padding="42 32">
         <StackPanel>
@@ -242,6 +244,7 @@
                         Margin="0 0 16 0"
                         Content="Huy"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
+                        Command="{Binding OpenEditCommand}"
                         Width="97"
                         Content="Cap nhat"></Button>
             </StackPanel>
@@ -249,5 +252,6 @@
         </StackPanel>
 
     </Border>
+    </materialDesign:DialogHost>
 
 </UserControl>

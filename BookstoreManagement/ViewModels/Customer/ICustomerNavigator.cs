@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
+using BookstoreManagement.ViewModels.Dialog.Customer;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
     public interface ICustomerNavigator : INavigator
     {
 
-        Task<UserUpdateRequest?> openAddCustomerDialog(AddCustomerViewModel viewModel);
+        Task<UserUpdateRequest?> openUpdateCustomerDialog(UpdateCustomerViewModel viewModel);
     }
 }

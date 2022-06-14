@@ -17,9 +17,9 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
         {
             _dialogService = dialogService;
         }
-        public object? OpenDetailSupplierDialog(SupplierDetailViewModel viewModel)
+        public async Task<object?> OpenDetailSupplierDialog(SupplierDetailViewModel viewModel)
         {
-            object? value = _dialogService.Show(viewModel);
+            object? value = await _dialogService.Show(viewModel);
             if (value == null)
                 return null;
             return value;

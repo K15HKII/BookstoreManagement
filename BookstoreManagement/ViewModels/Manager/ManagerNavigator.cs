@@ -23,7 +23,7 @@ public class ManagerNavigator : IManagerNavigator
         throw new System.NotImplementedException();
     }
 
-    public async Task< UserUpdateRequest?> OpenNewEmployeeDialog(AddEmployeeViewModel viewModel)
+    public async Task< UserUpdateRequest?> OpenNewEmployeeDialog(UpdateEmployeeViewModel viewModel)
     {
         object value = await _dialogService.Show(viewModel);
         if (value == null)
