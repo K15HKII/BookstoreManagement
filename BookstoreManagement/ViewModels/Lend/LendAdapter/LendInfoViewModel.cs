@@ -27,8 +27,10 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         {
             this.Id = "#" + count;
             this.UserId = lend.UserId;
-            User cus = _model.GetUser(lend.UserId).Wait();
-            this.UserName = cus.FirstName + cus.LastName;
+            Dispose(_model.GetUser(lend.UserId), user =>
+            {
+                this.UserName = user.FirstName + user.LastName;
+            });
             this.Price = lend.UnitPrice.ToString("C") + "đ";
             this.BookId = lend.BookId;
             this.Start = lend.StartDate.Date.ToString("dd/MM/yyyy");

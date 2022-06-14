@@ -18,7 +18,8 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         private readonly IModelRemote _model;
         private readonly IOrderInfoNavigator _navigator;
 
-        public OrderInfoViewModel(IOrderInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public OrderInfoViewModel(IOrderInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
+            IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
         {
             _navigator = navigator;
             _factory = factory;
@@ -30,8 +31,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             this.Id = "#" + bill.Id;
             this.Date = bill.CreatedAt.Value.ToString("dd/MM/yyyy");
             this.Status = bill.BillStatus ?? BillStatus.WAITING;
-            User user = _model.GetUser(bill.UserId).Wait();
-            this.Owner = user.FirstName + user.LastName;
+            Dispose(_model.GetUser(bill.UserId), user => { this.Owner = user.FirstName + user.LastName; });
             double temp = 0;
             for (int i = 0; i < bill.ListBillDetail.Count; i++)
             {
@@ -39,7 +39,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             }
             this.Price = temp.ToString("C") + "đ";
         }
-        
+
         [ObservableProperty] private BillStatus _status;
 
         [ObservableProperty] string? _id;
@@ -47,10 +47,11 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         [ObservableProperty] string? _date;
 
         [ObservableProperty] string? _owner;
-            
+
         [ObservableProperty] string? _price;
 
         [ObservableProperty] object? _bookId;
+
         [ICommand]
         public void OpenInfo()
         {

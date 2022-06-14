@@ -1,4 +1,4 @@
-﻿using BookstoreManagement.Data.Model.Api;
+﻿using System.Threading.Tasks;
 using BookstoreManagement.Services;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 
@@ -13,9 +13,9 @@ public class BookInfoNavigator : IBookInfoNavigator
         _dialogService = dialogService;
     }
 
-    public object? OpenInfoBookDialog(BookDialogViewModel viewModel)
+    public async Task<object?> OpenInfoBookDialog(BookDialogViewModel viewModel)
     {
-        object? value = _dialogService.Show(viewModel);
+        object? value = await _dialogService.Show(viewModel);
         if (value == null)
             return null;
         return value;

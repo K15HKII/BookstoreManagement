@@ -65,12 +65,12 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ObservableProperty] private string? _display;
 
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
             BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
             vm.SetBook(this._book,this.Id);
             //TODO: cast to edit request
-            object? request = _navigator.OpenInfoBookDialog(vm);
+            object? request = await _navigator.OpenInfoBookDialog(vm);
 
             if (request == null)
                 return;
