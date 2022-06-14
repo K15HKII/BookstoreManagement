@@ -13,105 +13,107 @@
     <UserControl.Resources>
     </UserControl.Resources>
 
-    <Border Background="White"
-            CornerRadius="8"
+    <Border CornerRadius="8"
             Padding="16">
 
-        <StackPanel Background="Transparent">
-
-            <Grid Grid.Row="0"
-                  Margin="0 0 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="176" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Border Width="176"
-                        Height="176"
-                        Background="{StaticResource SolidLightGrayColor}" >
+        <StackPanel>
+            <StackPanel Name="infoOfCustomer"
+                        Grid.Column="2"
+                        Orientation="Horizontal">
+                <Border Width="52px"
+                        Height="52px"
+                        CornerRadius="25"
+                        Background="{StaticResource SolidLightGrayColor}"
+                        Margin="0 0 6 0"
+                        x:Name="userAvatar">
                     <Border.BorderBrush>
-                        <ImageBrush
-                            ImageSource="{Binding BookImage}"/>
+                        <ImageBrush ImageSource="{Binding Image}" />
                     </Border.BorderBrush>
-                    </Border>
-
-                <Grid Grid.Column="1"
-                      Margin="16 0 0 0">
-                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
-                              Width="24"
-                              Height="24"
-                              HorizontalAlignment="Right"
-                              VerticalAlignment="Top" />
-                    <StackPanel>
-                        <TextBlock Style="{StaticResource Title}"
-                                   Text="{Binding Id}" 
-                                   Foreground="Black"
-                                   Margin="0 0 0 23" />
-                        <TextBlock Style="{StaticResource Caption}"
-                                   Text="Mã sản phẩm"
-                                   Foreground="{StaticResource SolidDarkGrayColor}"
-                                   Margin="0 0 0 8" />
-                        <TextBlock Style="{StaticResource Title}"
-                                   Text="{Binding ProductId}"
-                                   Foreground="Black"
-                                   Margin="0 0 0 8" />
-                        <TextBlock Style="{StaticResource Body}"
-                                   Text="{Binding BookName}"
-                                   Foreground="Black"
-                                   Margin="0 0 0 20" />
-                        <TextBlock Style="{StaticResource Body}"
-                                   Text="{Binding RateOwner}"
-                                   Foreground="{StaticResource SolidPrimaryColor}"
-                                   Margin="0 0 0 8" />
-                        <materialDesign:RatingBar Value="{Binding StarQuantity}"
-                                                  Max="5"
-                                                  Foreground="{StaticResource SolidYellowColor}"
-                                                  x:Name="CustomRatingBar" />
-                    </StackPanel>
-                </Grid>
-
-            </Grid>
-
-            <StackPanel x:Name="EXPANDER_PART"
-                        Visibility="Collapsed">
-                <StackPanel Margin="0 0 0 24">
-                    <TextBlock Style="{StaticResource Heading3}"
-                               Foreground="Black"
-                               Text="Noi dung"
-                               Margin="0 0 0 8" />
-                    <TextBox Style="{StaticResource myInput}"
-                             Text="{Binding RatingContent}"
-                             Width="{Binding ElementName=root, Path=ActualWidth}" />
-                </StackPanel>
-
-                <StackPanel Margin="0 0 0 24"
-                            HorizontalAlignment="Left">
-                    <TextBlock Style="{StaticResource Heading3}"
-                               Foreground="Black"
-                               Text="Hinh anh"
-                               Margin="0 0 0 8" />
-                    <Button Padding="0"
-                            Width="138"
-                            Height="138">
-                        <ContentControl Content="{StaticResource btnAddImage}" />
-                    </Button>
-
-                </StackPanel>
-
-                <StackPanel Margin="0 0 0 24">
-                    <TextBlock Style="{StaticResource Heading3}"
-                               Foreground="Black"
-                               Text="Phan hoi"
-                               Margin="0 0 0 8" />
-                    <TextBox Style="{StaticResource myInput}"
-                             Text="{Binding RatingReply, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             Width="{Binding ElementName=root, Path=ActualWidth}"
-                             materialDesign:HintAssist.Hint="Viet o day..." />
-
-                </StackPanel>
+                </Border>
+                <DockPanel LastChildFill="False"
+                            VerticalAlignment="Center"
+                            Height="{Binding ElementName=infoOfCustomer, Path=ActualHeight}">
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="abc"
+                               Margin="4 4 0 0"
+                               Style="{StaticResource Title}"
+                               DockPanel.Dock="Top"/>
+                    <materialDesign:RatingBar 
+                        Foreground="Yellow"
+                        Value="4"
+                        DockPanel.Dock="Bottom"/>
+                </DockPanel>
             </StackPanel>
 
-            <ToggleButton Style="{StaticResource myExpanderButton}"/>
+            <StackPanel Orientation="Horizontal"
+                        Margin="5 16 0 0">
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           Text="Ngay`"/>
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           Text="|"
+                           Margin="4 0 4 0"/>
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           Text="Phan loai" />
+            </StackPanel>
+
+            <TextBlock Style="{StaticResource Body}"
+                       TextWrapping="Wrap"
+                       TextAlignment="Justify"
+                       Text="Hàng hóa ok, được á, ok nè, ok nhe, hợp lí, bữa sau mua nữa ủng hộ nè, iu &lt;3"
+                       Margin="0 20 0 0"/>
+
+            <!--Show image, video-->
+            <WrapPanel Margin="0 20 0 0">
+            </WrapPanel>
+            
+            <!--Reply-->
+            <StackPanel Margin="20 0 0 20"
+                        Visibility="Visible">
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidOrangeColor}"
+                           Text="Phản hồi"
+                           Margin="0 0 0 4"/>
+                <TextBlock Style="{StaticResource Body}"
+                           TextWrapping="Wrap"
+                           TextAlignment="Justify"
+                           Text="Hàng hóa ok, được á, ok nè, ok nhe, hợp lí, bữa sau mua nữa ủng hộ nè, iu &lt;3"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <ToggleButton IsChecked="True">
+                    <ToggleButton.Style>
+                        <Style TargetType="{x:Type ToggleButton}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <materialDesign:PackIcon x:Name="xx"
+                                                                 Kind="Like"
+                                                                 Foreground="{StaticResource SolidLightGrayColor}" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked"
+                                         Value="True">
+                                    <Setter Property="Foreground"
+                                            Value="Black" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ToggleButton.Style>
+                </ToggleButton>
+
+                <TextBlock Style="{StaticResource Caption}"
+                           Foreground="{StaticResource SolidDarkGrayColor}"
+                           VerticalAlignment="Center"
+                           Text="1"
+                           Margin="4 0 0 0"/>
+            </StackPanel>
+            
+
         </StackPanel>
 
     </Border>

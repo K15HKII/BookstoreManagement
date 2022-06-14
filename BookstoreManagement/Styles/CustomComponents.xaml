@@ -65,6 +65,35 @@
         </Setter>
     </Style>
 
+    <Style x:Key="myLikeButton"
+           TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="abc"
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="icon"
+                                                 Kind="Like"
+                                                 Foreground="{DynamicResource SolidLightGrayColor}"
+                                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="icon" Property="Foreground" Value="Black">
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="myExpanderButton"
            TargetType="ToggleButton">
         <Setter Property="Template">

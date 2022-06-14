@@ -17,5 +17,11 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+        
+        [JsonProperty("avatar_id")]
+        public string? AvatarId { get; set; }
+        
+        [JsonProperty("created_at")]
+        public DateTime CreatedAt { get; set; }
     }
 }

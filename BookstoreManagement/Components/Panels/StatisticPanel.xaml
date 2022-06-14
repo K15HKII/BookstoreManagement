@@ -17,21 +17,41 @@
                                      Tag="Báo cáo" />
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Center"
-                        Height="32"
+                        Height="40"
                         Margin="0 0 0 28">
-                <Button Padding="0"
-                        Margin="0,2"
-                        Background="{x:Null}"
-                        BorderBrush="{x:Null}">
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Center">
-                        <materialDesign:PackIcon Kind="Calendar"
-                                                 VerticalAlignment="Center" />
-                        <TextBlock Style="{StaticResource Caption}"
-                                   VerticalAlignment="Center"
-                                   Margin="8 0 0 0">04/2022 - 05/2022</TextBlock>
-                    </StackPanel>
-                </Button>
+                <StackPanel Orientation="Horizontal">
+                    <Button Padding="0"
+                            Margin="0,2,0,2"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}">
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Calendar"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Caption}"
+                                       VerticalAlignment="Center"
+                                       Margin="8 0 0 0">04/2022</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <TextBlock Style="{StaticResource Caption}"
+                               VerticalAlignment="Center"
+                               Margin="16 0 16 0">to</TextBlock>
+
+                    <Button Padding="0"
+                            Margin="0,2"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}">
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Calendar"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource Caption}"
+                                       VerticalAlignment="Center"
+                                       Margin="8 0 0 0">05/2022</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
 
                 <ComboBox Margin="24 0 0 0">
                     <ComboBoxItem Content="Tháng"
@@ -51,7 +71,8 @@
 
             <Border Height="316" Background="{StaticResource SolidLightGrayColor}"></Border>
 
-            <DockPanel LastChildFill="False">
+            <DockPanel LastChildFill="False"
+                       Margin="0 32 0 0">
 
                 <ListView x:Name="itemsControl"
                           ItemsSource="{Binding Statistic}"
@@ -81,12 +102,21 @@
                     </ListView.ItemsPanel>
                 </ListView>
 
-                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                    <Button Content="Thêm báo cáo"></Button>
-                    <ComboBox Margin="12 0 0 0">
+                <StackPanel DockPanel.Dock="Right">
+                    <ComboBox Margin="0 0 0 16"
+                              Height="50">
                         <ComboBoxItem Content="Nam"
                                       IsSelected="True"></ComboBoxItem>
                     </ComboBox>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                            Background="{StaticResource SolidPrimaryColor}"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Right"
+                            Command="{Binding AddNewStatistic}"
+                            Margin="0 0 0 29">
+                        <materialDesign:PackIcon Kind="Add"
+                                                 Foreground="White" />
+                    </Button>
                 </StackPanel>
             </DockPanel>
             

@@ -26,5 +26,8 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("bill_details")]
         public List<BillDetail> ListBillDetail { get; set; }
+        
+        [JsonProperty("payment")]
+        public Payment? Payment { get; set; }
     }
 }

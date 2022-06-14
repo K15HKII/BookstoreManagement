@@ -17,5 +17,8 @@ namespace BookstoreManagement.Data.Model.Api
 
         [JsonProperty("tracking")]
         public string Tracking { get; set; }
+        
+        [JsonProperty("ship_cost")]
+        public int ShipCost { get; set; }
     }
 }
