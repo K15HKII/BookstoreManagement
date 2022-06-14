@@ -57,6 +57,7 @@ public partial class BaseBookViewModel : BaseViewModel
     [ObservableProperty] private BookTag[] _tags;
     [ObservableProperty] private string? _authorId;
     [ObservableProperty] private string? _publisher;
+    [ObservableProperty] private string? _publisherId;
     [ObservableProperty] private string? _display;
 
     [ObservableProperty] [Required] [Range(Double.Epsilon, Double.MaxValue)]

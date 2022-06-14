@@ -40,7 +40,7 @@
 
                 <StackPanel DockPanel.Dock="Right"
                             Orientation="Horizontal">
-                    <ComboBox>
+                    <ComboBox Padding="24 11 24 10">
                         <ComboBoxItem Content="Tháng"
                                       IsSelected="True">
                         </ComboBoxItem>
@@ -103,7 +103,7 @@
             </ScrollViewer>
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Background="Black"
+                Background="{StaticResource SolidPrimaryColor}"
                 Command="{Binding AddNewCommand}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"

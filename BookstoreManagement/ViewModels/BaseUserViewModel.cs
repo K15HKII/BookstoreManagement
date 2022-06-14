@@ -20,7 +20,6 @@ public abstract partial class BaseUserViewModel : BaseViewModel
     {
         current = user;
         this.Id = user.Id;
-        this.Name = user.FullName;
         this.FirstName = user.FirstName;
         this.LastName = user.LastName;
         this.Email = user.Email;

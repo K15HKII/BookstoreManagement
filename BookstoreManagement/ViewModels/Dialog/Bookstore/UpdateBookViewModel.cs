@@ -40,6 +40,8 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
                 Description = Description,
                 Price = Price ?? 1.0,
                 //TODO
+                AuthorId = AuthorId,
+                PublisherId = PublisherId,
             };
         }
 

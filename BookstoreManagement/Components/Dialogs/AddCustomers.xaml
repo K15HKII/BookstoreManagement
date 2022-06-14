@@ -73,6 +73,8 @@
                               SelectedValuePath="Value"
                               Width="auto"
                               Height="52"
+                              Tag="Gioi tinh"
+                              Padding="24 20 24 10"
                               Margin="0 0 0 12" />
 
                     <Grid Margin="0 0 0 12">

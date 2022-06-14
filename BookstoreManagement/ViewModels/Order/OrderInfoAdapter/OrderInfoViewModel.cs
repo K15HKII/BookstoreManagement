@@ -30,7 +30,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         {
             current = bill;
             this.Id = "#" + bill.Id;
-            this.Date = bill.CreatedAt.Value.ToString("dd/MM/yyyy");
+            this.Date = bill.CreatedAt.ToString("dd/MM/yyyy");
             this.Status = bill.BillStatus ?? BillStatus.WAITING;
             Dispose(_model.GetUser(bill.UserId), user => { this.Owner = user.FirstName + user.LastName; });
             double temp = 0;
