@@ -71,7 +71,7 @@
                                     <component:VoucherCard Margin="11 0 12 32" Width="447" />
                                     <Button Width="auto"
                                             Height="auto"
-                                            Command="{Binding }"></Button>
+                                            Command="{Binding OpenInfoCommand}"></Button>
                                     </Grid>   
                                 </DataTemplate>
                                     

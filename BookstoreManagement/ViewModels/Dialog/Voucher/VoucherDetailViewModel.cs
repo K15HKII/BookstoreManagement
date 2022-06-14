@@ -1,5 +1,6 @@
 ﻿using System;
 using BookstoreManagement.Annotations;
+using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
@@ -19,29 +20,46 @@ public partial class VoucherDetailViewModel : BaseViewModel, IDialog
         _factory = factory;
         _model = model;
     }
+    
+    public void SetVoucher(VoucherProfile voucher)
+    {
+        current = voucher;
+        this.Id = voucher.Id;
+        this.Name = voucher.Discount + "% " + voucher.Name;
+        this.Discount = voucher.Discount + "%";
+        this.Description = voucher.Description;
+        this.ApplyType = "Áp dụng cho Sách thể loại ";
+        for(int i = 0;i< voucher.RequireBookTags.Count;i++)
+        {
+            if(i==voucher.RequireBookTags.Count-1)
+            {
+                this.ApplyType += voucher.RequireBookTags[i];
+            }
+            else
+            {
+                this.ApplyType += voucher.RequireBookTags[i] + ", ";
+            }
+        }
 
-    //TODO:thêm thuộc tính voucher
-    [ObservableProperty] object? _id;
+        this.RequireMinValue = "Áp dụng cho đơn hàng từ " + voucher.RequireMinValue + "đ";
+    }
 
+    private VoucherProfile current;
+    
+    [ObservableProperty] private string _id;
+    
     [ObservableProperty] string? _name;
 
     [ObservableProperty] string? _description;
 
-    [ObservableProperty] object? _discountType;
+    [ObservableProperty] string? _requireMinValue;
 
-    [ObservableProperty] object? _discount;
+    [ObservableProperty] string? _applyType;
 
-    [ObservableProperty] DateTime? _usedAt;
+    [ObservableProperty] DiscountType? _discountType;
 
-    [ObservableProperty] object? _userId;
+    [ObservableProperty] string? _discount;
 
-    [ObservableProperty] DateTime? _expiredDate;
-
-    [ObservableProperty] DateTime? _releaseDate;
-
-    [ObservableProperty] object? _profileId;
-
-    [ObservableProperty] string? _usedQuantity;
 
 
     public event Action<object?>? CloseAction;
@@ -54,8 +72,9 @@ public partial class VoucherDetailViewModel : BaseViewModel, IDialog
     [ICommand]
     public void OpenEdit()
     {
-        //TODO: cast to edit request
-        object? request = _navigator.OpenEditVoucherDialog(_factory.Create<UpdateVoucherViewModel>());
+        UpdateVoucherViewModel vm = _factory.Create<UpdateVoucherViewModel>();
+        vm.SetVoucher(current);
+        object? request = _navigator.OpenEditVoucherDialog(vm);
 
         if (request == null)
             return;

@@ -228,6 +228,8 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<UpdateOrderViewModel>();
 
                 //Voucher
+                service.AddSingleton<IVoucherDetailNavigator, VoucherDetailNavigator>();
+                service.AddViewModel<VoucherDetailViewModel>();
                 service.AddViewModel<UpdateVoucherViewModel>();
 
                 //Customer
