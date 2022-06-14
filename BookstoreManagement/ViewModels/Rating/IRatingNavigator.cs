@@ -8,8 +8,6 @@ namespace BookstoreManagement.ViewModels.Rating
 {
     public interface IRatingNavigator : INavigator
     {
-        void openAccountScreen();
-
-        void openNotificationScreen();
+        
     }
 }

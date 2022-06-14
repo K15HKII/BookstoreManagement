@@ -10,13 +10,4 @@ public class RatingNavigator : IRatingNavigator
     {
         _dialogService = dialogService;
     }
-    public void openAccountScreen()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void openNotificationScreen()
-    {
-        throw new System.NotImplementedException();
-    }
 }

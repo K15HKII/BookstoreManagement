@@ -6,7 +6,8 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d" 
-             d:DesignWidth="735">
+             d:DesignWidth="735"
+             Width="700">
     <materialDesign:DialogHost
         Identifier="edit">
        <Border CornerRadius="16"
@@ -49,7 +50,7 @@
                        <Button Style="{StaticResource myButtonForShowDialog}"
                                Width="auto"
                                Height="50"
-                               Content="Thong tin ca nhan"
+                               Content="Thông tin cá nhân"
                                Margin="0 0 0 10">
                        </Button>
        
@@ -58,7 +59,7 @@
                                <DockPanel LastChildFill="False">
                                    <TextBlock Style="{StaticResource Caption}"
                                               Foreground="{StaticResource SolidDarkGrayColor}"
-                                              Text="So dien thoai"
+                                              Text="Số điện thoại"
                                               VerticalAlignment="Center" />
                                    <TextBlock Style="{StaticResource Body}"
                                               Foreground="Black"
@@ -71,7 +72,7 @@
                                <DockPanel LastChildFill="False">
                                    <TextBlock Style="{StaticResource Caption}"
                                               Foreground="{StaticResource SolidDarkGrayColor}"
-                                              Text="Ngay sinh"
+                                              Text="Ngày sinh"
                                               VerticalAlignment="Center" />
                                    <TextBlock Style="{StaticResource Body}"
                                               Foreground="Black"
@@ -84,7 +85,7 @@
                                <DockPanel LastChildFill="False">
                                    <TextBlock Style="{StaticResource Caption}"
                                               Foreground="{StaticResource SolidDarkGrayColor}"
-                                              Text="Gioi tinh"
+                                              Text="Giới tính"
                                               VerticalAlignment="Center" />
                                    <TextBlock Style="{StaticResource Body}"
                                               Foreground="Black"
@@ -97,7 +98,7 @@
                                <DockPanel LastChildFill="False">
                                    <TextBlock Style="{StaticResource Caption}"
                                               Foreground="{StaticResource SolidDarkGrayColor}"
-                                              Text="Dia chi"
+                                              Text="Địa chỉ"
                                               VerticalAlignment="Center" />
                                    <TextBlock Style="{StaticResource Body}"
                                               Foreground="Black"
@@ -108,7 +109,7 @@
                        </StackPanel>
                    </StackPanel>
        
-                   <DockPanel LastChildFill="False"
+                   <!--<DockPanel LastChildFill="False"
                               Margin="0 0 0 16">
                        <TextBlock Style="{StaticResource Heading3}"
                                   Foreground="Black"
@@ -140,13 +141,13 @@
                                   Foreground="{StaticResource SolidPrimaryColor}"
                                   Text="{Binding Character}"
                                   DockPanel.Dock="Right" />
-                   </DockPanel>
+                   </DockPanel>-->
        
                    <DockPanel LastChildFill="False"
                               Margin="0 0 0 32">
                        <TextBlock Style="{StaticResource Heading3}"
                                   Foreground="Black"
-                                  Text="Ngay tham gia" />
+                                  Text="Ngày tham gia" />
                        <TextBlock Style="{StaticResource Title}"
                                   Foreground="{StaticResource SolidPrimaryColor}"
                                   Text="{Binding CreateAt}"
@@ -161,11 +162,11 @@
                                Command="{Binding CloseCommand}"
                                Width="97"
                                Margin="0 0 16 0"
-                               Content="Huy"></Button>
+                               Content="Huỷ"></Button>
                        <Button Style="{StaticResource PrimaryButton}"
                                Command="{Binding OpenEditCommand}"
                                Width="97"
-                               Content="Cap nhat"></Button>
+                               Content="Cập nhật"></Button>
                    </StackPanel>
                </StackPanel>
            </Border> 

@@ -37,7 +37,7 @@
                            DockPanel.Dock="Right"/>
             </DockPanel>
 
-            <DockPanel LastChildFill="False"
+            <!--<DockPanel LastChildFill="False"
                        Margin="0 0 0 12">
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="Black"
@@ -60,6 +60,7 @@
                            Text="d0"
                            DockPanel.Dock="Right" />
             </DockPanel>
+            -->
 
             <DockPanel LastChildFill="False"
                        Margin="0 0 0 16">
@@ -72,7 +73,7 @@
                            DockPanel.Dock="Right" />
             </DockPanel>
 
-            <DockPanel LastChildFill="False"
+            <!--<DockPanel LastChildFill="False"
                        Margin="0 0 0 12">
                 <TextBlock Style="{StaticResource Caption}"
                            Foreground="Black"
@@ -82,7 +83,7 @@
                            Foreground="{StaticResource SolidOrangeColor}"
                            Text="Chưa có"
                            DockPanel.Dock="Right" />
-            </DockPanel>
+            </DockPanel>-->
 
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"

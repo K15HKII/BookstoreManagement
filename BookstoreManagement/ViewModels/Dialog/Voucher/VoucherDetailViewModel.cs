@@ -28,7 +28,7 @@ public partial class VoucherDetailViewModel : BaseViewModel, IDialog
         this.Name = voucher.Discount + "% " + voucher.Name;
         this.Discount = voucher.Discount + "%";
         this.Description = voucher.Description;
-        this.ApplyType = "Áp dụng cho Sách thể loại ";
+        this.ApplyType = "Áp dụng cho sách thể loại ";
         for(int i = 0;i< voucher.RequireBookTags.Count;i++)
         {
             if(i==voucher.RequireBookTags.Count-1)

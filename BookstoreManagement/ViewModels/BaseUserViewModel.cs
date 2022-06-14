@@ -27,6 +27,11 @@ public abstract partial class BaseUserViewModel : BaseViewModel
         this.UserName = user.Username;
         this.Gender = user.Gender;
         this.Phone = user.Phone;
+        Dispose(_model.GetAddresses(user.Id), list =>
+        {
+            UserAddress add = list[0];
+            this.Address = add.Address + " , " + add.Ward + " , " + add.District + " , " + add.City;
+        });
         /*this.Address =*/
         this.BirthDay = user.BirthDay.Value;
         this.CreateAt = user.CreateAt.Value;

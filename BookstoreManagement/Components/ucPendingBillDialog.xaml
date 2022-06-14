@@ -24,7 +24,7 @@
                             Orientation="Horizontal">
                     <TextBlock Style="{StaticResource Caption}"
                                Foreground="{StaticResource SolidDarkGrayColor}"
-                               Text="Ngay tao don"
+                               Text="Ngày tạo đơn"
                                Margin="0 0 12 0"
                                VerticalAlignment="Center" />
                     <TextBlock Style="{StaticResource Body}"
@@ -56,7 +56,7 @@
                     <DockPanel LastChildFill="False">
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
-                                   Text="So dien thoai"
+                                   Text="Số điện thoại"
                                    VerticalAlignment="Center" />
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
@@ -87,7 +87,7 @@
                                                  Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Dia chi"
+                                   Text="Địa chỉ"
                                    Margin="4 0 0 0" />
                     </StackPanel>
 
@@ -128,7 +128,7 @@
                                                  Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Hinh thuc thanh toan"
+                                   Text="Hình thức thanh toán"
                                    Margin="4 0 0 0" />
                     </StackPanel>
 
@@ -147,7 +147,7 @@
                                              Foreground="{StaticResource SolidPrimaryColor}" />
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="Don hang"
+                               Text="Đơn hàng"
                                Margin="4 0 0 0" />
                 </StackPanel>
 
@@ -167,7 +167,7 @@
                                     <TextBlock Style="{StaticResource Body}"
                                                DockPanel.Dock="Right"
                                                Foreground="{StaticResource SolidOrangeColor}"
-                                               Text="Thanh tien: 120.000"
+                                               Text="Thành tiền: 120.000"
                                                VerticalAlignment="Center" />
                                 </DockPanel>
                             </Border>
@@ -229,7 +229,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Ghi chu"
+                           Text="Ghi chú"
                            Margin="0 0 0 4" />
                 <TextBlock Style="{StaticResource Body}"
                            Foreground="Black"
@@ -246,7 +246,7 @@
                                Margin="0 0 0 11">
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
-                                   Text="Tong tien hang" />
+                                   Text="Tổng tiền hàng" />
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
                                    Text="240.000d"
@@ -256,7 +256,7 @@
                                Margin="0 0 0 11">
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
-                                   Text="Phi van chuyen" />
+                                   Text="Phí vận chuyển" />
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
                                    Text="20.000d"
@@ -266,7 +266,7 @@
                                Margin="0 0 0 11">
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
-                                   Text="Giam gia" />
+                                   Text="Giảm giá" />
                         <TextBlock Style="{StaticResource Caption}"
                                    Foreground="Black"
                                    Text="-60.000d"
@@ -275,7 +275,7 @@
                     <DockPanel LastChildFill="False">
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Tong tien" />
+                                   Text="Tổng tiền" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
                                    Text="200.000d"
@@ -299,10 +299,10 @@
                         Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Width="97"
-                        Content="Cap nhat"></Button>
+                        Content="Cập nhật"></Button>
             </StackPanel>
 
         </StackPanel>

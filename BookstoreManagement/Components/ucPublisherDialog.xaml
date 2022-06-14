@@ -43,7 +43,7 @@
                         <Button Style="{StaticResource myButtonForShowDialog}"
                                 Width="auto"
                                 Height="50"
-                                Content="Thong tin ca nhan"
+                                Content="Thông tin cá nhân"
                                 Margin="0 0 0 10">
                         </Button>
         
@@ -52,7 +52,7 @@
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Style="{StaticResource Caption}"
                                                Foreground="{StaticResource SolidDarkGrayColor}"
-                                               Text="So dien thoai"
+                                               Text="Số điện thoại"
                                                VerticalAlignment="Center" />
                                     <TextBlock Style="{StaticResource Body}"
                                                Foreground="Black"
@@ -78,7 +78,7 @@
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Style="{StaticResource Caption}"
                                                Foreground="{StaticResource SolidDarkGrayColor}"
-                                               Text="Dia chi"
+                                               Text="Địa chỉ"
                                                VerticalAlignment="Center" />
                                     <TextBlock Style="{StaticResource Body}"
                                                Foreground="Black"
@@ -89,11 +89,11 @@
                         </StackPanel>
                     </StackPanel>
         
-                    <DockPanel LastChildFill="False"
+                    <!--<DockPanel LastChildFill="False"
                                Margin="0 0 0 29">
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Da cung cap" />
+                                   Text="Đã cung cấp" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="{StaticResource SolidOrangeColor}"
                                    Text="{Binding BookQuantity}"
@@ -104,18 +104,18 @@
                                Margin="0 0 0 24">
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="The loai" />
+                                   Text="Thể loại" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Text="{Binding BookType}"
                                    DockPanel.Dock="Right" />
-                    </DockPanel>
+                    </DockPanel>-->
         
                     <DockPanel LastChildFill="False"
                                Margin="0 0 0 32">
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Ngay tham gia" />
+                                   Text="Ngày tham gia" />
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
                                    Text="{Binding CoopDate}"
@@ -130,11 +130,11 @@
                                 Command="{Binding CloseCommand}"
                                 Width="97"
                                 Margin="0 0 16 0"
-                                Content="Huy"></Button>
+                                Content="Huỷ"></Button>
                         <Button Style="{StaticResource PrimaryButton}"
                                 Command="{Binding OpenEditCommand}"
                                 Width="97"
-                                Content="Cap nhat"></Button>
+                                Content="Cập nhật"></Button>
                     </StackPanel>
                 </StackPanel>
             </Border>

@@ -32,7 +32,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             this.current = voucher;
             this.Name = voucher.Discount + "% " + voucher.Name;
             this.Description = voucher.Description;
-            this.ApplyType = "Áp dụng cho Sách thể loại ";
+            this.ApplyType = "Áp dụng cho sách thể loại ";
             for(int i = 0;i< voucher.RequireBookTags.Count;i++)
             {
                 if(i==voucher.RequireBookTags.Count-1)
@@ -45,7 +45,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
                 }
             }
 
-            this.RequireMinValue = voucher.RequireMinValue;
+            this.RequireMinValue = "Cho đơn hàng từ " + voucher.RequireMinValue + "đ";
         }
 
         private VoucherProfile current;
@@ -54,7 +54,7 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
 
         [ObservableProperty] string? _description;
 
-        [ObservableProperty] int? _requireMinValue;
+        [ObservableProperty] string? _requireMinValue;
 
         [ObservableProperty] string? _applyType;
 

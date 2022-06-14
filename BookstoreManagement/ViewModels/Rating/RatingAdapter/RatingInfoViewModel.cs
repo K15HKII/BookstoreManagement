@@ -20,6 +20,12 @@ namespace BookstoreManagement.ViewModels.Rating.RatingAdapter
         {
             _model = model;
         }
+        
+        public void setRating(Feedback feedback)
+        {
+            /*this.Id = feedback.Id;
+            this.*/
+        }
 
         
         [ObservableProperty] object? _id;

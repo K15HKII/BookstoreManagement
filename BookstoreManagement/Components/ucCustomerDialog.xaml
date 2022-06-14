@@ -12,8 +12,8 @@
         
     </UserControl.Resources>
 
-    <materialDesign:DialogHost
-        Identifier="edit">
+    <!--<materialDesign:DialogHost
+        Identifier="edit">-->
         <Border CornerRadius="16"
             Background="White"
             Padding="42 32">
@@ -56,14 +56,14 @@
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="{StaticResource SolidOrangeColor}"
                                HorizontalAlignment="Right"
-                               Text="Khach quen" 
+                               Text="Khách quen" 
                                DockPanel.Dock="Top"/>
 
                     <StackPanel DockPanel.Dock="Bottom">
                         <Button Width="auto"
                                 Height="50"
                                 Style="{StaticResource myButtonForShowDialog}"
-                                Content="Lien ket mang xa hoi"
+                                Content="Liên kết mạng xã hội"
                                 Margin="0 0 0 10"
                                 HorizontalContentAlignment="Center">
                         </Button>
@@ -116,7 +116,7 @@
                     <Button Style="{StaticResource myButtonForShowDialog}"
                             Width="auto"
                             Height="50"
-                            Content="Thong tin ca nhan"
+                            Content="Thông tin cá nhân"
                             Margin="0 0 0 10">
                         </Button>
 
@@ -125,7 +125,7 @@
                             <DockPanel LastChildFill="False">
                                 <TextBlock Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}"
-                                           Text="So dien thoai"
+                                           Text="Số điện thoại"
                                            VerticalAlignment="Center" />
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
@@ -138,7 +138,7 @@
                             <DockPanel LastChildFill="False">
                                 <TextBlock Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}"
-                                           Text="Ngay sinh"
+                                           Text="Ngày sinh"
                                            VerticalAlignment="Center" />
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
@@ -151,7 +151,7 @@
                             <DockPanel LastChildFill="False">
                                 <TextBlock Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}"
-                                           Text="Gioi tinh"
+                                           Text="Giới tính"
                                            VerticalAlignment="Center" />
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
@@ -164,7 +164,7 @@
                             <DockPanel LastChildFill="False">
                                 <TextBlock Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}"
-                                           Text="Dia chi"
+                                           Text="Địa chỉ"
                                            VerticalAlignment="Center" />
                                 <TextBlock Style="{StaticResource Body}"
                                            Foreground="Black"
@@ -179,17 +179,17 @@
                     <Button Style="{StaticResource myButtonForShowDialog}"
                             Width="auto"
                             Height="50"
-                            Content="Doi mat khau"
+                            Content="Đổi mật khẩu"
                             Margin="0 0 0 10"></Button>
                     <Button Style="{StaticResource myButtonForShowDialog}"
                             Width="auto"
                             Height="50"
-                            Content="Xoa tai khoan"></Button>
+                            Content="Xoá tài khoản"></Button>
                 </StackPanel>
 
             </Grid>
 
-            <DockPanel LastChildFill="False"
+            <!--<DockPanel LastChildFill="False"
                        Margin="0 0 0 16">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
@@ -221,13 +221,13 @@
                            Foreground="{StaticResource SolidOrangeColor}"
                            Text="{Binding IncomeCustomer}"
                            DockPanel.Dock="Right" />
-            </DockPanel>
+            </DockPanel>-->
 
             <DockPanel LastChildFill="False"
                        Margin="0 0 0 32">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Ngay tham gia" />
+                           Text="Ngày tham gia" />
                 <TextBlock Style="{StaticResource Title}"
                            Foreground="{StaticResource SolidPrimaryColor}"
                            Text="{Binding CreateAt}"
@@ -242,16 +242,18 @@
                         Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Command="{Binding OpenEditCommand}"
                         Width="97"
-                        Content="Cap nhat"></Button>
+                        Content="Cập nhật"></Button>
             </StackPanel>
 
         </StackPanel>
 
     </Border>
+    <!--
     </materialDesign:DialogHost>
+    -->
 
 </UserControl>

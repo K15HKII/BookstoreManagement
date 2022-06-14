@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,20 +30,27 @@ namespace BookstoreManagement.ViewModels.Rating
 
         public void Initialize()
         {
-            /*Dispose(_model.GetFeedbacks(), feedbacks =>
+            /*Dispose(_model.GetFeedbacks().Select(feedbacks => feedbacks.Select(book =>
             {
-                Feedbacks.Clear();
-                feedbacks.ForEach(feedback =>
+                RatingInfoViewModel vm = _factory.Create<RatingInfoViewModel>();
+                
+                ++Quantity;
+                string a = Quantity.ToString();
+                return vm;
+            })), feedbacks =>
+            {
+                feedbacks.Clear();
+                foreach (var vm in feedbacks)
                 {
-                    RatingInfoViewModel vm = _factory.Create<RatingInfoViewModel>();
-                    vm.SetFeedback(feedback);
-                    Feedbacks.Add(vm);
-                });
+                    feedbacks.Add(vm);
+                }
             });*/
         }
 
         [ObservableProperty] public ObservableCollection<RatingInfoViewModel> _feedbacks = new();
 
-        [ObservableProperty] public object? _selectedRatingView;
+        [ObservableProperty] public object? _selectedRatingView = new();
+        
+        [ObservableProperty] private int _quantity = 0;
     }
 }
