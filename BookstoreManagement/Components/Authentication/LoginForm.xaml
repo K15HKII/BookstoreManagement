@@ -25,21 +25,27 @@
                                Margin="46 47 0 28">
                     </TextBlock>
                     <StackPanel>
-                        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Tag="Nhập email"
                                  materialDesign:HintAssist.Hint="Tên đăng nhập"
                                  Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Margin="0 0 0 20"
                                  Width="348"/>
                         <PasswordBox x:Name="PasswordBox"
                                      utils:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     materialDesign:HintAssist.Hint="Mật khẩu"
+                                     Tag="Nhập mật khẩu"
                                      Style="{StaticResource myPasswordBox}"
                                      Width="348"/>
                     </StackPanel>
-                    <TextBlock Style="{StaticResource Caption}"
-                               Text="Quên mật khẩu"
-                               HorizontalAlignment="Right"
-                               Margin="0 10 70 0"></TextBlock>
+                    <Button Margin="0 10 70 0"
+                            HorizontalAlignment="Right"
+                            Background="{x:Null}"
+                            Padding="0"
+                            Content="Quên mật khẩu"
+                            TextElement.FontSize="12"
+                            TextElement.FontWeight="Normal"
+                            Width="90">
+                    </Button>
                     <Button Style="{StaticResource PrimaryButton}"
                             Width="348"
                             Height="49"
@@ -75,30 +81,6 @@
                                        Height="24"
                                        Margin="0 0 12 0" />
                                 <TextBlock Text="Đăng nhập với Google"
-                                           Style="{StaticResource Body}"
-                                           Foreground="{StaticResource SolidDarkGrayColor}"
-                                           VerticalAlignment="Center"></TextBlock>
-                            </StackPanel>
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="4"
-                                                  Color="#000000"
-                                                  Opacity="0.20"
-                                                  Direction="-90">
-                                </DropShadowEffect>
-                            </Border.Effect>
-                        </Border>
-                        <Border CornerRadius="8"
-                                Background="White"
-                                Width="230"
-                                Height="40"
-                                Padding="12 8 8 8">
-                            <StackPanel Orientation="Horizontal"
-                                        VerticalAlignment="Center">
-                                <Image Source="/Images/Icons/facebook.png"
-                                       Width="24"
-                                       Height="24"
-                                       Margin="0 0 12 0" />
-                                <TextBlock Text="Đăng nhập với Facebook"
                                            Style="{StaticResource Body}"
                                            Foreground="{StaticResource SolidDarkGrayColor}"
                                            VerticalAlignment="Center"></TextBlock>
