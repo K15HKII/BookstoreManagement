@@ -20,7 +20,8 @@ public abstract partial class BaseUserViewModel : BaseViewModel
     public void SetUser(User user)
     {
         this.Id = user.Id;
-        this.Name = user.FullName;
+        this.FirstName = user.FirstName;
+        this.LastName = user.LastName;
         this.Email = user.Email;
         this.UserName = user.Username;
         this.Gender = user.Gender;
@@ -36,7 +37,11 @@ public abstract partial class BaseUserViewModel : BaseViewModel
 
     [ObservableProperty]
     [Required]
-    private string? _name;
+    private string? _firstName;
+
+    [ObservableProperty]
+    [Required]
+    private string? _lastName;
 
     [ObservableProperty]
     [Required]

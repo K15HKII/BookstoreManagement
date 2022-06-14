@@ -32,7 +32,8 @@ namespace BookstoreManagement.ViewModels.Dialog.Customer
 
             return new UserUpdateRequest()
             {
-                FirstName = Name,
+                FirstName = FirstName,
+                LastName = LastName,
                 Email = Email,
                 Username = UserName,
                 Phone = Phone,
