@@ -39,14 +39,6 @@
                              MinWidth="100"
                              VerticalContentAlignment="Center"
                              HorizontalAlignment="Center" />
-                    <TextBox Style="{StaticResource myInput}"
-                             Foreground="Black"
-                             Tag="Tên"
-                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             MinWidth="100"
-                             VerticalContentAlignment="Center"
-                             HorizontalAlignment="Center"
-                             Margin="12 0 0 0" />
                 </StackPanel>
             </StackPanel>
 
@@ -106,7 +98,9 @@
                                    VerticalAlignment="Center" />
 
                         <!--ngay tham gia-->
-                        <DatePicker Grid.Column="1" />
+                        <DatePicker
+                            SelectedDate="{Binding CoopDate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Grid.Column="1" />
                         
                         <!--<TextBox Style="{StaticResource myInput}"
                                  Text="{Binding CoopDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

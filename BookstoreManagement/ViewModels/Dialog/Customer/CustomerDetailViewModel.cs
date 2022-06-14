@@ -32,13 +32,6 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
             _factory = factory;
         }
 
-        [ObservableProperty] private string? _createAt;
-        [ObservableProperty] private string? _phone;
-        [ObservableProperty] private string? _birthDay;
-        [ObservableProperty] private string? _gender;
-        [ObservableProperty] private string? _address;
-        [ObservableProperty] private Image? _image;
-
         public event Action<object?>? CloseAction;
         [ICommand]
         public void Close()

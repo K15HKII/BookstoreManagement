@@ -37,14 +37,14 @@
                     <TextBox Style="{StaticResource myInput}"
                              Foreground="Black"
                              Tag="Tên"
-                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              MinWidth="100"
                              VerticalContentAlignment="Center"
                              HorizontalAlignment="Center" />
                     <TextBox Style="{StaticResource myInput}"
                              Foreground="Black"
                              Tag="Tên"
-                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              MinWidth="100"
                              VerticalContentAlignment="Center"
                              HorizontalAlignment="Center"
@@ -83,7 +83,8 @@
                         </Grid.ColumnDefinitions>
 
                         <!--ngay sinh-->
-                        <DatePicker />
+                        <DatePicker
+                            SelectedDate="{Binding BirthDay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Birth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngay sinh"
@@ -110,7 +111,9 @@
                         </Grid.ColumnDefinitions>
                         
                         <!--ngay tham gia-->
-                        <DatePicker Grid.Column="1"/>
+                        <DatePicker 
+                            SelectedDate="{Binding CreateAt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            Grid.Column="1"/>
                         
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
