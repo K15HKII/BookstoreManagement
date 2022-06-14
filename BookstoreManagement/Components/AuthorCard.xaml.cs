@@ -18,9 +18,9 @@ namespace BookstoreManagement.Components
     /// <summary>
     /// Interaction logic for PublisherCard.xaml
     /// </summary>
-    public partial class PublisherCard : UserControl
+    public partial class AuthorCard : UserControl
     {
-        public PublisherCard()
+        public AuthorCard()
         {
             InitializeComponent();
         }
