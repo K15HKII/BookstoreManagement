@@ -23,7 +23,7 @@ public class SupplierNavigator : ISupplierNavigator
         throw new System.NotImplementedException();
     }
 
-    public async Task< PublisherUpdateRequest?> OpenNewSupplierDialog(AddSupplierViewModel viewModel)
+    public async Task< PublisherUpdateRequest?> OpenNewSupplierDialog(UpdateSupplierViewModel viewModel)
     {
         object value = await _dialogService.Show(viewModel);
         if (value == null)

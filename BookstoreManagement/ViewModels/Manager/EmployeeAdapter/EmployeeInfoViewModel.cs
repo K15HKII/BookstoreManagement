@@ -53,12 +53,12 @@ namespace BookstoreManagement.ViewModels.Manager.EmployeeAdapter
         [ObservableProperty] object? _dayOffQuantity;
         
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
             //TODO: cast to edit request
             EmployeeDetailViewModel vm = _factory.Create<EmployeeDetailViewModel>();
-            vm.SetEmployee(this.user);
-            object? request = _navigator.OpenDetailEmployeeDialog(vm);
+            vm.SetUser(this.user);
+            object? request = await _navigator.OpenDetailEmployeeDialog(vm);
 
             if (request == null)
                 return;

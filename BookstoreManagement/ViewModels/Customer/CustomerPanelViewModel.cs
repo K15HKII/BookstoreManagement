@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.Customer.adapter;
+using BookstoreManagement.ViewModels.Dialog.Customer;
 
 namespace BookstoreManagement.ViewModels.Customer
 {
@@ -66,7 +67,7 @@ namespace BookstoreManagement.ViewModels.Customer
         [ICommand]
         public async void AddNew()
         {
-            UserUpdateRequest? request = await _navigator.openAddCustomerDialog(_factory.Create<AddCustomerViewModel>());
+            UserUpdateRequest? request = await _navigator.openUpdateCustomerDialog(_factory.Create<UpdateCustomerViewModel>());
             if (request == null)
                 return;
 

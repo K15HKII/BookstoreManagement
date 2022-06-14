@@ -32,11 +32,22 @@
                              Width="auto"
                              Text="{Binding CustomerId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                              Tag="Ma khach hang" />
-                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                             Width="auto"
-                             Text="{Binding CustomerName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             Tag="Ten khach hang"
-                             Grid.Column="2" />
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Column="2">
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Foreground="Black"
+                                 Tag="Ho"
+                                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalAlignment="Center" />
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Foreground="Black"
+                                 Tag="Tên"
+                                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Margin="12 0 0 0" />
+                    </StackPanel>
                 </Grid>
 
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"
@@ -101,15 +112,23 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                            <!--ngay muon-->
+                            <DatePicker />
+
+                            <!--ngay het han muon-->
+                            <DatePicker Grid.Column="2"/>
+
+                            <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Width="auto"
                                      Text="{Binding LendDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                     Tag="Ngay muon" />
-                            <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                     Tag="Ngay muon">
+                            </TextBox>-->
+
+                            <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                      Width="auto"
                                      Text="{Binding LendExpired, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      Tag="Ngay het han muon"
-                                     Grid.Column="2" />
+                                     Grid.Column="2" />-->
                         </Grid>
                     </StackPanel>
 

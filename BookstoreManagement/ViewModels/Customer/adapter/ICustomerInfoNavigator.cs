@@ -9,6 +9,6 @@ namespace BookstoreManagement.ViewModels.Customer.adapter
 {
     public interface ICustomerInfoNavigator : INavigator
     {
-        object? OpenDetailUserDialog(CustomerDetailViewModel viewModel); //TODO: return edit request
+        Task<object?> OpenDetailUserDialog(CustomerDetailViewModel viewModel); //TODO: return edit request
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace BookstoreManagement.ViewModels.DialogView.Manager;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
 
-public interface EmployeeDetailNavigator : INavigator
+namespace BookstoreManagement.ViewModels.DialogView.Manager;
+
+public interface IEmployeeDetailNavigator : INavigator
 {
-    object? OpenEditEmployee(EditEmployeeViewModel viewModel);
+    Task<UserUpdateRequest> OpenEditEmployee(UpdateEmployeeViewModel viewModel);
 }

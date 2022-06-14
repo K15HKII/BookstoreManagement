@@ -13,39 +13,23 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Manager
 {
-    public partial class EmployeeDetailViewModel : BaseViewModel, IDialog
+    public partial class EmployeeDetailViewModel : BaseUserViewModel, IDialog
     {
         private readonly IModelRemote _model;
         private readonly IViewModelFactory _factory;
-        private readonly IEmployeeInfoNavigator _navigator;
+        private readonly IEmployeeDetailNavigator _navigator;
 
-        public EmployeeDetailViewModel(IEmployeeInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public EmployeeDetailViewModel(IEmployeeDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
         {
             _navigator = navigator;
             _model = model;
             _factory = factory;
         }
         
-        public void SetEmployee(User employee)
-        {
-            this.Id = employee.Id;
-            this.Name = employee.FullName;
-            this.Gender = employee.Gender.ToString();
-            this.CreateDay = employee.CreateAt.Value.ToString("dd/MM/yyyy");
-        }
-
-        [ObservableProperty] object? _id;
         [ObservableProperty] object? _position;
-        [ObservableProperty] object? _name;
-        [ObservableProperty] object? _image;
-        [ObservableProperty] object? _phone;
-        [ObservableProperty] object? _birth;
-        [ObservableProperty] object? _gender;
-        [ObservableProperty] object? _address;
         [ObservableProperty] object? _dayOffs;
         [ObservableProperty] object? _dayOffMax;
         [ObservableProperty] object? _character;
-        [ObservableProperty] object? _createDay;
 
         public event Action<object?>? CloseAction;
         [ICommand]
@@ -55,14 +39,14 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
         }
         
         [ICommand]
-        public void OpenEdit()
+        public async void OpenEdit()
         {
-            //TODO: cast to edit request
-            /*object? request = _navigator.OpenEditEmployeeDialog(_factory.Create<EditEmployeeViewModel>());
+            UpdateEmployeeViewModel vm = _factory.Create<UpdateEmployeeViewModel>(); 
+            vm.SetUser(current);
+            object? request = await _navigator.OpenEditEmployee(vm);
 
             if (request == null)
                 return;
-                */
         }
     }
 }

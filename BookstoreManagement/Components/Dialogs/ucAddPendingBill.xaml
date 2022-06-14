@@ -32,11 +32,22 @@
                              Width="auto"
                              Text="abc"
                              Tag="Ma khach hang" />
-                    <TextBox Style="{StaticResource myInputWithPlaceHolder}"
-                             Width="auto"
-                             Text="abc"
-                             Tag="Ten khach hang" 
-                             Grid.Column="2"/>
+                    <StackPanel Orientation="Horizontal"
+                                Grid.Column="2">
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Foreground="Black"
+                                 Tag="Ho"
+                                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalAlignment="Center" />
+                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                                 Foreground="Black"
+                                 Tag="Tên"
+                                 Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalContentAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Margin="12 0 0 0" />
+                    </StackPanel>
                 </Grid>
                 
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"

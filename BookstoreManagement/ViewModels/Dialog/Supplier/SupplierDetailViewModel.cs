@@ -29,20 +29,23 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         
         public void SetPublisher(Publisher publisher)
         {
-            this.Id = publisher.Id;
+            current = publisher;
+            this.Id = "#" + publisher.Id;
             this.Name = publisher.Name;
             this.Description = publisher.Description;
+            this.CoopDate = publisher.CreatedAt;
         }
-        
-        [ObservableProperty] object? _id;
-        [ObservableProperty] object? _image;
+
+        private Publisher current;
+        [ObservableProperty] string? _id;
+        [ObservableProperty] Image? _image;
         [ObservableProperty] object? _name;
         [ObservableProperty] object? _phone;
         [ObservableProperty] object? _email;
         [ObservableProperty] object? _address;
         [ObservableProperty] object? _bookQuantity;
         [ObservableProperty] object? _bookType;
-        [ObservableProperty] object? _coopDate;
+        [ObservableProperty] DateTime? _coopDate;
         [ObservableProperty] object? _description;
         
         public event Action<object?>? CloseAction;
@@ -53,10 +56,11 @@ namespace BookstoreManagement.ViewModels.DialogView.Supplier
         }
         
         [ICommand]
-        public void OpenEdit()
+        public async void OpenEdit()
         {
-            /*//TODO: cast to edit request
-            object? request = _navigator.OpenEditSupplierDialog(_factory.Create<EditSupplierViewModel>());
+            UpdateSupplierViewModel vm = _factory.Create <UpdateSupplierViewModel>();
+            vm.SetPublisher(current);
+            object? request = await _navigator.OpenEditSupplierDialog(vm);
 
             if (request == null)
                 return;

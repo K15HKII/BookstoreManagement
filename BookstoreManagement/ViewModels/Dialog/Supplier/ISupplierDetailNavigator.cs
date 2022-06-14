@@ -1,6 +1,9 @@
-﻿namespace BookstoreManagement.ViewModels.DialogView.Supplier;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+
+namespace BookstoreManagement.ViewModels.DialogView.Supplier;
 
 public interface ISupplierDetailNavigator : INavigator
 {
-    object? OpenEditSupplierDialog(EditSupplierViewModel viewModel);
+    Task<PublisherUpdateRequest> OpenEditSupplierDialog(UpdateSupplierViewModel viewModel);
 }

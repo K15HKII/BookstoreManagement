@@ -33,13 +33,24 @@
                            Foreground="{StaticResource SolidDarkGrayColor}"
                            Text="{Binding Id}"
                            HorizontalAlignment="Center" />
-                <TextBox Style="{StaticResource myInput}"
-                         Foreground="Black"
-                         Tag="Tên"
-                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         Width="210"
-                         VerticalContentAlignment="Center"
-                         HorizontalAlignment="Center" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Style="{StaticResource myInput}"
+                             Foreground="Black"
+                             Tag="Tên"
+                             Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             MinWidth="100"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Center" />
+                    <TextBox Style="{StaticResource myInput}"
+                             Foreground="Black"
+                             Tag="Tên"
+                             Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             MinWidth="100"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Margin="12 0 0 0"/>
+                </StackPanel>
+                
             </StackPanel>
 
             <Grid>
@@ -56,9 +67,8 @@
                              Width="auto"
                              Margin="0 0 0 12" />
 
-                    <ComboBox Text="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                              ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
-                              SelectedValue="{Binding Path=Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    <ComboBox ItemsSource="{Binding Source={converters:GenderEnumConverter {x:Type model:Gender}}}"
+                              SelectedValue="{Binding Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                               DisplayMemberPath="Display"
                               SelectedValuePath="Value"
                               Width="auto"
@@ -72,10 +82,14 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                        <!--ngaysinh-->
+                        <DatePicker
+                            Text="{Binding BirthDay, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            />
+                        <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Birth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngày sinh"
-                                 Width="auto" />
+                                 Width="auto" />-->
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="So dien thoai"
@@ -111,10 +125,15 @@
                                    Text="Ngay tham gia"
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
-                        <TextBox Style="{StaticResource myInput}"
+
+                        <!--ngay thm gia-->
+                        <DatePicker Grid.Column="1"
+                                    Text="{Binding CreateAt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <!--<TextBox Style="{StaticResource myInput}"
                                  Text="{Binding CreateDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
-                                 Grid.Column="1" />
+                                 Grid.Column="1" />-->
                     </Grid>
                 </StackPanel>
 

@@ -53,12 +53,12 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
 
         public event Action<object?>? CloseAction;
         [ICommand]
-        public void OpenDetail()
+        public async void OpenDetail()
         {
             //TODO: factory tạo viewModel không được
             SupplierDetailViewModel vm = _factory.Create<SupplierDetailViewModel>();
             vm.SetPublisher(_publisher);
-            object? request = _navigator.OpenDetailSupplierDialog(vm);
+            object? request = await _navigator.OpenDetailSupplierDialog(vm);
 
             if (request == null)
                 return;

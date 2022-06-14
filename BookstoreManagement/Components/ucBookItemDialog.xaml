@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:BookstoreManagement.Components"
              mc:Ignorable="d" 
              d:DesignWidth="735">
-
     <Border CornerRadius="16"
             Background="White"
             Padding="42 20 42 32">
@@ -137,7 +136,9 @@
                         Width="97"
                         Margin="0 0 16 0"
                         Content="Huỷ"/>
+                <!--TODO: Thêm command edit thì lỗi refit-->
                 <Button Style="{StaticResource PrimaryButton}"
+                        
                         Width="97"
                         Content="Cập nhật"/>
             </StackPanel>

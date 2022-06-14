@@ -79,11 +79,15 @@
                                Text="Ngay bat dau"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
-                    <TextBox Grid.Column="1"
+
+                    <!--ngay bat dau-->
+                    <DatePicker Grid.Column="1"/>
+                    
+                    <!--<TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
                              Width="auto"
-                             VerticalContentAlignment="Center" />
+                             VerticalContentAlignment="Center" />-->
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -97,11 +101,15 @@
                                Text="Ngay ket thuc"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
-                    <TextBox Grid.Column="1"
+
+                    <!--ngay kthuc-->
+                    <DatePicker Grid.Column="1" />
+                    
+                    <!--<TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
                              Width="auto"
-                             VerticalContentAlignment="Center" />
+                             VerticalContentAlignment="Center" />-->
                 </Grid>
 
             </Grid>
