@@ -9,12 +9,11 @@
         <GridLength x:Key="InfoCustomerColumnWidth">*</GridLength>
         <GridLength x:Key="OrderedQuantityColumnWidth">64</GridLength>
     </UserControl.Resources>
-    <Border Background="White"
-            Width="352px">
+    <Border Background="White">
         <ItemsControl ItemsSource="{Binding}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type customer:CustomerDetailViewModel}">
-                    <Grid Width="352px"
+                    <Grid Width="auto"
                           Height="65px">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource InfoCustomerColumnWidth}" />

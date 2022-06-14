@@ -7,14 +7,16 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              x:Name="_this"
-             d:DesignWidth="132"
+             d:DesignWidth="200"
              d:DesignHeight="40">
-    <Grid MinWidth="132" MinHeight="40">
-        <Border CornerRadius="8" MinWidth="132" MinHeight="40" Background="#FFBCFEFE"/>
+    <Grid MinWidth="200" MinHeight="40">
+        <Border CornerRadius="8"
+                MinWidth="200" MinHeight="40" Background="#FFBCFEFE"/>
         <DockPanel Margin="12 8 12 8">
             <materialDesign:PackIcon Width="24" Height="24" Kind="{Binding ElementName=_this, Path=Icon}"/>
             <TextBlock Margin="8 3.5 0 3.5" 
                        TextWrapping="Wrap"
+                       Style="{StaticResource Button}"
                        Text="{Binding ElementName=_this, Path=Text}" FontSize="14"/>
         </DockPanel>
     </Grid>

@@ -8,7 +8,8 @@
              xmlns:dashboard="clr-namespace:BookstoreManagement.ViewModels.Dashboard"
              mc:Ignorable="d"
              x:Name="_this"
-             d:DesignHeight="690" d:DesignWidth="1120">
+             d:DesignHeight="664"
+             d:DesignWidth="1120">
     <UserControl.Resources>
         <Style TargetType="{x:Type TabItem}" x:Key="NavigationRailItem">
             <Setter Property="Template">
@@ -111,7 +112,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabControl}">
                         <DockPanel Background="{TemplateBinding Background}" KeyboardNavigation.TabNavigation="Local">
-                            <Grid Width="160" DockPanel.Dock="Left">
+                            <Grid Width="200" DockPanel.Dock="Left">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
                                     <RowDefinition Height="26" />
@@ -168,7 +169,8 @@
         HorizontalContentAlignment="Center"
         ItemsSource="{Binding TabContents}" 
         SelectedIndex="{Binding SelectedIndex}"
-        Style="{StaticResource NavigationRail}">
+        Style="{StaticResource NavigationRail}"
+        Padding="32 0 32 26">
         <TabControl.ItemTemplate>
             <DataTemplate>
                 <ContentControl

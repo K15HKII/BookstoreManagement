@@ -17,8 +17,7 @@
         <GridLength x:Key="PaticipationDateColumnWidth">1.5*</GridLength>
     </UserControl.Resources>
      
-    <Border Background="White"
-            Width="928px">
+    <Border Background="White">
         <ItemsControl Margin="12 0 20 0" x:Name="itemsControl"
                       ItemsSource="{Binding Customers}">
             <ItemsControl.Template>
@@ -74,7 +73,7 @@
                 <DataTemplate DataType="{x:Type customer:CustomerInfoViewModel}">
                     <Grid x:Name="PART_Body"
                           VerticalAlignment="Center"
-                          Height="65px" Width="928px">
+                          Height="65px" Width="auto">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource CheckboxColumnWidth}" />
                             <ColumnDefinition Width="{StaticResource OrdinalColumnWidth}" />

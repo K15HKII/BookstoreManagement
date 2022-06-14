@@ -5,13 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:component="clr-namespace:BookstoreManagement.Components"
-             mc:Ignorable="d"  
-             d:DesignWidth="928">
+             mc:Ignorable="d">
     
     <StackPanel>
         <Grid>
             <StackPanel>
-                <component:HeaderNoWithSearchBar Width="928"
+                <component:HeaderNoWithSearchBar
                                          Height="89"
                                          Tag="Tổng quan" />
                 <TextBlock Style="{StaticResource Caption}"
@@ -73,7 +72,7 @@
                     <!--cai nay mac dinh chi duy nhat 2 label nay nen hong set cung' luon-->
 
                     <Border Background="{StaticResource SolidPrimaryColor}"
-                            Width="173"
+                            Width="205"
                             Height="82"
                             CornerRadius="16">
                         <StackPanel VerticalAlignment="Center"
@@ -100,7 +99,7 @@
 
 
                     <Border Background="{StaticResource SolidPrimaryColor}"
-                            Width="173"
+                            Width="205"
                             Height="82"
                             CornerRadius="16"
                             Grid.Column="2">
