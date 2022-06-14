@@ -37,7 +37,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto" />
+                             Width="auto"
+                             VerticalContentAlignment="Center"/>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -54,7 +55,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto" />
+                             Width="auto"
+                             VerticalContentAlignment="Center"/>
                 </Grid>
 
             </Grid>
@@ -80,7 +82,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto" />
+                             Width="auto"
+                             VerticalContentAlignment="Center" />
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -97,7 +100,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto" />
+                             Width="auto"
+                             VerticalContentAlignment="Center" />
                 </Grid>
 
             </Grid>
@@ -114,7 +118,8 @@
                            VerticalAlignment="Center" />
                 <TextBox Style="{StaticResource myInput}"
                          Width="auto"
-                         Grid.Column="1" />
+                         Grid.Column="1"
+                         VerticalContentAlignment="Center"/>
             </Grid>
 
             <StackPanel Margin="0 0 0 24">
@@ -123,7 +128,8 @@
                            Text="Dieu kien(tien)"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}" />
+                         Width="{Binding ElementName=root, Path=ActualWidth}"
+                         VerticalContentAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">
@@ -132,7 +138,8 @@
                            Text="Dieu kien(khac)"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}" />
+                         Width="{Binding ElementName=root, Path=ActualWidth}"
+                         VerticalContentAlignment="Center"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"

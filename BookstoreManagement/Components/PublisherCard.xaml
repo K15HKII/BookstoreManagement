@@ -18,10 +18,10 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <CheckBox Style="{StaticResource myCheckBoxStyle}"
-                      Width="24"
-                      Height="24"
-                      HorizontalAlignment="Right"/>
+            <ToggleButton Style="{StaticResource myCheckBox}"
+                          Width="24"
+                          Height="24"
+                          HorizontalAlignment="Right"/>
 
             <StackPanel Background="Transparent"
                         Grid.Row="1"

@@ -33,6 +33,38 @@
         </Setter>
     </Style>
 
+    <Style x:Key="myCheckBox"
+           TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="abc"
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="icon"
+                                                 Kind="CheckBoxOutlineBlank"
+                                                 Foreground="{DynamicResource SolidPrimaryColor}"
+                                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="icon"
+                                    Property="Kind"
+                                    Value="Checkbox">
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <!--custom toggle button-->
     <Style x:Key="myRatingStyle"
            TargetType="{x:Type ToggleButton}">
@@ -358,7 +390,7 @@
                                 <VisualState x:Name="MouseOver" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <StackPanel Margin="24, 12, 24, 12">
+                        <StackPanel Margin="24, 10, 24, 12">
                             <TextBlock Text="{TemplateBinding Tag}"
                                        Padding="2 0 0 0"
                                        Margin="0 0 0 3"
@@ -441,7 +473,7 @@
                                 <VisualState x:Name="MouseOver" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <DockPanel Margin="24, 12, 24, 12"
+                        <DockPanel Margin="24, 10, 24, 12"
                                    LastChildFill="False">
                             <StackPanel>
                                 <TextBlock Text="{TemplateBinding Tag}"
@@ -536,7 +568,8 @@
 
                         <ScrollViewer Margin="24, 14, 24, 10"
                                       x:Name="PART_ContentHost"
-                                      HorizontalScrollBarVisibility="Disabled" />
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

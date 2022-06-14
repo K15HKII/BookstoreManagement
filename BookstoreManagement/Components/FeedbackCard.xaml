@@ -118,27 +118,9 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <ToggleButton IsChecked="True">
-                    <ToggleButton.Style>
-                        <Style TargetType="{x:Type ToggleButton}">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate>
-                                        <materialDesign:PackIcon x:Name="xx"
-                                                                 Kind="Like"
-                                                                 Foreground="{StaticResource SolidLightGrayColor}" />
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked"
-                                         Value="True">
-                                    <Setter Property="Foreground"
-                                            Value="Black" />
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </ToggleButton.Style>
+                <ToggleButton Style="{StaticResource myLikeButton}"
+                              Width="20"
+                              Height="20">
                 </ToggleButton>
 
                 <TextBlock Style="{StaticResource Caption}"

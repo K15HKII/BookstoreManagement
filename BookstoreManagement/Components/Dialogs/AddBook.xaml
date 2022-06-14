@@ -20,7 +20,8 @@
                            Foreground="Black"
                            Text="Ten san pham"
                            Margin="0 0 0 8" />
-                <TextBox Width="{Binding ElementName=root, Path=ActualWidth}"
+                <TextBox Style="{StaticResource myInput}"
+                    Width="{Binding ElementName=root, Path=ActualWidth}"
                          Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
             <Grid Margin="0 0 0 24">
@@ -42,7 +43,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto"/>
+                             Width="auto"
+                             VerticalContentAlignment="Center"/>
                 </Grid>
 
                 <Grid Grid.Column="2">
@@ -59,7 +61,8 @@
                     <TextBox Grid.Column="1"
                              Style="{StaticResource myInput}"
                              Text="abc"
-                             Width="auto" />
+                             Width="auto"
+                             VerticalContentAlignment="Center" />
                 </Grid>
 
             </Grid>
@@ -128,7 +131,8 @@
                            Text="Mo ta"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
-                          Width="{Binding ElementName=root, Path=ActualWidth}" />
+                          Width="{Binding ElementName=root, Path=ActualWidth}"
+                         VerticalContentAlignment="Top"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"

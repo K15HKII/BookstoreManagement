@@ -55,11 +55,11 @@
                                    Text="{Binding Date}"/>
                     </StackPanel>
 
-                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
-                              Width="24"
-                              Height="24"
-                              HorizontalAlignment="Right"
-                              Margin="0 34 0 0" />
+                    <ToggleButton Style="{StaticResource myCheckBox}"
+                                  Width="24"
+                                  Height="24"
+                                  HorizontalAlignment="Right"
+                                  Margin="0 34 0 0" />
                 </StackPanel>
             </Grid>
         </Grid>

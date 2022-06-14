@@ -38,6 +38,7 @@
                          Tag="Tên"
                          Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          Width="210"
+                         VerticalContentAlignment="Center"
                          HorizontalAlignment="Center" />
             </StackPanel>
 
