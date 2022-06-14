@@ -7,16 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.ViewModels.DialogView;
-using BookstoreManagement.ViewModels.Dialog.Lend;
 
 namespace BookstoreManagement.ViewModels.Lend
 {
     public interface ILendNavigator : INavigator
     {
-        void openAccountScreen();
 
-        void openNotificationScreen();
-        
         Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel);
     }
 }

@@ -13,15 +13,6 @@ public class LendNavigator : ILendNavigator
     {
         _dialogService = dialogService;
     }
-    public void openAccountScreen()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void openNotificationScreen()
-    {
-        throw new System.NotImplementedException();
-    }
 
     public async Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel)
     {

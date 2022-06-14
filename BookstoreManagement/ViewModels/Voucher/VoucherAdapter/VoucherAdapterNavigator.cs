@@ -1,11 +1,22 @@
-﻿using BookstoreManagement.ViewModels.DialogView.Voucher;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Services;
+using BookstoreManagement.ViewModels.DialogView.Voucher;
 
 namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter;
 
 public class VoucherAdapterNavigator : IVoucherAdapterNavigator
 {
-    public object? OpenDetailVoucherDialog(VoucherDetailViewModel viewModel)
+    private readonly IDialogService _dialogService;
+
+    public VoucherAdapterNavigator(IDialogService dialogService)
     {
-        throw new System.NotImplementedException();
+        _dialogService = dialogService;
+    }
+    public async Task<object?> OpenDetailVoucherDialog(VoucherDetailViewModel viewModel)
+    {
+        object? value = await _dialogService.Show(viewModel);
+        if (value == null)
+            return null;
+        return value;
     }
 }

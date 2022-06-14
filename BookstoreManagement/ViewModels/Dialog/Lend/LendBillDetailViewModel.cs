@@ -16,7 +16,7 @@ public partial class LendBillDetailViewModel : BaseLendBillViewModel, IDialog
     private readonly IViewModelFactory _factory;
     private readonly ILendBillDetailNavigator _navigator;
 
-    public LendBillDetailViewModel(ILendBillDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+    public LendBillDetailViewModel(ILendBillDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
     {
         _navigator = navigator;
         _model = model;
