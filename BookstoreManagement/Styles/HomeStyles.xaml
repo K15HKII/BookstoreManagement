@@ -10,7 +10,8 @@
                     xmlns:rating="clr-namespace:BookstoreManagement.ViewModels.Rating"
                     xmlns:voucher="clr-namespace:BookstoreManagement.ViewModels.Voucher"
                     xmlns:order="clr-namespace:BookstoreManagement.ViewModels.Order"
-                    xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.BookStore">
+                    xmlns:bookStore="clr-namespace:BookstoreManagement.ViewModels.BookStore"
+                    xmlns:panels="clr-namespace:BookstoreManagement.Components.Panels">
     
     <ResourceDictionary x:Key="TabHeaderDataTemplates">
         <DataTemplate DataType="{x:Type dashboard:DashBoardPanelViewModel}">
@@ -53,10 +54,10 @@
             <components:StatisticPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type bookStore:BookPanelViewModel}">
-            <components:BookStoragePanel/>
+            <components:BooksPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type order:OrderViewModel}">
-            <components:PendingBillPanel/>
+            <components:OrdersPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type voucher:VoucherPanelViewModel}">
             <components:VoucherPanel/>
@@ -65,7 +66,7 @@
             <components:FeedbackPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
-            <components:UserManagementPanel/>
+            <components:CustomerPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type manager:ManagerViewModel}">
             <components:EmployeeManagementPanel/>
@@ -74,7 +75,7 @@
             <components:PublisherManagementPanel/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type lend:LendViewModel}">
-            <components:LendingPanel/>
+            <panels:StorageLogPanel/>
         </DataTemplate>
     </ResourceDictionary>
     

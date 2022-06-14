@@ -3,11 +3,11 @@
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for UserManagementPanel.xaml
+    /// Interaction logic for BooksPanel.xaml
     /// </summary>
-    public partial class UserManagementPanel : UserControl
+    public partial class BooksPanel : UserControl
     {
-        public UserManagementPanel()
+        public BooksPanel()
         {
             InitializeComponent();
         }

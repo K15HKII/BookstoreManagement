@@ -3,13 +3,13 @@
 namespace BookstoreManagement.Components
 {
     /// <summary>
-    /// Interaction logic for PendingBillPanel.xaml
+    /// Interaction logic for OrdersPanel.xaml
     /// </summary>
-    public partial class PendingBillPanel : UserControl
+    public partial class OrdersPanel : UserControl
     {
         private Border[] tabMarks = new Border[3];
 
-        public PendingBillPanel()
+        public OrdersPanel()
         {
             InitializeComponent();
         }
