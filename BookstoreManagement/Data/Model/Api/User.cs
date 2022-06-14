@@ -48,5 +48,8 @@ namespace BookstoreManagement.Data.Model.Api
         public DateTime? CreateAt { get; set; }
 
         public String FullName => FirstName + " " + LastName;
+
+        [JsonProperty("avatar")]
+        public Image? Avatar { get; set; }
     }
 }

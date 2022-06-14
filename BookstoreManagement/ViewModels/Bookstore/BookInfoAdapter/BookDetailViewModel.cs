@@ -34,8 +34,12 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
             this.Id = book.Id;
             this.Title = book.Title;
             this.Price = (double)book.Price + "đ";
-            Publisher pub = _model.GetPublisher(book.PublisherId).Wait();
-            this.Publisher = pub.Name;
+            Dispose(_model.GetPublisher(book.PublisherId), publisher =>
+            {
+                if (publisher == null)
+                    return;
+                this.Publisher = publisher.Name;
+            });
             this.Description = book.Description;
             this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
         }

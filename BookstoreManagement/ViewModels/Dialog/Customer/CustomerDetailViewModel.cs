@@ -36,6 +36,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         [ObservableProperty] private string? _birthDay;
         [ObservableProperty] private string? _gender;
         [ObservableProperty] private string? _address;
+        [ObservableProperty] private Image? _image;
         
         public void SetUser(User user) 
         {
@@ -43,10 +44,10 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
             this.Email = user.Email;
             this.Phone = user.Phone;
             this.Gender = user.Gender.ToString();
+            this.Image = user.Avatar;
             /*this.Address = */
             /*this.BirthDay = user.BirthDay.Value.ToString("dd/MM/yyyy");*/
             this.CreateAt = user.CreateAt.Value.ToString("dd/MM/yyyy");
-            
         }
 
         public event Action<object?>? CloseAction;

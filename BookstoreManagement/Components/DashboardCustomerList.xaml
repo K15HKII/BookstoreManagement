@@ -26,7 +26,11 @@
                                     Height="47px"
                                     CornerRadius="25"
                                     Background="{StaticResource SolidLightGrayColor}"
-                                    Margin="0 0 6 0" />
+                                    Margin="0 0 6 0">
+                                <Border.BorderBrush>
+                                    <ImageBrush ImageSource="{Binding Image, Converter={StaticResource UriImageConverter}, IsAsync=True}"/>
+                                </Border.BorderBrush>
+                            </Border>
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
