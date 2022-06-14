@@ -33,6 +33,38 @@
         </Setter>
     </Style>
 
+    <Style x:Key="myCheckBox"
+           TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="abc"
+                          Height="{TemplateBinding Height}"
+                          Width="{TemplateBinding Width}">
+                        <materialDesign:PackIcon Name="icon"
+                                                 Kind="CheckBoxOutlineBlank"
+                                                 Foreground="{DynamicResource SolidPrimaryColor}"
+                                                 VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                                 Height="{Binding ElementName=abc, Path=ActualHeight}"
+                                                 Width="{Binding ElementName=abc, Path=ActualWidth}" />
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="icon"
+                                    Property="Kind"
+                                    Value="Checkbox">
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <!--custom toggle button-->
     <Style x:Key="myRatingStyle"
            TargetType="{x:Type ToggleButton}">
@@ -358,7 +390,7 @@
                                 <VisualState x:Name="MouseOver" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <StackPanel Margin="24, 12, 24, 12">
+                        <StackPanel Margin="24, 10, 24, 12">
                             <TextBlock Text="{TemplateBinding Tag}"
                                        Padding="2 0 0 0"
                                        Margin="0 0 0 3"
@@ -441,7 +473,7 @@
                                 <VisualState x:Name="MouseOver" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <DockPanel Margin="24, 12, 24, 12"
+                        <DockPanel Margin="24, 10, 24, 12"
                                    LastChildFill="False">
                             <StackPanel>
                                 <TextBlock Text="{TemplateBinding Tag}"
@@ -536,7 +568,8 @@
 
                         <ScrollViewer Margin="24, 14, 24, 10"
                                       x:Name="PART_ContentHost"
-                                      HorizontalScrollBarVisibility="Disabled" />
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -706,11 +739,16 @@
             </Border>
             <Border Grid.Column="0"
                     Margin="1"
-                    CornerRadius="25 0 0 25">
+                    CornerRadius="25 0 0 25" >
                 <Border.Background>
                     <SolidColorBrush Color="White" />
                 </Border.Background>
-                <TextBlock Text="{TemplateBinding Tag}" />
+                <Grid>
+                    <TextBlock Text="{TemplateBinding Tag}"
+                               Margin="24 8 0 0"
+                               Style="{DynamicResource SmallCaption}" />
+                    
+                </Grid>
             </Border>
             <materialDesign:PackIcon Grid.Column="1"
                                      Kind="ArrowDropDown"
@@ -801,7 +839,7 @@
                                           Content="{TemplateBinding SelectionBoxItem}"
                                           ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                          Margin="24 14 24 10"
+                                          Margin="24 20 24 10"
                                           VerticalAlignment="Stretch"
                                           HorizontalAlignment="Left">
                         </ContentPresenter>
@@ -829,7 +867,7 @@
                                 <Border x:Name="DropDownBorder"
                                         CornerRadius="16"
                                         BorderBrush="Black"
-                                        BorderThickness="2"
+                                        BorderThickness="0"
                                         Background="White">
                                 </Border>
                                 <ScrollViewer Margin="4,6,4,6"
@@ -864,7 +902,7 @@
                                  Value="true">
                             <Setter TargetName="DropDownBorder"
                                     Property="CornerRadius"
-                                    Value="4" />
+                                    Value="16" />
                             <Setter TargetName="DropDownBorder"
                                     Property="Margin"
                                     Value="0,2,0,0" />
@@ -897,7 +935,7 @@
                                                                       Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource OrangeColor}" />
+                                                                 Value="{StaticResource PinkColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -907,7 +945,7 @@
                                                                       Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource YellowColor}" />
+                                                                 Value="{DynamicResource LightGrayColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

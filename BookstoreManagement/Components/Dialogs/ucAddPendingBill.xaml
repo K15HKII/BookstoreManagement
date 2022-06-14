@@ -214,7 +214,8 @@
                            Text="Ghi chu"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
-                         Width="{Binding ElementName=root, Path=ActualWidth}" />
+                         Width="{Binding ElementName=root, Path=ActualWidth}"
+                         VerticalContentAlignment="Top"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"

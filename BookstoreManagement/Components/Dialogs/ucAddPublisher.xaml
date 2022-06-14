@@ -30,12 +30,11 @@
                            Foreground="{StaticResource SolidDarkGrayColor}"
                            Text="{Binding Id}"
                            VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
+                           Margin="0 0 0 16" />
                 <TextBox Style="{StaticResource myInput}"
                            Foreground="Black"
                            Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                           VerticalAlignment="Center"
-                           Margin="0 0 16 0" />
+                           VerticalAlignment="Center"/>
             </StackPanel>
 
             <Grid>
@@ -108,7 +107,8 @@
                         <TextBox Style="{StaticResource myInput}"
                                  Text="{Binding BookType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
-                                 Grid.Column="1" />
+                                 Grid.Column="1"
+                                 VerticalContentAlignment="Center"/>
                     </Grid>
                 </StackPanel>
 
