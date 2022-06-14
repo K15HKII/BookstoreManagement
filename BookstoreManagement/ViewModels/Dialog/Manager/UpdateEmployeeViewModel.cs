@@ -40,8 +40,8 @@ namespace BookstoreManagement.ViewModels.DialogView.Manager
                 Gender = (Gender)Gender,
                 Phone = Phone,
                 Email = Email,
-                Create_at = CreateDate,
-                Birthday = Birth,
+                Create_at = CreateAt,
+                Birthday = BirthDay,
                 Password = Password,
                 Username = UserName,
             };

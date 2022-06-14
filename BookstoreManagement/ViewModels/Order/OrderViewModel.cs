@@ -37,6 +37,7 @@ namespace BookstoreManagement.ViewModels.Order
                 UpdateBills(bills.Select(bill =>
                 {
                     OrderInfoViewModel vm = _factory.Create<OrderInfoViewModel>();
+                    vm.DialogCRUDEvent += Initialize;
                     Quantity++;
                     vm.SetOrder(bill);
                     return vm;

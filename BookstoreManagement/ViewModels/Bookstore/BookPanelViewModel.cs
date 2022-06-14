@@ -36,6 +36,7 @@ namespace BookstoreManagement.ViewModels.BookStore
             Dispose(_model.GetBooks().Select(books => books.Select(book =>
             {
                 BookDetailViewModel vm = _factory.Create<BookDetailViewModel>();
+                vm.DialogCRUDEvent += () => Initialize();
                 ++Quantity;
                 string a = Quantity.ToString();
                 vm.SetBook(book);
@@ -60,7 +61,8 @@ namespace BookstoreManagement.ViewModels.BookStore
         [ICommand]
         public async void AddNew()
         {
-            BookUpdateRequest? request = await _navigator.OpenUpdateBookDialog(_factory.Create<UpdateBookViewModel>());
+            UpdateBookViewModel vm = _factory.Create<UpdateBookViewModel>();
+            BookUpdateRequest? request = await _navigator.OpenUpdateBookDialog(vm);
             if (request == null)
                 return;
 
@@ -68,7 +70,6 @@ namespace BookstoreManagement.ViewModels.BookStore
             {
                 Console.WriteLine("Book created successfully");
                 Initialize();
-                //TODO: Notify
             });
         }
 

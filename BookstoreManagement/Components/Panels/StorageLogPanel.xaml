@@ -151,9 +151,9 @@
                                         <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
                                         <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
                                         <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
-                                        <ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />
+                                        <!--<ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />
                                         <ColumnDefinition Width="{StaticResource StatusColumnWidth}" />
-                                        <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />-->
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0"
                                                Text="Tên"

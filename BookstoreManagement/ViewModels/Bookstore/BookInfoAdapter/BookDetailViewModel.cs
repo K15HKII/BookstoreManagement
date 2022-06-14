@@ -14,26 +14,26 @@ using BookstoreManagement.Data.Model.Api;
 
 namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
 {
-    public partial class BookDetailViewModel : BaseBookViewModel
+    public partial class BookDetailViewModel : BaseBookViewModel, ICRUD
     {
-
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
         private readonly IBookInfoNavigator _navigator;
 
-        public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider, IViewModelFactory factory, IModelRemote model) : base(scheluderProvider,model)
+        public BookDetailViewModel(IBookInfoNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,
+            IViewModelFactory factory, IModelRemote model) : base(scheluderProvider, model)
         {
             _navigator = navigator;
             _factory = factory;
             _model = model;
         }
-        
+
         public void SetBook(Book book)
         {
             this._book = book;
             this.Id = book.Id;
             this.Title = book.Title;
-            this.Price = (double)book.Price + "đ";
+            this.Price = (double) book.Price + "đ";
             Dispose(_model.GetPublisher(book.PublisherId), publisher =>
             {
                 if (publisher == null)
@@ -57,7 +57,7 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         [ObservableProperty] object? _price;
 
         [ObservableProperty] object? _publisherId;
-        
+
         [ObservableProperty] string? _publisher;
 
         [ObservableProperty] BookTag? _tag;
@@ -68,15 +68,11 @@ namespace BookstoreManagement.ViewModels.BookStore.BookInfoAdapter
         public async void OpenInfo()
         {
             BookDialogViewModel vm = _factory.Create<BookDialogViewModel>();
-            vm.SetBook(this._book,this.Id);
-            //TODO: cast to edit request
-            object? request = await _navigator.OpenInfoBookDialog(vm);
-
-            if (request == null)
-                return;
-
-            //TODO: send request to server
+            vm.DialogCRUDEvent += DialogCRUDEvent;
+            vm.SetBook(this._book, this.Id);
+            await _navigator.OpenInfoBookDialog(vm);
         }
-        
+
+        public event DialogCRUDEventHandler? DialogCRUDEvent;
     }
 }

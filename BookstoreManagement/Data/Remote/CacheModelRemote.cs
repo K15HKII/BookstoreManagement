@@ -213,6 +213,11 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
+        public IObservable<object> UpdateBill(int billId, BillUpdateRequest request)
+        {
+            throw new NotImplementedException();
+        }
+
         public IObservable<object> DeleteBill(int id)
         {
             throw new NotImplementedException();

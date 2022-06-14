@@ -28,17 +28,18 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         [ObservableProperty] object? _phone;
         [ObservableProperty] object? _address;
         [ObservableProperty] object? _description;
+        [ObservableProperty] private BillStatus _status;
         
         public BillUpdateRequest? ToRequest()
         {
-            ValidateAllProperties();
+            ValidateProperties();
 
             if (HasErrors)
                 return null;
 
             return new BillUpdateRequest()
             {
-                
+                BillStatus = Status
             };
         }
         

@@ -1,15 +1,9 @@
-﻿using BookstoreManagement.Data.Model.Api;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookstoreManagement.Data;
 
 namespace BookstoreManagement.ViewModels;
 
@@ -18,7 +12,7 @@ public abstract partial class BaseLendBillViewModel : BaseViewModel
 
     private readonly IModelRemote _model;
 
-    public BaseLendBillViewModel([NotNull] ScheluderProvider scheluderProvider, Data.Remote.IModelRemote model) : base(scheluderProvider)
+    public BaseLendBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
     {
         this._model = model;
     }

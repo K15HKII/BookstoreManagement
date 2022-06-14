@@ -13,7 +13,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.BookStore
 {
-    public partial class BookDialogViewModel : BaseBookViewModel, IDialog
+    public partial class BookDialogViewModel : BaseBookViewModel, IDialog, ICRUD
     {
         
         private readonly IModelRemote _model;
@@ -48,10 +48,12 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             if (request == null)
                 return;
 
-            Dispose(_model.CreateBook(request!), book =>
+            Dispose(_model.UpdateBook(book.Id, request!), book =>
             {
-                Console.WriteLine("Book updated successfully");
+                DialogCRUDEvent?.Invoke();
             });
         }
+
+        public event DialogCRUDEventHandler? DialogCRUDEvent;
     }
 }

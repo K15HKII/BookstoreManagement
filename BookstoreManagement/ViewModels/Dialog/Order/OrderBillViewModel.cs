@@ -8,19 +8,25 @@ using System.Threading.Tasks;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
+using BookstoreManagement.Services;
+using BookstoreManagement.Services.Common;
 using BookstoreManagement.Utils;
 using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Order
 {
-    public partial class OrderBillViewModel : BaseViewModel, IDialog
+    public partial class OrderBillViewModel : BaseViewModel, IDialog, ICRUD
     {
         //TODO: thiếu function chấp nhận đơn hàng
         private readonly IModelRemote _model;
+        private readonly IDialogService _dialogService;
+        private readonly IViewModelFactory _factory;
 
-        public OrderBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public OrderBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model, IDialogService dialogService, IViewModelFactory factory) : base(scheluderProvider)
         {
             _model = model;
+            this._dialogService = dialogService;
+            _factory = factory;
         }
         
         public void setOrder(Bill bill)
@@ -41,7 +47,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
             this.Billstatus = bill.BillStatus;
         }
 
-        [ObservableProperty] private string? _id;
+        [ObservableProperty] private int _id;
         [ObservableProperty] private DateTime? _createAt;
         [ObservableProperty] string? _customerName;
         [ObservableProperty] string? _customerPhone;
@@ -68,6 +74,22 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         {
             CloseAction?.Invoke(null);
         }
-        
+
+        [ICommand]
+        public async void Update()
+        {
+            var vm = _factory.Create<UpdateOrderViewModel>();
+            //TODO:
+            BillUpdateRequest? request = (BillUpdateRequest?) await _dialogService.Show(vm);
+            if (request != null)
+            {
+                Dispose(_model.UpdateBill(Id, request), res =>
+                {
+                    DialogCRUDEvent?.Invoke();
+                });
+            }
+        }
+
+        public event DialogCRUDEventHandler? DialogCRUDEvent;
     }
 }

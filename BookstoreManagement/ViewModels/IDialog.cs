@@ -12,4 +12,12 @@ namespace BookstoreManagement.ViewModels
         public event Action<object?> CloseAction;
 
     }
+    
+    public delegate void DialogCRUDEventHandler();
+
+    public interface ICRUD
+    {
+        public event DialogCRUDEventHandler DialogCRUDEvent;
+    }
+    
 }

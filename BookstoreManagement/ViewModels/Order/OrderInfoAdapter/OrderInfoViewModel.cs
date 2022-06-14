@@ -12,7 +12,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
 {
-    public partial class OrderInfoViewModel : BaseViewModel
+    public partial class OrderInfoViewModel : BaseViewModel, ICRUD
     {
         private readonly IViewModelFactory _factory;
         private readonly IModelRemote _model;
@@ -59,13 +59,11 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         public async void OpenInfo()
         {
             OrderBillViewModel vm = _factory.Create<OrderBillViewModel>();
+            vm.DialogCRUDEvent += DialogCRUDEvent;
             vm.setOrder(current);
-            object? request = _navigator.OpenDetailOrdedrDialog(vm);
-
-            if (request == null)
-                return;
-
-            //TODO: send request to server
+            await _navigator.OpenDetailOrdedrDialog(vm);
         }
+
+        public event DialogCRUDEventHandler? DialogCRUDEvent;
     }
 }
