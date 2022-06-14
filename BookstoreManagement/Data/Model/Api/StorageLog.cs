@@ -9,6 +9,9 @@ public class StorageLog
     [JsonProperty("id")]
     public string Id { get; set; }
     
+    [JsonProperty("actor_id")]
+    public string ActorId { get; set; }
+    
     [JsonProperty("description")]
     public string? Description { get; set; }
     

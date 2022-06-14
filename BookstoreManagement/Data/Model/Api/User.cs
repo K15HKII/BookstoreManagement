@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace BookstoreManagement.Data.Model.Api
@@ -20,23 +21,26 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("username")]
         public string Username { get; set; }
         
-        [JsonProperty("age")]
-        public int? Age { get; set; }
-
         [JsonProperty("phone")]
         public string? Phone { get; set; }
         
         [JsonProperty("gender")]
         public Gender Gender { get; set; } 
         
+        [JsonProperty("avatar_id")]
+        public string? AvatarId { get; set; }
+        
         [JsonProperty("birthday")]
         public DateTime? BirthDay { get; set; }
+        
+        [JsonProperty("avatar")]
+        public Image Avatar { get; set; }
 
         [JsonProperty("password")]
         public string Password { get; set; }
-        
+
         [JsonProperty("salt")]
-        public string Salt { get; set; }
+        public string? Salt { get; set; }
 
         [JsonProperty("role")]
         public Role? Role { get; set; }
@@ -46,6 +50,12 @@ namespace BookstoreManagement.Data.Model.Api
         
         [JsonProperty("created_at")]
         public DateTime? CreateAt { get; set; }
+        
+        [JsonProperty("addresses")]
+        public List<UserAddress> Addresses { get; set; }
+        
+        [JsonProperty("banks")]
+        public List<UserBank> Banks { get; set; }
 
         public String FullName => FirstName + " " + LastName;
     }

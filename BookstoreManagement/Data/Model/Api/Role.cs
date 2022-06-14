@@ -8,8 +8,7 @@ namespace BookstoreManagement.Data.Model.Api
 {
     public enum Role
     {
-
-        admin, user
+        ADMIN, EMPLOYEE, USER
 
     }
 }
