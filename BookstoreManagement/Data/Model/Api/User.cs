@@ -32,9 +32,6 @@ namespace BookstoreManagement.Data.Model.Api
         
         [JsonProperty("birthday")]
         public DateTime? BirthDay { get; set; }
-        
-        [JsonProperty("avatar")]
-        public Image Avatar { get; set; }
 
         [JsonProperty("password")]
         public string Password { get; set; }

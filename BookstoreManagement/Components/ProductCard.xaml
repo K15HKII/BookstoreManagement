@@ -71,11 +71,12 @@
                                        VerticalAlignment="Center"></TextBlock>
                         </StackPanel>
                     </Border>
-                    <CheckBox Style="{StaticResource myCheckBoxStyle}"
-                              Width="24"
-                              Height="24"
-                              HorizontalAlignment="Right"
-                              Margin="0 51 0 0" />
+                    <ToggleButton 
+                                    Width="24"
+                                    Height="24"
+                                    Click="ButtonBase_OnClick"
+                                    HorizontalAlignment="Right"
+                                    Margin="0 51 0 0" />
 
                 </StackPanel>
 

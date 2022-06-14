@@ -31,7 +31,7 @@ namespace BookstoreManagement.Data.Model.Api
         public float Price { get; set; }
         
         [JsonProperty("publisher_id")]
-        public int? PublisherId { get; set; }
+        public int PublisherId { get; set; }
 
         [JsonProperty("tag")]
         public BookTag? Tag { get; set; }
