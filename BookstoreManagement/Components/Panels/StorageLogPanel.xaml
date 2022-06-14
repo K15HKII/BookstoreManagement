@@ -8,141 +8,188 @@
              xmlns:components="clr-namespace:BookstoreManagement.Components"
              xmlns:orderInfoAdapter="clr-namespace:BookstoreManagement.ViewModels.Order.OrderInfoAdapter"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="664" d:DesignWidth="928">
+
+    <UserControl.Resources>
+        <GridLength x:Key="InfoBookColumnWidth">2*</GridLength>
+        <GridLength x:Key="CategoryColumnWidth">1.5*</GridLength>
+        <GridLength x:Key="PriceColumnWidth">1.1*</GridLength>
+        <!--<GridLength x:Key="PublisherColumnWidth">1.8*</GridLength>-->
+        <GridLength x:Key="QuantityColumnWidth">1.1*</GridLength>
+        <!--<GridLength x:Key="SoldColumnWidth">1.1*</GridLength>-->
+    </UserControl.Resources>
+
     <Grid>
         <StackPanel>
             <components:HeaderNoWithSearchBar Tag="Nhật xuất hàng"
                                            Height="89" />
 
             <Grid Margin="0 12 0 0">
-                <TabControl Style="{StaticResource NavigationRail}">
-                    <TabItem Style="{StaticResource NavigationRailItem}"
-                                 Padding="12 8"
-                                 Header="Nhập hàng">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          Margin="0"
-                                          DockPanel.Dock="Top"
-                                          Height="{Binding ElementName=p, Path=ActualHeight}">
-                            <ListView x:Name="itemsControl"
-                                          ItemsSource="{Binding WaitingBills}"
-                                          Width="{Binding ElementName=p, Path=ActualWidth}"
-                                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="Padding"
-                                                    Value="0 0 0 0" />
-                                        <Setter Property="Margin"
-                                                    Value="11 0 12 32" />
-                                        <Setter Property="BorderThickness"
-                                                    Value="0" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
-                                        <Grid>
-                                            <components:PendingBillCard Width="449" />
-                                            <Button Width="auto"
-                                                        Height="auto"
-                                                        Command="{Binding OpenInfoCommand}">
-                                            </Button>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                                <ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel Margin="-11 0 -12 0"
-                                                       IsItemsHost="True"
-                                                       Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                            </ListView>
-                        </ScrollViewer>
-                    </TabItem>
-                    <TabItem Header="Xuất hàng"
-                                 Style="{StaticResource NavigationRailItem}"
-                                 Padding="12 8">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          Margin="0"
-                                          DockPanel.Dock="Top"
-                                          Height="{Binding ElementName=p, Path=ActualHeight}">
-                            <ListView
-                                    ItemsSource="{Binding ShippingBills}"
-                                    Width="{Binding ElementName=p, Path=ActualWidth}"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="Padding"
-                                                    Value="0 0 0 0" />
-                                        <Setter Property="Margin"
-                                                    Value="11 0 12 32" />
-                                        <Setter Property="BorderThickness"
-                                                    Value="0" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
-                                        <Grid>
-                                            <components:PendingBillCard Width="449" />
-                                            <Button Height="auto"
-                                                        Width="auto"
-                                                        Command="{Binding OpenInfoCommand}">
-                                            </Button>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                                <ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel Margin="-11 0 -12 0"
-                                                       IsItemsHost="True"
-                                                       Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                            </ListView>
-                        </ScrollViewer>
-                    </TabItem>
-                    <TabItem Header="Giao hàng"
-                                 Style="{StaticResource NavigationRailItem}"
-                                 Padding="12 8">
-                        <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                          Margin="0"
-                                          DockPanel.Dock="Top"
-                                          Height="{Binding ElementName=p, Path=ActualHeight}">
-                            <ListView
-                                    ItemsSource="{Binding RatingBills}"
-                                    Width="{Binding ElementName=p, Path=ActualWidth}"
-                                    ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                                <ListView.ItemContainerStyle>
-                                    <Style TargetType="ListViewItem">
-                                        <Setter Property="Padding"
-                                                    Value="0 0 0 0" />
-                                        <Setter Property="Margin"
-                                                    Value="11 0 12 32" />
-                                        <Setter Property="BorderThickness"
-                                                    Value="0" />
-                                    </Style>
-                                </ListView.ItemContainerStyle>
-                                <ListView.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type orderInfoAdapter:OrderInfoViewModel}">
-                                        <Grid>
-                                            <components:PendingBillCard Width="449" />
-                                            <Button Height="auto"
-                                                        Width="auto"
-                                                        Command="{Binding OpenInfoCommand}">
-                                            </Button>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                                <ListView.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel Margin="-11 0 -12 0"
-                                                       IsItemsHost="True"
-                                                       Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ListView.ItemsPanel>
-                            </ListView>
-                        </ScrollViewer>
-                    </TabItem>
-                </TabControl>
+                <ItemsControl Margin="12 0 20 0"
+                              ItemsSource="{Binding}">
+                    <ItemsControl.Template>
+                        <ControlTemplate TargetType="ItemsControl">
+                            <StackPanel>
+                                <Grid x:Name="PART_Header">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
+                                        <!--<ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />-->
+                                        <ColumnDefinition Width="{StaticResource QuantityColumnWidth}" />
+                                        <!--<ColumnDefinition Width="{StaticResource SoldColumnWidth}" />-->
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0"
+                                               Text="Tên"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="1"
+                                               Text="Loại"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="2"
+                                               Text="Giá"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <!--<TextBlock Grid.Column="3"
+                                                   Text="Nhà cung cấp"
+                                                   Style="{StaticResource Caption}"
+                                                   Foreground="{StaticResource SolidDarkGrayColor}" />-->
+                                    <TextBlock Grid.Column="4"
+                                               Text="Số lượng"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <!--<TextBlock Grid.Column="5"
+                                                   Text="Đã bán"
+                                                   Style="{StaticResource Caption}"
+                                                   Foreground="{StaticResource SolidDarkGrayColor}" />-->
+                                </Grid>
+                                <ScrollViewer>
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="PART_Body">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
+                                    <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
+                                    <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
+                                    <!--<ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />-->
+                                    <ColumnDefinition Width="{StaticResource QuantityColumnWidth}" />
+                                    <!--<ColumnDefinition Width="{StaticResource SoldColumnWidth}" />-->
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Name="infoOfCustomer"
+                                            Grid.Column="0"
+                                            Orientation="Horizontal">
+                                    <Border Width="56px"
+                                            Height="56px"
+                                            CornerRadius="4"
+                                            Background="Transparent"
+                                            Margin="0 0 8 0">
+                                        <Image Source="{Binding Image}"
+                                               x:Name="bookImage" />
+                                    </Border>
+                                    <StackPanel Orientation="Vertical"
+                                                VerticalAlignment="Center">
+                                        <TextBlock HorizontalAlignment="Left"
+                                                   Text="{Binding Title}"
+                                                   Style="{StaticResource Title}" />
+                                        <TextBlock HorizontalAlignment="Left"
+                                                   Text="{Binding Id}"
+                                                   Style="{StaticResource Caption}"
+                                                   Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    </StackPanel>
+                                </StackPanel>
+                                <TextBlock Grid.Column="1"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Tag}"
+                                           Style="{StaticResource Title}" />
+
+                                <TextBlock Grid.Column="2"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Price}"
+                                           Style="{StaticResource Title}"
+                                           Foreground="{StaticResource SolidOrangeColor}" />
+
+                                <!--<TextBlock Grid.Column="3"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               Text="{Binding Publisher}"
+                                               Style="{StaticResource Title}" />-->
+
+                                <TextBlock Grid.Column="4"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           Text="{Binding Quantity}"
+                                           Style="{StaticResource Title}" />
+
+                                <!--<TextBlock Grid.Column="5"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               Text="{Binding SoldQuantity}"
+                                               Style="{StaticResource Title}" />-->
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+            <Grid Margin="0 24 0 0" VerticalAlignment="Bottom">
+                <ItemsControl Margin="12 0 20 0"
+                              ItemsSource="{Binding}">
+                    <ItemsControl.Template>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <Grid x:Name="PART_Header">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource StatusColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0"
+                                               Text="Tên"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="1"
+                                               Text="Loại"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="2"
+                                               Text="Giá"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="3"
+                                               Text="Nhà cung cấp"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="4"
+                                               Text="Trạng thái"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="5"
+                                               Text="Đã bán"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                </Grid>
+                                <ScrollViewer>
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate />
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
         </StackPanel>
 
