@@ -96,7 +96,8 @@
                         <ComboBox Width="auto"
                                  Text="abc"
                                  Tag="Phan loai"
-                                 Margin="0 0 0 8" />
+                                 Margin="0 0 0 8"
+                                  Padding="24 20 24 10"/>
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
                                  Text="abc"

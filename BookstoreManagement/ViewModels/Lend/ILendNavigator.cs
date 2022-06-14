@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.ViewModels.DialogView;
+using BookstoreManagement.ViewModels.Dialog.Lend;
 
 namespace BookstoreManagement.ViewModels.Lend
 {
@@ -16,6 +17,6 @@ namespace BookstoreManagement.ViewModels.Lend
 
         void openNotificationScreen();
         
-        Task<LendUpdateRequest?> OpenNewLendBillDialog(AddLendBillViewModel viewModel);
+        Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel);
     }
 }
