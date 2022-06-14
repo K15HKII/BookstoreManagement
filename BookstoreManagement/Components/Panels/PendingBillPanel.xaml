@@ -9,7 +9,7 @@
              xmlns:order="clr-namespace:BookstoreManagement.ViewModels.Order"
              xmlns:orderInfoAdapter="clr-namespace:BookstoreManagement.ViewModels.Order.OrderInfoAdapter"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="664" d:DesignWidth="928">
 
     <UserControl.Resources>
         <Style TargetType="{x:Type TabItem}"
@@ -201,13 +201,15 @@
                                           IsSelected="True">
                             </ComboBoxItem>
                         </ComboBox>
-                        <Button Padding="0"
-                                Width="24"
-                                Height="24"
-                                VerticalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Filter"
-                                                     VerticalAlignment="Center" />
-                        </Button>
+                       <Button Padding="0"
+                            Margin="0,2"
+                            Width="24"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Filter"
+                                                 VerticalAlignment="Center" />
+                    </Button>
                     </StackPanel>
                 </DockPanel>
 
@@ -221,9 +223,7 @@
                                           DockPanel.Dock="Top"
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            ItemsSource="{Binding WaitingBills}"
-                                                            HorizontalAlignment="Left">
+                                                            ItemsSource="{Binding WaitingBills}">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView x:Name="itemsControl"
                                                   
@@ -269,9 +269,7 @@
                                           DockPanel.Dock="Top"
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            ItemsSource="{Binding ShippingBills}"
-                                                            HorizontalAlignment="Left">
+                                                            ItemsSource="{Binding ShippingBills}">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
                                             
@@ -317,9 +315,7 @@
                                           DockPanel.Dock="Top"
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            ItemsSource="{Binding RatingBills}"
-                                                            HorizontalAlignment="Left">
+                                                            ItemsSource="{Binding RatingBills}">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
                                             
@@ -365,9 +361,7 @@
                                           DockPanel.Dock="Top"
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            ItemsSource="{Binding FinishBills}"
-                                                            HorizontalAlignment="Left">
+                                                            ItemsSource="{Binding FinishBills}">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
                                             
@@ -414,9 +408,7 @@
                                           DockPanel.Dock="Top"
                                           Height="{Binding ElementName=p, Path=ActualHeight}">
                                 <component:PageItemsControl Margin="0 0 0 0"
-                                                            VerticalAlignment="Top"
-                                                            ItemsSource="{Binding CancelledLends}"
-                                                            HorizontalAlignment="Left">
+                                                            ItemsSource="{Binding CancelledLends}">
                                     <component:PageItemsControl.ItemsTemplate>
                                         <ListView
                                             Width="{Binding ElementName=p, Path=ActualWidth}"
@@ -460,7 +452,7 @@
         
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
                 Command="{Binding AddNewCommand}"
-                Background="Black"
+                Background="{StaticResource SolidPrimaryColor}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
                 Margin="0 0 0 29">

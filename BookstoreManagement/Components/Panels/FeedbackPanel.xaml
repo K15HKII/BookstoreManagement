@@ -14,7 +14,7 @@
             <component:HeaderWithSearchBar Tag="Đánh giá" />
 
             <DockPanel LastChildFill="False"
-                       Height="36"
+                       Height="40"
                        VerticalAlignment="Center"
                        Margin="0 25 0 29">
                 <TextBlock Text="Số lượng"
