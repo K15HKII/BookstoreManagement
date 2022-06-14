@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:api="clr-namespace:BookstoreManagement.Data.Model.Api"
              xmlns:component="clr-namespace:BookstoreManagement.Components"
+             xmlns:wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d">
     
     <StackPanel>
@@ -59,7 +60,31 @@
 
                 <Border Height="272"
                         Background="{StaticResource SolidLightGrayColor}"
-                        Margin="0 15 0 0"></Border>
+                        Margin="0 15 0 0">
+                    <wpf:CartesianChart Name="Chart" Series="{Binding SeriesCollection}" >
+                        <wpf:CartesianChart.AxisY>
+                            <wpf:Axis Name="Axis">
+                                <wpf:Axis.Sections>
+                                    <wpf:AxisSection Value="8.5" StrokeThickness="3" Stroke="#F9D648">
+                                        <wpf:AxisSection.Fill>
+                                            <SolidColorBrush Color="#A3A3FF" Opacity=".4"></SolidColorBrush>
+                                        </wpf:AxisSection.Fill>
+                                    </wpf:AxisSection>
+                                    <wpf:AxisSection Value="4" SectionWidth="8" Label="Good">
+                                        <wpf:AxisSection.Fill>
+                                            <SolidColorBrush Color="#CDCDCD" Opacity=".4"></SolidColorBrush>
+                                        </wpf:AxisSection.Fill>
+                                    </wpf:AxisSection>
+                                    <wpf:AxisSection Value="0" SectionWidth="4" Label="Bad">
+                                        <wpf:AxisSection.Fill>
+                                            <SolidColorBrush Color="#FF8585" Opacity=".4"></SolidColorBrush>
+                                        </wpf:AxisSection.Fill>
+                                    </wpf:AxisSection>
+                                </wpf:Axis.Sections>
+                            </wpf:Axis>
+                        </wpf:CartesianChart.AxisY>
+                    </wpf:CartesianChart>
+                </Border>
             </StackPanel>
 
             <StackPanel Grid.Column="2">
