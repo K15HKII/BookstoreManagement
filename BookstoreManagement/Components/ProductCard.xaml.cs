@@ -25,5 +25,10 @@ namespace BookstoreManagement.Components
         {
             InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
