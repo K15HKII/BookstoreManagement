@@ -26,5 +26,8 @@ namespace BookstoreManagement.Data.Model.Api
         [JsonProperty("end_date")]
         public DateTime EndDate { get; set; }
         
+        [JsonProperty("payment")]
+        public Payment Payment { get; set; }
+        
     }
 }

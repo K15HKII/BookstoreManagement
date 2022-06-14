@@ -11,16 +11,16 @@ namespace BookstoreManagement.Data.Model.Api
     {
         [JsonProperty("id")]
         public string Id { get; set; }
+        
+        [JsonProperty("created_at")]
+        public DateTime CreatedAt { get; set; }
 
         [JsonProperty("title")]
-        public string Title { get; set; }
+        public string? Title { get; set; }
         
         [JsonProperty("description")]
         public string? Description { get; set; }
-        
-        [JsonProperty("isbn")]
-        public string? Isbn { get; set; }
-        
+
         [JsonProperty("stock")]
         public int Stock { get; set; }
         
@@ -31,13 +31,16 @@ namespace BookstoreManagement.Data.Model.Api
         public float Price { get; set; }
         
         [JsonProperty("publisher_id")]
-        public int PublisherId { get; set; }
+        public int? PublisherId { get; set; }
 
         [JsonProperty("tag")]
-        public BookTag Tag { get; set; }
+        public BookTag? Tag { get; set; }
         
         [JsonProperty("images")]
         public List<Image>? Images { get; set; }
+        
+        [JsonProperty("videos")]
+        public List<Video>? Videos { get; set; }    
 
     }
 }

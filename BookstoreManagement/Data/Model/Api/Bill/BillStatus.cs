@@ -2,6 +2,10 @@
 {
     public enum BillStatus
     {
-        WAITING, PROCESSING, TRANSPORTING, COMPLETED, CANCELED
+        WAITING, 
+        PROCESSING, 
+        TRANSPORTING, 
+        COMPLETED, 
+        CANCELED
     }
 }
