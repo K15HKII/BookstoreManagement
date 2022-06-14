@@ -43,6 +43,8 @@
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
                                Text="{Binding Name}"
+                               Width="110"
+                               TextWrapping="Wrap"
                                Margin="0 0 8 0" />
                     <TextBlock Style="{StaticResource Title}"
                                Text="#1"

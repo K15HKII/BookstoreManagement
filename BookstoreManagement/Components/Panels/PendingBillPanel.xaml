@@ -163,9 +163,10 @@
 
     <Grid>
         <StackPanel>
-            <component:HeaderWithSearchBar Tag="Đơn hàng" />
+            <component:HeaderWithSearchBar Tag="Đơn hàng"
+                                           Height="89"/>
 
-            <Grid Margin="0 25 0 0">
+            <Grid Margin="0 12 0 0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="500"></RowDefinition>

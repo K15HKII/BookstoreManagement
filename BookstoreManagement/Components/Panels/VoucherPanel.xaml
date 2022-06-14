@@ -8,17 +8,17 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:voucher="clr-namespace:BookstoreManagement.ViewModels.Voucher.VoucherAdapter"
              mc:Ignorable="d"
-             d:DesignWidth="928"
              Height="664">
     
     <Grid>
         <StackPanel>
-            <component:HeaderWithSearchBar Tag="Voucher" />
+            <component:HeaderWithSearchBar Tag="Voucher"
+                                           Height="89"/>
 
             <DockPanel LastChildFill="False"
                        Height="40"
                        VerticalAlignment="Center"
-                       Margin="0 25 0 29">
+                       Margin="0 12 0 29">
                 <TextBlock Text="Số lượng"
                            Style="{StaticResource Caption}"
                            Foreground="{StaticResource SolidDarkGrayColor}"
