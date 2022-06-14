@@ -8,7 +8,6 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:customer="clr-namespace:BookstoreManagement.ViewModels.DialogView.Customer"
              mc:Ignorable="d"
-             d:DesignWidth="928"
              Height="664">
 
     <UserControl.Resources>
@@ -25,7 +24,7 @@
             <component:HeaderWithSearchBar Tag="Khách hàng" />
 
             <DockPanel LastChildFill="False"
-                       Height="36"
+                       Height="40"
                        VerticalAlignment="Center"
                        Margin="0 25 0 29">
                 <TextBlock Text="Số lượng"
@@ -66,18 +65,17 @@
                 </StackPanel>
             </DockPanel>
 
-            <ScrollViewer 
-                          Margin="0"
+            <ScrollViewer Margin="0"
                           x:Name="p"
                           VerticalScrollBarVisibility="Auto"
                           Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                         AncestorType={x:Type Grid}}, Path=ActualHeight}">
                 <component:PageItemsControl Margin="0 0 0 0"
-                                            Width="928"
+                                            Width="auto"
                                             ItemsSource="{Binding Customers}"
                                             VerticalAlignment="Top">
                     <component:PageItemsControl.ItemsTemplate>
-                        <ItemsControl Width="928">
+                        <ItemsControl Width="{Binding ElementName=p, Path=ActualWidth}">
                             <ItemsControl.Template>
                                 <ControlTemplate TargetType="ItemsControl">
                                     <StackPanel>
@@ -92,8 +90,7 @@
                                                     Width="{StaticResource ProfitFromCustomerColumnWidth}" />
                                                 <ColumnDefinition Width="{StaticResource PaticipationDateColumnWidth}" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="0"
-                                                       Text="" />
+                                            <TextBlock Grid.Column="0"/>
                                             <TextBlock Grid.Column="1"
                                                        Text="STT"
                                                        Style="{StaticResource Caption}"
@@ -133,7 +130,7 @@
                                     <Grid>
                                     <Grid x:Name="PART_Body"
                                           VerticalAlignment="Center"
-                                          Height="65px" Width="928px">
+                                          Height="65px" Width="auto">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="{StaticResource CheckboxColumnWidth}" />
                                             <ColumnDefinition Width="{StaticResource OrdinalColumnWidth}" />
@@ -151,7 +148,7 @@
 
                                         <TextBlock Grid.Column="1"
                                                    VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
+                                                   HorizontalAlignment="Left"
                                                    Text="{Binding Id}"
                                                    Style="{StaticResource Title}" />
 
@@ -182,25 +179,25 @@
 
                                         <TextBlock Grid.Column="3"
                                                    VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
+                                                       HorizontalAlignment="Left"
                                                    Text="{Binding Type}"
                                                    Style="{StaticResource Caption}" />
 
                                         <TextBlock Grid.Column="4"
                                                    VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
+                                                       HorizontalAlignment="Left"
                                                    Text="{Binding BillQuantity}"
                                                    Style="{StaticResource Title}"
                                                    Foreground="{StaticResource SolidOrangeColor}" />
                                         <TextBlock Grid.Column="5"
                                                    VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
+                                                       HorizontalAlignment="Left"
                                                    Text="{Binding CustomerIncome}"
                                                    Style="{StaticResource Title}"
                                                    Foreground="{StaticResource SolidPrimaryColor}" />
                                         <TextBlock Grid.Column="6"
                                                    VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
+                                                       HorizontalAlignment="Left"
                                                    Text="{Binding CreateDate}"
                                                    Style="{StaticResource Caption}"
                                                    Foreground="Black" />
@@ -216,7 +213,7 @@
             </ScrollViewer>
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Background="Black"
+                Background="{StaticResource SolidPrimaryColor}"
                 Command="{Binding AddNewCommand}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"

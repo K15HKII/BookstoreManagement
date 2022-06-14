@@ -7,14 +7,14 @@
              xmlns:component="clr-namespace:BookstoreManagement.Components"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="664" 
-             d:DesignWidth="928">
+             d:DesignHeight="664">
     <Grid>
         <StackPanel>
             <component:HeaderWithSearchBar Tag="Nhà phát hành" />
 
             <DockPanel LastChildFill="False"
-                       Height="36"
+                       Height="40"
+                       Width="auto"
                        VerticalAlignment="Center"
                        Margin="0 25 0 29">
                 <TextBlock Text="Số lượng"
@@ -101,7 +101,7 @@
             </ScrollViewer>
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Background="Black"
+                Background="{StaticResource SolidPrimaryColor}"
                 Command="{Binding AddNewCommand}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"

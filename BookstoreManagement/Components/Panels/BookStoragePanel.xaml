@@ -14,7 +14,7 @@
         <StackPanel>
             <component:HeaderWithSearchBar Tag="Kho Sách" />
             <DockPanel LastChildFill="False"
-                       Height="36"
+                       Height="40"
                        VerticalAlignment="Center"
                        Margin="0 25 0 29">
                 <TextBlock Text="Số lượng"
@@ -98,7 +98,7 @@
             </ScrollViewer>
         </StackPanel>
         <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
-                Background="Black"
+                Background="{StaticResource SolidPrimaryColor}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"
                 Command="{Binding AddNewCommand}"

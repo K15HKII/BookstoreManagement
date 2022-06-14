@@ -131,14 +131,14 @@
                                Foreground="Black"
                                Text="Khách quen" />
                     <component:DashboardCustomerList Margin="0 8 0 0"
-                                                     Height="260" 
+                                                     Height="220" 
                                                      DataContext="{Binding UserList}"/>
                 </StackPanel>
 
             </StackPanel>
         </Grid>
 
-        <StackPanel>
+        <StackPanel Margin="0 24 0 0">
             <TextBlock Style="{StaticResource Title}"
                        Foreground="Black"
                        Text="Sách bán chạy" />
