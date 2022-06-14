@@ -33,7 +33,7 @@
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="Black"
                                Margin="0 0 0 6"
-                               Text="#01" />
+                               Text="{Binding Id}" />
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="{StaticResource SolidPrimaryColor}"
                                Text="{Binding UserName}" 

@@ -80,7 +80,7 @@ namespace BookstoreManagement.ViewModels.Lend
         [ICommand]
         public async void AddNew()
         {
-            LendUpdateRequest? request = await _navigator.OpenNewLendBillDialog(_factory.Create<AddLendBillViewModel>());
+            LendUpdateRequest? request = await _navigator.OpenNewLendBillDialog(_factory.Create<UpdateLendBillViewModel>());
             if (request == null)
                 return;
 

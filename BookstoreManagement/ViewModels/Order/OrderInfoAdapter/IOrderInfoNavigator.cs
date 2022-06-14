@@ -1,8 +1,9 @@
-﻿using BookstoreManagement.ViewModels.DialogView.Order;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.ViewModels.DialogView.Order;
 
 namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
 
 public interface IOrderInfoNavigator : INavigator
 {
-    object? OpenDetailOrdedrDialog(OrderBillViewModel viewModel); //TODO: return edit request
+    Task<object?> OpenDetailOrdedrDialog(OrderBillViewModel viewModel); //TODO: return edit request
 }

@@ -2,23 +2,21 @@
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Services;
 
-namespace BookstoreManagement.ViewModels.DialogView.BookStore;
+namespace BookstoreManagement.ViewModels.DialogView.Voucher;
 
-public class BookDetailNavigator : IBookDetailNavigator
+public class VoucherDetailNavigator : IVoucherDetailNavigator
 {
-
     private readonly IDialogService _dialogService;
 
-    public BookDetailNavigator(IDialogService dialogService)
+    public VoucherDetailNavigator(IDialogService dialogService)
     {
         _dialogService = dialogService;
     }
-
-    public async Task<BookUpdateRequest?> OpenEditBookDialog(UpdateBookViewModel viewModel)
+    public async Task<VoucherUpdateRequest?> OpenEditVoucherDialog(UpdateVoucherViewModel viewModel)
     {
         object value = await _dialogService.Show(viewModel,"edit");
         if (value == null)
             return null;
-        return value as BookUpdateRequest;
+        return value as VoucherUpdateRequest;
     }
 }

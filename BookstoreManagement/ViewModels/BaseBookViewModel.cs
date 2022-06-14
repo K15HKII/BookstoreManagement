@@ -24,10 +24,14 @@ public partial class BaseBookViewModel : BaseViewModel
 
     public void SetBook(Book book, string count)
     {
+        current = book;
         this.Id = "#" + count;
         this.Title = book.Title;
         this.Price = book.Price;
-        Dispose(_model.GetPublisher(book.PublisherId), pub => { this.Publisher = pub.Name; });
+        Dispose(_model.GetPublisher(book.PublisherId), pub =>
+        {
+            this.Publisher = pub.Name;
+        });
         this.Description = book.Description;
         this.Quantity = book.Stock;
         if (this.Quantity > 0)
@@ -42,6 +46,8 @@ public partial class BaseBookViewModel : BaseViewModel
         this.Display = book.Images == null || book.Images.Count == 0 ? null : book.Images![0].Id;
     }
 
+    protected Book current;
+    
     [ObservableProperty] private string? _id;
 
     [ObservableProperty] [Required] [MinLength(1)]

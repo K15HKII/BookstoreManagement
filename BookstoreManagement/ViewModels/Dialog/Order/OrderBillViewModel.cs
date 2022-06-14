@@ -22,12 +22,32 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         {
             _model = model;
         }
+        
+        public void setOrder(Bill bill)
+        {
+            this.Id = "#" + bill.Id;
+            this.CreateAt = bill.CreatedAt;
+            Dispose(_model.GetUser(bill.UserId), user =>
+            {
+                this.CustomerName = user.FullName;
+                this.CustomerPhone = user.Phone;
+                this.CustomerEmail = user.Email;
+                Dispose(_model.GetAddress(user.Id,bill.AddressId), address =>
+                {
+                    this.CustomerAddress = address.Address;
+                });
+            });
+            this.PaymentMethod = bill.Payment;
+            this.Billstatus = bill.BillStatus;
+        }
 
-        [ObservableProperty] object? _customername;
-        [ObservableProperty] object? _customerphone;
-        [ObservableProperty] object? _customeremail;
-        [ObservableProperty] object? _customeraddress;
-        [ObservableProperty] object? _paymentmethod;
+        [ObservableProperty] private string? _id;
+        [ObservableProperty] private DateTime? _createAt;
+        [ObservableProperty] string? _customerName;
+        [ObservableProperty] string? _customerPhone;
+        [ObservableProperty] string? _customerEmail;
+        [ObservableProperty] string? _customerAddress;
+        [ObservableProperty] Payment? _paymentMethod;
 
         //Voucher thì đã có adapter binding sẵn trong VoucherWindow
         [ObservableProperty] ObservableCollection<object>? _lsvoucherapply;

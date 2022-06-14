@@ -86,7 +86,7 @@ namespace BookstoreManagement.ViewModels.Order
         [ICommand]
         public async void AddNew()
         {
-            BillUpdateRequest? request = await _navigator.OpenNewOrderDialog(_factory.Create<AddOrderViewModel>());
+            BillUpdateRequest? request = await _navigator.OpenNewOrderDialog(_factory.Create<UpdateOrderViewModel>());
             if (request == null)
                 return;
 

@@ -13,11 +13,11 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Voucher
 {
-    public partial class AddVoucherViewModel : BaseViewModel, IDialog
+    public partial class UpdateVoucherViewModel : BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
 
-        public AddVoucherViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public UpdateVoucherViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
         {
             _model = model;
         }

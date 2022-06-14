@@ -19,7 +19,7 @@
             <components:ucAddPublisher/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type voucher:AddVoucherViewModel}">
+        <DataTemplate DataType="{x:Type voucher:UpdateVoucherViewModel}">
             <components:ucAddVoucher/>
         </DataTemplate>
         
@@ -31,11 +31,11 @@
             <components:ucAddEmployee/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type dialogView:AddLendBillViewModel}">
+        <DataTemplate DataType="{x:Type dialogView:UpdateLendBillViewModel}">
             <components:ucAddLendBill/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type order:AddOrderViewModel}">
+        <DataTemplate DataType="{x:Type order:UpdateOrderViewModel}">
             <components:ucAddPendingBill/>
         </DataTemplate>
         

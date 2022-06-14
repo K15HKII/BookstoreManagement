@@ -41,6 +41,16 @@ namespace BookstoreManagement.Data.Remote
             throw new NotImplementedException();
         }
 
+        public IObservable<List<UserAddress>> GetAddresses(string user_id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IObservable<UserAddress> GetAddress(string user_id, long address_id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IObservable<List<Author>> GetAuthors()
         {
             throw new NotImplementedException();

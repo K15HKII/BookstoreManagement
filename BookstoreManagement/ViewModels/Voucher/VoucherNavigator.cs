@@ -23,7 +23,7 @@ namespace BookstoreManagement.ViewModels.Voucher
             throw new NotImplementedException();
         }
 
-        public async Task<VoucherUpdateRequest?> OpenAddVoucherDialog(AddVoucherViewModel viewModel)
+        public async Task<VoucherUpdateRequest?> OpenAddVoucherDialog(UpdateVoucherViewModel viewModel)
         {
             object value = await _dialogService.Show(viewModel);
             if (value == null)

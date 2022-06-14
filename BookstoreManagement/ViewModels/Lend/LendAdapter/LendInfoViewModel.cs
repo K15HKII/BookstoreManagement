@@ -25,11 +25,12 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
 
         public void SetLend(Data.Model.Api.Lend lend, int count)
         {
+            current = lend;
             this.Id = "#" + count;
             this.UserId = lend.UserId;
             Dispose(_model.GetUser(lend.UserId), user =>
             {
-                this.UserName = user.FirstName + user.LastName;
+                this.UserName = user.FullName;
             });
             this.Price = lend.UnitPrice.ToString("C") + "đ";
             this.BookId = lend.BookId;
@@ -38,12 +39,14 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
             this.Status = lend.Status;
         }
 
+        private Data.Model.Api.Lend current;
+
         [ObservableProperty] string? _id;
 
         [ObservableProperty] string? _userId;
-        
-        [ObservableProperty] string? _userName;
-        
+
+        [ObservableProperty] private string? _userName;
+
         [ObservableProperty] string? _userImage;
 
         [ObservableProperty] string? _price;
@@ -61,10 +64,11 @@ namespace BookstoreManagement.ViewModels.Lend.LendAdapter
         [ObservableProperty] private LendStatus? _status;
 
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
-            //TODO: không mở được info
-            object? request = _navigator.OpenInfoLendDialog(_factory.Create<LendBillDetailViewModel>());
+            LendBillDetailViewModel vm = _factory.Create<LendBillDetailViewModel>();
+            vm.SetLend(current);
+            object? request = await _navigator.OpenInfoLendDialog(vm);
 
             if (request == null)
                 return;

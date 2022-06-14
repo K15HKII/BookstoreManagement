@@ -14,6 +14,6 @@ namespace BookstoreManagement.ViewModels.Order
 
         void openNotificationScreen();
         
-        Task<BillUpdateRequest?> OpenNewOrderDialog(AddOrderViewModel viewModel);
+        Task<BillUpdateRequest?> OpenNewOrderDialog(UpdateOrderViewModel viewModel);
     }
 }

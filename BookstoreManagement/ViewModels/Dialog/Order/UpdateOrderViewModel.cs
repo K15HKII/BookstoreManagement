@@ -12,13 +12,13 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView.Order
 {
-    public partial class AddOrderViewModel : BaseViewModel, IDialog
+    public partial class UpdateOrderViewModel : BaseViewModel, IDialog
     {
         //Còn khúc thêm sách chưa rõ ràng
         
         private readonly IModelRemote _model;
 
-        public AddOrderViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public UpdateOrderViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
         {
             _model = model;
         }

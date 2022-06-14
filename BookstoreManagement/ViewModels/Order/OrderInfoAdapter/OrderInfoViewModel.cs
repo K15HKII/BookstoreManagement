@@ -28,6 +28,7 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
 
         public void SetOrder(Bill bill)
         {
+            current = bill;
             this.Id = "#" + bill.Id;
             this.Date = bill.CreatedAt.Value.ToString("dd/MM/yyyy");
             this.Status = bill.BillStatus ?? BillStatus.WAITING;
@@ -39,6 +40,8 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
             }
             this.Price = temp.ToString("C") + "đ";
         }
+
+        private Bill current; 
 
         [ObservableProperty] private BillStatus _status;
 
@@ -53,10 +56,11 @@ namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter
         [ObservableProperty] object? _bookId;
 
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
-            //TODO: cast to edit request
-            object? request = _navigator.OpenDetailOrdedrDialog(_factory.Create<OrderBillViewModel>());
+            OrderBillViewModel vm = _factory.Create<OrderBillViewModel>();
+            vm.setOrder(current);
+            object? request = _navigator.OpenDetailOrdedrDialog(vm);
 
             if (request == null)
                 return;

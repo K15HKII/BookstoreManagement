@@ -13,11 +13,11 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView
 {
-    public partial class AddLendBillViewModel : BaseViewModel, IDialog
+    public partial class UpdateLendBillViewModel : BaseViewModel, IDialog
     {
         private readonly IModelRemote _model;
 
-        public AddLendBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
+        public UpdateLendBillViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(scheluderProvider)
         {
             _model = model;
         }

@@ -1,6 +1,9 @@
-﻿namespace BookstoreManagement.ViewModels.DialogView.Voucher;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Data.Model.Api;
+
+namespace BookstoreManagement.ViewModels.DialogView.Voucher;
 
 public interface IVoucherDetailNavigator: INavigator
 {
-    object? OpenEditVoucherDialog(EditVoucherViewModel viewModel);
+    Task<VoucherUpdateRequest?> OpenEditVoucherDialog(UpdateVoucherViewModel viewModel);
 }

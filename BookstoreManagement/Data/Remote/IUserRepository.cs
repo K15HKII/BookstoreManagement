@@ -21,5 +21,11 @@ public interface IUserRepository
     IObservable<Object> DeleteUser(string id);
     
     //TODO: Lấy địa chỉ người dùng và bank
+    [Get("/api/user/addresses/{user_id}")]
+    IObservable<List<UserAddress>> GetAddresses([AliasAs("user_id")] string user_id);
+    
+    [Get("/api/user/address/{address_id}/{user_id}")]
+    IObservable<UserAddress> GetAddress([AliasAs("user_id")] string user_id, [AliasAs("address_id")] long address_id);
+
     #endregion
 }

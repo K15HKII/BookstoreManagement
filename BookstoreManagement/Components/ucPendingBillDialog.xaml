@@ -17,7 +17,7 @@
                        Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="# Ma don"
+                           Text="{Binding Id}"
                            VerticalAlignment="Center" />
                 <StackPanel DockPanel.Dock="Right"
                             VerticalAlignment="Center"
@@ -29,7 +29,7 @@
                                VerticalAlignment="Center" />
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="Black"
-                               Text="02/02/2022" />
+                               Text="{Binding CreateAt}" />
                 </StackPanel>
 
             </DockPanel>
@@ -50,7 +50,7 @@
                                                  Foreground="{StaticResource SolidPrimaryColor}" />
                         <TextBlock Style="{StaticResource Heading3}"
                                    Foreground="Black"
-                                   Text="Nobita"
+                                   Text="{Binding CustomerName}"
                                    Margin="4 0 0 0" />
                     </StackPanel>
                     <DockPanel LastChildFill="False">
@@ -60,7 +60,7 @@
                                    VerticalAlignment="Center" />
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
-                                   Text="09476186xx"
+                                   Text="{Binding CustomerPhone}"
                                    DockPanel.Dock="Right"
                                    VerticalAlignment="Center" />
                     </DockPanel>
@@ -72,7 +72,7 @@
                                    Margin="0 0 0 2" />
                         <TextBlock Style="{StaticResource Body}"
                                    Foreground="{StaticResource SolidPrimaryColor}"
-                                   Text="20520558@gm.uit.edu.vn"
+                                   Text="{Binding CustomerEmail}"
                                    DockPanel.Dock="Right"
                                    VerticalAlignment="Center" />
                     </DockPanel>
@@ -93,7 +93,7 @@
 
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="Black"
-                               Text="KTX A" />
+                               Text="{Binding CustomerAddress}" />
                 </StackPanel>
             </Grid>
 
@@ -134,7 +134,7 @@
 
                     <TextBlock Style="{StaticResource Body}"
                                Foreground="Black"
-                               Text="" />
+                               Text="{Binding PaymentMethod}" />
                 </StackPanel>
             </Grid>
 
@@ -223,7 +223,7 @@
                 <TextBlock Style="{StaticResource Body}"
                            Foreground="Black"
                            TextWrapping="Wrap"
-                           Text="{Binding State}" />
+                           Text="{Binding Billstatus}" />
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">

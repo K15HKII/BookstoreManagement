@@ -1,8 +1,9 @@
-﻿using BookstoreManagement.ViewModels.DialogView;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.ViewModels.DialogView;
 
 namespace BookstoreManagement.ViewModels.Lend.LendAdapter;
 
 public interface ILendInfoNavigator : INavigator
 {
-    object? OpenInfoLendDialog(LendBillDetailViewModel viewModel);
+    Task<object?> OpenInfoLendDialog(LendBillDetailViewModel viewModel);
 }

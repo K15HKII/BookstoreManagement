@@ -14,6 +14,6 @@ namespace BookstoreManagement.ViewModels.Voucher
 
         void openNotificationScreen();
 
-        Task<VoucherUpdateRequest?> OpenAddVoucherDialog(AddVoucherViewModel viewModel);
+        Task<VoucherUpdateRequest?> OpenAddVoucherDialog(UpdateVoucherViewModel viewModel);
     }
 }

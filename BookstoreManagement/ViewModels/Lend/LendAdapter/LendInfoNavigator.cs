@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Services;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Services;
 using BookstoreManagement.ViewModels.DialogView;
 
 namespace BookstoreManagement.ViewModels.Lend.LendAdapter;
@@ -11,7 +12,7 @@ public class LendInfoNavigator : ILendInfoNavigator
     {
         _dialogService = dialogService;
     }
-    public object? OpenInfoLendDialog(LendBillDetailViewModel viewModel)
+    public async Task<object?> OpenInfoLendDialog(LendBillDetailViewModel viewModel)
     {
         object? value = _dialogService.Show(viewModel);
         if (value == null)

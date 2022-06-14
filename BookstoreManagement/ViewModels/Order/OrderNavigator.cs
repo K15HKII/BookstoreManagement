@@ -29,7 +29,7 @@ namespace BookstoreManagement.ViewModels.Order
             throw new NotImplementedException();
         }
 
-        public async Task<BillUpdateRequest?> OpenNewOrderDialog(AddOrderViewModel viewModel)
+        public async Task<BillUpdateRequest?> OpenNewOrderDialog(UpdateOrderViewModel viewModel)
         {
             object value = await _dialogService.Show(viewModel);
             if (value == null)

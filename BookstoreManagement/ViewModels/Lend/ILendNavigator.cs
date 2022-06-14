@@ -16,6 +16,6 @@ namespace BookstoreManagement.ViewModels.Lend
 
         void openNotificationScreen();
         
-        Task<LendUpdateRequest?> OpenNewLendBillDialog(AddLendBillViewModel viewModel);
+        Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel);
     }
 }

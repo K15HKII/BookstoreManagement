@@ -30,7 +30,6 @@ using BookstoreManagement.ViewModels.Manager;
 using BookstoreManagement.ViewModels.Manager.EmployeeAdapter;
 using BookstoreManagement.ViewModels.Order;
 using BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
-using BookstoreManagement.ViewModels.Order.Page;
 using BookstoreManagement.ViewModels.Rating;
 using BookstoreManagement.ViewModels.Rating.RatingAdapter;
 using BookstoreManagement.ViewModels.Report;
@@ -212,17 +211,6 @@ namespace BookstoreManagement.Services
                 service.AddSingleton<ISupplierInfoNavigator, SupplierInfoNavigator>();
                 service.AddViewModel<SupplierInfoViewModel>();
 
-                //OrderPage
-                service.AddViewModel<ArrivedPageViewModel>();
-                service.AddViewModel<CancleViewModel>();
-                service.AddViewModel<RateOrderPageViewModel>();
-                service.AddViewModel<ShippingPageViewModel>();
-                service.AddViewModel<WaitingConfirmPageViewModel>();
-
-                
-
-                
-
                 //Lend
                 service.AddSingleton<ILendInfoNavigator, LendInfoNavigator>();
                 service.AddViewModel<LendInfoViewModel>();
@@ -237,10 +225,10 @@ namespace BookstoreManagement.Services
                 //Order
                 service.AddViewModel<OrderBillViewModel>();
                 service.AddViewModel<OrderItemViewModel>();
-                service.AddViewModel<AddOrderViewModel>();
+                service.AddViewModel<UpdateOrderViewModel>();
 
                 //Voucher
-                service.AddViewModel<AddVoucherViewModel>();
+                service.AddViewModel<UpdateVoucherViewModel>();
 
                 //Customer
                 service.AddSingleton<ICustomerDetailNavigator, CustomerDetailNavigator>();
@@ -259,7 +247,9 @@ namespace BookstoreManagement.Services
                 service.AddViewModel<UpdateSupplierViewModel>();
 
                 //Lend
-                service.AddViewModel<AddLendBillViewModel>();
+                service.AddSingleton<ILendBillDetailNavigator, LendBillDetailNavigator>();
+                service.AddViewModel<LendBillDetailViewModel>();
+                service.AddViewModel<UpdateLendBillViewModel>();
                 service.AddSingleton<IViewModelFactory, ViewModelFactory>();
             });
             return host;

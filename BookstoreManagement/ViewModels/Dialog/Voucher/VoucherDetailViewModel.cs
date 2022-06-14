@@ -55,7 +55,7 @@ public partial class VoucherDetailViewModel : BaseViewModel, IDialog
     public void OpenEdit()
     {
         //TODO: cast to edit request
-        object? request = _navigator.OpenEditVoucherDialog(_factory.Create<EditVoucherViewModel>());
+        object? request = _navigator.OpenEditVoucherDialog(_factory.Create<UpdateVoucherViewModel>());
 
         if (request == null)
             return;

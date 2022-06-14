@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Services;
+﻿using System.Threading.Tasks;
+using BookstoreManagement.Services;
 using BookstoreManagement.ViewModels.DialogView.Order;
 
 namespace BookstoreManagement.ViewModels.Order.OrderInfoAdapter;
@@ -11,9 +12,9 @@ public class OrderInfoNavigator : IOrderInfoNavigator
     {
         _dialogService = dialogService;
     }
-    public object? OpenDetailOrdedrDialog(OrderBillViewModel viewModel)
+    public async Task<object?> OpenDetailOrdedrDialog(OrderBillViewModel viewModel)
     {
-        object? value = _dialogService.Show(viewModel);
+        object? value = await _dialogService.Show(viewModel);
         if (value == null)
             return null;
         return value;

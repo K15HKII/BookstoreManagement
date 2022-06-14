@@ -1,5 +1,5 @@
 ﻿namespace BookstoreManagement.ViewModels.DialogView.Order;
 
-public interface IOrderBIllNavigator : INavigator
+public interface IOrderBillNavigator : INavigator
 {
 }

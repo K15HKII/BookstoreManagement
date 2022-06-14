@@ -23,7 +23,7 @@ public class LendNavigator : ILendNavigator
         throw new System.NotImplementedException();
     }
 
-    public async Task<LendUpdateRequest?> OpenNewLendBillDialog(AddLendBillViewModel viewModel)
+    public async Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel)
     {
         object value = await _dialogService.Show(viewModel);
         if (value == null)

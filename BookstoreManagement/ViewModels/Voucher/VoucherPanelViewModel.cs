@@ -60,7 +60,7 @@ namespace BookstoreManagement.ViewModels.Voucher
     [ICommand]
     public async void AddNew()
     {
-        VoucherUpdateRequest? request = await _navigator.OpenAddVoucherDialog(_factory.Create<AddVoucherViewModel>());
+        VoucherUpdateRequest? request = await _navigator.OpenAddVoucherDialog(_factory.Create<UpdateVoucherViewModel>());
         if (request == null)
             return;
 

@@ -27,7 +27,7 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
             _factory = factory;
         }
 
-         public Book _book;
+         public Book book;
         
         [ObservableProperty] object? _sold;
 
@@ -43,7 +43,7 @@ namespace BookstoreManagement.ViewModels.DialogView.BookStore
         public async void OpenEdit()
         {
             UpdateBookViewModel vm = _factory.Create<UpdateBookViewModel>();
-            vm.SetBook(this._book,this._book.Id);
+            vm.SetBook(current,current.Id);
             BookUpdateRequest? request = await _navigator.OpenEditBookDialog(vm);
             if (request == null)
                 return;

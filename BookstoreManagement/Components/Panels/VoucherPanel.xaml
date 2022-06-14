@@ -83,9 +83,11 @@
                                 </Style>
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
+                                
                                 <DataTemplate DataType="{x:Type voucher:VoucherAdapterViewModel}">
                                     <component:VoucherCard Width="447" />
                                 </DataTemplate>
+                                
                             </ListView.ItemTemplate>
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
