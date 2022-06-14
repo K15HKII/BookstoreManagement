@@ -6,10 +6,7 @@ namespace BookstoreManagement.ViewModels.Lend
 {
     public interface ILendNavigator : INavigator
     {
-        void openAccountScreen();
 
-        void openNotificationScreen();
-        
         Task<LendUpdateRequest?> OpenNewLendBillDialog(UpdateLendBillViewModel viewModel);
     }
 }

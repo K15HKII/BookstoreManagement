@@ -65,9 +65,16 @@
                         <ItemsControl x:Name="itemsControl"
                                       ItemsSource="{Binding LsVouchers}">
                             <ItemsControl.ItemTemplate>
+                                
                                 <DataTemplate DataType="{x:Type voucher:VoucherAdapterViewModel}">
+                                    <Grid>
                                     <component:VoucherCard Margin="11 0 12 32" Width="447" />
+                                    <Button Width="auto"
+                                            Height="auto"
+                                            Command="{Binding }"></Button>
+                                    </Grid>   
                                 </DataTemplate>
+                                    
                             </ItemsControl.ItemTemplate>
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>

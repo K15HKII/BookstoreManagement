@@ -26,15 +26,23 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
             _model = model;
         }
         
+        
         public void SetVoucher(VoucherProfile voucher)
         {
             this.Name = voucher.Discount + "% " + voucher.Name;
             this.Description = voucher.Description;
             this.ApplyType = "Áp dụng cho Sách thể loại ";
-            /*for(int i = 0;i< voucher.RequireBookTags.Count;i++)
+            for(int i = 0;i< voucher.RequireBookTags.Count;i++)
             {
-                this.ApplyType += voucher.RequireBookTags[i] + ",";
-            }*/
+                if(i==voucher.RequireBookTags.Count-1)
+                {
+                    this.ApplyType += voucher.RequireBookTags[i];
+                }
+                else
+                {
+                    this.ApplyType += voucher.RequireBookTags[i] + ", ";
+                }
+            }
 
             this.RequireMinValue = voucher.RequireMinValue;
         }
@@ -52,10 +60,11 @@ namespace BookstoreManagement.ViewModels.Voucher.VoucherAdapter
         [ObservableProperty] float? _discount;
 
         [ICommand]
-        public void OpenInfo()
+        public async void OpenInfo()
         {
-            //TODO: cast to edit request
-            object? request = _navigator.OpenDetailVoucherDialog(_factory.Create<VoucherDetailViewModel>());
+            VoucherDetailViewModel vm = _factory.Create<VoucherDetailViewModel>();
+            
+            object? request = await _navigator.OpenDetailVoucherDialog(vm);
 
             if (request == null)
                 return;

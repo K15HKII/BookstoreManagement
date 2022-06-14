@@ -14,12 +14,6 @@ namespace BookstoreManagement.Components
         {
             InitializeComponent();
 
-            Voucher v = new Voucher()
-            {
-                ExpiredDate = DateTime.Now,
-            };
-
-            itemsControl.ItemsSource = new List<Voucher>() { v, v, v, v, v, v, v, v, v, v };
         }
     }
 }
