@@ -24,7 +24,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Customer
         private readonly IViewModelFactory _factory;
         private readonly ICustomerDetailNavigator _navigator;
 
-        public CustomerDetailViewModel(ICustomerDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(scheluderProvider)
+        public CustomerDetailViewModel(ICustomerDetailNavigator navigator, [NotNull] ScheluderProvider scheluderProvider,IViewModelFactory factory, IModelRemote model) : base(navigator, scheluderProvider, factory, model)
         {
             _navigator = navigator;
             _model = model;

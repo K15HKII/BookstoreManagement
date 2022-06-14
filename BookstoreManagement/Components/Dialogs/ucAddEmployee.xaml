@@ -33,11 +33,23 @@
                            Text="{Binding Id}"
                            VerticalAlignment="Center"
                            Margin="0 0 0 16" />
-                <TextBox Style="{StaticResource myInput}"
-                         Foreground="Black"
-                         Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                         VerticalAlignment="Center"
-                         VerticalContentAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Style="{StaticResource myInput}"
+                             Foreground="Black"
+                             Tag="Tên"
+                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             MinWidth="100"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Center" />
+                    <TextBox Style="{StaticResource myInput}"
+                             Foreground="Black"
+                             Tag="Tên"
+                             Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             MinWidth="100"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Margin="12 0 0 0" />
+                </StackPanel>
             </StackPanel>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -60,6 +72,7 @@
                               SelectedValuePath="Value"
                               Width="auto"
                               Height="52"
+                              Tag="Gioi tinh"
                               Margin="0 0 0 12" />
 
                     <Grid Margin="0 0 0 12">
@@ -69,10 +82,12 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Style="{StaticResource myInputWithPlaceHolder}"
+                        <!--ngay sinh-->
+                        <DatePicker />
+                        <!--<TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Birth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="Ngay sinh"
-                                 Width="auto" />
+                                 Width="auto" />-->
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Tag="So dien thoai"
@@ -93,11 +108,16 @@
                             <ColumnDefinition Width="auto" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Style="{StaticResource Title}"
+                        
+                        <!--ngay tham gia-->
+                        <DatePicker />
+                        
+                        <!--<TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
                                    Text="Ngay tham gia"
                                    Margin="0 0 16 0"
-                                   VerticalAlignment="Center" />
+                                   VerticalAlignment="Center" />-->
+
                         <TextBox Style="{StaticResource myInput}"
                                  Text="{Binding DayCreated, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Width="auto"
