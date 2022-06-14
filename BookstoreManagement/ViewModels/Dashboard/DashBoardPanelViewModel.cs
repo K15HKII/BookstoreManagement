@@ -1,12 +1,16 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Windows.Media;
 using BookstoreManagement.Annotations;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
 using BookstoreManagement.ViewModels.Components;
 using BookstoreManagement.ViewModels.DialogView.BookStore;
 using BookstoreManagement.ViewModels.DialogView.Customer;
+using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 namespace BookstoreManagement.ViewModels.Dashboard
@@ -64,6 +68,40 @@ namespace BookstoreManagement.ViewModels.Dashboard
 
         //TODO: còn chart
 
+        [ObservableProperty] private SeriesCollection _seriesCollection = new SeriesCollection
+        {
+            new LineSeries
+            {
+                Values = new ChartValues<ObservableValue>
+                {
+                    new ObservableValue(3),
+                    new ObservableValue(5),
+                    new ObservableValue(2),
+                    new ObservableValue(7),
+                    new ObservableValue(7),
+                    new ObservableValue(4)
+                },
+                PointGeometrySize = 0,
+                StrokeThickness = 4,
+                Fill = Brushes.Transparent
+            },
+            new LineSeries
+            {
+                Values = new ChartValues<ObservableValue>
+                {
+                    new ObservableValue(3),
+                    new ObservableValue(4),
+                    new ObservableValue(6),
+                    new ObservableValue(8),
+                    new ObservableValue(7),
+                    new ObservableValue(5)
+                },
+                PointGeometrySize = 0,
+                StrokeThickness = 4,
+                Fill = Brushes.Transparent
+            }
+        };
+        
         [ObservableProperty] private ObservableCollection<StatisticViewModel> _mainStatistics = new();
 
         [ObservableProperty] int? _waitingOrders;
