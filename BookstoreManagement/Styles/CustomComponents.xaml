@@ -739,11 +739,16 @@
             </Border>
             <Border Grid.Column="0"
                     Margin="1"
-                    CornerRadius="25 0 0 25">
+                    CornerRadius="25 0 0 25" >
                 <Border.Background>
                     <SolidColorBrush Color="White" />
                 </Border.Background>
-                <TextBlock Text="{TemplateBinding Tag}" />
+                <Grid>
+                    <TextBlock Text="{TemplateBinding Tag}"
+                               Margin="24 8 0 0"
+                               Style="{DynamicResource SmallCaption}" />
+                    
+                </Grid>
             </Border>
             <materialDesign:PackIcon Grid.Column="1"
                                      Kind="ArrowDropDown"
@@ -834,7 +839,7 @@
                                           Content="{TemplateBinding SelectionBoxItem}"
                                           ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                           ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                                          Margin="24 14 24 10"
+                                          Margin="24 20 24 10"
                                           VerticalAlignment="Stretch"
                                           HorizontalAlignment="Left">
                         </ContentPresenter>
@@ -862,7 +867,7 @@
                                 <Border x:Name="DropDownBorder"
                                         CornerRadius="16"
                                         BorderBrush="Black"
-                                        BorderThickness="2"
+                                        BorderThickness="0"
                                         Background="White">
                                 </Border>
                                 <ScrollViewer Margin="4,6,4,6"
@@ -897,7 +902,7 @@
                                  Value="true">
                             <Setter TargetName="DropDownBorder"
                                     Property="CornerRadius"
-                                    Value="4" />
+                                    Value="16" />
                             <Setter TargetName="DropDownBorder"
                                     Property="Margin"
                                     Value="0,2,0,0" />
@@ -930,7 +935,7 @@
                                                                       Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource OrangeColor}" />
+                                                                 Value="{StaticResource PinkColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -940,7 +945,7 @@
                                                                       Storyboard.TargetProperty="(Panel.Background).
                     (SolidColorBrush.Color)">
                                             <EasingColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource YellowColor}" />
+                                                                 Value="{DynamicResource LightGrayColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

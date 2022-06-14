@@ -13,7 +13,13 @@
 
     <Grid>
 
-        <TextBox Style="{StaticResource myInput}"
+        <ComboBox Width="400"
+                  Height="50"
+                  Tag="abc" IsDropDownOpen="True">
+            <ComboBoxItem IsSelected="True">hifshdfi</ComboBoxItem>
+        </ComboBox>
+
+        <!--<TextBox Style="{StaticResource myInput}"
                  Width="400"
                  Height="50"
                  VerticalContentAlignment="Center">sklfhskdfhsdfksdkfsdnsfnlksdfnlasd</TextBox>
@@ -29,7 +35,7 @@
                Name="test1"
                Placement="Center">
             <TextBlock Background="Red">hihi</TextBlock>
-        </Popup>
+        </Popup>-->
         
     </Grid>
 

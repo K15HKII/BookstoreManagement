@@ -25,9 +25,9 @@ namespace BookstoreManagement.Components
             InitializeComponent();
         }
 
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            test1.IsOpen = true;
-        }
+        //private void btn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    test1.IsOpen = true;
+        //}
     }
 }
