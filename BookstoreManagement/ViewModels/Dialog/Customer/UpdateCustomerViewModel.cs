@@ -2,6 +2,7 @@
 using BookstoreManagement.Data.Model.Api;
 using BookstoreManagement.Data.Remote;
 using BookstoreManagement.Utils;
+using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,15 +34,27 @@ namespace BookstoreManagement.ViewModels.Dialog.Customer
             {
                 FirstName = Name,
                 Email = Email,
-                Username = Username,
+                Username = UserName,
                 Phone = Phone,
                 Gender = (Gender)Gender,
-                Birthday = Birthday,
-                Create_at = CreateAt,
+                Birthday = Birth,
+                Create_at = CreateDate,
                 Role = Type
             };
         } 
 
         public event Action<object?> CloseAction;
+
+        [ICommand]
+        public void Close()
+        {
+            CloseAction?.Invoke(null);
+        }
+
+        [ICommand]
+        public void Accept()
+        {
+            CloseAction?.Invoke(ToRequest());
+        }
     }
 }

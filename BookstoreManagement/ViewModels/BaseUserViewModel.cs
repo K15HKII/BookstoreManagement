@@ -22,38 +22,57 @@ public abstract partial class BaseUserViewModel : BaseViewModel
         this.Id = user.Id;
         this.Name = user.FullName;
         this.Email = user.Email;
-        this.Username = user.Username;
+        this.UserName = user.Username;
         this.Gender = user.Gender;
         this.Phone = user.Phone;
         this.Password = user.Password;
-        this.Birthday = user.BirthDay;
-        this.CreateAt = user.CreateAt;
+        this.Birth = user.BirthDay;
+        this.CreateDate = user.CreateAt;
     }
 
-    [ObservableProperty] string? _id;
-        
-    [ObservableProperty] string? _image;
+    [ObservableProperty]
+    [Required]
+    private string? _id;
 
-    [ObservableProperty] [Required] [MinLength(1)] 
-    string? _name;
+    [ObservableProperty]
+    [Required]
+    private string? _name;
 
-    [ObservableProperty] string? _email;
+    [ObservableProperty]
+    [Required]
+    private string? _userName;
 
-    [ObservableProperty] Role? _type;
+    [ObservableProperty]
+    [Required]
+    private string? _password;
 
-    [ObservableProperty] [Required] [MinLength(1)] 
-    string? _username;
+    [ObservableProperty]
+    [Required]
+    private string? _confirmpassword;
 
-    [ObservableProperty] [Required] [MinLength(1)] 
-    string? _password;
+    [ObservableProperty]
+    [Required]
+    private Gender? _gender;
 
-    [ObservableProperty] DateTime? _birthday;
+    [ObservableProperty]
+    [Required]
+    private string? _phone;
 
-    [ObservableProperty] string? _phone;
 
-    [ObservableProperty] [Required] [MinLength(1)]
-     Gender? _gender;
+    [ObservableProperty]
+    [Required]
+    private DateTime? _birth;
 
-    [ObservableProperty] DateTime? _createAt;
+    [ObservableProperty]
+    [Required]
+    private DateTime? _createDate;
+
+    [ObservableProperty]
+    [Required]
+    private string? _email;
+
+    [ObservableProperty]
+    [Required]
+    private Role? _type;
 
 }
