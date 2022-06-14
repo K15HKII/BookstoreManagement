@@ -13,7 +13,7 @@ namespace BookstoreManagement.Data.Model.Api
         public string? TransportId { get; set; }
         
         [JsonProperty("created_at")]
-        public DateTime? CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
         
         [JsonProperty("user_id")]
         public string UserId { get; set; }
