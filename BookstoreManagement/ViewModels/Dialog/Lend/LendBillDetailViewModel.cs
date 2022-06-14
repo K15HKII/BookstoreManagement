@@ -6,7 +6,7 @@ using Microsoft.Toolkit.Mvvm.Input;
 
 namespace BookstoreManagement.ViewModels.DialogView;
 
-public partial class LendBillDetailViewModel : BaseViewModel, IDialog
+public partial class LendBillDetailViewModel : BaseLendBillViewModel, IDialog
 {
     private readonly IModelRemote _model;
     private readonly IViewModelFactory _factory;

@@ -23,16 +23,25 @@ public abstract partial class BaseLendBillViewModel : BaseViewModel
         this._model = model;
     }
 
-    public void SetLend(Data.Model.Api.Lend lend)
+    public string? SetLend(Data.Model.Api.Lend lend)
     {
         this.Type = lend.GetType;
         this.LendDate = lend.StartDate;
         this.LendExpired = lend.EndDate;
         this.Price = lend.UnitPrice;
         this.BookId = lend.BookId;
-        //_model.GetBook(lend.BookId).Subscribe(x => {}).Dispose;
+        Dispose(_model.GetBook(lend.BookId), book =>
+        {
+            LendBookName = book.Title;
+        });
+        Dispose(_model.GetUser(lend.UserId), user =>
+        {
+            CustomerName = user.FullName;
+        });
         //TODO: getBookImage /*this.BookImage */
         this.UserId = lend.UserId;
+
+        return "";
     }
 
     [ObservableProperty]

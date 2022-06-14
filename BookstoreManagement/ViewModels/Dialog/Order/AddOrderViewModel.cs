@@ -29,7 +29,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         [ObservableProperty] object? _address;
         [ObservableProperty] object? _description;
         
-        public BillUpdateRequest? ToAddRequest()
+        public BillUpdateRequest? ToRequest()
         {
             ValidateAllProperties();
 
@@ -38,7 +38,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
 
             return new BillUpdateRequest()
             {
-
+                
             };
         }
         
@@ -53,7 +53,7 @@ namespace BookstoreManagement.ViewModels.DialogView.Order
         [ICommand]
         public void Accept()
         {
-            CloseAction?.Invoke(ToAddRequest());
+            CloseAction?.Invoke(ToRequest());
         }
     }
 }
