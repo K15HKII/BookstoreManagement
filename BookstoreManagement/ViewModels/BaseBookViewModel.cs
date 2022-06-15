@@ -16,6 +16,11 @@ public partial class BaseBookViewModel : BaseViewModel
 {
     private readonly IModelRemote _model;
 
+    public static string[] BOOK_TAG = new string[]
+    {
+        "Drama","Hài kịch","Kinh dị","Giật gân","Lãng mạn","Thần bí","Huyền ảo","Khoa học viễn tưởng","Sinh học","Tự lực","Sức khoẻ","Hài hước","Lịch sử","Thơ","Luận văn","Hồi kí","Tự truyện","Kinh doanh","Du lịch","Nhà báo","Hội hoạ","Văn học"
+    };
+
     public BaseBookViewModel([NotNull] ScheluderProvider scheluderProvider, IModelRemote model) : base(
         scheluderProvider)
     {

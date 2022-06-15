@@ -44,19 +44,19 @@
                                Foreground="{StaticResource SolidDarkPrimaryColor}"
                                Margin="0 0 0 8"
                                Text="{Binding ExpiredDate}"/>
-                    <TextBlock Style="{StaticResource SmallCaption}"
+                    <!--<TextBlock Style="{StaticResource SmallCaption}"
                                Foreground="{StaticResource SolidDarkPrimaryColor}"
                                Margin="0 0 0 2"
-                               Text="Đã dùng"/>
+                               Text="Đã dùng"/>-->
                     <TextBlock Style="{StaticResource Button}"
                                Foreground="{StaticResource SolidOrangeColor}"
                                Text="{Binding UsedQuantity}"/>
                 </StackPanel>
 
-                <ToggleButton Style="{StaticResource myCheckBox}"
+                <!--<ToggleButton Style="{StaticResource myCheckBox}"
                               Width="24"
                               Height="24"
-                              DockPanel.Dock="Bottom"/>
+                              DockPanel.Dock="Bottom"/>-->
             </DockPanel>
         </Grid>
     </Grid>
