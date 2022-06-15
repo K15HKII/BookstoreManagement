@@ -10,7 +10,7 @@
              d:DesignHeight="664">
     <Grid>
         <StackPanel>
-            <component:HeaderWithSearchBar Tag="Nhà phát hành"
+            <component:HeaderWithSearchBar Tag="{Binding TitlePanel}"
                                            Height="89"/>
 
             <DockPanel LastChildFill="False"
@@ -83,7 +83,7 @@
                                 </Style>
                             </ListView.ItemContainerStyle>
                             <ListView.ItemTemplate>
-                                <DataTemplate DataType="{x:Type api:Publisher}">
+                                <DataTemplate>
                                     <Grid>
                                     <component:PublisherCard Width="210" />
                                     <Button Width="auto" Height="auto"

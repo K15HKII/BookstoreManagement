@@ -34,10 +34,10 @@ namespace BookstoreManagement.ViewModels.Suppier
 
         public void Initialize()
         {
-            Dispose(_model.GetPublishers().Select(publishers => publishers.Select(publisher =>
+            Dispose(_model.GetAuthors().Select(publishers => publishers.Select(publisher =>
             {
                 SupplierInfoViewModel vm = _factory.Create<SupplierInfoViewModel>();
-                /*vm.SetPublisher(publisher);*/
+                vm.SetAuthor(publisher);
                 Quantity++;
                 return vm;
             })), publishers =>
@@ -48,6 +48,11 @@ namespace BookstoreManagement.ViewModels.Suppier
                     LsSuppliers.Add(vm);
                 }
             });
+        }
+        
+        public string TitlePanel
+        {
+            get => "Tác giả";
         }
 
         // Thiếu mở dialog thêm nhà cung cấp, xoá, filter

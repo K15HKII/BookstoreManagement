@@ -31,13 +31,18 @@ namespace BookstoreManagement.ViewModels.Suppier
             _model = model;
             Initialize();
         }
+        
+        public string TitlePanel
+        {
+            get => "Nhà vận chuyển";
+        }
 
         public void Initialize()
         {
-            Dispose(_model.GetPublishers().Select(publishers => publishers.Select(publisher =>
+            Dispose(_model.GetTransporters().Select(publishers => publishers.Select(publisher =>
             {
                 SupplierInfoViewModel vm = _factory.Create<SupplierInfoViewModel>();
-                /*vm.SetPublisher(publisher);*/
+                vm.SetTransporter(publisher);
                 Quantity++;
                 return vm;
             })), publishers =>

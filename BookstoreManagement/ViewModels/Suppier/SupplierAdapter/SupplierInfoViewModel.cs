@@ -33,6 +33,18 @@ namespace BookstoreManagement.ViewModels.Suppier.SupplierAdapter
             this.Id = "#" + publisher.Id.ToString();
             this.Name = publisher.Name;
         }
+
+        public void SetAuthor(Author publisher)
+        {
+            this.Id = "#" + publisher.Id.ToString();
+            this.Name = publisher.Name;
+        }
+        
+        public void SetTransporter(Transporter publisher)
+        {
+            this.Id = "#" + publisher.Id.ToString();
+            this.Name = publisher.Name;
+        }
         
         private Publisher _publisher;
 
