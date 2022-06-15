@@ -153,9 +153,6 @@
                                         <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
                                         <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
                                         <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
-                                        <!--<ColumnDefinition Width="{StaticResource PublisherColumnWidth}" />
-                                        <ColumnDefinition Width="{StaticResource StatusColumnWidth}" />
-                                        <ColumnDefinition Width="{StaticResource SoldColumnWidth}" />-->
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0"
                                                Text="Tên"
@@ -169,18 +166,6 @@
                                                Text="Giá"
                                                Style="{StaticResource Caption}"
                                                Foreground="{StaticResource SolidDarkGrayColor}" />
-                                    <TextBlock Grid.Column="3"
-                                               Text="Nhà cung cấp"
-                                               Style="{StaticResource Caption}"
-                                               Foreground="{StaticResource SolidDarkGrayColor}" />
-                                    <TextBlock Grid.Column="4"
-                                               Text="Trạng thái"
-                                               Style="{StaticResource Caption}"
-                                               Foreground="{StaticResource SolidDarkGrayColor}" />
-                                    <TextBlock Grid.Column="5"
-                                               Text="Đã bán"
-                                               Style="{StaticResource Caption}"
-                                               Foreground="{StaticResource SolidDarkGrayColor}" />
                                 </Grid>
                                 <ScrollViewer>
                                     <ItemsPresenter />
@@ -189,7 +174,27 @@
                         </ControlTemplate>
                     </ItemsControl.Template>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate />
+                        <DataTemplate DataType="storage:BookItemViewModel">
+                             <Grid x:Name="PART_Header">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="{StaticResource InfoBookColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource CategoryColumnWidth}" />
+                                        <ColumnDefinition Width="{StaticResource PriceColumnWidth}" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0"
+                                               Text="{Binding Title}"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding TagString}"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                    <TextBlock Grid.Column="2"
+                                               Text="{Binding Price}"
+                                               Style="{StaticResource Caption}"
+                                               Foreground="{StaticResource SolidDarkGrayColor}" />
+                                </Grid>
+                        </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
             </Grid>

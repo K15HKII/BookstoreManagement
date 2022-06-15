@@ -29,7 +29,6 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel>
-
                 <ListView x:Name="itemsControl"
                           Width="{Binding ElementName=p, Path=ActualWidth}"
                           ItemsSource="{Binding MainStatistics}"
@@ -59,6 +58,7 @@
                 </ListView>
 
                 <Border Height="272"
+                        Width="544"
                         Background="{StaticResource SolidLightGrayColor}"
                         Margin="0 15 0 0">
                     <wpf:CartesianChart Name="Chart" Series="{Binding StatisticData}" >
@@ -88,7 +88,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="2">
-                <Grid>
+                <Grid Width="420">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="4" />
@@ -151,7 +151,8 @@
                     </Border>
                 </Grid>
 
-                <StackPanel Margin="0 52 0 0">
+                <StackPanel Margin="0 52 0 0"
+                            Width="350">
                     <TextBlock Style="{StaticResource Title}"
                                Foreground="Black"
                                Text="Khách quen" />

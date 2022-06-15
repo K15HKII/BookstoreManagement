@@ -71,6 +71,14 @@ namespace BookstoreManagement.ViewModels.Dashboard
             Dispose(_model.GetBills(), bills =>
             {
                 chartCalculate(TimeUnit.DAY, bills);
+
+                WaitingOrders = 0;
+                ShippingOrders = 0;
+                for (var i = 0; i < bills.Count; i++)
+                {
+                    WaitingOrders += bills[i].BillStatus == BillStatus.WAITING ? 1 : 0;
+                    ShippingOrders += bills[i].BillStatus == BillStatus.TRANSPORTING ? 1 : 0;
+                }
             });
         }
 
