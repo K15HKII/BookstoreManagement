@@ -11,6 +11,6 @@ public partial class IncomingViewModel : BaseBookViewModel
     {
     }
 
-    [ObservableProperty] private int _quantity;
+    [ObservableProperty] private int _quantity = 0;
 
 }

@@ -51,6 +51,10 @@ namespace BookstoreManagement.ViewModels.BookStore
             });
         }
 
+        [ObservableProperty] private int _waitingOrders;
+        [ObservableProperty] private int _shippingOrders;
+
+        [ObservableProperty] private bool _dataGridView = false;
 
         [ObservableProperty] private ObservableCollection<BookDetailViewModel> _books = new();
 

@@ -22,7 +22,7 @@
                         <StackPanel Name="infoOfCustomer"
                                     Grid.Column="0"
                                     Orientation="Horizontal">
-                            <Border Width="47px"
+                            <!--<Border Width="47px"
                                     Height="47px"
                                     CornerRadius="25"
                                     Background="{StaticResource SolidLightGrayColor}"
@@ -30,7 +30,7 @@
                                 <Border.BorderBrush>
                                     <ImageBrush ImageSource="{Binding Image, Converter={StaticResource UriImageConverter}, IsAsync=True}"/>
                                 </Border.BorderBrush>
-                            </Border>
+                            </Border>-->
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"

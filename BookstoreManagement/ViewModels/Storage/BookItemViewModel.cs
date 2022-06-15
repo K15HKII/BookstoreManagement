@@ -17,7 +17,7 @@ public partial class BookItemViewModel : BaseBookViewModel
     [ICommand]
     public void Click()
     {
-        Log.adjust(current, 1);
+        Log.Adjust(current, 1);
     }
     
 }

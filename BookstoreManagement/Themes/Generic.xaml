@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:BookstoreManagement.Components"
     xmlns:system="clr-namespace:System;assembly=System.Runtime"
-    xmlns:converters1="clr-namespace:BookstoreManagement.Utils.Converters">
+    xmlns:converters1="clr-namespace:BookstoreManagement.Utils.Converters"
+    xmlns:utils="clr-namespace:BookstoreManagement.Utils">
 
     <!--<ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="BookstoreManagentment.ImageLoaderBoarder.xaml"/>
@@ -11,6 +12,7 @@
     </ResourceDictionary.MergedDictionaries>-->
 
     <local:TextFormatConverter x:Key="ToStringConverter"/>
+    <utils:ViewSelector x:Key="ViewSelector"/>
     <converters1:BooleanVisibility x:Key="DefaultVisibilityConverter"/>
     <converters1:UriImageConverter x:Key="UriImageConverter"/>
 
