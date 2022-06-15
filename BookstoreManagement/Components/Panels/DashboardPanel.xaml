@@ -18,6 +18,9 @@
                            Foreground="{StaticResource SolidSecondaryColor}"
                            Text="{Binding ThisMonth}"
                            Margin="0 -24 0 0" />
+                <TextBlock Style="{StaticResource Title}"
+                           FontSize="18"
+                           Text="Doanh thu theo tháng"/>
             </StackPanel>
         </Grid>
 

@@ -171,6 +171,12 @@ namespace BookstoreManagement.Services
                 service.AddSingleton<ISupplierNavigator, SupplierNavigator>();
                 service.AddViewModel<SupplierViewModel>();
 
+                service.AddSingleton<IAuthorNavigator, AuthorNavigator>();
+                service.AddViewModel<AuthorViewModel>();
+
+                service.AddSingleton<ITransporterNavigator, TransporterNavigator>();
+                service.AddViewModel<TransporterViewModel>();
+
                 //Setting
                 service.AddSingleton<ISettingNavigator, SettingNavigator>();
                 service.AddViewModel<SettingViewModel>();

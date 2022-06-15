@@ -46,11 +46,11 @@ namespace BookstoreManagement.ViewModels
                 factory.Create<BookPanelViewModel>(),
                 factory.Create<OrderViewModel>(),
                 factory.Create<VoucherPanelViewModel>(),
-                factory.Create<RatingViewModel>(),
+                factory.Create<AuthorViewModel>(),
                 factory.Create<CustomerPanelViewModel>(),
                 factory.Create<ManagerViewModel>(),
                 factory.Create<SupplierViewModel>(),
-                factory.Create<LendViewModel>()
+                factory.Create<TransporterViewModel>()
             };
         }
 

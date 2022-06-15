@@ -34,9 +34,11 @@
                             <StackPanel Orientation="Vertical"
                                         VerticalAlignment="Center">
                                 <TextBlock HorizontalAlignment="Left"
+                                           FontSize="18"
                                            Text="{Binding Name}"
                                            Style="{StaticResource Title}" />
                                 <TextBlock HorizontalAlignment="Left"
+                                           FontSize="15"
                                            Text="{Binding Email}"
                                            Style="{StaticResource Caption}"
                                            Foreground="{StaticResource SolidDarkGrayColor}" />
@@ -49,10 +51,10 @@
                             <TextBlock Text="{Binding BillQuantity}"
                                        HorizontalAlignment="Right"
                                        Style="{StaticResource Title}" />
-                            <TextBlock HorizontalAlignment="Right"
+                            <!--<TextBlock HorizontalAlignment="Right"
                                        Text="Đơn hàng"
                                        Style="{StaticResource Caption}"
-                                       Foreground="{StaticResource SolidDarkGrayColor}" />
+                                       Foreground="{StaticResource SolidDarkGrayColor}" />-->
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

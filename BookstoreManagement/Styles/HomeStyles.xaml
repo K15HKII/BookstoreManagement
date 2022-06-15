@@ -29,9 +29,6 @@
         <DataTemplate DataType="{x:Type voucher:VoucherPanelViewModel}">
             <components:MainMenuItem Icon="Tag" Text="Voucher"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type rating:RatingViewModel}">
-            <components:MainMenuItem Icon="ThumbsUpDown" Text="Rating"/>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
             <components:MainMenuItem Icon="Account" Text="Customer"/>
         </DataTemplate>
@@ -41,8 +38,11 @@
         <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
             <components:MainMenuItem Icon="Charity" Text="Supplier"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type lend:LendViewModel}">
-            <components:MainMenuItem Icon="BookmarkMultiple" Text="Lend"/>
+        <DataTemplate DataType="{x:Type suppier:AuthorViewModel}">
+            <components:MainMenuItem Icon="Draw" Text="Author"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type suppier:TransporterViewModel}">
+            <components:MainMenuItem Icon="LocalShipping" Text="Transporter"/>
         </DataTemplate>
     </ResourceDictionary>
     
@@ -62,9 +62,6 @@
         <DataTemplate DataType="{x:Type voucher:VoucherPanelViewModel}">
             <components:VoucherPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type rating:RatingViewModel}">
-            <components:FeedbackPanel/>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type customer:CustomerPanelViewModel}">
             <components:CustomerPanel/>
         </DataTemplate>
@@ -74,8 +71,11 @@
         <DataTemplate DataType="{x:Type suppier:SupplierViewModel}">
             <components:PublisherManagementPanel/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type lend:LendViewModel}">
-            <panels:StorageLogPanel/>
+        <DataTemplate DataType="{x:Type suppier:AuthorViewModel}">
+            <components:PublisherManagementPanel/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type suppier:TransporterViewModel}">
+            <components:PublisherManagementPanel/>
         </DataTemplate>
     </ResourceDictionary>
     

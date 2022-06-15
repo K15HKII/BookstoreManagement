@@ -35,6 +35,7 @@ public abstract partial class BaseUserViewModel : BaseViewModel
         /*this.Address =*/
         this.BirthDay = user.BirthDay.Value;
         this.CreateAt = user.CreateAt.Value;
+        this.Name = user.FullName;
     }
 
     [ObservableProperty] [Required] string? _id;
