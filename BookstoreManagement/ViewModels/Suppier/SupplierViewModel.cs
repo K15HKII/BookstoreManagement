@@ -31,6 +31,11 @@ namespace BookstoreManagement.ViewModels.Suppier
             _model = model;
             Initialize();
         }
+        
+        public string TitlePanel
+        {
+            get => "Nhà phát hành";
+        }
 
         public void Initialize()
         {
