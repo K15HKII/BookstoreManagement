@@ -19,7 +19,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Thong tin khach hang"
+                           Text="Thông tin khách hàng"
                            Margin="0 0 0 8" />
                 <Grid Margin="0 0 0 8">
                     <Grid.ColumnDefinitions>
@@ -31,12 +31,12 @@
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
                              Text="abc"
-                             Tag="Ma khach hang" />
+                             Tag="Mã khách hàng" />
                     <StackPanel Orientation="Horizontal"
                                 Grid.Column="2">
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Foreground="Black"
-                                 Tag="Ho"
+                                 Tag="Họ"
                                  Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  VerticalContentAlignment="Center"
                                  HorizontalAlignment="Center" />
@@ -53,18 +53,18 @@
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
                          Text="abc"
-                         Tag="So dien thoai"
+                         Tag="Số điện thoại"
                          Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
                          Text="abc"
-                         Tag="Dia chi" />
+                         Tag="Địa chỉ" />
             </StackPanel>
 
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Thong tin san pham"
+                           Text="Thông tin sản phẩm"
                            Margin="0 0 0 8" />
                 <Grid Margin="0 0 0 8">
                     <Grid.ColumnDefinitions>
@@ -77,7 +77,7 @@
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Width="auto"
                              Text="abc"
-                             Tag="Ten san pham" />
+                             Tag="Tên sản phẩm" />
                     <!--custom quantity-->
                     <Border Grid.Column="2"></Border>
                     <!--custom add btn-->
@@ -95,13 +95,13 @@
                         <!--fix combobox-->
                         <ComboBox Width="auto"
                                  Text="abc"
-                                 Tag="Phan loai"
+                                 Tag="Phân loại"
                                  Margin="0 0 0 8"
                                   Padding="24 20 24 10"/>
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
                                  Text="abc"
-                                 Tag="Gia san pham"
+                                 Tag="Giá sản phẩm"
                                  Margin="0 0 0 8" />
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Width="auto"
@@ -223,7 +223,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Ghi chu"
+                           Text="Ghi chú"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
@@ -236,11 +236,11 @@
                         Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Command="{Binding AcceptCommand}"
                         Width="97"
-                        Content="Them"></Button>
+                        Content="Thêm"></Button>
             </StackPanel>
         </StackPanel>
     </Border>

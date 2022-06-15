@@ -22,7 +22,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Ten san pham"
+                           Text="Tên sản phẩm"
                            Margin="0 0 0 8" />
                 <TextBox Width="auto"
                          Style="{StaticResource myInput}"
@@ -45,7 +45,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="Gia"
+                               Text="Giá"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
@@ -63,7 +63,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="So luong"
+                               Text="Số lượng"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
@@ -78,7 +78,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Nha cung cap"
+                           Text="Nhà cung cấp"
                            Margin="0 0 0 8" />
                 <ComboBox Width="auto" 
                           ItemsSource="{Binding Source={StaticResource PublisherProvider}, Path=Source}"
@@ -88,7 +88,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Phan loai"
+                           Text="Phân loại"
                            Margin="0 0 0 8"
                            VerticalAlignment="Center" />
                 <ListView>
@@ -108,7 +108,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Hinh anh"
+                           Text="Hình ảnh"
                            Margin="0 0 0 8"
                            VerticalAlignment="Center" />
                 <StackPanel Orientation="Horizontal">
@@ -137,7 +137,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Mo ta"
+                           Text="Mô tả"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
                          TextWrapping="WrapWithOverflow"
@@ -152,11 +152,11 @@
                         Width="97"
                         Command="{Binding CloseCommand}"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Command="{Binding AcceptCommand}"
                         Width="97"
-                        Content="Them"></Button>
+                        Content="Thêm"></Button>
             </StackPanel>
         </StackPanel>
     </Border>

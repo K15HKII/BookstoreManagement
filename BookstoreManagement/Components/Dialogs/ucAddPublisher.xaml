@@ -66,7 +66,7 @@
                                  Width="auto" />-->
                         <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                                  Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                 Tag="So dien thoai"
+                                 Tag="Số điện thoại"
                                  Width="auto"
                                  Grid.Column="2" />
                     </Grid>
@@ -79,7 +79,7 @@
 
                     <TextBox Style="{StaticResource myInputWithPlaceHolder}"
                              Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             Tag="Dia chi"
+                             Tag="Địa chỉ"
                              Width="auto"
                               />
                 </StackPanel>
@@ -93,7 +93,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
-                                   Text="Ngay tham gia"
+                                   Text="Ngày tham gia"
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
 
@@ -115,7 +115,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Style="{StaticResource Title}"
                                    Foreground="{StaticResource SolidDarkGrayColor}"
-                                   Text="The loai"
+                                   Text="Thể loại"
                                    Margin="0 0 16 0"
                                    VerticalAlignment="Center" />
                         <TextBox Style="{StaticResource myInput}"
@@ -135,11 +135,11 @@
                         Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Command="{Binding AcceptCommand}"
                         Width="97"
-                        Content="Them"></Button>
+                        Content="Thêm"></Button>
             </StackPanel>
 
         </StackPanel>

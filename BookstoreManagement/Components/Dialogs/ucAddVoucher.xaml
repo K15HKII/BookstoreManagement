@@ -31,7 +31,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="Giam gia"
+                               Text="Giảm giá"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
@@ -49,7 +49,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="So luong"
+                               Text="Số lượng"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
                     <TextBox Grid.Column="1"
@@ -76,7 +76,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="Ngay bat dau"
+                               Text="Ngày bắt đầu"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
 
@@ -98,7 +98,7 @@
 
                     <TextBlock Style="{StaticResource Heading3}"
                                Foreground="Black"
-                               Text="Ngay ket thuc"
+                               Text="Ngày kết thúc"
                                VerticalAlignment="Center"
                                Margin="0 0 16 0" />
 
@@ -121,7 +121,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Toi da"
+                           Text="Tối đa"
                            Margin="0 0 24 0"
                            VerticalAlignment="Center" />
                 <TextBox Style="{StaticResource myInput}"
@@ -133,7 +133,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Dieu kien(tien)"
+                           Text="Điều kiện(tiền)"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
@@ -143,7 +143,7 @@
             <StackPanel Margin="0 0 0 24">
                 <TextBlock Style="{StaticResource Heading3}"
                            Foreground="Black"
-                           Text="Dieu kien(khac)"
+                           Text="Điều kiện(khác)"
                            Margin="0 0 0 8" />
                 <TextBox Style="{StaticResource myInput}"
                          Width="{Binding ElementName=root, Path=ActualWidth}"
@@ -156,11 +156,11 @@
                         Command="{Binding CloseCommand}"
                         Width="97"
                         Margin="0 0 16 0"
-                        Content="Huy"></Button>
+                        Content="Huỷ"></Button>
                 <Button Style="{StaticResource PrimaryButton}"
                         Command="{Binding AcceptCommand}"
                         Width="97"
-                        Content="Them"></Button>
+                        Content="Thêm"></Button>
             </StackPanel>
         </StackPanel>
     </Border>

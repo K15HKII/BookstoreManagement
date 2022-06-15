@@ -19,7 +19,7 @@
                                Height="191"
                                CornerRadius="100"
                                Background="{StaticResource SolidLightGrayColor}"
-                               Margin="0 0 0 16" >
+                               Margin="20 0 20 16">
                            <Border.BorderBrush>
                                <ImageBrush
                                    ImageSource="{Binding Image}"
